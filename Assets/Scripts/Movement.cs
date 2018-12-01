@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour {
     public Rigidbody rb;
     public Transform tf;
     public Trigger front;
-    public Trigger back;
+   // public Trigger back;
     public Trigger left;
     public Trigger right;
     public string[] Controls = new string[4];
@@ -28,17 +28,21 @@ public class Movement : MonoBehaviour {
         Debug.Log((int)tf.eulerAngles.y);
         MoveForward();
         HandleInput();
-        if (front.Collision||back.Collision)
+        if (front.Collision/*||back.Collision*/)
         {
             if (!right.Collision && cooldown == 0)
             {
-                Rotate(-1);
+                Rotate(1);
 
             }
             else if (!left.Collision && cooldown == 0)
             {
-                Rotate(1); 
+                Rotate(-1); 
 
+            }
+            else if(left.Collision && right.Collision)
+            {
+                Rotate(2);
             }
         }
 
@@ -49,16 +53,16 @@ public class Movement : MonoBehaviour {
         switch ((int)tf.eulerAngles.y)
         {
             case 0:
-                Facing = new Vector3(-Time.deltaTime,0,0);
+                Facing = new Vector3(Time.deltaTime,0,0);
                 break;
             case 90:
-                Facing = new Vector3(0, 0,Time.deltaTime);
+                Facing = new Vector3(0, 0,-Time.deltaTime);
                 break;
             case 180:
-                Facing = new Vector3(Time.deltaTime, 0,0);
+                Facing = new Vector3(-Time.deltaTime, 0,0);
                 break;
             case 270:
-                Facing = new Vector3(0,0,-Time.deltaTime);
+                Facing = new Vector3(0,0,Time.deltaTime);
                 break;
         }
 
