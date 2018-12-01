@@ -131,13 +131,9 @@ public class Pacman : MonoBehaviour {
         if (LockRotateMovement == true)
             return;
 
-        if ((Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.S)) || (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.S)) || (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.D)))
-            return;
-        else if (Input.GetKeyDown(KeyCode.W))
-            {
-                Move_Player();
+                                                                                                                                                     if ((Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.S)) || (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.S)) || (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.D)))
+                                                                                                                                                            return;
 
-            }
             else if (Input.GetKeyDown(KeyCode.S))
             {
             currentKey = KeyCode.S;
