@@ -40,22 +40,19 @@ public class Enemy : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             rigidbody.AddForce(0, 0, zspd);
-            transform.localRotation = new Quaternion(0, 0, 0, 1f);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
             rigidbody.AddForce(0, 0, -zspd);
-            transform.localRotation = new Quaternion(0, 1, 0, 0);
+
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rigidbody.AddForce(-xspd, 0, 0);
-            transform.localRotation = new Quaternion(0, 0.7071068f, 0, -0.7071068f);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             rigidbody.AddForce(xspd, 0, 0);
-            transform.localRotation = new Quaternion(0, 0.7071068f, 0, 0.7071068f);
         }
     }
 }
