@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.AI;
 public class Movement : MonoBehaviour {
     public Rigidbody rb;    
-    public Transform tf;
-    public Trigger front, left, right;      //colliders voor navigatie
-    public string[] Controls = new string[2];       //controlls van spookje
-    public int speed = 100;     //beweegsnelheid
-    public int Respawntime = 4;         //tijd voordat speler weer kan besturen
-    float RotationCooldown = 0;         //tijd voordat er weer gedraaid kan worden
-    Vector3 Velocity;         //beweegsnelheid
-    public NavMeshAgent agent;          //navigatie voor teruggaan naar spawn
-    public Transform respawn;           //locatie van spawnpunt
-    public bool dead = false;           //als true is de speler doodgegaan
+    public Transform tf;    
+    public Trigger front, left, right;               //colliders voor navigatie
+    public string[] Controls = new string[2];        //controlls van spookje
+    public int speed = 100;                          //beweegsnelheid
+    public int Respawntime = 4;                      //tijd voordat speler weer kan besturen
+    float RotationCooldown = 0;                      //tijd voordat er weer gedraaid kan worden
+    Vector3 Velocity;                                //beweegsnelheid
+    public NavMeshAgent agent;                       //navigatie voor teruggaan naar spawn
+    public Transform respawn;                        //locatie van spawnpunt
+    public bool dead = false;                        //als true is de speler doodgegaan
     float respawntimer = 0;         
 
     void Start ()
@@ -25,18 +25,7 @@ public class Movement : MonoBehaviour {
     {
         if (dead)
         {
-            agent.enabled = true;
-            respawntimer += Time.deltaTime;
-            if(respawntimer >= Respawntime)
-            {
-                dead = false;
-                agent.enabled = false;
-                tf.eulerAngles = new Vector3(0, 0, 0);
-                respawntimer = 0;
-                
-            }
-            agent.SetDestination(respawn.position);
-
+            DoRespawn();
         }
 	}
 
@@ -46,25 +35,8 @@ public class Movement : MonoBehaviour {
         {
             MoveForward();
             HandleInput();
-            if (front.Collision)
-            {
-                if (!right.Collision && RotationCooldown == 0)
-                {
-                    Rotate(1);
-
-                }
-                else if (!left.Collision && RotationCooldown == 0)
-                {
-                    Rotate(-1);
-
-                }
-                else if (left.Collision && right.Collision)
-                {
-                    Rotate(2);
-                }
-            }
+            AutoNav();
         }
-
     }
 
     void MoveForward()
@@ -86,21 +58,53 @@ public class Movement : MonoBehaviour {
         }
 
         tf.position += Velocity * speed;    
-    }
-
+    }       //beweegt Character naar de kijkrichting
     void Rotate(int i)
     {
         tf.Rotate(0,i*90,0);
         RotationCooldown = 1;
-    }
+    }       //Roteer de Character met 90 graden naar 1 rechts, -1 links
+    void DoRespawn()
+    {
+        agent.enabled = true;
+        respawntimer += Time.deltaTime;
+        if (respawntimer >= Respawntime)
+        {
+            dead = false;
+            agent.enabled = false;
+            tf.eulerAngles = new Vector3(0, 0, 0);
+            respawntimer = 0;
 
+        }
+        agent.SetDestination(respawn.position);
+    }         //roept NavMeshAgent aan om de character naar spawn te sturen
+    void AutoNav()
+    {
+        if (front.Collision)
+        {
+            if (!right.Collision)
+            {
+                Rotate(1);
+
+            }
+            else if (!left.Collision)
+            {
+                Rotate(-1);
+
+            }
+            else if (left.Collision)
+            {
+                Rotate(2);
+            }
+        }
+    }           //zorgt voor automatisch draaien tegen muren
     void HandleInput()
     {
-        if (Input.GetKey(Controls[0]) && RotationCooldown == 0)
+        if (Input.GetKey(Controls[0]) && RotationCooldown == 0 && !right.Collision)
         {
             Rotate(1); 
         }
-        if (Input.GetKey(Controls[1]) && RotationCooldown == 0)
+        if (Input.GetKey(Controls[1]) && RotationCooldown == 0 && !left.Collision)
         {
             Rotate(-1);
         }
@@ -112,5 +116,5 @@ public class Movement : MonoBehaviour {
                 RotationCooldown = 0;
             }
         }
-    }
+    }       //neemt de twee inputs om te draaien, zorgt ook dat je niet een muur in kan draaien. Bevat ook draai cooldown
 }

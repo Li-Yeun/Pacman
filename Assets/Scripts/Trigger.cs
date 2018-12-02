@@ -6,7 +6,11 @@ public class Trigger : MonoBehaviour {
     public bool Collision;
     private void OnTriggerEnter(Collider col)
     {
-        Collision = true;
+        if (col.gameObject.tag == "Maze")
+        {
+            Collision = true;
+        }
+
 
     }
 
