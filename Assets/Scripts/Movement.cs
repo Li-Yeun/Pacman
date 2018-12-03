@@ -14,14 +14,16 @@ public class Movement : MonoBehaviour {
     public NavMeshAgent agent;                       //navigatie voor teruggaan naar spawn
     public Transform respawn;                        //locatie van spawnpunt
     public bool dead = false;                        //als true is de speler doodgegaan
+    public bool UseRandom;
     float respawntimer = 0;         
 
     void Start ()
     {
         agent.enabled = false;
 	}
-	
-	void Update ()
+
+    
+        void Update ()
     {
         if (dead)
         {
@@ -82,7 +84,15 @@ public class Movement : MonoBehaviour {
     {
         if (front.Collision)
         {
-            if (!right.Collision)
+            //Ik weet niet waarom dit niet altijd goed werkt
+            //if (!right.Collision && !left.Collision)  
+            //{
+            //    int side = Random.Range(0, 2)*2-1;
+                
+            //    Debug.Log(side);
+            //    Rotate(side);
+            //}
+             if (!right.Collision)
             {
                 Rotate(1);
 
