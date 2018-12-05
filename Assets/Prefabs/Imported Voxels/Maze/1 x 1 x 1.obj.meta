@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 5b747f82ae4b5e04fa4af22d49794d3b
+guid: 1ce2d7642ceb60a40af311369165d3c6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Pacman_Maze
-    100004: Pacman Maze_root
+    100002: 1_x_1_x_1
     400000: //RootNode
-    400002: Pacman_Maze
-    400004: Pacman Maze_root
-    2100000: Pacman_MazeMat
-    2300000: Pacman_Maze
-    3300000: Pacman_Maze
-    4300000: Pacman_Maze
-    6400000: Pacman_Maze
+    400002: 1_x_1_x_1
+    2100000: 1_x_1_x_1Mat
+    2300000: 1_x_1_x_1
+    3300000: 1_x_1_x_1
+    4300000: 1_x_1_x_1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -47,7 +44,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

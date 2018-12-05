@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 34bae155d8631a240959348b3a65dc7d
+guid: 379096c20b9a44d4f9baf45cb4bb435b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: untitled
-    100002: //RootNode
-    400000: untitled
-    400002: //RootNode
-    2100000: untitledMat
-    2300000: untitled
-    3300000: untitled
-    4300000: untitled
-    6400000: untitled
+    100000: //RootNode
+    100002: Maze_New_Walls
+    400000: //RootNode
+    400002: Maze_New_Walls
+    2100000: Maze_New_WallsMat
+    2300000: Maze_New_Walls
+    3300000: Maze_New_Walls
+    4300000: Maze_New_Walls
+    6400000: Maze_New_Walls
   externalObjects: {}
   materials:
     importMaterials: 1

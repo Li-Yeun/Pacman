@@ -229,12 +229,8 @@ public class PacmanMovement : MonoBehaviour {
     {
         get { return p_Direction; }
     }
-    public KeyCode CurrentKey
+    public Vector3 PacmanPos
     {
-        get { return currentKey; }
-    }
-    public KeyCode P_key
-    {
-        get { return p_Key; }
+        get { return transform.position; }
     }
 }
