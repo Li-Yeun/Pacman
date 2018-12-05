@@ -63,21 +63,6 @@ public class Pacman : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        switch (collision.gameObject.tag)
-        {
-            case "Enemy":
-                StartDeathSequence();
-                break;
-            case "Friendly":
-                break;
-            default:
-               rigidbody.useGravity = false;
-                break;
-        }
- 
-    }
 
     private void ApplyLock()
     {
