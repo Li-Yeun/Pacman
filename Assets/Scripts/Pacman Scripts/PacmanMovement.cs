@@ -4,44 +4,33 @@ using UnityEngine;
 
 public class PacmanMovement : MonoBehaviour {
 
+    [Header("Directional Speed")]
+    [SerializeField] float xspd,yspd, zspd;
 
-    [SerializeField] float xspd;
-    [SerializeField] float yspd;
-    [SerializeField] float zspd;
+    [Header("Camera's")]
+    [SerializeField] GameObject NormalCamera, ThirdPerson, MiniMap, EnemyCamera;
 
-    public GameObject NormalCamera, ThirdPerson, MiniMap, EnemyCamera;
+    [Header("Spawner")]
+    [SerializeField] GameObject Spawner;
 
     string[] Directions;
     public string currentDirection, p_Direction;
-
-    Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0) };
+    Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0)};
     Vector3 rotation;
-
     int directionIndex, rotateIndex;
-
-    public static Vector3 Position;
     bool SwitchControls;
-    bool LockMovement;
-    public static bool LockRotateMovement;
-    [SerializeField] float LockRotateTime;
-
     public KeyCode currentKey, p_Key;
-
-
     Rigidbody rigidbody;
 
     // Use this for initialization
     void Start()
     {
-
         rigidbody = GetComponent<Rigidbody>();
         Directions = new string[] { "Up","Right", "Down", "Left" };
         rotation = RotateList[rotateIndex];
         directionIndex = 0;
         currentDirection = Directions[directionIndex];
         SwitchControls = false;
-        LockMovement = false;
-        LockRotateMovement = false;
     }
 
     // Update is called once per frame
@@ -49,17 +38,12 @@ public class PacmanMovement : MonoBehaviour {
     {
         p_Direction = currentDirection;
         p_Key = currentKey;
-        if (LockMovement == false)
-        {
-            KeyInput();
-        }
+        KeyInput();
 
         if (transform.position.y < -20)
         {
             StartDeathSequence();
         }
-
-        Position = transform.position;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -78,15 +62,12 @@ public class PacmanMovement : MonoBehaviour {
 
     }
 
-    private void ApplyLock()
-    {
-        LockRotateMovement = false;
-    }
-
     private void StartDeathSequence()
     {
-        transform.position = new Vector3(0, 0, 0);
-
+        transform.position = Spawner.transform.position;
+        rigidbody.useGravity = true;
+        directionIndex = 0;
+        currentDirection = Directions[directionIndex];
     }
 
     void KeyInput()
@@ -99,7 +80,7 @@ public class PacmanMovement : MonoBehaviour {
         {
             NormalCamera.SetActive(false);
             ThirdPerson.SetActive(true);
-            //   MiniMap.SetActive(true);
+            MiniMap.SetActive(true);
             ThirdPersonMode();
         }
         else

@@ -12,7 +12,6 @@ public class FirstPerson : MonoBehaviour {
     public float distanceOffset;
     public static bool LockMovement;
     [SerializeField] float CameraTurnSpeed = 0.1f;
-    public List<Light> Lights;
     public Vector3 CameraOffset;
     void Start()
     {
@@ -22,7 +21,7 @@ public class FirstPerson : MonoBehaviour {
 
     void LateUpdate()
     {
-        if(pacmanMovement.currentDirection != pacmanMovement.p_Direction)
+        if(pacmanMovement.CurrentDirection != pacmanMovement.P_Direction)
         {
             RotateCamera();
         }
@@ -61,19 +60,4 @@ public class FirstPerson : MonoBehaviour {
         transform.rotation = Quaternion.Slerp(fromAngle, toAngle, 1);
     }
 
-    void OnPreRender()
-    {
-        foreach (Light light in Lights)
-        {
-            light.enabled = false;
-        }
-    }
-
-    void OnPostRender()
-    {
-        foreach (Light light in Lights)
-        {
-            light.enabled = true;
-        }
-    }
 }
