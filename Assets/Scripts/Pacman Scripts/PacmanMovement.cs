@@ -13,13 +13,17 @@ public class PacmanMovement : MonoBehaviour {
     [Header("Spawner")]
     [SerializeField] GameObject Spawner;
 
+    [Header("Triggers")]
+    [SerializeField] Trigger left, right;
+
     string[] Directions;
     public string currentDirection, p_Direction;
     Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0)};
     Vector3 rotation;
     int directionIndex, rotateIndex;
-    bool SwitchControls;
+    bool SwitchControls, LockMovement;
     public KeyCode currentKey, p_Key;
+
     Rigidbody rigidbody;
 
     // Use this for initialization
@@ -31,6 +35,7 @@ public class PacmanMovement : MonoBehaviour {
         directionIndex = 0;
         currentDirection = Directions[directionIndex];
         SwitchControls = false;
+        LockMovement = false;
     }
 
     // Update is called once per frame
@@ -94,38 +99,40 @@ public class PacmanMovement : MonoBehaviour {
 
     private void ThirdPersonMode()
     {
-        /*   if (LockRotateMovement == true)
-               return;
-               */
         if (Input.GetKeyDown(KeyCode.S))
         {
-            //LockRotateMovement = true;
             currentKey = KeyCode.S;
             AddDirectionIndex(2);
             Rotation();
             Move_Player();
 
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) && left.Collision == false && LockMovement == false)
         {
-            //LockRotateMovement = true;
+            LockMovement = true;
             currentKey = KeyCode.A;
             AddDirectionIndex(-1);
             Rotation();
             Move_Player();
+            Invoke("UnlockMovement", 0.2f);
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) && right.Collision == false && LockMovement == false)
         {
-            //LockRotateMovement = true;
+            LockMovement = true;
             currentKey = KeyCode.D;
             AddDirectionIndex(1);
             Rotation();
             Move_Player();
+            Invoke("UnlockMovement", 0.2f);
 
         }
 
     }
 
+    private void UnlockMovement()
+    {
+        LockMovement = false;
+    }
     private void NormalMode()
     {
         if (Input.GetKeyDown(KeyCode.W))

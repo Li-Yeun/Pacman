@@ -6,11 +6,6 @@ public class FirstPerson : MonoBehaviour {
 
     public GameObject target;
     public PacmanMovement pacmanMovement;
-    public float damping = 1;
-    Vector3 offset;
-    public float angleOffset;
-    public float distanceOffset;
-    public static bool LockMovement;
     [SerializeField] float CameraTurnSpeed = 0.1f;
     public Vector3 CameraOffset;
     void Start()
@@ -33,7 +28,7 @@ public class FirstPerson : MonoBehaviour {
     {
         if(pacmanMovement.CurrentKey == KeyCode.S)
         {
-            StartCoroutine(RotateMe(Vector3.up * 180, CameraTurnSpeed*2));
+            StartCoroutine(RotateMe(Vector3.up * 180, CameraTurnSpeed));
         } else if(pacmanMovement.CurrentKey == KeyCode.A)
         {
             StartCoroutine(RotateMe(Vector3.up * -90, CameraTurnSpeed));
