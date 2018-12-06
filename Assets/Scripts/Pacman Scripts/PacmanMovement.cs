@@ -214,4 +214,14 @@ public class PacmanMovement : MonoBehaviour {
     {
         get { return transform.position; }
     }
+
+    public KeyCode CurrentKey
+    {
+        get { return currentKey; }
+    }
+
+    public KeyCode P_Key
+    {
+        get { return p_Key; }
+    }
 }

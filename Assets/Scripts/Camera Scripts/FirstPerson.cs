@@ -31,7 +31,27 @@ public class FirstPerson : MonoBehaviour {
 
     public void RotateCamera()
     {
-        switch(pacmanMovement.CurrentDirection)
+        if(pacmanMovement.CurrentKey == KeyCode.S)
+        {
+            StartCoroutine(RotateMe(Vector3.up * 180, CameraTurnSpeed));
+        } else if(pacmanMovement.CurrentKey == KeyCode.A)
+        {
+            StartCoroutine(RotateMe(Vector3.up * -90, CameraTurnSpeed));
+        } else if((pacmanMovement.CurrentKey == KeyCode.D))
+        {
+            StartCoroutine(RotateMe(Vector3.up * 90, CameraTurnSpeed));
+        }
+    }
+    IEnumerator RotateMe(Vector3 byAngles, float inTime)
+    {
+        var fromAngle = transform.rotation;
+        var toAngle = Quaternion.Euler(transform.eulerAngles + byAngles);
+        for (var t = 0f; t < 1; t += Time.deltaTime / inTime)
+        {
+            transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
+            yield return null;
+        }
+        switch (pacmanMovement.CurrentDirection)
         {
             case "Up":
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
@@ -47,17 +67,6 @@ public class FirstPerson : MonoBehaviour {
                 break;
 
         }
-    }
-    IEnumerator RotateMe(Vector3 byAngles, float inTime)
-    {
-        var fromAngle = transform.rotation;
-        var toAngle = Quaternion.Euler(transform.eulerAngles + byAngles);
-        for (var t = 0f; t < 1; t += Time.deltaTime / inTime)
-        {
-            transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
-            yield return null;
-        }
-        transform.rotation = Quaternion.Slerp(fromAngle, toAngle, 1);
     }
 
 }
