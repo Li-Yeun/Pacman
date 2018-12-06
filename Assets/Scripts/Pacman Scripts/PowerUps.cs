@@ -1,0 +1,21 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PowerUps : MonoBehaviour {
+
+    [SerializeField] GameObject HomingMissles;
+	// Use this for initialization
+	void Start () {
+        HomingMissles.SetActive(false);
+	}
+
+    // Update is called once per frame
+    void Update() {
+        if (Input.GetKeyDown("3"))
+        {
+            HomingMissles.SetActive(true);
+        } else
+            HomingMissles.SetActive(false); 
+    }
+}
