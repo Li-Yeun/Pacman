@@ -14,8 +14,7 @@ public class PowerUps : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown("3"))
         {
-            HomingMissles.SetActive(true);
-        } else
-            HomingMissles.SetActive(false); 
+            HomingMissles.SetActive(!HomingMissles.active);
+        }
     }
 }

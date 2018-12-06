@@ -33,7 +33,7 @@ public class FirstPerson : MonoBehaviour {
     {
         if(pacmanMovement.CurrentKey == KeyCode.S)
         {
-            StartCoroutine(RotateMe(Vector3.up * 180, CameraTurnSpeed));
+            StartCoroutine(RotateMe(Vector3.up * 180, CameraTurnSpeed*2));
         } else if(pacmanMovement.CurrentKey == KeyCode.A)
         {
             StartCoroutine(RotateMe(Vector3.up * -90, CameraTurnSpeed));

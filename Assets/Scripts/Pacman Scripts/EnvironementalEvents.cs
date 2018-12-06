@@ -15,7 +15,7 @@ public class EnvironementalEvents : MonoBehaviour {
 		if(Input.GetKeyDown("2") && Smoke.activeSelf == false)
         {
             Smoke.SetActive(true);
-            Invoke("TurnOffSmokes", 5f);
+            Invoke("TurnOffSmokes", 10f);
         }
 	}
 
