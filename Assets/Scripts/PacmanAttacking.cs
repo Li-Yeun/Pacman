@@ -18,6 +18,20 @@ public class PacmanAttacking : MonoBehaviour {
 	void Update ()
     {
         if (Input.GetKeyDown("8"))
-            animator.SetBool("PacmanIsOnTheHunt", true);
+        {
+            PacmanIsTheHunter();
+        }
+
+        if (animator.GetBool("PacmanIsOnTheHunt")) { TimePassed += Time.deltaTime; }
+
+        if (TimePassed >= 10)
+        {
+            animator.SetBool("PacmanIsOnTheHunt", false);
+            TimePassed = 0; 
+        }
 	}
+    public void PacmanIsTheHunter()
+    {
+        animator.SetBool("PacmanIsOnTheHunt", true);
+    }
 }
