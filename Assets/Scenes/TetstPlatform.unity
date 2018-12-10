@@ -12164,16 +12164,22 @@ MonoBehaviour:
   yspd: 0
   zspd: 2
   NormalCamera: {fileID: 1261171512}
-  ThirdPerson: {fileID: 1724819820}
+  FirstPerson: {fileID: 1724819820}
   MiniMap: {fileID: 140098480}
-  EnemyCamera: {fileID: 0}
   Spawner: {fileID: 501993956}
   left: {fileID: 1084191081}
   right: {fileID: 1641117865}
-  currentDirection: 
-  p_Direction: 
-  currentKey: 0
-  p_Key: 0
+--- !u!114 &1700235658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1700235656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a70a52f9e9e87d448e9ccce9642454a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1700235662
 MonoBehaviour:
   m_ObjectHideFlags: 0
