@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1330084163278984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.17, y: -0.92, z: 10.94}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: -9.39, y: -0.9200001, z: 9.56}
+  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,6 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerpileaten: 0
   powerpil: {fileID: 1330084163278984}
+  AnimationScriptSpookjes: {fileID: 0}
+  view3d: {fileID: 0}
+  powerpilscore: {fileID: 0}
 --- !u!135 &135990491145725128
 SphereCollider:
   m_ObjectHideFlags: 1

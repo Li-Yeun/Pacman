@@ -1085,6 +1085,11 @@ Prefab:
       propertyPath: view3d
       value: 
       objectReference: {fileID: 1905550894}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: powerpilscore
+      value: 
+      objectReference: {fileID: 1574347485}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -1275,6 +1280,11 @@ Prefab:
       propertyPath: view3d
       value: 
       objectReference: {fileID: 1905550894}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: powerpilscore
+      value: 
+      objectReference: {fileID: 1574347485}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -2274,6 +2284,11 @@ Prefab:
       propertyPath: view3d
       value: 
       objectReference: {fileID: 1905550894}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: powerpilscore
+      value: 
+      objectReference: {fileID: 1574347485}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -8400,10 +8415,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1330084163278984, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
-      propertyPath: m_Layer
-      value: 14
-      objectReference: {fileID: 0}
     - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
         type: 2}
       propertyPath: AnimationScriptSpookjes
@@ -8414,6 +8425,11 @@ Prefab:
       propertyPath: view3d
       value: 
       objectReference: {fileID: 1905550894}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: powerpilscore
+      value: 
+      objectReference: {fileID: 1574347485}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -9185,26 +9201,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1330084163278984, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
-      propertyPath: m_Layer
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330084163278984, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
-      propertyPath: m_Name
-      value: Powerpil (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4093587285494662, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.39999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 4093587285494662, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.39999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 4093587285494662, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.39999998
-      objectReference: {fileID: 0}
     - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
         type: 2}
       propertyPath: AnimationScriptSpookjes
@@ -9215,6 +9211,15 @@ Prefab:
       propertyPath: view3d
       value: 
       objectReference: {fileID: 1905550894}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: powerpilscore
+      value: 
+      objectReference: {fileID: 1574347485}
+    - target: {fileID: 1330084163278984, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
+      propertyPath: m_Name
+      value: Powerpil (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -9442,7 +9447,8 @@ Prefab:
       propertyPath: Lights.Array.data[1]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114144760807093214, guid: 0dbc58a16ba00db48a6ee3ff46109d41, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 0dbc58a16ba00db48a6ee3ff46109d41, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1019932597 stripped
@@ -10875,6 +10881,11 @@ Prefab:
       propertyPath: view3d
       value: 
       objectReference: {fileID: 1905550894}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: powerpilscore
+      value: 
+      objectReference: {fileID: 1574347485}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -11391,6 +11402,7 @@ GameObject:
   - component: {fileID: 1574347482}
   - component: {fileID: 1574347484}
   - component: {fileID: 1574347483}
+  - component: {fileID: 1574347485}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -11456,6 +11468,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1574347481}
   m_CullTransparentMesh: 0
+--- !u!114 &1574347485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1574347481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d13c36fe87d409479db89bacbfee66d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreCounter: {fileID: 1574347483}
+  counter: 0
 --- !u!1 &1578443386
 GameObject:
   m_ObjectHideFlags: 0
@@ -13539,9 +13564,9 @@ RectTransform:
   m_Father: {fileID: 1021671735}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -609, y: 455}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 330, y: -80}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1979897707

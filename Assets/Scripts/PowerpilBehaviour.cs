@@ -11,6 +11,8 @@ public class PowerpilBehaviour : MonoBehaviour {
     public GameObject powerpil;
     public PacmanAttacking AnimationScriptSpookjes;
     public PacmanAttacking view3d;
+    public ScoreCounter powerpilscore;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -39,6 +41,7 @@ public class PowerpilBehaviour : MonoBehaviour {
             powerpil.SetActive(false);
             AnimationScriptSpookjes.PacmanIsTheHunter();
             view3d.PacmanIsTheHunter();
+            powerpilscore.PowerpilPoints();
         }   
 	}
 }
