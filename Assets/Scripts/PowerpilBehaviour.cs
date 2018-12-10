@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Laat de powerpil verdwijnen als pacman deze eet
+/// Triggerd ook het event dat pacman de spookjes kan gaan eten ipv andersom.
+/// </summary>
 public class PowerpilBehaviour : MonoBehaviour {
 
     public bool powerpileaten;
     public GameObject powerpil;
-
+    public PacmanAttacking AnimationScriptSpookjes;
+    public PacmanAttacking view3d;
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         powerpileaten = false;
 	}
 
@@ -32,6 +37,8 @@ public class PowerpilBehaviour : MonoBehaviour {
 		if (powerpileaten)
         {
             powerpil.SetActive(false);
-        }
+            AnimationScriptSpookjes.PacmanIsTheHunter();
+            view3d.PacmanIsTheHunter();
+        }   
 	}
 }
