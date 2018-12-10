@@ -4,33 +4,40 @@ using UnityEngine;
 
 public class EnvironementalEvents : MonoBehaviour {
 
-    [SerializeField] GameObject Smoke;
-    [SerializeField] ParticleSystem Smokes;
-	// Use this for initialization
-	void Start () {
+    [SerializeField] GameObject Smoke, FireWorks, SandStorm, Water;
+    [SerializeField] Transform parent;
+    // Use this for initialization
+    void Start () {
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown("2") && Smoke.activeSelf == false)
+        if (Input.GetKeyDown("2"))
         {
-            Smoke.SetActive(true);
-            Invoke("TurnOffSmokes", 10f);
+            ActivateEvent(Smoke);
+
         }
-	}
+        else if (Input.GetKeyDown("4"))
+        {
+            ActivateEvent(FireWorks);
 
-    void TurnOffSmokes()
-    {
-        Smokes.loop = false;
-        Invoke("DeActivateSmoke", 11);
+        }
+        else if (Input.GetKeyDown("5"))
+        {
+            ActivateEvent(SandStorm);
+        }
     }
 
-    void DeActivateSmoke()
+    private void ActivateEvent(GameObject gameObject)
     {
-        Smokes.loop = true;
-        Smoke.SetActive(false);
+        if (FindObjectsOfType<SmokeScript>().Length == 0)
+        {
+            GameObject go = Instantiate(gameObject);
+            go.transform.parent = parent;
+        }
     }
 
-    
+
+
 
 }
