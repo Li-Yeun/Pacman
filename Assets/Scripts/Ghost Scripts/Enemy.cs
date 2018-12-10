@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Insert wat deze Class doet thanks. Wordt hij ergens gebruikt?
+/// </summary>
 public class Enemy : MonoBehaviour
 {
 

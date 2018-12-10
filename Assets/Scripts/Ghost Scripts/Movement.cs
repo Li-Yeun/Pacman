@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
+/// <summary>
+/// Insert alle functies van wat deze classe doet. Thanks.
+/// </summary>
+
 public class Movement : MonoBehaviour {
     public Rigidbody rb;    
     public Transform tf;    
@@ -23,7 +28,7 @@ public class Movement : MonoBehaviour {
 	}
 
     
-        void Update ()
+    void Update ()
     {
         if (dead)
         {
