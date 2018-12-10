@@ -1075,6 +1075,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.39999998
       objectReference: {fileID: 0}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: AnimationScriptSpookjes
+      value: 
+      objectReference: {fileID: 560189591}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: view3d
+      value: 
+      objectReference: {fileID: 1905550894}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -1255,6 +1265,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.39999998
       objectReference: {fileID: 0}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: AnimationScriptSpookjes
+      value: 
+      objectReference: {fileID: 560189591}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: view3d
+      value: 
+      objectReference: {fileID: 1905550894}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -2244,6 +2264,16 @@ Prefab:
       propertyPath: m_Name
       value: Powerpil (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: AnimationScriptSpookjes
+      value: 
+      objectReference: {fileID: 560189591}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: view3d
+      value: 
+      objectReference: {fileID: 1905550894}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -8374,6 +8404,16 @@ Prefab:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: AnimationScriptSpookjes
+      value: 
+      objectReference: {fileID: 560189591}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: view3d
+      value: 
+      objectReference: {fileID: 1905550894}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -9165,6 +9205,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.39999998
       objectReference: {fileID: 0}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: AnimationScriptSpookjes
+      value: 
+      objectReference: {fileID: 560189591}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: view3d
+      value: 
+      objectReference: {fileID: 1905550894}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -10815,6 +10865,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.39999998
       objectReference: {fileID: 0}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: AnimationScriptSpookjes
+      value: 
+      objectReference: {fileID: 560189591}
+    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
+        type: 2}
+      propertyPath: view3d
+      value: 
+      objectReference: {fileID: 1905550894}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -13173,7 +13233,7 @@ GameObject:
   - component: {fileID: 1905550892}
   - component: {fileID: 1905550894}
   m_Layer: 11
-  m_Name: Animated Ghost
+  m_Name: Animated Ghost 3D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
