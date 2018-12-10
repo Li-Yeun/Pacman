@@ -13,9 +13,16 @@ public class ScoreCounter : MonoBehaviour {
         scoreCounter.text = "SCORE: " + counter;
 	}
 	
+    // Adds points to the scorecounter when a powerpil is eaten
     public void PowerpilPoints()
     {
         counter += 50;
+    }
+
+    // Adds points to the scorecounter when a pellet is eaten
+    public void PelletPoints()
+    {
+        counter += 10;
     }
 
 	// Update is called once per frame
