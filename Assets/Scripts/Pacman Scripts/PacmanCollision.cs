@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class PacmanCollision : MonoBehaviour {
 
-    public bool Collision;
-    private void OnTriggerEnter(Collider col)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (col.gameObject.tag == "Maze")
+        switch (collision.gameObject.tag)
         {
-            Collision = true;
+            case "Enemy":
+                SendMessage("StartDeathSequence");
+                break;
+            case "Friendly":
+                break;
+            default:
+                break;
         }
 
     }
 
-    private void OnTriggerExit(Collider col)
-    {
-        Collision = false;
-    }
+
 }

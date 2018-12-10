@@ -5,24 +5,22 @@ using UnityEngine;
 public class PacmanMovement : MonoBehaviour {
 
     [Header("Directional Speed")]
-    [SerializeField] float xspd,yspd, zspd;
+    [SerializeField] float xspd = 2,yspd = 0, zspd = 2;  // Stel de horizontale snelheid van Pacman in de Editor vast.
 
     [Header("Camera's")]
-    [SerializeField] GameObject NormalCamera, ThirdPerson, MiniMap, EnemyCamera;
+    [SerializeField] GameObject NormalCamera, FirstPerson, MiniMap;  // Dit zijn de camera's die Pacman gebruikt.
 
     [Header("Spawner")]
-    [SerializeField] GameObject Spawner;
+    [SerializeField] GameObject Spawner; // Hier respawned Pacman als die dood gaat
 
     [Header("Triggers")]
-    [SerializeField] Trigger left, right;
+    [SerializeField] Trigger left, right; 
 
     string[] Directions;
-    public string currentDirection, p_Direction;
-    Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0)};
-    Vector3 rotation;
-    int directionIndex, rotateIndex;
+    int directionIndex;
     bool SwitchControls, LockMovement;
-    public KeyCode currentKey, p_Key;
+    private string currentDirection, p_Direction;
+    private KeyCode currentKey, p_Key;
 
     Rigidbody rigidbody;
 
@@ -31,7 +29,6 @@ public class PacmanMovement : MonoBehaviour {
     {
         rigidbody = GetComponent<Rigidbody>();
         Directions = new string[] { "Up","Right", "Down", "Left" };
-        rotation = RotateList[rotateIndex];
         directionIndex = 0;
         currentDirection = Directions[directionIndex];
         SwitchControls = false;
@@ -43,118 +40,92 @@ public class PacmanMovement : MonoBehaviour {
     {
         p_Direction = currentDirection;
         p_Key = currentKey;
-        KeyInput();
-
-        if (transform.position.y < -20)
-        {
-            StartDeathSequence();
-        }
+        NormalOrFirstPersonMode();
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        switch (collision.gameObject.tag)
-        {
-            case "Enemy":
-                StartDeathSequence();
-                break;
-            case "Friendly":
-                break;
-            default:
-                rigidbody.useGravity = false;
-                break;
-        }
-
-    }
-
-    private void StartDeathSequence()
-    {
-        transform.position = Spawner.transform.position;
-        rigidbody.useGravity = true;
-        directionIndex = 0;
-        currentDirection = Directions[directionIndex];
-    }
-
-    void KeyInput()
+    void NormalOrFirstPersonMode() // Deze methode switch tussen normal- en firstperson mode
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
             SwitchControls = !SwitchControls;
         }
+
         if (SwitchControls)
         {
             NormalCamera.SetActive(false);
-            ThirdPerson.SetActive(true);
+            FirstPerson.SetActive(true);
             MiniMap.SetActive(true);
-            ThirdPersonMode();
+            FirstPersonMode();
         }
         else
         {
             NormalCamera.SetActive(true);
-            ThirdPerson.SetActive(false);
+            FirstPerson.SetActive(false);
             MiniMap.SetActive(false);
             NormalMode();
         }
+
     }
 
-    private void ThirdPersonMode()
+    private void FirstPersonMode()
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            currentKey = KeyCode.S;
-            AddDirectionIndex(2);
-            Rotation();
-            Move_Player();
-
+            HandleKeyInput(KeyCode.S, 2);
         }
         else if (Input.GetKey(KeyCode.A) && left.Collision == false && LockMovement == false)
         {
-            LockMovement = true;
-            currentKey = KeyCode.A;
-            AddDirectionIndex(-1);
-            Rotation();
-            Move_Player();
-            Invoke("UnlockMovement", 0.2f);
+            HandleKeyInput(KeyCode.A, -1);
         }
         else if (Input.GetKey(KeyCode.D) && right.Collision == false && LockMovement == false)
         {
-            LockMovement = true;
-            currentKey = KeyCode.D;
-            AddDirectionIndex(1);
-            Rotation();
-            Move_Player();
-            Invoke("UnlockMovement", 0.2f);
-
+            HandleKeyInput(KeyCode.D, 1);
         }
-
     }
 
-    private void UnlockMovement()
-    {
-        LockMovement = false;
-    }
     private void NormalMode()
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            currentDirection = Directions[0];
+            HandleKeyInputNormal(0);
+
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            currentDirection = Directions[2];
+            HandleKeyInputNormal(2);
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            currentDirection = Directions[3];
+            HandleKeyInputNormal(3);
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            currentDirection = Directions[1];
+            HandleKeyInputNormal(1);
+        }
+    }
+
+    private void HandleKeyInput(KeyCode KeyInput, int Direction)
+    {
+        if (KeyInput != KeyCode.S)
+        {
+            LockMovement = true;
+            Invoke("UnlockMovement", 0.5f);
         }
 
+        currentKey = KeyInput;
+        AddDirectionIndex(Direction);
+        Rotation();
+        Move_Player();
+       
+    }
+
+    public void HandleKeyInputNormal(int direction)
+    {
+        currentDirection = Directions[direction];
         Rotation();
         Move_Player();
     }
+
 
     public void AddDirectionIndex(int number)
     {
@@ -169,6 +140,7 @@ public class PacmanMovement : MonoBehaviour {
         }
         currentDirection = Directions[directionIndex];
     }
+
     public void Move_Player()
     {
         if (currentDirection == "Up")
@@ -189,8 +161,10 @@ public class PacmanMovement : MonoBehaviour {
         }
     }
 
-    private void Rotation()
+    private void Rotation() // Pacman wordt met deze methode geroteerd naar de richting waar die naar toe gaat.
     {
+        Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0) };
+
         if (currentDirection == "Up")
         {
             rigidbody.rotation = Quaternion.Euler(RotateList[0]);
@@ -207,6 +181,24 @@ public class PacmanMovement : MonoBehaviour {
         {
             rigidbody.rotation = Quaternion.Euler(RotateList[1]);
         }
+    }
+
+    public void StartDeathSequence() // Gebruik deze methode wanneer Pacman de "Enemy" heeft geraakt.
+    {
+        // SendMessage("DecreaseHealth");
+        transform.position = Spawner.transform.position;
+        rigidbody.useGravity = true;
+        Invoke("DisableGravity", 1f);
+    }
+
+    private void UnlockMovement()
+    {
+        LockMovement = false;
+    }
+
+    public void DisableGravity()
+    {
+        rigidbody.useGravity = false;
     }
 
     public string CurrentDirection
