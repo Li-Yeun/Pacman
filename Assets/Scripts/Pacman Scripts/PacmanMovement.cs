@@ -5,33 +5,34 @@ using UnityEngine;
 public class PacmanMovement : MonoBehaviour {
 
     [Header("Directional Speed")]
-    [SerializeField] float xspd = 2,yspd = 0, zspd = 2;  // Stel de horizontale snelheid van Pacman in de Editor vast.
+    [Header("Directional Speed")]
+    [SerializeField] Vector3 Speed;
+
+    [Header("Spawner")]
+    [SerializeField] GameObject Spawner;
+
+    int currentDirection;
+    Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0) };
+
+    public bool SwitchControls = false;
+    public KeyCode currentKey, p_Key;
+    public int p_Direction;
+    public Rigidbody rb;
 
     [Header("Camera's")]
     [SerializeField] GameObject NormalCamera, FirstPerson, MiniMap;  // Dit zijn de camera's die Pacman gebruikt.
-
-    [Header("Spawner")]
-    [SerializeField] GameObject Spawner; // Hier respawned Pacman als die dood gaat
-
     [Header("Triggers")]
     [SerializeField] Trigger left, right; 
 
-    string[] Directions;
-    int directionIndex;
-    bool SwitchControls, LockMovement;
-    private string currentDirection, p_Direction;
-    private KeyCode currentKey, p_Key;
+    bool LockMovement;
 
-    Rigidbody rigidbody;
 
     // Use this for initialization
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
-        Directions = new string[] { "Up","Right", "Down", "Left" };
-        directionIndex = 0;
-        currentDirection = Directions[directionIndex];
-        SwitchControls = false;
+        transform.position = Spawner.transform.position;
+        rb = GetComponent<Rigidbody>();
+        currentDirection = 0;
         LockMovement = false;
     }
 
@@ -40,31 +41,9 @@ public class PacmanMovement : MonoBehaviour {
     {
         p_Direction = currentDirection;
         p_Key = currentKey;
-        NormalOrFirstPersonMode();
-    }
-
-    void NormalOrFirstPersonMode() // Deze methode switch tussen normal- en firstperson mode
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SwitchControls = !SwitchControls;
-        }
-
-        if (SwitchControls)
-        {
-            NormalCamera.SetActive(false);
-            FirstPerson.SetActive(true);
-            MiniMap.SetActive(true);
-            FirstPersonMode();
-        }
-        else
-        {
-            NormalCamera.SetActive(true);
-            FirstPerson.SetActive(false);
-            MiniMap.SetActive(false);
-            NormalMode();
-        }
-
+        if (SwitchControls) { TopDownMode(); }
+        else { FirstPersonMode(); }
+        Move_Player();
     }
 
     private void FirstPersonMode()
@@ -81,14 +60,15 @@ public class PacmanMovement : MonoBehaviour {
         {
             HandleKeyInput(KeyCode.D, 1);
         }
+        Rotation();
+        
     }
-
-    private void NormalMode()
+    
+    private void TopDownMode()
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
             HandleKeyInputNormal(0);
-
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
@@ -102,6 +82,8 @@ public class PacmanMovement : MonoBehaviour {
         {
             HandleKeyInputNormal(1);
         }
+        Rotation();
+        
     }
 
     private void HandleKeyInput(KeyCode KeyInput, int Direction)
@@ -111,75 +93,62 @@ public class PacmanMovement : MonoBehaviour {
             LockMovement = true;
             Invoke("UnlockMovement", 0.5f);
         }
-
+        currentDirection += Direction;
+        if (currentDirection > 3)
+        {
+            currentDirection = 0;
+        }
+        else if (currentDirection < 0)
+        {
+            currentDirection = 3;
+        }
         currentKey = KeyInput;
-        AddDirectionIndex(Direction);
-        Rotation();
-        Move_Player();
-       
     }
 
     public void HandleKeyInputNormal(int direction)
     {
-        currentDirection = Directions[direction];
+        currentDirection = direction;
         Rotation();
         Move_Player();
     }
 
-
-    public void AddDirectionIndex(int number)
-    {
-        directionIndex += number;
-        if (directionIndex > Directions.Length - 1)
-        {
-            directionIndex -= Directions.Length;
-        }
-        else if (directionIndex < 0)
-        {
-            directionIndex = 3;
-        }
-        currentDirection = Directions[directionIndex];
-    }
-
     public void Move_Player()
     {
-        if (currentDirection == "Up")
+        if (currentDirection == 0)
         {
-            rigidbody.velocity = new Vector3(0, 0, zspd);
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, Speed.z);
         }
-        else if (currentDirection == "Right")
+        else if (currentDirection == 1)
         {
-            rigidbody.velocity = new Vector3(xspd, 0, 0);
+            GetComponent<Rigidbody>().velocity = new Vector3(Speed.x, 0, 0);
         }
-        else if (currentDirection == "Down")
+        else if (currentDirection == 2)
         {
-            rigidbody.velocity = new Vector3(0, 0, -zspd);
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -Speed.z);
         }
-        else if (currentDirection == "Left")
+        else if (currentDirection == 3)
         {
-            rigidbody.velocity = new Vector3(-xspd, 0, 0);
+            GetComponent<Rigidbody>().velocity = new Vector3(-Speed.x, 0, 0);
         }
     }
 
-    private void Rotation() // Pacman wordt met deze methode geroteerd naar de richting waar die naar toe gaat.
+    private void Rotation()
     {
-        Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0) };
-
-        if (currentDirection == "Up")
+        if (currentDirection == 0)
         {
-            rigidbody.rotation = Quaternion.Euler(RotateList[0]);
+            rb.rotation = Quaternion.Euler(RotateList[0]);
         }
-        else if (currentDirection == "Down")
+        else if (currentDirection == 2)
         {
-            rigidbody.rotation = Quaternion.Euler(RotateList[2]);
+            rb.rotation = Quaternion.Euler(RotateList[2]);
         }
-        else if (currentDirection == "Left")
+        else if (currentDirection == 3)
         {
-            rigidbody.rotation = Quaternion.Euler(RotateList[3]);
+            rb.rotation = Quaternion.Euler(RotateList[3]);
         }
-        else if (currentDirection == "Right")
+        else if (currentDirection == 1)
         {
-            rigidbody.rotation = Quaternion.Euler(RotateList[1]);
+            rb.rotation = Quaternion.Euler(RotateList[1]);
         }
     }
 
@@ -187,7 +156,7 @@ public class PacmanMovement : MonoBehaviour {
     {
         // SendMessage("DecreaseHealth");
         transform.position = Spawner.transform.position;
-        rigidbody.useGravity = true;
+        GetComponent<Rigidbody>().useGravity = true;
         Invoke("DisableGravity", 1f);
     }
 
@@ -198,14 +167,14 @@ public class PacmanMovement : MonoBehaviour {
 
     public void DisableGravity()
     {
-        rigidbody.useGravity = false;
+        GetComponent<Rigidbody>().useGravity = false;
     }
 
-    public string CurrentDirection
+    public int CurrentDirection
         {
             get { return currentDirection; }
         }
-    public string P_Direction
+    public int P_Direction
     {
         get { return p_Direction; }
     }
