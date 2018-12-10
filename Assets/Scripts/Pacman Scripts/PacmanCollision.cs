@@ -14,7 +14,6 @@ public class PacmanCollision : MonoBehaviour {
                 GameObject fx = Instantiate(DeathFX, transform.position, Quaternion.identity);
                 fx.transform.parent = parent;
                 SendMessage("StartDeathSequence");
-                Invoke("DestroyFx", 2f);
                 break;
             case "Friendly":
                 break;
@@ -23,10 +22,4 @@ public class PacmanCollision : MonoBehaviour {
         }
 
     }
-
-    public void DestroyFx()
-    {
-
-    }
-
 }
