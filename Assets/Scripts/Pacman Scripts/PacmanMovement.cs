@@ -96,7 +96,7 @@ public class PacmanMovement : MonoBehaviour {
         currentDirection += Direction;
         if (currentDirection > 3)
         {
-            currentDirection = 0;
+            currentDirection -= 4;
         }
         else if (currentDirection < 0)
         {

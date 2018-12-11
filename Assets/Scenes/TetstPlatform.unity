@@ -11689,7 +11689,7 @@ MonoBehaviour:
   MiniMap: {fileID: 140098480}
   EnemyCamera: {fileID: 0}
   Player: {fileID: 1700235656}
-  view: 0
+  view: 1
 --- !u!1001 &1604489374
 Prefab:
   m_ObjectHideFlags: 0
