@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PacmanMovement : MonoBehaviour {
+public class PacmanMultiMovement : NetworkBehaviour {
 
     [Header("Directional Speed")]
     [Header("Directional Speed")]
@@ -20,7 +22,7 @@ public class PacmanMovement : MonoBehaviour {
     public Rigidbody rb;
 
     [Header("Triggers")]
-    [SerializeField] Trigger left, right; 
+    [SerializeField] Trigger left, right;
 
     bool LockMovement;
 
@@ -37,6 +39,8 @@ public class PacmanMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (!hasAuthority)
+            return;
         p_Direction = currentDirection;
         p_Key = currentKey;
         if (SwitchControls) { TopDownMode(); }
