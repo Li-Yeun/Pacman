@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour {
     public bool Collision;
+
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Maze")

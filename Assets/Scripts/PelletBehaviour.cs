@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PelletBehaviour : MonoBehaviour {
 
-    public bool pelleteaten;
-    public GameObject pellet;
-    public ScoreCounter pelletscore;
+    bool pelleteaten;
+    private ScoreCounter pelletscore;
 
 	// Use this for initialization
 	void Start () {
+
+        pelletscore = FindObjectOfType<ScoreCounter>();
         pelleteaten = false;
 	}
 
@@ -30,7 +31,7 @@ public class PelletBehaviour : MonoBehaviour {
     void Update () {
 		if (pelleteaten)
         {
-            pellet.SetActive(false);
+            gameObject.SetActive(false);  // Of Destroy(gameObject);    <--- Om de pellets echt uit de game te wissen.
             pelletscore.PelletPoints();
         }
 	}

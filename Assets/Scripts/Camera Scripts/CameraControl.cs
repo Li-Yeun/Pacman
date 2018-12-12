@@ -3,11 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraControl : MonoBehaviour {
-    [SerializeField] GameObject NormalCamera, FirstPerson, MiniMap, EnemyCamera;
-    public GameObject Player;
-    public enum View {TopDown, FirstPerson }
-    public View view;
-	void Update () {
+
+    public enum View { TopDown, FirstPerson }
+    [SerializeField] GameObject NormalCamera, FirstPerson, MiniMap;
+    [SerializeField] View view;
+    private GameObject Player;
+
+    private void Start()
+    {
+        Player = FindObjectOfType<PacmanMovement>().gameObject;
+    }
+    void Update () {
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            switch(view)
+            {
+                case View.TopDown:
+                    view = View.FirstPerson;
+                    break;
+                case View.FirstPerson:
+                    view = View.TopDown;
+                    break;
+            }
+        }
 
         switch (view)
         {

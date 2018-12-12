@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
-
     BoxCollider boxCollider;
-    // Use this for initialization
+
     void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void OnCollisionEnter(Collision collision)

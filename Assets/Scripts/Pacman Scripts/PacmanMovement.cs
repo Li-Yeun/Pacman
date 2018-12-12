@@ -5,27 +5,22 @@ using UnityEngine;
 public class PacmanMovement : MonoBehaviour {
 
     [Header("Directional Speed")]
-    [Header("Directional Speed")]
     [SerializeField] Vector3 Speed;
 
     [Header("Spawner")]
     [SerializeField] GameObject Spawner;
 
-    int currentDirection;
+    [Header("Triggers")]
+    [SerializeField] Trigger left, right;
+
     Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0) };
 
-    public bool SwitchControls = false;
-    public KeyCode currentKey, p_Key;
-    public int p_Direction;
     public Rigidbody rb;
-
-    [Header("Triggers")]
-    [SerializeField] Trigger left, right; 
-
+    public bool SwitchControls = false;
+    public int currentDirection, p_Direction;
     bool LockMovement;
+    public KeyCode currentKey, p_Key;
 
-
-    // Use this for initialization
     void Start()
     {
         transform.position = Spawner.transform.position;
@@ -34,7 +29,6 @@ public class PacmanMovement : MonoBehaviour {
         LockMovement = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         p_Direction = currentDirection;
@@ -57,9 +51,7 @@ public class PacmanMovement : MonoBehaviour {
         else if (Input.GetKey(KeyCode.D) && right.Collision == false && LockMovement == false)
         {
             HandleKeyInput(KeyCode.D, 1);
-        }
-        Rotation();
-        
+        } 
     }
     
     private void TopDownMode()
@@ -81,7 +73,6 @@ public class PacmanMovement : MonoBehaviour {
             HandleKeyInputNormal(1);
         }
         Rotation();
-        
     }
 
     private void HandleKeyInput(KeyCode KeyInput, int Direction)
@@ -101,12 +92,12 @@ public class PacmanMovement : MonoBehaviour {
             currentDirection = 3;
         }
         currentKey = KeyInput;
+        Rotation();
     }
 
     public void HandleKeyInputNormal(int direction)
     {
         currentDirection = direction;
-        Rotation();
         Move_Player();
     }
 
@@ -152,7 +143,6 @@ public class PacmanMovement : MonoBehaviour {
 
     public void StartDeathSequence() // Gebruik deze methode wanneer Pacman de "Enemy" heeft geraakt.
     {
-        // SendMessage("DecreaseHealth");
         transform.position = Spawner.transform.position;
         GetComponent<Rigidbody>().useGravity = true;
         Invoke("DisableGravity", 1f);
@@ -166,28 +156,5 @@ public class PacmanMovement : MonoBehaviour {
     public void DisableGravity()
     {
         GetComponent<Rigidbody>().useGravity = false;
-    }
-
-    public int CurrentDirection
-        {
-            get { return currentDirection; }
-        }
-    public int P_Direction
-    {
-        get { return p_Direction; }
-    }
-    public Vector3 PacmanPos
-    {
-        get { return transform.position; }
-    }
-
-    public KeyCode CurrentKey
-    {
-        get { return currentKey; }
-    }
-
-    public KeyCode P_Key
-    {
-        get { return p_Key; }
     }
 }

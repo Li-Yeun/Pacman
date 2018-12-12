@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FPcamera : MonoBehaviour {
-    public Transform tr_Target;
-    public float turnspeed = 0.1f;
-    Vector3 Offset = Vector3.zero;
+
+    [SerializeField] float turnspeed = 0.1f;
+    private Transform tr_Target;
     private Vector3 R_offset = new Vector3(0,-90,0);
     private Quaternion TargetAngle;
-	void Update ()
+    Vector3 Offset = Vector3.zero;
+
+    private void Start()
+    {
+        tr_Target = FindObjectOfType<PacmanMovement>().gameObject.transform;
+    }
+    void Update ()
     {
          gameObject.transform.position = tr_Target.position + Offset;
          TargetAngle = tr_Target.rotation * Quaternion.Euler(0, R_offset.y, 0);

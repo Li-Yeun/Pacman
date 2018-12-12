@@ -8,18 +8,23 @@ using UnityEngine.AI;
 /// </summary>
 
 public class Movement : MonoBehaviour {
-    public Rigidbody rb;    
-    public Transform tf;    
-    public Trigger front, left, right;               //colliders voor navigatie
-    public string[] Controls = new string[2];        //controlls van spookje
-    public int speed = 100;                          //beweegsnelheid
-    public int Respawntime = 4;                      //tijd voordat speler weer kan besturen
-    float RotationCooldown = 0;                      //tijd voordat er weer gedraaid kan worden
-    Vector3 Velocity;                                //beweegsnelheid
-    public NavMeshAgent agent;                       //navigatie voor teruggaan naar spawn
-    public Transform respawn;                        //locatie van spawnpunt
-    public bool dead = false;                        //als true is de speler doodgegaan
-    public bool UseRandom;
+
+    [Header("General")]
+    [SerializeField] Trigger front, left, right;               //colliders voor navigatie
+    [SerializeField] NavMeshAgent agent;                       //navigatie voor teruggaan naar spawn
+    [SerializeField] Transform respawn;                        //locatie van spawnpunt
+
+    [Header("Ghost Behaviour")]
+    [SerializeField] int speed = 100;                          //beweegsnelheid
+    [SerializeField] int Respawntime = 4;                      //tijd voordat speler weer kan besturen
+
+    [Header("Control Options")]
+    [SerializeField] string[] Controls = new string[2];        //controlls van spookje
+
+    Vector3 Velocity;                                          //beweegsnelheid
+    bool dead = false;                                         //als true is de speler doodgegaan
+    bool UseRandom;
+    float RotationCooldown = 0;                                //tijd voordat er weer gedraaid kan worden
     float respawntimer = 0;         
 
     void Start ()
@@ -48,7 +53,7 @@ public class Movement : MonoBehaviour {
 
     void MoveForward()
     {
-        switch ((int)tf.eulerAngles.y)
+        switch ((int)gameObject.transform.eulerAngles.y)
         {
             case 0:
                 Velocity = new Vector3(Time.deltaTime,0,0);
@@ -64,11 +69,11 @@ public class Movement : MonoBehaviour {
                 break;
         }
 
-        tf.position += Velocity * speed;    
+        gameObject.transform.position += Velocity * speed;    
     }       //beweegt Character naar de kijkrichting
     void Rotate(int i)
     {
-        tf.Rotate(0,i*90,0);
+        gameObject.transform.Rotate(0,i*90,0);
         RotationCooldown = 1;
     }       //Roteer de Character met 90 graden naar 1 rechts, -1 links
     void DoRespawn()
@@ -79,7 +84,7 @@ public class Movement : MonoBehaviour {
         {
             dead = false;
             agent.enabled = false;
-            tf.eulerAngles = new Vector3(0, 0, 0);
+            gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
             respawntimer = 0;
 
         }

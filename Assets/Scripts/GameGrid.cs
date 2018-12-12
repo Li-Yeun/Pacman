@@ -6,13 +6,7 @@ public class GameGrid : MonoBehaviour {
 
     int range;
     bool LockRotate;
-	// Use this for initialization
-	void Start () {
 
-
-	}
-	
-	// Update is called once per frame
 	void Update () {
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -29,34 +23,24 @@ public class GameGrid : MonoBehaviour {
             switch (range)
             {
                 case 0:
-                    transform.Rotate(0, 0, 15.7f);
-                    transform.position = new Vector3(-6.4f, transform.position.y, -7.807534f);
+                    transform.rotation = Quaternion.Euler(0, 90, 0);
                     break;
                 case 1:
-                    transform.Rotate(0, 0, -15.7f);
-                    transform.position = new Vector3(6.4f, transform.position.y, -7.807534f);
+                    transform.rotation = Quaternion.Euler(0, 0, -18f);
                     break;
                 case 2:
-                    transform.Rotate(20, 0, 0);
-                    transform.position = new Vector3(-0.6253641f, transform.position.y, 0.78f);
+                    transform.rotation = Quaternion.Euler(0, 0, 18);
                     break;
-
                 case 3:
-                    transform.Rotate(-20, 0, 0);
-                    transform.position = new Vector3(-0.6253641f, transform.position.y, -0.78f);
+                    transform.rotation = Quaternion.Euler(0, -90, 0);
                     break;
             }
-        }
-
-        
+        }   
         else
         {
-            transform.rotation = new Quaternion(0f, 0f, 0f,0f);
-            transform.position = new Vector3(-0.6253641f, transform.position.y, -7.807534f);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         LockRotate = !LockRotate;
-
-
     }
 }

@@ -6,21 +6,16 @@ public class EnvironementalEvents : MonoBehaviour {
 
     [SerializeField] GameObject Smoke, FireWorks, SandStorm, Water;
     [SerializeField] Transform parent;
-    // Use this for initialization
-    void Start () {
-	}
-	
+
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown("2"))
         {
             ActivateEvent(Smoke);
-
         }
         else if (Input.GetKeyDown("4"))
         {
             ActivateEvent(FireWorks);
-
         }
         else if (Input.GetKeyDown("5"))
         {
@@ -36,8 +31,4 @@ public class EnvironementalEvents : MonoBehaviour {
             go.transform.parent = parent;
         }
     }
-
-
-
-
 }

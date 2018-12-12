@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour {
 
-    public GameObject FollowTarget;
+    private GameObject FollowTarget;
 
-	// Use this for initialization
 	void Start () {
-		
+        FollowTarget = FindObjectOfType<PacmanMovement>().gameObject;
 	}
 	
-	// Update is called once per frame
 	void LateUpdate() {
         transform.position = new Vector3(FollowTarget.transform.position.x, transform.position.y, FollowTarget.transform.position.z);
 	}

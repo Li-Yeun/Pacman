@@ -8,14 +8,14 @@ using UnityEngine;
 public class PowerpilBehaviour : MonoBehaviour {
 
     public bool powerpileaten;
-    public GameObject powerpil;
-    public PacmanAttacking AnimationScriptSpookjes;
-    public PacmanAttacking view3d;
-    public ScoreCounter powerpilscore;
+    private PacmanAttacking[] AnimationScriptSpookjes;
+    private ScoreCounter powerpilscore;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
+        powerpilscore = FindObjectOfType<ScoreCounter>();
+        AnimationScriptSpookjes = FindObjectsOfType<PacmanAttacking>();
         powerpileaten = false;
 	}
 
@@ -38,10 +38,12 @@ public class PowerpilBehaviour : MonoBehaviour {
     void Update () {
 		if (powerpileaten)
         {
-            powerpil.SetActive(false);
-            AnimationScriptSpookjes.PacmanIsTheHunter();
-            view3d.PacmanIsTheHunter();
+            gameObject.SetActive(false);
             powerpilscore.PowerpilPoints();
+
+            foreach (PacmanAttacking Ghost in AnimationScriptSpookjes)
+                Ghost.PacmanIsTheHunter();
+
         }   
 	}
 }

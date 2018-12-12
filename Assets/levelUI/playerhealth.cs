@@ -3,21 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerhealth : MonoBehaviour {
 
-    public int health = 2;
+    public int health = 3;
     public Texture2D Health3;
     public Texture2D Health2;
     public Texture2D Health1;
     public Texture2D currentHealth;
     Rect rec;
 
+    private float width = 300, height = 300;
+    private float xpos = 90, ypos = 850;
+
     private void Start()
     {
-        rec.width = Screen.width - 100;
-        rec.height = Screen.height - 50;
-
+        rec.size = new Vector2(width, height);
+        rec.position = new Vector2(xpos, ypos);
     }
     private void OnGUI()
     {
@@ -29,9 +32,10 @@ public class playerhealth : MonoBehaviour {
         Healthbar();
 	}
 
-
     void Dead()
-    { }
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     public void Healthbar()
     {
@@ -41,5 +45,10 @@ public class playerhealth : MonoBehaviour {
             { currentHealth = Health2; }
                 else if (health == 1)
                     { currentHealth = Health1; }
+    }
+
+    public void DecreaseHealth()
+    {
+        health--;
     }
 }

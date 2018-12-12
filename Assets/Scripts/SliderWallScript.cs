@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class SliderWallScript : MonoBehaviour
 {
-
-    // Use this for initialization
-    public Animator anim;
-    public PacmanMovement pacmanMovement;
+    [SerializeField] Animator anim;
+    [SerializeField] GameObject pacmanMovement;
     float TimeSpent = 0;
     bool DoorOpen = false;
     void Start()
     {
+        pacmanMovement = FindObjectOfType<PacmanMovement>().gameObject;
         anim = GetComponent<Animator>();
         anim.Play("SlidingOut");
     }
@@ -28,7 +27,7 @@ public class SliderWallScript : MonoBehaviour
                 DoorOpen = true;
                 TimeSpent = 0;
             }
-            else if (DoorOpen && ( Mathf.Abs(transform.position.x - pacmanMovement.PacmanPos.x) >= 3 || Mathf.Abs(transform.position.z - pacmanMovement.PacmanPos.z) >= 3))
+            else if (DoorOpen && ( Mathf.Abs(transform.position.x - pacmanMovement.transform.position.x) >= 3 || Mathf.Abs(transform.position.z - pacmanMovement.transform.position.z) >= 3))
             {
                 DoorOpen = false;
                 anim.Play("SlidingOut");
