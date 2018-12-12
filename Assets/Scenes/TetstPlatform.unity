@@ -11689,7 +11689,7 @@ MonoBehaviour:
   MiniMap: {fileID: 140098480}
   EnemyCamera: {fileID: 0}
   Player: {fileID: 1700235656}
-  view: 1
+  view: 0
 --- !u!1001 &1604489374
 Prefab:
   m_ObjectHideFlags: 0
@@ -12222,7 +12222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1665467814
 Light:
   m_ObjectHideFlags: 0
@@ -12494,9 +12494,6 @@ MonoBehaviour:
   p_Key: 0
   p_Direction: 0
   rb: {fileID: 1700235659}
-  NormalCamera: {fileID: 1261171512}
-  FirstPerson: {fileID: 1724819820}
-  MiniMap: {fileID: 140098480}
   left: {fileID: 1084191081}
   right: {fileID: 1641117865}
 --- !u!114 &1700235658
@@ -12661,7 +12658,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tr_Target: {fileID: 1022149419}
-  tr_Camera: {fileID: 1724819824}
   turnspeed: 4
 --- !u!4 &1724819824
 Transform:
@@ -13114,6 +13110,7 @@ GameObject:
   - component: {fileID: 1785474686}
   - component: {fileID: 1785474688}
   - component: {fileID: 1785474687}
+  - component: {fileID: 1785474689}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -13145,7 +13142,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785474685}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -13173,6 +13170,22 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785474685}
   m_CullTransparentMesh: 0
+--- !u!114 &1785474689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1785474685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aabfc74e07c0414b928a05fd8ea0330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
+  Health3: {fileID: 2800000, guid: eea667c23156de945a077df1e6f8412c, type: 3}
+  Health2: {fileID: 2800000, guid: b9bdc5768fd30f541a3ed62e9acf01e9, type: 3}
+  Health1: {fileID: 2800000, guid: 026c164b082f8cb4fa5d135059409c70, type: 3}
+  currentHealth: {fileID: 2800000, guid: eea667c23156de945a077df1e6f8412c, type: 3}
 --- !u!1001 &1797983769
 Prefab:
   m_ObjectHideFlags: 0
