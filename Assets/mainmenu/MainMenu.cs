@@ -7,15 +7,23 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    public Button play;
+    public Button loadplay, play;
+    public Button multiplayer;
     public Button about;
     public Button exitgame;
     public string gamescene;
-    public GameObject About;
-	
-    public void PlayGame()
+    public GameObject About, buttonexplain;
+
+    public void levelselector()
+    { }
+
+    public void startgame()
+    { SceneManager.LoadScene(gamescene); }
+
+    public void Buttonexplain()
     {
-        SceneManager.LoadScene(gamescene);
+        buttonexplain.SetActive(true);
+        
     }
 
     public void AboutGame()
