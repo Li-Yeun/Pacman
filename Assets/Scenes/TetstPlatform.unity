@@ -8004,16 +8004,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114142769573159340, guid: c182280d107d8414ebdfa8de91efd5af,
-        type: 2}
-      propertyPath: pelletscore
-      value: 
-      objectReference: {fileID: 1574347485}
-    - target: {fileID: 114142769573159340, guid: c182280d107d8414ebdfa8de91efd5af,
-        type: 2}
-      propertyPath: pellet
-      value: 
-      objectReference: {fileID: 2050675790}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c182280d107d8414ebdfa8de91efd5af, type: 2}
   m_IsPrefabAsset: 0
@@ -8695,21 +8685,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
-        type: 2}
-      propertyPath: AnimationScriptSpookjes
-      value: 
-      objectReference: {fileID: 560189591}
-    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
-        type: 2}
-      propertyPath: view3d
-      value: 
-      objectReference: {fileID: 1905550894}
-    - target: {fileID: 114083136525375162, guid: c9b0b84dfd214d247afd892733fecf78,
-        type: 2}
-      propertyPath: powerpilscore
-      value: 
-      objectReference: {fileID: 1574347485}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   m_IsPrefabAsset: 0
@@ -12734,7 +12709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1665467814
 Light:
   m_ObjectHideFlags: 0
@@ -15105,11 +15080,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b7546ef77191f142b9a7531c114e6f0, type: 3}
   m_IsPrefabAsset: 0
---- !u!1 &2050675790 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1403524952478584, guid: c182280d107d8414ebdfa8de91efd5af,
-    type: 2}
-  m_PrefabInternal: {fileID: 684486768}
 --- !u!4 &2050675791 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4533093674899204, guid: c182280d107d8414ebdfa8de91efd5af,

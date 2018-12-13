@@ -28,5 +28,10 @@ public class ScoreCounter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         scoreCounter.text = "SCORE: " + counter;
+
+        if (FindObjectsOfType<PelletBehaviour>().Length == 0 && FindObjectsOfType<PowerpilBehaviour>().Length == 0)
+        {
+            Debug.Log("PACMAN WINS!");
+        }
 	}
 }

@@ -8,6 +8,7 @@ TagManager:
   - Friendly
   - Maze
   - TeleportShit
+  - Pellet
   layers:
   - Default
   - TransparentFX
