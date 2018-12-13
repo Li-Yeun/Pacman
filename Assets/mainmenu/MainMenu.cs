@@ -14,16 +14,13 @@ public class MainMenu : MonoBehaviour {
     public string gamescene;
     public GameObject About, buttonexplain;
 
-    public void levelselector()
-    { }
 
     public void startgame()
     { SceneManager.LoadScene(gamescene); }
 
     public void Buttonexplain()
     {
-        buttonexplain.SetActive(true);
-        
+        buttonexplain.SetActive(true);  
     }
 
     public void AboutGame()
