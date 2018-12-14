@@ -16,9 +16,9 @@ public class TeleportScript2 : MonoBehaviour {
             {   
                 if (tp.code == code && tp != this)
                 {
-                    tp.dissableTimer = 2;
+                    tp.dissableTimer = 1;
                     Vector3 position = tp.gameObject.transform.position;
-                    position.y += 0.3f;
+                    position.y += 0.2f;
                     collider.gameObject.transform.position = position;
                 }
             }
