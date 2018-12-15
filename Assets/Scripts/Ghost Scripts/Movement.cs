@@ -19,17 +19,27 @@ public class Movement : MonoBehaviour {
     [SerializeField] int Respawntime = 4;                      //tijd voordat speler weer kan besturen
 
     [Header("Control Options")]
-    [SerializeField] string[] Controls = new string[2];        //controlls van spookje
+    [SerializeField] string[] Controls = new string[2];        //controls van spookje
 
     Vector3 Velocity;                                          //beweegsnelheid
     bool dead = false;                                         //als true is de speler doodgegaan
-    bool UseRandom;
     float RotationCooldown = 0;                                //tijd voordat er weer gedraaid kan worden
-    float respawntimer = 0;         
+    float respawntimer = 0;
+
+
+    bool[] Abilities;               //welke ability geactiveerd is
+    public IncreaseVision Vision;   //extern script van ability 0, zit op bodylight
+    public float[] Cooldown;        //instelbare cooldown per ability
+    float[] cooldowncounter;        //counter die loopt als ability niet geactiveerd is
+    float[] DurationCounter;        //duration counter hoelang de ability geactiveerd is
+    public float[] Duration;        //instelbare Duration per ability
 
     void Start ()
     {
         agent.enabled = false;
+        Abilities = new bool[4];
+        cooldowncounter = new float[4];
+        DurationCounter = new float[4];
 	}
 
     
@@ -38,7 +48,10 @@ public class Movement : MonoBehaviour {
         if (dead)
         {
             DoRespawn();
-        }
+        }     
+
+        DoAbilities();
+        
 	}
 
     void FixedUpdate()
@@ -94,14 +107,6 @@ public class Movement : MonoBehaviour {
     {
         if (front.Collision)
         {
-            //Ik weet niet waarom dit niet altijd goed werkt
-            //if (!right.Collision && !left.Collision)  
-            //{
-            //    int side = Random.Range(0, 2)*2-1;
-                
-            //    Debug.Log(side);
-            //    Rotate(side);
-            //}
              if (!right.Collision)
             {
                 Rotate(1);
@@ -136,5 +141,41 @@ public class Movement : MonoBehaviour {
                 RotationCooldown = 0;
             }
         }
-    }       //neemt de twee inputs om te draaien, zorgt ook dat je niet een muur in kan draaien. Bevat ook draai cooldown
+
+
+        //TODO forloop van maken :/
+        if (Input.GetKey(Controls[2]) && !Abilities[0] && cooldowncounter[0] >= Cooldown[0])
+        {
+            Abilities[0] = true;
+        }
+        if (Input.GetKey(Controls[3]) && !Abilities[1] && cooldowncounter[1] >= Cooldown[1])
+        {
+            Abilities[1] = true;
+        }
+        if (Input.GetKey(Controls[4]) && !Abilities[2] && cooldowncounter[2] >= Cooldown[2])
+        {
+            Abilities[2] = true;
+        }
+    }
+
+    void DoAbilities()
+    {
+        if (Abilities[0])
+        {
+            Vision.activated = true;
+            cooldowncounter[0] = 0;
+            DurationCounter[0] += Time.deltaTime;
+            if(DurationCounter[0] >= Duration[0])
+            {
+                Abilities[0] = false;
+                Vision.activated = false;
+                DurationCounter[0] = 0;
+            }
+        }
+        else if (!Abilities[0])
+        {
+            cooldowncounter[0] += Time.deltaTime;
+        }
+
+    }
 }
