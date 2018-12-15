@@ -33,6 +33,7 @@ public class Movement : MonoBehaviour {
     float[] cooldowncounter;        //counter die loopt als ability niet geactiveerd is
     float[] DurationCounter;        //duration counter hoelang de ability geactiveerd is
     public float[] Duration;        //instelbare Duration per ability
+    float SpeedMultiplier = 1;
 
     void Start ()
     {
@@ -82,7 +83,7 @@ public class Movement : MonoBehaviour {
                 break;
         }
 
-        gameObject.transform.position += Velocity * speed;    
+        gameObject.transform.position += Velocity * speed * SpeedMultiplier;    
     }       //beweegt Character naar de kijkrichting
     void Rotate(int i)
     {
@@ -175,6 +176,23 @@ public class Movement : MonoBehaviour {
         else if (!Abilities[0])
         {
             cooldowncounter[0] += Time.deltaTime;
+        }
+
+        if (Abilities[1])
+        {
+            SpeedMultiplier = 1.3f;
+            cooldowncounter[1] = 0;
+            DurationCounter[1] += Time.deltaTime;
+            if(DurationCounter[1] >= Duration[1])
+            {
+                Abilities[1] = false;
+                SpeedMultiplier = 1;
+                DurationCounter[1] = 0;
+            }
+        }
+        else if (!Abilities[1])
+        {
+            cooldowncounter[1] += Time.deltaTime;
         }
 
     }

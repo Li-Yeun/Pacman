@@ -10624,9 +10624,11 @@ MonoBehaviour:
   Vision: {fileID: 371842395}
   Cooldown:
   - 5
+  - 5
   - 0
   - 0
   Duration:
+  - 5
   - 5
   - 0
   - 0
