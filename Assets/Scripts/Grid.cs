@@ -104,7 +104,17 @@ public class Grid: MonoBehaviour {
                     Teleporterr.transform.parent = transform;
                     Teleporterr.transform.localPosition = new Vector3(x, 1, z);
                     TeleportScript2 TeleporterScript = Teleporterr.GetComponent<TeleportScript2>();
-                    TeleporterScript.code = TimesTeleporterCreated % 2;
+                    switch (TimesTeleporterCreated)
+                    {
+                        default: TeleporterScript.code = 0; break;
+                        case 1: TeleporterScript.code = 1; break;
+                        case 2: TeleporterScript.code = 0; break;
+                        case 3: TeleporterScript.code = 3; break;
+                        case 4: TeleporterScript.code = 3; break;
+                        case 5: TeleporterScript.code = 2; break;
+                        case 6: TeleporterScript.code = 2; break;
+                        case 7: TeleporterScript.code = 1; break;
+                    }
                     Teleporter.SetActive(true);
                 }
                 break;
