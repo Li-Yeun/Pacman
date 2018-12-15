@@ -5,9 +5,8 @@ using UnityEngine;
 /// Script dat zorgt dat de teleporters werken.
 /// </summary>
 public class TeleportScript2 : MonoBehaviour {
-    public int code = 0;
+    public int code;
     float dissableTimer =0;
-    
     void OnTriggerEnter(Collider collider)
     {
         if ((collider.gameObject.name == "Pacman" || collider.gameObject.name == "Blue") && dissableTimer <=0)

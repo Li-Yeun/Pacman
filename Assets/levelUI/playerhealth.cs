@@ -14,12 +14,12 @@ public class playerhealth : MonoBehaviour {
     public Texture2D currentHealth;
     Rect rec;
 
-    private float width = 300, height = 300;
+    private float lengte = 300, breedte = 300;
     private float xpos = 90, ypos = 850;
 
     private void Start()
     {
-        rec.size = new Vector2(width, height);
+        rec.size = new Vector2(lengte, breedte);
         rec.position = new Vector2(xpos, ypos);
     }
     private void OnGUI()

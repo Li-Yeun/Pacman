@@ -6,20 +6,20 @@ public class aboutmenu : MonoBehaviour {
 
     public Button Back;
     public GameObject About;
-    public int width;
-    public int height;
+    public int lengte;
+    public int breedte;
     public Button video;
     public GameObject Video;
 
-    public void Setwidth(int Width)
-    { width = Width; }
+    public void Setlengte(int lengte)
+    { lengte = lengte; }
 
-    public void Setheight(int Height)
-    { height = Height; }
+    public void Setbreedte(int breedte)
+    { breedte = breedte; }
 
     public void Setresolution()
     {
-        Screen.SetResolution(width, height, false);
+        Screen.SetResolution(lengte, breedte, false);
     }
 
     public void back()

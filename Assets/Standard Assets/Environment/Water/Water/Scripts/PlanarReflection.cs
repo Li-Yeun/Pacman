@@ -167,7 +167,7 @@ namespace UnityStandardAssets.Water
 
             GL.invertCulling = true;
 
-            Transform reflectiveSurface = transform; //waterHeight;
+            Transform reflectiveSurface = transform; //waterbreedte;
 
             Vector3 eulerA = cam.transform.eulerAngles;
 

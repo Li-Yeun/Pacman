@@ -19,7 +19,7 @@ public class SliderWallScript : MonoBehaviour
     void Update()
     {
         TimeSpent += Time.deltaTime;
-        if (TimeSpent >= 5)
+        if (TimeSpent >= 2)
         {
             if (Input.GetKeyDown("1"))
             {

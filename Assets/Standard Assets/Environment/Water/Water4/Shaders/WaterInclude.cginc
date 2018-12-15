@@ -134,7 +134,7 @@ inline void VertexDisplacementHQ(	sampler2D mapA, sampler2D mapB,
 	
 	tf.rga = tf.rga-half3(0.5,0.5,0.0);
 				
-	// height displacement in alpha channel, normals info in rgb
+	// breedte displacement in alpha channel, normals info in rgb
 	
 	vertexOffset = tf.a * half4(normal.xyz, 0.0) * vertexStrength;							
 	normalOffset = tf.rg;
@@ -153,7 +153,7 @@ inline void VertexDisplacementLQ(	sampler2D mapA, sampler2D mapB,
 	
 	tf.rga = tf.rga-half3(0.5,0.5,0.0);
 				
-	// height displacement in alpha channel, normals info in rgb
+	// breedte displacement in alpha channel, normals info in rgb
 	
 	vertexOffset = tf.a * half4(0,1,0,0) * vertexStrength;							
 	normalOffset = tf.rg * normalsStrength;
