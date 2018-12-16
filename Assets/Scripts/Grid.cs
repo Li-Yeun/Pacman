@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Deze class is verantwoordelijk voor het initialise van het level.
+/// </summary>
 public class Grid: MonoBehaviour {
     int lengte,breedte;
     public int TimesTeleporterCreated = 0;
@@ -10,15 +12,15 @@ public class Grid: MonoBehaviour {
     public GameObject powerpill;
     public GameObject SlidingDoor;
     public GameObject Teleporter;
+    public GameObject SpawnPacman;
     public char [,] gamegridd;
     char b;
 
-    // Use this for initialization
     void Start()
     {
         lengte = 23;
         breedte = 37;
-
+        // Dit is de level layout, hier staat in waar wat wordt geplaatst in de grid op het moment dat het level geladen wordt.
         gamegridd = new char [,] 
         {
             { 'b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b' },
@@ -38,7 +40,7 @@ public class Grid: MonoBehaviour {
             { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
             { 't','e','e','b','e','b','e','b','e','b','e','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','e','b','e','b','e','b','e','b','e','e','t' },
             { 'b','e','b','b','e','b','e','b','e','b','e','b','b','f','b','b','b','e','b','e','b','b','b','f','b','b','e','b','e','b','e','b','e','b','b','e','b' },
-            { 'b','e','e','e','e','b','e','b','e','b','e','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','e','b','e','b','e','b','e','e','e','e','b' },
+            { 'b','e','e','e','e','b','e','b','e','b','e','e','b','e','e','e','e','e','k','e','e','e','e','e','b','e','e','b','e','b','e','b','e','e','e','e','b' },
             { 'b','e','b','b','b','b','e','e','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','e','e','b','b','b','b','e','b' },
             { 'b','e','b','e','e','e','e','b','e','e','e','e','e','e','b','e','e','e','b','e','e','e','b','e','e','e','e','b','e','b','e','e','e','e','b','e','b' },
             { 'b','e','b','e','b','b','b','b','e','b','e','b','b','b','b','b','b','e','b','e','b','b','b','b','b','b','e','b','e','b','b','b','b','e','b','e','b' },
@@ -48,11 +50,9 @@ public class Grid: MonoBehaviour {
         SpawnGrid();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-            
-    }
+    /// <summary>
+    /// Deze methode gaat alle locaties van de grid af.
+    /// </summary>
     void SpawnGrid()
     {
         for (int z = 0; z < breedte; z++)
@@ -61,6 +61,13 @@ public class Grid: MonoBehaviour {
                 LoadBlock(gamegridd[x,z], z, x);
             } 
     }
+    /// <summary>
+    ///  Deze methode doet aan de hand wat er daar op in de grid staat het object laden.
+    ///  En plaatst dat op de goeie plaats in het spel.
+    /// </summary>
+    /// <param name="TileType"></param>
+    /// <param name="x"></param>
+    /// <param name="z"></param>
     void LoadBlock(char TileType, int x, int z)
     {
         switch (TileType)
@@ -104,6 +111,10 @@ public class Grid: MonoBehaviour {
                     Teleporterr.transform.parent = transform;
                     Teleporterr.transform.localPosition = new Vector3(x, 1, z);
                     TeleportScript2 TeleporterScript = Teleporterr.GetComponent<TeleportScript2>();
+                    //Vanwege de methode waarin de grid wordt aangemaakt had ik 2 opties om de goeie teleporters te linken aan elkaar. 
+                    //1 Was meerdere instances maken die al gelinkt waren en die dan laten spawnen.
+                    //De andere was de linkcode in dit script handmatig afstellen. 
+                    //Ik vond zelf dit een betere optie omdat het en minder verschillende blokken vereist en uiteindelijk code lijnen scheelt.
                     switch (TimesTeleporterCreated)
                     {
                         default: TeleporterScript.code = 0; break;
@@ -116,6 +127,14 @@ public class Grid: MonoBehaviour {
                         case 7: TeleporterScript.code = 1; break;
                     }
                     Teleporter.SetActive(true);
+                }
+                break;
+            case 'k':
+                {
+                    GameObject spawnPac = Instantiate(SpawnPacman, Vector3.zero, SpawnPacman.transform.rotation) as GameObject;
+                    spawnPac.transform.parent = transform;
+                    spawnPac.transform.localPosition = new Vector3(x, 1, z);
+                    spawnPac.SetActive(true);
                 }
                 break;
             default: break;

@@ -5,7 +5,8 @@ using UnityEngine;
 public class PacmanAttacking : MonoBehaviour {
 
     Animator animator;
-    float TimePassed = 0;
+    public float TimePassed = 0;
+    public bool PacmanIsTheBoyInTown;
 	// Use this for initialization
 	void Start ()
     {
@@ -22,11 +23,12 @@ public class PacmanAttacking : MonoBehaviour {
             PacmanIsTheHunter();
         }
 
-        if (animator.GetBool("PacmanIsOnTheHunt")) { TimePassed += Time.deltaTime; }
+        if (animator.GetBool("PacmanIsOnTheHunt")) { TimePassed += Time.deltaTime; PacmanIsTheBoyInTown = true; }
 
         if (TimePassed >= 10)
         {
             animator.SetBool("PacmanIsOnTheHunt", false);
+            PacmanIsTheBoyInTown = false;
             TimePassed = 0; 
         }
 	}

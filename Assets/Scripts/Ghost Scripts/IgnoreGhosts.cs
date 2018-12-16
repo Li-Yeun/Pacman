@@ -4,11 +4,34 @@ using UnityEngine;
 
 public class IgnoreGhosts : MonoBehaviour
 {
+    [Tooltip("FX prefab on player")] [SerializeField] GameObject DeathFX;
+    [SerializeField] Transform Spawner;
+    public PacmanAttacking pacmanAttacking;
+    private void Start()
+    {
+        pacmanAttacking = pacmanAttacking.GetComponent<PacmanAttacking>();
+    }
+
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Enemy")
-        {
-            Physics.IgnoreCollision(col.collider, GetComponent<Collider>());
-        }
-    }
+        
+        switch (col.gameObject.tag) {
+            case "Enemy": //Zorgt dat geestjes door elkaar kunnen bewegen
+            {
+                    Physics.IgnoreCollision(col.collider, GetComponent<Collider>());
+            }
+                break;
+            case "Player":
+                {  //Zorgt dat het geestje doodgaat als pacman een powerpill op heeft.
+                    if (pacmanAttacking.PacmanIsTheBoyInTown)
+                    {
+                        GameObject fx = Instantiate(DeathFX, transform.position, Quaternion.identity);
+                        fx.transform.parent = Spawner;
+                        transform.position = Spawner.transform.position;
+                    }
+                }
+                break;
+            default:
+                break;
+    }   }
 }
