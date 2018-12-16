@@ -6,13 +6,15 @@ public class PelletBehaviour : MonoBehaviour {
 
     bool pelleteaten;
     private ScoreCounter pelletscore;
+    public float Timer = 0;
 
-	// Use this for initialization
-	void Start () {
 
+    // Use this for initialization
+    void Start ()
+    {
         pelletscore = FindObjectOfType<ScoreCounter>();
         pelleteaten = false;
-	}
+    }
 
     private void OnTriggerEnter(Collider other)
     {

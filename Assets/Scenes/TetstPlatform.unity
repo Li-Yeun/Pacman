@@ -1675,6 +1675,72 @@ MonoBehaviour:
   T_Intensity: 12
   T_Height: 5.5
   Speed: 1
+--- !u!1001 &372056433
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 485194055}
+    m_Modifications:
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.428
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.261
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 834588dcdc39a7047be76e0d5fc9bb27, type: 2}
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+  m_IsPrefabAsset: 0
 --- !u!1 &380518622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,6 +2241,7 @@ MonoBehaviour:
   SlidingDoor: {fileID: 1544150870}
   Teleporter: {fileID: 1963085175}
   SpawnPacman: {fileID: 501993956}
+  Citroen: {fileID: 925193741}
 --- !u!4 &485194055
 Transform:
   m_ObjectHideFlags: 0
@@ -2191,6 +2258,7 @@ Transform:
   - {fileID: 2050675791}
   - {fileID: 2138812543}
   - {fileID: 401529847}
+  - {fileID: 925193742}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
@@ -7249,8 +7317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebbde2a4b7c81f4f956339e6694343d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeathFX: {fileID: 0}
-  parent: {fileID: 0}
   TimePassed: 0
   PacmanIsTheBoyInTown: 0
 --- !u!1 &570636498
@@ -8589,6 +8655,73 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fbd8b0e86678de4b89fc1a1bf06432c, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &925193741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 9a2a64a41eecde04fb76b7c02690b018,
+    type: 3}
+  m_PrefabInternal: {fileID: 372056433}
+--- !u!4 &925193742 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 9a2a64a41eecde04fb76b7c02690b018,
+    type: 3}
+  m_PrefabInternal: {fileID: 372056433}
+--- !u!135 &925193743
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925193741}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &925193744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925193741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12d16884492a5c4cb2e3b0793812bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Citroen: {fileID: 925193741}
+--- !u!95 &925193745
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925193741}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b5297131c495b147a6f2e29a438b0bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &925193746
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925193741}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &950704851
 GameObject:
   m_ObjectHideFlags: 0
@@ -9074,6 +9207,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1403524952478584, guid: c182280d107d8414ebdfa8de91efd5af,
     type: 2}
   m_PrefabInternal: {fileID: 684486768}
+--- !u!54 &1083061590
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1083061589}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &1084191079
 GameObject:
   m_ObjectHideFlags: 0
@@ -11555,7 +11703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1665467814
 Light:
   m_ObjectHideFlags: 0
@@ -13031,8 +13179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebbde2a4b7c81f4f956339e6694343d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeathFX: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 2}
-  parent: {fileID: 166849570}
   TimePassed: 0
   PacmanIsTheBoyInTown: 0
 --- !u!1 &1921095874

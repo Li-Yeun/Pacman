@@ -7,12 +7,14 @@ using UnityEngine;
 public class Grid: MonoBehaviour {
     int lengte,breedte;
     public int TimesTeleporterCreated = 0;
+    float Timer = 0;
     public GameObject block1;
     public GameObject pellet;
     public GameObject powerpill;
     public GameObject SlidingDoor;
     public GameObject Teleporter;
     public GameObject SpawnPacman;
+    public GameObject Citroen;
     public char [,] gamegridd;
     char b;
 
@@ -137,7 +139,31 @@ public class Grid: MonoBehaviour {
                     spawnPac.SetActive(true);
                 }
                 break;
+            case 'c':
+                {
+                    GameObject citroen = Instantiate(Citroen, Vector3.zero, Citroen.transform.rotation) as GameObject;
+                    citroen.transform.parent = transform;
+                    citroen.transform.localPosition = new Vector3(x, 1, z);
+                    citroen.SetActive(true);
+                }
+                break;
             default: break;
+        }
+    }
+    private void Update()
+    {
+        Timer += Time.deltaTime;
+        float val = Random.value;
+        if (Timer > val * 10000)
+        {
+            Timer = 0;
+            switch ((int)Random.Range(0, 4))
+            {
+                case 0: LoadBlock('c', 1, 1); break;
+                case 1: LoadBlock('c', 35, 1); break;
+                case 2: LoadBlock('c', 1, 21); break;
+                case 3: LoadBlock('c', 35, 21); break;
+            }
         }
     }
 }

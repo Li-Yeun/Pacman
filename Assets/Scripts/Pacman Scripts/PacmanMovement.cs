@@ -5,7 +5,7 @@ using UnityEngine;
 public class PacmanMovement : MonoBehaviour {
 
     [Header("Directional Speed")]
-    [SerializeField] Vector3 Speed;
+    [SerializeField] public Vector3 Speed;
 
     [Header("Spawner")]
     [SerializeField] GameObject Spawner;
