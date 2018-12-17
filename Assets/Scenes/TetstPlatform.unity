@@ -1740,7 +1740,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
+      propertyPath: m_TagString
+      value: Fruit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a2a64a41eecde04fb76b7c02690b018, type: 3}
@@ -1956,7 +1964,7 @@ GameObject:
   - component: {fileID: 401529847}
   m_Layer: 0
   m_Name: BuildingBlock
-  m_TagString: Untagged
+  m_TagString: Maze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8693,7 +8701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Citroen: {fileID: 925193741}
-  pacmanMovement: {fileID: 0}
+  pacmanMovement: {fileID: 1700235657}
 --- !u!95 &925193745
 Animator:
   serializedVersion: 3

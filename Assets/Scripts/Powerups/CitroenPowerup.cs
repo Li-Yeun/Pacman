@@ -17,7 +17,8 @@ public class CitroenPowerup : MonoBehaviour {
         switch (col.gameObject.tag)
         {
             case "Pellet":
-                Citroen.SetActive(false);
+                Destroy(Citroen);
+                Debug.Log("1");
                 break;
             case "Player":
                 Citroen.SetActive(false);

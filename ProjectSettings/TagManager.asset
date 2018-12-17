@@ -9,6 +9,7 @@ TagManager:
   - Maze
   - TeleportShit
   - Pellet
+  - Fruit
   layers:
   - Default
   - TransparentFX
