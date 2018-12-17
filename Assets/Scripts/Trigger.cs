@@ -5,7 +5,14 @@ using UnityEngine;
 public class Trigger : MonoBehaviour {
     public bool Collision;
 
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Maze")
+        {
+            Collision = true;
+        }
+    }
+    private void OnTriggerStay(Collider col)
     {
         if (col.gameObject.tag == "Maze")
         {
@@ -15,8 +22,11 @@ public class Trigger : MonoBehaviour {
 
     }
 
-    private void OnTriggerExit(Collider col)
+    private void OnTriggerExit(Collider other)
     {
-        Collision = false;
+        if (other.gameObject.tag == "Maze")
+        {
+            Collision = false;
+        }
     }
 }
