@@ -11715,7 +11715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1665467814
 Light:
   m_ObjectHideFlags: 0
@@ -12037,6 +12037,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HomingMissles: {fileID: 507442999}
+--- !u!114 &1700235665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1700235656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aabfc74e07c0414b928a05fd8ea0330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  Health3: {fileID: 2800000, guid: eea667c23156de945a077df1e6f8412c, type: 3}
+  Health2: {fileID: 2800000, guid: b9bdc5768fd30f541a3ed62e9acf01e9, type: 3}
+  Health1: {fileID: 2800000, guid: 026c164b082f8cb4fa5d135059409c70, type: 3}
+  currentHealth: {fileID: 2800000, guid: eea667c23156de945a077df1e6f8412c, type: 3}
 --- !u!4 &1701109169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4464193205433164, guid: 7034bb6ec5beb514da13788bce1adbed,
