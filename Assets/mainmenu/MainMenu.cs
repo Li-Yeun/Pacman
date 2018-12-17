@@ -11,12 +11,15 @@ public class MainMenu : MonoBehaviour {
     public Button multiplayer;
     public Button about;
     public Button exitgame;
-    public string gamescene;
+    public string gamescene, multiplayerscene;
     public GameObject About, buttonexplain;
 
 
     public void startgame()
     { SceneManager.LoadScene(gamescene); }
+
+    public void Multiplayer()
+    { SceneManager.LoadScene(multiplayerscene); }
 
     public void Buttonexplain()
     {

@@ -699,6 +699,7 @@ MonoBehaviour:
   about: {fileID: 1767849286}
   exitgame: {fileID: 1089031109}
   gamescene: TetstPlatform
+  multiplayerscene: MultiyPlayer
   About: {fileID: 617146010}
   buttonexplain: {fileID: 1995807384}
 --- !u!1 &501840204
@@ -1772,7 +1773,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 481756987}
-        m_MethodName: AboutGame
+        m_MethodName: Multiplayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
