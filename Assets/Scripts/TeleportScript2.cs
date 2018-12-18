@@ -17,7 +17,6 @@ public class TeleportScript2 : MonoBehaviour {
                 {
                     tp.dissableTimer = 1;
                     Vector3 position = tp.gameObject.transform.position;
-                    position.y += 0.2f;
                     collider.gameObject.transform.position = position;
                 }
             }
