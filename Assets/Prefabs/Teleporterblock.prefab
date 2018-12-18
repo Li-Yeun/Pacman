@@ -9,46 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1330084163278984}
+  m_RootGameObject: {fileID: 1513580549421540}
   m_IsPrefabAsset: 1
---- !u!1 &1330084163278984
+--- !u!1 &1513580549421540
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4093587285494662}
-  - component: {fileID: 33156254839556462}
-  - component: {fileID: 23252421080467228}
-  - component: {fileID: 135990491145725128}
-  - component: {fileID: 114083136525375162}
-  m_Layer: 14
-  m_Name: Powerpil
-  m_TagString: Pellet
+  - component: {fileID: 4700149653646658}
+  - component: {fileID: 33468137005931378}
+  - component: {fileID: 23279932832642490}
+  - component: {fileID: 65666801374554652}
+  - component: {fileID: 114209244033585674}
+  m_Layer: 0
+  m_Name: Teleporterblock
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4093587285494662
+--- !u!4 &4700149653646658
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1330084163278984}
+  m_GameObject: {fileID: 1513580549421540}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.687174, y: 2.3685188, z: 24.279999}
-  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23252421080467228
+--- !u!23 &23279932832642490
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1330084163278984}
+  m_GameObject: {fileID: 1513580549421540}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: a2a2b4254302b254e9a79934ff2f00ff, type: 2}
+  - {fileID: 2100000, guid: bfe14e8b064e03745aacf67c2a393a76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,34 +78,34 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33156254839556462
+--- !u!33 &33468137005931378
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1330084163278984}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114083136525375162
-MonoBehaviour:
+  m_GameObject: {fileID: 1513580549421540}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65666801374554652
+BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1330084163278984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94081a4fbf809cd4f9e43a271c522d32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerpileaten: 0
---- !u!135 &135990491145725128
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1330084163278984}
+  m_GameObject: {fileID: 1513580549421540}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.51
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114209244033585674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1513580549421540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da58da4cde4a82439b350555b1c4ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: 0

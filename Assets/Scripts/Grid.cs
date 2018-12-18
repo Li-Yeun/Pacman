@@ -5,8 +5,7 @@ using UnityEngine;
 /// Deze class is verantwoordelijk voor het initialise van het level.
 /// </summary>
 public class Grid: MonoBehaviour {
-    int lengte,breedte;
-    public int TimesTeleporterCreated = 0;
+    private int TimesTeleporterCreated = 0;
     float Timer = 0;
     public GameObject block1;
     public GameObject pellet;
@@ -15,15 +14,14 @@ public class Grid: MonoBehaviour {
     public GameObject Teleporter;
     public GameObject SpawnPacman;
     public GameObject Citroen;
-    public char [,] gamegridd;
-    char b;
+    [Header("Parents")]
+    [SerializeField] Transform PelletsParent,SlidingDoorParent,TeleporterParent,BuildingBlockParent,PowerPillParent,CitroenParent, SpawnerParent;
+    public char [,] gamegrid;
 
     void Start()
     {
-        lengte = 23;
-        breedte = 37;
         // Dit is de level layout, hier staat in waar wat wordt geplaatst in de grid op het moment dat het level geladen wordt.
-        gamegridd = new char [,] 
+        gamegrid = new char [,] 
         {
             { 'b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b' },
             { 'b','e','e','e','e','e','e','b','e','b','p','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','p','b','e','b','e','e','e','e','e','e','b' },
@@ -57,10 +55,10 @@ public class Grid: MonoBehaviour {
     /// </summary>
     void SpawnGrid()
     {
-        for (int z = 0; z < breedte; z++)
-            for (int x = 0; x < lengte; x++)
+        for (int z = 0; z < gamegrid.GetLongLength(1); z++)
+            for (int x = 0; x < gamegrid.GetLongLength(0); x++)
             {
-                LoadBlock(gamegridd[x,z], z, x);
+                LoadBlock(gamegrid[x,z], z, x);
             } 
     }
     /// <summary>
@@ -74,43 +72,31 @@ public class Grid: MonoBehaviour {
     {
         switch (TileType)
         {
-            case 'b': 
+            case 'b':
                 {
-                    GameObject block = Instantiate(block1, Vector3.zero, block1.transform.rotation) as GameObject;
-                    block.transform.parent = transform;
-                    block.transform.localPosition = new Vector3(x, 1.5f, z);
-                    block.SetActive(true);
+                    InstantiateObject(block1,x,z);
                 }
                 break;
             case 'e':
                 {
-                    GameObject pell = Instantiate(pellet, Vector3.zero, pellet.transform.rotation) as GameObject;
-                    pell.transform.parent = transform;
-                    pell.transform.localPosition = new Vector3(x, 1, z);
-                    pell.SetActive(true);
+                    InstantiateObject(pellet, x, z);
                 }
                 break;
             case 'p':
                 {
-                    GameObject power = Instantiate(powerpill, Vector3.zero, powerpill.transform.rotation) as GameObject;
-                    power.transform.parent = transform;
-                    power.transform.localPosition = new Vector3(x, 1, z);
-                    power.SetActive(true);
+                    InstantiateObject(powerpill, x, z);
                 }
                 break;
             case 'f':
                 {
-                    GameObject door = Instantiate(SlidingDoor, Vector3.zero, SlidingDoor.transform.rotation) as GameObject;
-                    door.transform.parent = transform;
-                    door.transform.localPosition = new Vector3(x, 1, z);
-                    door.SetActive(true);
+                    InstantiateObject(SlidingDoor, x, z);
                 }
                 break;
             case 't':
                 {
                     TimesTeleporterCreated++;
-                    GameObject Teleporterr = Instantiate(Teleporter, Vector3.zero, SlidingDoor.transform.rotation) as GameObject;
-                    Teleporterr.transform.parent = transform;
+                    GameObject Teleporterr = Instantiate(Teleporter, Vector3.zero, SlidingDoor.transform.rotation);
+                    Teleporterr.transform.parent = TeleporterParent;
                     Teleporterr.transform.localPosition = new Vector3(x, 1, z);
                     TeleportScript2 TeleporterScript = Teleporterr.GetComponent<TeleportScript2>();
                     //Vanwege de methode waarin de grid wordt aangemaakt had ik 2 opties om de goeie teleporters te linken aan elkaar. 
@@ -128,28 +114,32 @@ public class Grid: MonoBehaviour {
                         case 6: TeleporterScript.code = 2; break;
                         case 7: TeleporterScript.code = 1; break;
                     }
-                    Teleporter.SetActive(true);
                 }
                 break;
             case 'k': // Werkt niet.
                 {
-                    GameObject spawnPac = Instantiate(SpawnPacman, Vector3.zero, SpawnPacman.transform.rotation) as GameObject;
-                    spawnPac.transform.parent = transform;
-                    spawnPac.transform.localPosition = new Vector3(x, 1, z);
-                    spawnPac.SetActive(true);
+                    InstantiateObject(SpawnPacman, x, z);
                 }
                 break;
             case 'c':
                 {
-                    GameObject citroen = Instantiate(Citroen, Vector3.zero, Citroen.transform.rotation) as GameObject;
-                    citroen.transform.parent = transform;
-                    citroen.transform.localPosition = new Vector3(x, 1, z);
-                    citroen.SetActive(true);
+                    InstantiateObject(Citroen, x, z);
                 }
                 break;
             default: break;
         }
     }
+
+    private void InstantiateObject(GameObject gameObject, int x, int z)
+    {
+        GameObject gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
+        gameObjectt.transform.parent = BuildingBlockParent;
+        if (gameObject == block1)
+            gameObjectt.transform.localPosition = new Vector3(x, 1.5f, z);
+        else
+            gameObjectt.transform.localPosition = new Vector3(x, 1, z);
+    }
+
     private void Update()
     {
         Timer += Time.deltaTime;

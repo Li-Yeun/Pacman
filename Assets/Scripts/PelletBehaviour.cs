@@ -33,7 +33,7 @@ public class PelletBehaviour : MonoBehaviour {
     void Update () {
 		if (pelleteaten)
         {
-            gameObject.SetActive(false);  // Of Destroy(gameObject);    <--- Om de pellets echt uit de game te wissen.
+            Destroy(gameObject);
             pelletscore.PelletPoints();
         }
 	}

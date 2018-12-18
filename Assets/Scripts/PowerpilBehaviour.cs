@@ -40,10 +40,8 @@ public class PowerpilBehaviour : MonoBehaviour {
         {
             gameObject.SetActive(false);
             powerpilscore.PowerpilPoints();
-
             foreach (PacmanAttacking Ghost in AnimationScriptSpookjes)
                 Ghost.PacmanIsTheHunter();
-
         }   
 	}
 }

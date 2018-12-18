@@ -39,12 +39,22 @@ public class playerhealth : MonoBehaviour {
 
     public void Healthbar()
     {
-        if (health == 3)
-        { currentHealth = Health3; }
-            else if (health == 2)
-            { currentHealth = Health2; }
-                else if (health == 1)
-                    { currentHealth = Health1; }
+        switch(health)
+        {
+            case 3:
+                currentHealth = Health3;
+                break;
+            case 2:
+                currentHealth = Health2;
+                break;
+            case 1:
+                currentHealth = Health1;
+                break;
+            default:
+                currentHealth = Health3;
+                health = 3;
+                break;
+        }
     }
 
     public void DecreaseHealth()
