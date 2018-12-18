@@ -34,7 +34,7 @@ public class Grid: MonoBehaviour {
             { 'b','b','e','b','e','e','e','e','e','b','e','b','b','e','b','e','e','e','b','e','e','e','b','e','b','b','e','b','e','e','e','e','e','b','e','b','b' },
             { 't','e','e','b','e','b','b','b','e','b','e','e','e','e','b','e','b','e','b','e','b','e','b','e','e','e','e','b','e','b','b','b','e','b','e','e','t' },
             { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','e','e','e','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
-            { 'b','b','e','b','b','f','b','b','b','b','e','e','b','e','b','e','b','b','f','b','b','e','b','e','b','e','e','b','b','b','b','f','b','b','e','b','b' },
+            { 'b','b','e','b','b','f','b','b','b','b','e','e','b','e','b','e','b','b','o','b','b','e','b','e','b','e','e','b','b','b','b','f','b','b','e','b','b' },
             { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','s','s','s','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
             { 'b','p','b','b','b','b','b','b','e','e','e','e','e','e','b','e','b','s','s','s','b','e','e','e','e','e','e','e','e','b','b','b','b','b','b','p','b' },
             { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','b','b','b','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
@@ -78,7 +78,7 @@ public class Grid: MonoBehaviour {
                 {
                     GameObject block = Instantiate(block1, Vector3.zero, block1.transform.rotation) as GameObject;
                     block.transform.parent = transform;
-                    block.transform.localPosition = new Vector3(x, 1, z);
+                    block.transform.localPosition = new Vector3(x, 1.5f, z);
                     block.SetActive(true);
                 }
                 break;
@@ -131,7 +131,7 @@ public class Grid: MonoBehaviour {
                     Teleporter.SetActive(true);
                 }
                 break;
-            case 'k':
+            case 'k': // Werkt niet.
                 {
                     GameObject spawnPac = Instantiate(SpawnPacman, Vector3.zero, SpawnPacman.transform.rotation) as GameObject;
                     spawnPac.transform.parent = transform;
