@@ -17,9 +17,16 @@ public class PacmanMovement : MonoBehaviour {
 
     public Rigidbody rb;
     public bool SwitchControls = false;
+    public bool AnimationLock = false;
     public int currentDirection, p_Direction;
     bool LockMovement;
     public KeyCode currentKey, p_Key;
+
+    public Vector3 Position { get { return gameObject.transform.position; }
+        set { gameObject.transform.position = value; }
+    }
+
+
 
     void Start()
     {
@@ -33,9 +40,16 @@ public class PacmanMovement : MonoBehaviour {
     {
         p_Direction = currentDirection;
         p_Key = currentKey;
-        if (SwitchControls) { TopDownMode(); }
-        else { FirstPersonMode(); }
-        Move_Player();
+        
+        if (!AnimationLock)
+        {
+            Move_Player();
+            if (SwitchControls) { TopDownMode(); }
+            else { FirstPersonMode(); }
+            
+
+        }
+        else { rb.velocity = Vector3.zero; }
     }
 
     private void FirstPersonMode()
@@ -139,6 +153,8 @@ public class PacmanMovement : MonoBehaviour {
         {
             rb.rotation = Quaternion.Euler(RotateList[1]);
         }
+
+
     }
 
     public void StartDeathSequence() // Gebruik deze methode wanneer Pacman de "Enemy" heeft geraakt.

@@ -75,6 +75,7 @@ public class Grid: MonoBehaviour {
             case 'b':
                 {
                     InstantiateObject(block1,x,z);
+               
                 }
                 break;
             case 'e':
@@ -135,7 +136,16 @@ public class Grid: MonoBehaviour {
         GameObject gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
         gameObjectt.transform.parent = BuildingBlockParent;
         if (gameObject == block1)
+        {
             gameObjectt.transform.localPosition = new Vector3(x, 1.5f, z);
+
+            if (x == 0 || z == 0 || x == gamegrid.GetLongLength(1) - 1 || z == gamegrid.GetLongLength(0) - 1)
+            { gameObjectt.tag = "BoundingWall"; }
+            else
+            {
+                gameObjectt.tag = "Maze";
+            }
+        }
         else
             gameObjectt.transform.localPosition = new Vector3(x, 1, z);
     }
