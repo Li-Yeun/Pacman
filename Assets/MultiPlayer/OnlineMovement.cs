@@ -11,7 +11,7 @@ using UnityEngine.Networking;
 public class OnlineMovement : NetworkBehaviour {
     public Rigidbody rb;    
     public Transform tf;    
-    public Trigger front, left, right;               //colliders voor navigatie
+    public SpecialTrigger2 front, left, right;               //colliders voor navigatie
     public string[] Controls = new string[2];        //controlls van spookje
     public int speed = 100;                          //beweegsnelheid
     public int Respawntime = 4;                      //tijd voordat speler weer kan besturen

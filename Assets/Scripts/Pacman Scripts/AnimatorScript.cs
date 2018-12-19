@@ -29,8 +29,8 @@ public class AnimatorScript : MonoBehaviour {
     [SerializeField] Animator animatorSalto;
     GameObject go;
     [Header("Jump Ookay")] 
-    [SerializeField] SpecialTrigger specialTrigger;
-    [SerializeField] SpecialTrigger2 specialTrigger2;
+    [SerializeField] SpecialTrigger2 Jumper;
+    [SerializeField] SpecialTrigger2 JumperOuterWalls;
     public bool JumpRunning = false;
 
     void Start()
@@ -49,7 +49,7 @@ public class AnimatorScript : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!specialTrigger.Collision && !specialTrigger2.Collision && !JumpRunning)
+            if (!Jumper.Collision && !JumperOuterWalls.Collision && !JumpRunning)
             {
                 Jump();
             }

@@ -2,33 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CitroenPowerup : MonoBehaviour {
-
-    public GameObject Citroen;
+public class CitroenPowerup : MonoBehaviour
+{
     public PacmanMovement pacmanMovement;
     // Use this for initialization
+
     void Start()
     {
-        Citroen = this.gameObject;
         pacmanMovement = FindObjectOfType<PacmanMovement>();
+        SameFruitChecker();
     }
+
     void OnTriggerStay(Collider col)
     {
         switch (col.gameObject.tag)
         {
             case "Pellet":
-                Destroy(Citroen);
+                Destroy(col.gameObject);
                 break;
             case "Player":
-                Citroen.SetActive(false);
+                Destroy(gameObject);
                 pacmanMovement.Speed.x++;
                 pacmanMovement.Speed.z++;
-
                 break;
         }
     }
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    /// <summary>
+    /// prevents multiple of the sameFruit spawning on the same place.
+    /// </summary>
+    void SameFruitChecker()
+    {
+        foreach (CitroenPowerup cp in FindObjectsOfType<CitroenPowerup>())
+        {
+            if (cp.transform.position.x == gameObject.transform.position.x && cp.transform.position.y == gameObject.transform.position.y && cp != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }

@@ -10,16 +10,17 @@ public class PacmanMovement : MonoBehaviour {
     [Header("Spawner")]
     [SerializeField] GameObject Spawner;
 
-    [Header("Triggers")]
-    [SerializeField] Trigger left, right;
+    [Header("Special Triggers")]
+    [SerializeField] SpecialTrigger2 left, right;
 
     Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0) };
 
     public Rigidbody rb;
     public bool SwitchControls = false;
     public bool AnimationLock = false;
+    public bool Teleporterlock = false;
     public int currentDirection, p_Direction;
-    bool LockMovement;
+    public bool LockMovement;
     public KeyCode currentKey, p_Key;
 
     public Vector3 Position { get { return gameObject.transform.position; }
@@ -54,18 +55,21 @@ public class PacmanMovement : MonoBehaviour {
 
     private void FirstPersonMode()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (!Teleporterlock)
         {
-            HandleKeyInput(KeyCode.S, 2);
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                HandleKeyInput(KeyCode.S, 2);
+            }
+            else if (Input.GetKey(KeyCode.A) && !left.Collision && !LockMovement)
+            {
+                HandleKeyInput(KeyCode.A, -1);
+            }
+            else if (Input.GetKey(KeyCode.D) && !right.Collision && !LockMovement)
+            {
+                HandleKeyInput(KeyCode.D, 1);
+            }
         }
-        else if (Input.GetKey(KeyCode.A) && left.Collision == false && LockMovement == false)
-        {
-            HandleKeyInput(KeyCode.A, -1);
-        }
-        else if (Input.GetKey(KeyCode.D) && right.Collision == false && LockMovement == false)
-        {
-            HandleKeyInput(KeyCode.D, 1);
-        } 
     }
     
     private void TopDownMode()

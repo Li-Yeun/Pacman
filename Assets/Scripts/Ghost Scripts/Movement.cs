@@ -10,7 +10,7 @@ using UnityEngine.AI;
 public class Movement : MonoBehaviour {
 
     [Header("General")]
-    [SerializeField] Trigger front, left, right;               //colliders voor navigatie
+    [SerializeField] SpecialTrigger2 front, left, right;               //colliders voor navigatie
     [SerializeField] NavMeshAgent agent;                       //navigatie voor teruggaan naar spawn
     [SerializeField] Transform respawn;                        //locatie van spawnpunt
 

@@ -22,7 +22,7 @@ public class PacmanMultiMovement : NetworkBehaviour {
     public Rigidbody rb;
 
     [Header("Triggers")]
-    [SerializeField] Trigger left, right;
+    [SerializeField] SpecialTrigger2 left, right;
 
     bool LockMovement;
 
