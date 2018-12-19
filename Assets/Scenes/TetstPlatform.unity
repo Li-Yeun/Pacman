@@ -1703,7 +1703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f48fb64526449f498fcb6cb46faf949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block1: {fileID: 1070261862001456, guid: 13a8b6b0635a2e74f861fd6b9b8e902e, type: 2}
+  block1: {fileID: 1512430940375074, guid: 8ae547de3eddb36459c3676db8784df5, type: 2}
   pellet: {fileID: 1403524952478584, guid: c182280d107d8414ebdfa8de91efd5af, type: 2}
   powerpill: {fileID: 1330084163278984, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   SlidingDoor: {fileID: 1670355100042582, guid: 9dd446b7a72286f4096223ed61f1195a,
