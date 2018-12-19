@@ -11,7 +11,7 @@ public class PacmanMovement : MonoBehaviour {
     [SerializeField] GameObject Spawner;
 
     [Header("Special Triggers")]
-    [SerializeField] SpecialTrigger2 left, right;
+    [SerializeField] SpecialTrigger2 left, right, Movement;
 
     Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0) };
 
@@ -39,24 +39,23 @@ public class PacmanMovement : MonoBehaviour {
 
     void Update()
     {
+        if (Movement.Collision) { Teleporterlock = true; } else { Teleporterlock = false; }
         p_Direction = currentDirection;
         p_Key = currentKey;
-        
         if (!AnimationLock)
         {
             Move_Player();
-            if (SwitchControls) { TopDownMode(); }
-            else { FirstPersonMode(); }
-            
-
+            if (!Teleporterlock)
+            {
+                if (SwitchControls) { TopDownMode(); }
+                else { FirstPersonMode(); }
+            }
         }
         else { rb.velocity = Vector3.zero; }
     }
 
     private void FirstPersonMode()
     {
-        if (!Teleporterlock)
-        {
             if (Input.GetKeyDown(KeyCode.S))
             {
                 HandleKeyInput(KeyCode.S, 2);
@@ -69,7 +68,7 @@ public class PacmanMovement : MonoBehaviour {
             {
                 HandleKeyInput(KeyCode.D, 1);
             }
-        }
+       
     }
     
     private void TopDownMode()

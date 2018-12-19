@@ -6,30 +6,21 @@ public class LockPacmanMovement : MonoBehaviour
 {
 
     [SerializeField] SpecialTrigger2 trigger;
-    PacmanMovement pacmanMovement;
+    PacmanMovement pacmanMove;
     private void Start()
     {
-        pacmanMovement = FindObjectOfType<PacmanMovement>();
+        pacmanMove = FindObjectOfType<PacmanMovement>();
     }
-    private void OnTriggerEnter(Collider other)
+
+    private void Update()
     {
-        if (other.gameObject.tag == "Player")
+        if (trigger.Collision)
         {
-            pacmanMovement.Teleporterlock = true;
+            pacmanMove.AnimationLock = true;
         }
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
+        else
         {
-            pacmanMovement.Teleporterlock = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            pacmanMovement.Teleporterlock = false;
+            pacmanMove.AnimationLock = false;
         }
     }
 }
