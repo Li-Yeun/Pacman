@@ -26,6 +26,7 @@ public class AnimatorScript : MonoBehaviour {
     [SerializeField] PacmanMovement Pacman;
     [SerializeField] GameObject PacmanAnimationObject;
     [SerializeField] Transform PacmanParentParent;
+    [SerializeField] Animator animatorSalto;
     GameObject go;
     [Header("Jump Ookay")] 
     [SerializeField] SpecialTrigger specialTrigger;
@@ -66,6 +67,7 @@ public class AnimatorScript : MonoBehaviour {
             case 2: animator.Play("PacmanAnimationJump4"); break;
             case 3: animator.Play("PacmanAnimationJump2"); break;
         }
+        animatorSalto.Play("PacmanSalto");
         Invoke("EndJump", 1f);
     }
     void EndJump()

@@ -952,9 +952,36 @@ Prefab:
       propertyPath: m_Name
       value: Pacman Body Mesh
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: ed50bf1e7f2e53441a492f1029fbe66a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed50bf1e7f2e53441a492f1029fbe66a, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &278334644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: ed50bf1e7f2e53441a492f1029fbe66a,
+    type: 3}
+  m_PrefabInternal: {fileID: 278334643}
+--- !u!95 &278334645
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 278334644}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61958f6e2667ff044b5e98623676c06d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &303102884
 GameObject:
   m_ObjectHideFlags: 0
@@ -10918,6 +10945,7 @@ MonoBehaviour:
   PacmanAnimationObject: {fileID: 1430176403655028, guid: be22c57443c9882439047dd41dc2b289,
     type: 2}
   PacmanParentParent: {fileID: 1504235252}
+  animatorSalto: {fileID: 278334645}
   specialTrigger: {fileID: 1448569209}
   specialTrigger2: {fileID: 1848148564}
   JumpRunning: 0
@@ -11247,7 +11275,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
       propertyPath: m_LocalRotation.y
@@ -11255,7 +11283,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
       propertyPath: m_LocalRotation.w
@@ -11400,6 +11428,10 @@ Prefab:
     - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.90000093
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114661502714551550, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
