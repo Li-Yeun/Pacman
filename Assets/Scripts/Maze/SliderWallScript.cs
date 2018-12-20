@@ -5,12 +5,11 @@ using UnityEngine;
 public class SliderWallScript : MonoBehaviour
 {
     [SerializeField] Animator anim;
-    [SerializeField] GameObject pacmanMovement;
+    GameObject pacmanMovement;
     float TimeSpent = 0;
     bool DoorOpen = false;
     void Start()
     {
-        pacmanMovement = FindObjectOfType<PacmanMovement>().gameObject;
         anim = GetComponent<Animator>();
         anim.Play("SlidingOut");
     }
@@ -34,5 +33,10 @@ public class SliderWallScript : MonoBehaviour
                 TimeSpent = 0;
             }
         }
+    }
+
+    public void PacmanInstantiated()
+    {
+        pacmanMovement = FindObjectOfType<PacmanMovement>().gameObject;
     }
 }

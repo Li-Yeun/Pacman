@@ -12,7 +12,7 @@ public class PacmanCollision : MonoBehaviour {
     private void Start()
     {
         Health = FindObjectOfType<playerhealth>();
-        pacmanAttacking = pacmanAttacking.GetComponent<PacmanAttacking>();
+       // pacmanAttacking = pacmanAttacking.GetComponent<PacmanAttacking>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -20,7 +20,7 @@ public class PacmanCollision : MonoBehaviour {
         switch (collision.gameObject.tag)
         {
             case "Enemy":
-                if (!pacmanAttacking.PacmanIsTheBoyInTown)
+             //   if (!pacmanAttacking.PacmanIsTheBoyInTown)
                     {
                     GameObject fx = Instantiate(DeathFX, transform.position, Quaternion.identity);
                     fx.transform.parent = parent;

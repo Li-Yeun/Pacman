@@ -12,6 +12,9 @@ TagManager:
   - Fruit
   - BoundingWall
   - AnimationFolderPac
+  - Object Parent
+  - Camera Parent
+  - Ghost Parent
   layers:
   - Default
   - TransparentFX

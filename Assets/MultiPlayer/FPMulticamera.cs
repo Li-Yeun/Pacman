@@ -13,7 +13,8 @@ public class FPMulticamera : NetworkBehaviour
 
     private void Start()
     {
-        PacmanMultiMovement Target = FindObjectOfType<PacmanMultiMovement>();
+        gameObject.transform.parent = GameObject.FindGameObjectWithTag("Camera Parent").transform;
+        PacmanMovement Target = FindObjectOfType<PacmanMovement>();
         tr_Target = Target.gameObject.transform;
     }
 

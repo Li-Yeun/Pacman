@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.Networking;
 /// <summary>
 /// Insert alle functies van wat deze classe doet. Thanks.
 /// </summary>
 
-public class Movement : MonoBehaviour {
+public class Movement : NetworkBehaviour {
 
     [Header("General")]
     [SerializeField] SpecialTrigger2 front, left, right;               //colliders voor navigatie
@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour {
 
     void Start ()
     {
+        gameObject.transform.parent = GameObject.FindGameObjectWithTag("Ghost Parent").transform;
         agent.enabled = false;
         Abilities = new bool[4];
         cooldowncounter = new float[4];
@@ -46,6 +47,8 @@ public class Movement : MonoBehaviour {
     
     void Update ()
     {
+        if (!hasAuthority)
+            return;
         if (dead)
         {
             DoRespawn();

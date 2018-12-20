@@ -21,15 +21,16 @@ GameObject:
   - component: {fileID: 4586542941477568}
   - component: {fileID: 20006186982650824}
   - component: {fileID: 81749761266728008}
-  - component: {fileID: 114376451986849380}
-  - component: {fileID: 114791561376861884}
+  - component: {fileID: 114606866597455268}
+  - component: {fileID: 114758210892138690}
+  - component: {fileID: 114397706199126032}
   m_Layer: 0
   m_Name: First Person Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4586542941477568
 Transform:
   m_ObjectHideFlags: 1
@@ -90,7 +91,35 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1923607694538722}
   m_Enabled: 1
---- !u!114 &114376451986849380
+--- !u!114 &114397706199126032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1923607694538722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825155018d00c924f834714c3d54daad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnspeed: 8
+--- !u!114 &114606866597455268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1923607694538722}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b07b89faf31d6b46b302189cf37ea9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisableLights:
+  - {fileID: 0}
+  EnableLights:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &114758210892138690
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,15 +151,3 @@ MonoBehaviour:
     i15: 183
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114791561376861884
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923607694538722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 825155018d00c924f834714c3d54daad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turnspeed: 4

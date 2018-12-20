@@ -16,7 +16,7 @@ public class TeleportScript2 : MonoBehaviour
     private bool Lockk = false ;
     void OnTriggerEnter(Collider collider)
     {
-        if ((collider.gameObject.name == "Pacman" || collider.gameObject.name == "Blue") && !Lockk )
+        if ((collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy") && !Lockk )
         {
             foreach (TeleportScript2 tp in FindObjectsOfType<TeleportScript2>())
             {

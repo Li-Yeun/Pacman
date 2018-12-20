@@ -14,6 +14,12 @@ public class FruitChecker : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+    }
+
+    //TODO wissen
+    public void PacmanInstantiated()
+    {
         AnimatorScript animatorScript = FindObjectOfType<AnimatorScript>();
         animatorScript.Apple.Add(gameObject);
     }

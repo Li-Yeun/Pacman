@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraControl : MonoBehaviour {
-
+    /*
     public enum View { TopDown, FirstPerson }
-    [SerializeField] GameObject NormalCamera, FirstPerson, MiniMap;
+    [SerializeField] GameObject NormalCamera, MiniMap;
     [SerializeField] View view;
     private GameObject Player;
+    bool Camera = false;
 
     private void Start()
     {
-        Player = FindObjectOfType<PacmanMovement>().gameObject;
+        
     }
     void Update () {
 
@@ -50,4 +51,5 @@ public class CameraControl : MonoBehaviour {
             
         }
     }
+    */
 }

@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 19800002}
   - component: {fileID: 19900002}
   - component: {fileID: 114571695915344396}
+  - component: {fileID: 114075081106100276}
   m_Layer: 0
   m_Name: Fireworks
   m_TagString: Untagged
@@ -32406,6 +32407,38 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100002}
   m_IsPrefabAsset: 1
+--- !u!114 &114075081106100276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 24
+    i1: 1
+    i2: 73
+    i3: 177
+    i4: 163
+    i5: 84
+    i6: 73
+    i7: 4
+    i8: 74
+    i9: 39
+    i10: 180
+    i11: 81
+    i12: 232
+    i13: 22
+    i14: 210
+    i15: 222
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114571695915344396
 MonoBehaviour:
   m_ObjectHideFlags: 1

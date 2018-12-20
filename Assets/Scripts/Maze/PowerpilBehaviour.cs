@@ -15,7 +15,6 @@ public class PowerpilBehaviour : MonoBehaviour {
     void Start ()
     {
         powerpilscore = FindObjectOfType<ScoreCounter>();
-        AnimationScriptSpookjes = FindObjectsOfType<PacmanAttacking>();
         powerpileaten = false;
 	}
 
@@ -44,4 +43,8 @@ public class PowerpilBehaviour : MonoBehaviour {
                 Ghost.PacmanIsTheHunter();
         }   
 	}
+    public void PacmanInstantiated()
+    {
+        AnimationScriptSpookjes = FindObjectsOfType<PacmanAttacking>();
+    }
 }

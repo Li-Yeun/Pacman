@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 198186761381896016}
   - component: {fileID: 199903285884917430}
   - component: {fileID: 114180299715079192}
+  - component: {fileID: 114263504542970002}
   m_Layer: 10
   m_Name: Smoke Generator
   m_TagString: Untagged
@@ -53,6 +54,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b86e7fc01adf7542bebc8c265e1a898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114263504542970002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1953361603329772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 203
+    i1: 63
+    i2: 252
+    i3: 136
+    i4: 177
+    i5: 5
+    i6: 13
+    i7: 36
+    i8: 10
+    i9: 140
+    i10: 123
+    i11: 58
+    i12: 110
+    i13: 206
+    i14: 244
+    i15: 222
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!198 &198186761381896016
 ParticleSystem:
   m_ObjectHideFlags: 1

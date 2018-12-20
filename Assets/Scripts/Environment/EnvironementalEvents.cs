@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class EnvironementalEvents : MonoBehaviour {
+public class EnvironementalEvents : NetworkBehaviour {
 
     [SerializeField] GameObject Smoke, FireWorks, SandStorm, Water;
     [SerializeField] Transform parent;
@@ -11,24 +12,26 @@ public class EnvironementalEvents : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown("2"))
         {
-            ActivateEvent(Smoke);
+            CmdActivateEvent(Smoke);
         }
         else if (Input.GetKeyDown("4"))
         {
-            ActivateEvent(FireWorks);
+            CmdActivateEvent(FireWorks);
         }
         else if (Input.GetKeyDown("5"))
         {
-            ActivateEvent(SandStorm);
+            CmdActivateEvent(SandStorm);
         }
     }
 
-    private void ActivateEvent(GameObject gameObject)
+    [Command]
+    private void CmdActivateEvent(GameObject gameObject)
     {
         if (FindObjectsOfType<SmokeScript>().Length == 0)
         {
             GameObject go = Instantiate(gameObject);
             go.transform.parent = parent;
+            NetworkServer.Spawn(go);
         }
     }
 }

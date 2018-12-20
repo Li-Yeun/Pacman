@@ -18,14 +18,14 @@ public class PlayerOnline : NetworkBehaviour {
         }
         else if (isLocalPlayer)
         {
-            if (FindObjectsOfType<PacmanMultiMovement>().Length == 0)
+            if (FindObjectsOfType<PacmanMovement>().Length == 0)
             {
                 CmdSpawnMyPacman();
                 FirstPerson.SetActive(true);
                 MiniMap.SetActive(true);
                 TopDownCamera.SetActive(false);
             }
-            else if (FindObjectsOfType<PacmanMultiMovement>().Length >= 1)
+            else if (FindObjectsOfType<PacmanMovement>().Length >= 1)
             {
                 CmdSpawnMyGhost();
 

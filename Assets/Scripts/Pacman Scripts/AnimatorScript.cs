@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using System;
 
 // Todo verander de y = 2 naar iets anders.
@@ -18,7 +19,7 @@ using System;
 /// Als je aan deze classe zit vermoord ik je xxTinus
 /// Btw Ik weet dat die y = 2 lelijk is. (working on it)
 /// </summary>
-public class AnimatorScript : MonoBehaviour {
+public class AnimatorScript : NetworkBehaviour {
 
 
     // Use this for initialization
@@ -47,12 +48,14 @@ public class AnimatorScript : MonoBehaviour {
     {
         go = Instantiate(PacmanAnimationObject);
         animator2 = go.GetComponent<Animator>();
-        go.transform.parent = PacmanParentParent;
+        go.transform.parent = GameObject.FindGameObjectWithTag("Object Parent").transform;
         Pacman.transform.parent = go.transform.transform;
     }
     // Update is called once per frame
     void Update()
     {
+        if (!hasAuthority)
+            return;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (!Jumper.Collision && !JumperOuterWalls.Collision && !AnimationPlaying)

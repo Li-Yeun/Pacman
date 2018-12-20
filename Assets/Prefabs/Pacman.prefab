@@ -69,9 +69,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4665406293924228}
   - component: {fileID: 65940146142608280}
-  - component: {fileID: 114262175962528654}
+  - component: {fileID: 114148793324972426}
   m_Layer: 0
-  m_Name: Collider Links
+  m_Name: Collider Links(Pacman)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 4705235341549774}
   - component: {fileID: 198819120412850770}
   - component: {fileID: 199815545328128978}
+  - component: {fileID: 114627085745521892}
   m_Layer: 0
   m_Name: Homing Missiles
   m_TagString: Untagged
@@ -103,9 +104,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4960443261014180}
   - component: {fileID: 65159366688970480}
-  - component: {fileID: 114546259885111306}
+  - component: {fileID: 114136721807397628}
   m_Layer: 0
-  m_Name: Collider Rechts
+  m_Name: Collider Rechts(Pacman)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,6 +128,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1720645800818078
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4879001926510492}
+  - component: {fileID: 33489565019177196}
+  - component: {fileID: 65059123049798312}
+  - component: {fileID: 114165193448897144}
+  m_Layer: 0
+  m_Name: TeleportClose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1807048419904614
 GameObject:
   m_ObjectHideFlags: 1
@@ -137,7 +156,7 @@ GameObject:
   - component: {fileID: 4750474034648292}
   - component: {fileID: 33447385864574218}
   - component: {fileID: 65708867996293318}
-  - component: {fileID: 114767298499154066}
+  - component: {fileID: 114276165710159438}
   m_Layer: 0
   m_Name: JumpAvailble
   m_TagString: Untagged
@@ -196,6 +215,8 @@ GameObject:
   - component: {fileID: 114071927505651976}
   - component: {fileID: 114557836394759504}
   - component: {fileID: 114596046132242732}
+  - component: {fileID: 114860781626154706}
+  - component: {fileID: 114520310560575174}
   m_Layer: 0
   m_Name: Pacman
   m_TagString: Player
@@ -263,7 +284,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990302627283604}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.878644, y: 2.002519, z: 13.892496}
+  m_LocalPosition: {x: 4, y: 4, z: 4}
   m_LocalScale: {x: 0.90000093, y: 0.9, z: 0.90000093}
   m_Children:
   - {fileID: 4999663831320144}
@@ -300,6 +321,19 @@ Transform:
   m_Father: {fileID: 4947751106676220}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4879001926510492
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720645800818078}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 2, z: 3}
+  m_Children: []
+  m_Father: {fileID: 4947751106676220}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4947751106676220
 Transform:
   m_ObjectHideFlags: 1
@@ -314,6 +348,7 @@ Transform:
   - {fileID: 4665406293924228}
   - {fileID: 4750474034648292}
   - {fileID: 4421364530904774}
+  - {fileID: 4879001926510492}
   m_Father: {fileID: 4702360685858640}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -433,6 +468,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1807048419904614}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33489565019177196
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720645800818078}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33889639311927502
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -469,6 +511,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!65 &65059123049798312
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720645800818078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65080303193457680
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -620,14 +674,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc14dc57714f4541bd359fde0fc46dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatorBodyMesh: {fileID: 95086322646408522}
   Pacman: {fileID: 114330916325753022}
   PacmanAnimationObject: {fileID: 1430176403655028, guid: be22c57443c9882439047dd41dc2b289,
     type: 2}
   PacmanParentParent: {fileID: 0}
-  animatorSalto: {fileID: 95086322646408522}
-  specialTrigger: {fileID: 114767298499154066}
-  specialTrigger2: {fileID: 114074681834381426}
-  JumpRunning: 0
+  Jumper: {fileID: 114276165710159438}
+  JumperOuterWalls: {fileID: 114074681834381426}
+  Apple: []
+  AnimationPlaying: 0
 --- !u!114 &114071927505651976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -656,7 +711,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collision: 0
---- !u!114 &114262175962528654
+  inputstring: BoundingWall
+--- !u!114 &114136721807397628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1566325078087788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collision: 0
+  inputstring: Maze
+--- !u!114 &114148793324972426
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -664,10 +733,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1094180315867410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a50f2f71f5ac52c4f86db67c5b5f77d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Collision: 0
+  inputstring: Maze
+--- !u!114 &114165193448897144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720645800818078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collision: 0
+  inputstring: TeleportShit
 --- !u!114 &114263557970263148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -682,6 +765,19 @@ MonoBehaviour:
   DeathFX: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 2}
   parent: {fileID: 0}
   pacmanAttacking: {fileID: 0}
+--- !u!114 &114276165710159438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807048419904614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collision: 0
+  inputstring: Maze
 --- !u!114 &114330916325753022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -694,28 +790,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: {x: 2, y: 0, z: 2}
-  Spawner: {fileID: 0}
-  left: {fileID: 114262175962528654}
-  right: {fileID: 114546259885111306}
+  left: {fileID: 114148793324972426}
+  right: {fileID: 114136721807397628}
+  Movement: {fileID: 114165193448897144}
   rb: {fileID: 54224212824454748}
-  SwitchControls: 0
   AnimationLock: 0
+  Teleporterlock: 0
   currentDirection: 0
   p_Direction: 0
+  LockMovement: 0
   currentKey: 0
   p_Key: 0
---- !u!114 &114546259885111306
+--- !u!114 &114520310560575174
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1566325078087788}
+  m_GameObject: {fileID: 1990302627283604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a50f2f71f5ac52c4f86db67c5b5f77d6, type: 3}
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 1e-12
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 1
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1000
 --- !u!114 &114557836394759504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -744,18 +850,70 @@ MonoBehaviour:
   Health2: {fileID: 2800000, guid: b9bdc5768fd30f541a3ed62e9acf01e9, type: 3}
   Health1: {fileID: 2800000, guid: 026c164b082f8cb4fa5d135059409c70, type: 3}
   currentHealth: {fileID: 2800000, guid: eea667c23156de945a077df1e6f8412c, type: 3}
---- !u!114 &114767298499154066
+--- !u!114 &114627085745521892
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1807048419904614}
+  m_GameObject: {fileID: 1379048216843572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01496d022028e6548914fa4cb2620379, type: 3}
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 51
+    i1: 184
+    i2: 227
+    i3: 227
+    i4: 12
+    i5: 161
+    i6: 132
+    i7: 116
+    i8: 185
+    i9: 226
+    i10: 18
+    i11: 76
+    i12: 40
+    i13: 109
+    i14: 133
+    i15: 222
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114860781626154706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990302627283604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 51
+    i1: 184
+    i2: 227
+    i3: 227
+    i4: 12
+    i5: 161
+    i6: 132
+    i7: 116
+    i8: 185
+    i9: 226
+    i10: 18
+    i11: 76
+    i12: 40
+    i13: 109
+    i14: 133
+    i15: 222
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!135 &135796094062668830
 SphereCollider:
   m_ObjectHideFlags: 1

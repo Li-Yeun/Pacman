@@ -1,22 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PacmanMovement : MonoBehaviour {
+public class PacmanMovement : NetworkBehaviour {
 
     [Header("Directional Speed")]
     [SerializeField] public Vector3 Speed;
 
     [Header("Spawner")]
-    [SerializeField] GameObject Spawner;
+    GameObject Spawner;
 
     [Header("Special Triggers")]
     [SerializeField] SpecialTrigger2 left, right, Movement;
-
     Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0) };
 
     public Rigidbody rb;
-    public bool SwitchControls = false;
     public bool AnimationLock = false;
     public bool Teleporterlock = false;
     public int currentDirection, p_Direction;
@@ -31,14 +30,20 @@ public class PacmanMovement : MonoBehaviour {
 
     void Start()
     {
+        gameObject.transform.parent = GameObject.FindGameObjectWithTag("Object Parent").transform;
+        Spawner = GameObject.Find("Pacman Spawn");
         transform.position = Spawner.transform.position;
         rb = GetComponent<Rigidbody>();
         currentDirection = 0;
         LockMovement = false;
+        FindObjectOfType<General>().SendMessageUpwards("Broadcast");
     }
 
     void Update()
     {
+        if (!hasAuthority)
+            return;
+
         if (Movement.Collision) { Teleporterlock = true; } else { Teleporterlock = false; }
         p_Direction = currentDirection;
         p_Key = currentKey;
@@ -47,8 +52,7 @@ public class PacmanMovement : MonoBehaviour {
             Move_Player();
             if (!Teleporterlock)
             {
-                if (SwitchControls) { TopDownMode(); }
-                else { FirstPersonMode(); }
+               FirstPersonMode();
             }
         }
         else { rb.velocity = Vector3.zero; }
@@ -71,27 +75,6 @@ public class PacmanMovement : MonoBehaviour {
        
     }
     
-    private void TopDownMode()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            HandleKeyInputNormal(0);
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            HandleKeyInputNormal(2);
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            HandleKeyInputNormal(3);
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            HandleKeyInputNormal(1);
-        }
-        Rotation();
-    }
-
     private void HandleKeyInput(KeyCode KeyInput, int Direction)
     {
         if (KeyInput != KeyCode.S)
@@ -110,12 +93,6 @@ public class PacmanMovement : MonoBehaviour {
         }
         currentKey = KeyInput;
         Rotation();
-    }
-
-    public void HandleKeyInputNormal(int direction)
-    {
-        currentDirection = direction;
-        Move_Player();
     }
 
     public void Move_Player()
@@ -175,5 +152,6 @@ public class PacmanMovement : MonoBehaviour {
     public void DisableGravity()
     {
         GetComponent<Rigidbody>().useGravity = false;
+        
     }
 }

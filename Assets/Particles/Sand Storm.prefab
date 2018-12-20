@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 19800000}
   - component: {fileID: 19900000}
   - component: {fileID: 114784782594250770}
+  - component: {fileID: 114964909583261208}
   m_Layer: 0
   m_Name: Sand Storm
   m_TagString: Untagged
@@ -4589,3 +4590,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b86e7fc01adf7542bebc8c265e1a898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114964909583261208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 31
+    i1: 122
+    i2: 164
+    i3: 212
+    i4: 14
+    i5: 223
+    i6: 246
+    i7: 228
+    i8: 139
+    i9: 84
+    i10: 144
+    i11: 3
+    i12: 202
+    i13: 208
+    i14: 49
+    i15: 225
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1

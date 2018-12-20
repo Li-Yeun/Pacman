@@ -21,7 +21,9 @@ GameObject:
   - component: {fileID: 4096223034079364}
   - component: {fileID: 20953923905012444}
   - component: {fileID: 81994378398507208}
-  - component: {fileID: 114547540887563970}
+  - component: {fileID: 114109351705570280}
+  - component: {fileID: 114522778291549850}
+  - component: {fileID: 114262317596590430}
   m_Layer: 0
   m_Name: MiniMap
   m_TagString: Untagged
@@ -35,7 +37,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1892565082899440}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 2.05, y: 17.74, z: 9.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -58,19 +60,19 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.7
-    y: 0.5
-    width: 0.3
-    height: 0.5
+    x: 0.79
+    y: 0.66
+    width: 0.18
+    height: 0.27
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 47
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 30519
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -89,7 +91,7 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1892565082899440}
   m_Enabled: 1
---- !u!114 &114547540887563970
+--- !u!114 &114109351705570280
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,15 +99,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 1892565082899440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bfccf361fdbf7849b3a477cd36cdcb7, type: 3}
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraX: 0
-  cameraY: 11.62
-  cameraZ: 0
-  xrotate: 0
-  yrotate: 0
-  zrotate: 0
-  Lights:
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 92
+    i1: 162
+    i2: 103
+    i3: 220
+    i4: 211
+    i5: 35
+    i6: 123
+    i7: 180
+    i8: 40
+    i9: 69
+    i10: 234
+    i11: 6
+    i12: 214
+    i13: 77
+    i14: 4
+    i15: 120
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114262317596590430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1892565082899440}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b07b89faf31d6b46b302189cf37ea9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisableLights:
   - {fileID: 0}
   - {fileID: 0}
+  EnableLights:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &114522778291549850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1892565082899440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e9e82a31b09ee47a01d08495e33093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

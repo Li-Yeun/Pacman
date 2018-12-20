@@ -5,11 +5,11 @@ using UnityEngine.Networking;
 
 public class MiniMap : NetworkBehaviour {
 
-    public Transform FollowTarget;
+    Transform FollowTarget;
 
 	// Use this for initialization
 	void Start () {
-        PacmanMultiMovement Target = FindObjectOfType<PacmanMultiMovement>();
+        PacmanMovement Target = FindObjectOfType<PacmanMovement>();
         FollowTarget = Target.gameObject.transform;
     }
 	

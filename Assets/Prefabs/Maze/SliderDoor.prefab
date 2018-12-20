@@ -159,4 +159,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95336576965249456}
-  pacmanMovement: {fileID: 0}

@@ -84,12 +84,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4e9c96826d8d64ca769edf9c9a475f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GhostObject: {fileID: 1148053677652030, guid: a155ea71e7a126a49a75a6af11f15e00,
+  GhostObject: {fileID: 1386731014217534, guid: 7034bb6ec5beb514da13788bce1adbed,
     type: 2}
-  PacmanObject: {fileID: 1225817121689970, guid: 436e604535b9b5e40b0aa7ae9af8f4b3,
+  PacmanObject: {fileID: 1990302627283604, guid: 33b8e3e30ca18474b9e2124c286d85de,
     type: 2}
   FirstPerson: {fileID: 1923607694538722, guid: 3e1ffd642bcd73744a44a72a486b13b7,
     type: 2}
-  MiniMap: {fileID: 1988991201972808, guid: 6f00f5a8e1d589743ba67a34877990cf, type: 2}
+  MiniMap: {fileID: 1892565082899440, guid: 5ca267dcd3237bb42845ea06d64d0478, type: 2}
   TopDownCamera: {fileID: 1662447514158034, guid: 916f3cf6a12c2ce41941a4eb84207307,
     type: 2}
