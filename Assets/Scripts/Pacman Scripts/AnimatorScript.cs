@@ -22,16 +22,22 @@ public class AnimatorScript : MonoBehaviour {
 
 
     // Use this for initialization
-    Animator animator;
+    [Header("Animators")]
+    Animator animator2;
+    [SerializeField] Animator animatorBodyMesh;
+
+
+
     [SerializeField] PacmanMovement Pacman;
     [SerializeField] GameObject PacmanAnimationObject;
     [SerializeField] Transform PacmanParentParent;
-    [SerializeField] Animator animatorSalto;
+
     GameObject go;
     [Header("Jump Ookay")] 
     [SerializeField] SpecialTrigger2 Jumper;
     [SerializeField] SpecialTrigger2 JumperOuterWalls;
-    public bool JumpRunning = false;
+    public List<GameObject> Apple;
+    public bool AnimationPlaying = false;
 
     void Start()
     {
@@ -40,7 +46,7 @@ public class AnimatorScript : MonoBehaviour {
     public void Overzetten()
     {
         go = Instantiate(PacmanAnimationObject);
-        animator = go.GetComponent<Animator>();
+        animator2 = go.GetComponent<Animator>();
         go.transform.parent = PacmanParentParent;
         Pacman.transform.parent = go.transform.transform;
     }
@@ -49,34 +55,57 @@ public class AnimatorScript : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!Jumper.Collision && !JumperOuterWalls.Collision && !JumpRunning)
+            if (!Jumper.Collision && !JumperOuterWalls.Collision && !AnimationPlaying)
             {
                 Jump();
             }
         }
+        foreach (GameObject apple in Apple)
+        {
+            if (apple.GetComponent<SpecialTrigger2>().Collision)
+            {
+                ScoutingJump();
+                Destroy(apple);
+                Apple.Remove(apple);
+                return;
+            }
+        }
     }
 
-    void Jump()
+    void StartAnimation(float duratation, bool LockMovements)
     {
-        JumpRunning = true;
-        Pacman.AnimationLock = true;
-        switch (Pacman.currentDirection)
-        {
-            case 0: animator.Play("PacmanAnimationJump3"); break; 
-            case 1: animator.Play("PacmanAnimationJump");  break;
-            case 2: animator.Play("PacmanAnimationJump4"); break;
-            case 3: animator.Play("PacmanAnimationJump2"); break;
-        }
-        animatorSalto.Play("PacmanSalto");
-        Invoke("EndJump", 1f);
+        AnimationPlaying = true;
+        if (LockMovements)
+            Pacman.AnimationLock = true;
+        Invoke("EndAnimation", duratation);
     }
-    void EndJump()
+
+    void EndAnimation()
     {
         Pacman.transform.parent = PacmanParentParent;
         Destroy(go);
         Overzetten();
         Pacman.Position = new Vector3(Pacman.Position.x, 2, Pacman.Position.z);
         Pacman.AnimationLock = false;
-        JumpRunning = false;
+        AnimationPlaying = false;
+    }
+
+    void Jump()
+    {
+        StartAnimation(1f,true);
+        switch (Pacman.currentDirection)
+        {
+            case 0: animator2.Play("PacmanAnimationJump3"); break;
+            case 1: animator2.Play("PacmanAnimationJump"); break;
+            case 2: animator2.Play("PacmanAnimationJump4"); break;
+            case 3: animator2.Play("PacmanAnimationJump2"); break;
+        }
+        animatorBodyMesh.Play("PacmanSalto");
+    }
+
+    void ScoutingJump()
+    {
+        StartAnimation(2f, false);
+        animatorBodyMesh.Play("Apple");
     }
 }

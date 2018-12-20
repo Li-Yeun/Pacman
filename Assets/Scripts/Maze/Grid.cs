@@ -13,7 +13,7 @@ public class Grid: MonoBehaviour {
     public GameObject SlidingDoor;
     public GameObject Teleporter;
     public GameObject SpawnPacman;
-    public GameObject Citroen;
+    public GameObject Citroen, Apple;
     [Header("Parents")]
     [SerializeField] Transform PelletsParent,SlidingDoorParent,TeleporterParent,BuildingBlockParent,PowerPillParent,CitroenParent, SpawnerParent;
     public char [,] gamegrid;
@@ -36,7 +36,7 @@ public class Grid: MonoBehaviour {
             { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','s','s','s','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
             { 'b','p','b','b','b','b','b','b','e','e','e','e','e','e','b','e','b','s','s','s','b','e','e','e','e','e','e','e','e','b','b','b','b','b','b','p','b' },
             { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','b','b','b','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
-            { 'b','b','e','b','b','f','b','b','b','b','e','e','b','e','b','e','e','e','e','e','e','e','b','e','b','e','e','b','b','b','b','f','b','b','e','b','b' },
+            { 'b','b','e','b','b','f','b','b','b','b','e','e','b','e','b','e','e','e','a','e','e','e','b','e','b','e','e','b','b','b','b','f','b','b','e','b','b' },
             { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
             { 't','e','e','b','e','b','e','b','e','b','e','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','e','b','e','b','e','b','e','b','e','e','t' },
             { 'b','b','e','b','e','b','e','b','e','b','e','b','b','f','b','b','b','e','b','e','b','b','b','f','b','b','e','b','e','b','e','b','e','b','e','b','b' },
@@ -75,7 +75,6 @@ public class Grid: MonoBehaviour {
             case 'b':
                 {
                     InstantiateObject(block1,x,z);
-               
                 }
                 break;
             case 'e':
@@ -125,6 +124,11 @@ public class Grid: MonoBehaviour {
             case 'c':
                 {
                     InstantiateObject(Citroen, x, z);
+                }
+                break;
+            case 'a':
+                {
+                    InstantiateObject(Apple, x, z);
                 }
                 break;
             default: break;
