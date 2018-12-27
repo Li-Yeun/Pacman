@@ -93,3 +93,7 @@ MonoBehaviour:
   MiniMap: {fileID: 1892565082899440, guid: 5ca267dcd3237bb42845ea06d64d0478, type: 2}
   TopDownCamera: {fileID: 1662447514158034, guid: 916f3cf6a12c2ce41941a4eb84207307,
     type: 2}
+  MiniMapLight: {fileID: 1492236938368748, guid: ab692e9273b8c6a4cb0951363d4d5269,
+    type: 2}
+  GeneralLight: {fileID: 1583380133374922, guid: d2e44daf971ced84ea15a9a3cbc2bffe,
+    type: 2}

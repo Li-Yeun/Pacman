@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class TurnOnOFFLight : MonoBehaviour {
 
-    [SerializeField] List<Light> DisableLights;
-    [SerializeField] List<Light> EnableLights;
+    Light[] DisableLights;
+   // List<Light>EnableLights;
 
     public void Start()
     {
-        
+        DisableLights = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Light>();
     }
     void OnPreRender()
     {
@@ -17,11 +17,12 @@ public class TurnOnOFFLight : MonoBehaviour {
         {
             light.enabled = true;
         }
-
+/*
         foreach (Light light in EnableLights)
         {
             light.enabled = false;
         }
+        */
     }
 
     void OnPostRender()
@@ -31,9 +32,11 @@ public class TurnOnOFFLight : MonoBehaviour {
             light.enabled = false;
         }
 
+        /*
         foreach (Light light in EnableLights)
         {
             light.enabled = true;
         }
+        */
     }
 }

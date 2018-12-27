@@ -3951,14 +3951,15 @@ MonoBehaviour:
   left: {fileID: 114759327691288254}
   right: {fileID: 114074931950441828}
   agent: {fileID: 195016883331229240}
-  speed: 4
-  Respawntime: 8
+  speed: 3
+  Respawntime: 0
   Controls:
   - x
   - z
   - c
   - v
   - b
+  dead: 0
   Vision: {fileID: 114325951750609582}
   Cooldown:
   - 5
@@ -4079,7 +4080,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathFX: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 2}
-  pacmanAttacking: {fileID: 114034265871168360}
 --- !u!114 &114826586837290788
 MonoBehaviour:
   m_ObjectHideFlags: 1

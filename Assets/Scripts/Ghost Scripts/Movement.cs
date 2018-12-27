@@ -22,7 +22,7 @@ public class Movement : NetworkBehaviour {
     [SerializeField] string[] Controls = new string[2];        //controls van spookje
 
     Vector3 Velocity;                                          //beweegsnelheid
-    bool dead = false;                                         //als true is de speler doodgegaan
+    public bool dead = false;                                         //als true is de speler doodgegaan
     float RotationCooldown = 0;                                //tijd voordat er weer gedraaid kan worden
     float respawntimer = 0;
 
@@ -44,6 +44,7 @@ public class Movement : NetworkBehaviour {
         cooldowncounter = new float[4];
         DurationCounter = new float[4];
         FindObjectOfType<General>().GhostBroadcast();
+        gameObject.transform.position = respawn.position;
     }
 
     
@@ -104,6 +105,7 @@ public class Movement : NetworkBehaviour {
             dead = false;
             agent.enabled = false;
             gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+            gameObject.transform.position = respawn.position;
             respawntimer = 0;
 
         }

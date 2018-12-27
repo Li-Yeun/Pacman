@@ -8,6 +8,8 @@ public class PlayerOnline : NetworkBehaviour {
     [SerializeField] GameObject GhostObject;
     [SerializeField] GameObject PacmanObject;
     [SerializeField] GameObject FirstPerson, MiniMap, TopDownCamera;
+    [SerializeField] GameObject MiniMapLight, GeneralLight;
+
     // Use this for initialization
     void Start () {
 
@@ -39,6 +41,8 @@ public class PlayerOnline : NetworkBehaviour {
     {
         Instantiate(FirstPerson);
         Instantiate(MiniMap);
+        Instantiate(MiniMapLight);
+        Instantiate(GeneralLight);
     }
 
     [Command]

@@ -128,14 +128,8 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662447514158034}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b07b89faf31d6b46b302189cf37ea9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisableLights:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  EnableLights:
-  - {fileID: 0}
