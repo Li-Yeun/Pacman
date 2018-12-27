@@ -5,10 +5,11 @@ using UnityEngine;
 public class IgnoreGhosts : MonoBehaviour
 {
     [Tooltip("FX prefab on player")] [SerializeField] GameObject DeathFX;
-    [SerializeField] Transform Spawner;
+    Transform Spawner;
     public PacmanAttacking pacmanAttacking;
     private void Start()
     {
+        Spawner = GameObject.Find("SpawnAtRunTime").transform;
         pacmanAttacking = pacmanAttacking.GetComponent<PacmanAttacking>();
     }
 

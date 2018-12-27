@@ -36,7 +36,7 @@ public class PacmanMovement : NetworkBehaviour {
         rb = GetComponent<Rigidbody>();
         currentDirection = 0;
         LockMovement = false;
-        FindObjectOfType<General>().SendMessageUpwards("Broadcast");
+        FindObjectOfType<General>().PacmanBroadcast();
     }
 
     void Update()

@@ -10,58 +10,47 @@ public class PlayerOnline : NetworkBehaviour {
     [SerializeField] GameObject FirstPerson, MiniMap, TopDownCamera;
     // Use this for initialization
     void Start () {
-        if (!isLocalPlayer)
-        {
-            FirstPerson.SetActive(false);
-            MiniMap.SetActive(false);
-            TopDownCamera.SetActive(false);
-        }
-        else if (isLocalPlayer)
+
+        if (isLocalPlayer)
         {
             if (FindObjectsOfType<PacmanMovement>().Length == 0)
             {
                 CmdSpawnMyPacman();
-                FirstPerson.SetActive(true);
-                MiniMap.SetActive(true);
-                TopDownCamera.SetActive(false);
+                NormalSpawnMyPacman();
+
             }
-            else if (FindObjectsOfType<PacmanMovement>().Length >= 1)
+            else
             {
                 CmdSpawnMyGhost();
-
-                // Dit werkt nog niet
-                TopDownCamera.SetActive(true);
-                FirstPerson.SetActive(false);
-                MiniMap.SetActive(false);
+                NormalSpawnMyGhost();
             }
         }
     }
-
-    // Update is called once per frame
-    void Update () {
-        return;
-	}
 
     [Command]
     void CmdSpawnMyPacman()
     {
         GameObject Pacman = Instantiate(PacmanObject);
-
-        GameObject firstPerson = Instantiate(FirstPerson);
-        GameObject miniMap = Instantiate(MiniMap);
-
         NetworkServer.SpawnWithClientAuthority(Pacman, connectionToClient);
-        NetworkServer.SpawnWithClientAuthority(firstPerson, connectionToClient);
-        NetworkServer.SpawnWithClientAuthority(miniMap, connectionToClient);
+
+    }
+
+    void NormalSpawnMyPacman()
+    {
+        Instantiate(FirstPerson);
+        Instantiate(MiniMap);
     }
 
     [Command]
     void CmdSpawnMyGhost()
     {
         GameObject Ghost = Instantiate(GhostObject);
-        GameObject topDownCamera = Instantiate(TopDownCamera);
         NetworkServer.SpawnWithClientAuthority(Ghost, connectionToClient);
-        NetworkServer.SpawnWithClientAuthority(TopDownCamera, connectionToClient);
+    }
+
+    void NormalSpawnMyGhost()
+    {
+      Instantiate(TopDownCamera);
     }
 
 }

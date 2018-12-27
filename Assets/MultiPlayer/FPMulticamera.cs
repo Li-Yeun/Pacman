@@ -20,8 +20,6 @@ public class FPMulticamera : NetworkBehaviour
 
     void Update ()
     {
-        if (!hasAuthority)
-            return;
          gameObject.transform.position = tr_Target.position + Offset;
          TargetAngle = tr_Target.rotation * Quaternion.Euler(0, R_offset.y, 0);
          gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, TargetAngle, turnspeed * Time.deltaTime);

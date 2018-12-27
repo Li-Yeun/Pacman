@@ -12,7 +12,7 @@ public class Movement : NetworkBehaviour {
     [Header("General")]
     [SerializeField] SpecialTrigger2 front, left, right;               //colliders voor navigatie
     [SerializeField] NavMeshAgent agent;                       //navigatie voor teruggaan naar spawn
-    [SerializeField] Transform respawn;                        //locatie van spawnpunt
+    private Transform respawn;                        //locatie van spawnpunt
 
     [Header("Ghost Behaviour")]
     [SerializeField] int speed = 100;                          //beweegsnelheid
@@ -38,11 +38,13 @@ public class Movement : NetworkBehaviour {
     void Start ()
     {
         gameObject.transform.parent = GameObject.FindGameObjectWithTag("Ghost Parent").transform;
+        respawn = GameObject.FindGameObjectWithTag("Respawn").transform;
         agent.enabled = false;
         Abilities = new bool[4];
         cooldowncounter = new float[4];
         DurationCounter = new float[4];
-	}
+        FindObjectOfType<General>().GhostBroadcast();
+    }
 
     
     void Update ()

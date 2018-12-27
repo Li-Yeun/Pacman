@@ -32,6 +32,7 @@ public class PacmanAttacking : MonoBehaviour {
             TimePassed = 0; 
         }
 	}
+
     public void PacmanIsTheHunter()
     {
         animator.SetBool("PacmanIsOnTheHunt", true);

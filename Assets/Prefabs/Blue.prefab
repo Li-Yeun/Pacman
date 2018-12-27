@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4918657589427970}
   - component: {fileID: 95190057598186034}
   - component: {fileID: 114034265871168360}
+  - component: {fileID: 114826586837290788}
   m_Layer: 12
   m_Name: Animated Ghost
   m_TagString: Untagged
@@ -895,6 +896,7 @@ GameObject:
   - component: {fileID: 4988782904230416}
   - component: {fileID: 95828528695723344}
   - component: {fileID: 114858539162788368}
+  - component: {fileID: 114001387388492798}
   m_Layer: 11
   m_Name: Animated Ghost 3D
   m_TagString: Untagged
@@ -3876,6 +3878,38 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114001387388492798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1620577394467372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 112
+    i1: 52
+    i2: 187
+    i3: 110
+    i4: 197
+    i5: 190
+    i6: 181
+    i7: 20
+    i8: 218
+    i9: 19
+    i10: 120
+    i11: 139
+    i12: 206
+    i13: 26
+    i14: 219
+    i15: 237
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114034265871168360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3917,7 +3951,6 @@ MonoBehaviour:
   left: {fileID: 114759327691288254}
   right: {fileID: 114074931950441828}
   agent: {fileID: 195016883331229240}
-  respawn: {fileID: 0}
   speed: 4
   Respawntime: 8
   Controls:
@@ -4046,8 +4079,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathFX: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 2}
-  Spawner: {fileID: 0}
   pacmanAttacking: {fileID: 114034265871168360}
+--- !u!114 &114826586837290788
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1051348829376662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 112
+    i1: 52
+    i2: 187
+    i3: 110
+    i4: 197
+    i5: 190
+    i6: 181
+    i7: 20
+    i8: 218
+    i9: 19
+    i10: 120
+    i11: 139
+    i12: 206
+    i13: 26
+    i14: 219
+    i15: 237
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114858539162788368
 MonoBehaviour:
   m_ObjectHideFlags: 1

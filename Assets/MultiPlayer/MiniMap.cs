@@ -15,8 +15,6 @@ public class MiniMap : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate() {
-        if (!hasAuthority)
-            return;
         transform.position = new Vector3(FollowTarget.transform.position.x, transform.position.y, FollowTarget.transform.position.z);
 	}
 }
