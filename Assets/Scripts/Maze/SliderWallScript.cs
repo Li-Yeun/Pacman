@@ -8,6 +8,7 @@ public class SliderWallScript : MonoBehaviour
     GameObject pacmanMovement;
     float TimeSpent = 0;
     bool DoorOpen = false;
+    public bool ActivateDoor = false;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -20,8 +21,9 @@ public class SliderWallScript : MonoBehaviour
         TimeSpent += Time.deltaTime;
         if (TimeSpent >= 2)
         {
-            if (Input.GetKeyDown("1"))
+            if (ActivateDoor)
             {
+                ActivateDoor = false;
                 anim.Play("SlidingIn");
                 DoorOpen = true;
                 TimeSpent = 0;

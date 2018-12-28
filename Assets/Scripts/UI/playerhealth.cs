@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
 public class playerhealth : MonoBehaviour {
 
@@ -34,7 +35,8 @@ public class playerhealth : MonoBehaviour {
 
     void Dead()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        NetworkManager networkManager = FindObjectOfType<NetworkManager>();
+        networkManager.ServerChangeScene(SceneManager.GetActiveScene().name);
     }
 
     public void Healthbar()
