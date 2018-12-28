@@ -2,39 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PacmanAttacking : MonoBehaviour {
+public class GhostStates : MonoBehaviour
+{
 
-    Animator animator;
+    private Animator animator;
     public float TimePassed = 0;
-    public bool PacmanIsTheBoyInTown;
-	// Use this for initialization
-	void Start ()
+
+    void Start()
     {
         animator = GetComponent<Animator>();
         animator.Play("SpookAnimationBlue");
         animator.SetBool("PacmanIsOnTheHunt", false);
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    void Update()
     {
         if (Input.GetKeyDown("8"))
         {
-            PacmanIsTheHunter();
+            Vulnerable();
         }
 
-        if (animator.GetBool("PacmanIsOnTheHunt")) { TimePassed += Time.deltaTime; PacmanIsTheBoyInTown = true; }
+        if (animator.GetBool("PacmanIsOnTheHunt"))
+        {
+            TimePassed += Time.deltaTime;
+        }
 
         if (TimePassed >= 10)
         {
             animator.SetBool("PacmanIsOnTheHunt", false);
-            PacmanIsTheBoyInTown = false;
-            TimePassed = 0; 
+            TimePassed = 0;
         }
-	}
+    }
 
-    public void PacmanIsTheHunter()
+    public void Vulnerable()
     {
         animator.SetBool("PacmanIsOnTheHunt", true);
     }
+
+    public bool IsVulnerable
+    {
+        get { return animator.GetBool("PacmanIsOnTheHunt");}
+    }
+
+
 }

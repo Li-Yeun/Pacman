@@ -7,8 +7,8 @@ using UnityEngine;
 /// </summary>
 public class PowerpilBehaviour : MonoBehaviour {
 
-    public bool powerpileaten;
-    private PacmanAttacking[] AnimationScriptSpookjes;
+    [SerializeField] bool powerpileaten;
+    private GhostStates[] AnimationScriptSpookjes;
     private ScoreCounter powerpilscore;
 
     // Use this for initialization
@@ -39,16 +39,16 @@ public class PowerpilBehaviour : MonoBehaviour {
         {
             gameObject.SetActive(false);
             powerpilscore.PowerpilPoints();
-            foreach (PacmanAttacking Ghost in AnimationScriptSpookjes)
+            foreach (GhostStates Ghost in AnimationScriptSpookjes)
             {
                 if (Ghost == null)
                     Debug.Log("No Ghosts");
-                Ghost.PacmanIsTheHunter();
+                Ghost.Vulnerable();
             }
         }   
 	}
     public void GhostInstantiated()
     {
-        AnimationScriptSpookjes = FindObjectsOfType<PacmanAttacking>();
+        AnimationScriptSpookjes = FindObjectsOfType<GhostStates>();
     }
 }

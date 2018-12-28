@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IgnoreGhosts : MonoBehaviour
+public class GhostCollision : MonoBehaviour
 {
     [Tooltip("FX prefab on player")] [SerializeField] GameObject DeathFX;
-    Transform Spawner;
-    PacmanAttacking pacmanAttacking;
-    bool dead;
+    private Transform Spawner;
+    private GhostStates pacmanAttacking;
+
     private void Start()
     {
         Spawner = GameObject.Find("SpawnAtRunTime").transform;
-
     }
 
     void OnCollisionEnter(Collision col)
@@ -26,7 +25,7 @@ public class IgnoreGhosts : MonoBehaviour
                 break;
             case "Player":
                 {  //Zorgt dat het geestje doodgaat als pacman een powerpill op heeft.
-                    if (pacmanAttacking.PacmanIsTheBoyInTown)
+                    if (pacmanAttacking.IsVulnerable)
                     {
                         GameObject fx = Instantiate(DeathFX, transform.position, Quaternion.identity);
                         fx.transform.parent = Spawner;
@@ -38,9 +37,10 @@ public class IgnoreGhosts : MonoBehaviour
                 break;
         }
     }
+
     public void GhostInstantiated()
     {
-        pacmanAttacking = FindObjectOfType<PacmanAttacking>();
+        pacmanAttacking = FindObjectOfType<GhostStates>();
     }
 
 }

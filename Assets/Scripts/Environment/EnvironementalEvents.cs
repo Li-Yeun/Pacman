@@ -27,7 +27,7 @@ public class EnvironementalEvents : NetworkBehaviour {
     [Command]
     private void CmdActivateEvent(GameObject gameObject)
     {
-        if (FindObjectsOfType<SmokeScript>().Length == 0)
+        if (FindObjectsOfType<ParticleScript>().Length == 0)
         {
             GameObject go = Instantiate(gameObject);
             go.transform.parent = parent;

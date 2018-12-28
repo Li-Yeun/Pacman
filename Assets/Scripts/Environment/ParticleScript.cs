@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmokeScript : MonoBehaviour {
+public class ParticleScript : MonoBehaviour {
 
     ParticleSystem particleSystem;
 	void Start () {

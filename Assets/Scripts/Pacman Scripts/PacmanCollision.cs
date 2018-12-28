@@ -6,7 +6,7 @@ public class PacmanCollision : MonoBehaviour {
 
     [Tooltip("FX prefab on player")] [SerializeField] GameObject DeathFX;
     [SerializeField] Transform parent;
-    PacmanAttacking pacmanAttacking;
+    GhostStates pacmanAttacking;
     playerhealth Health;
 
     private void Start()
@@ -20,7 +20,7 @@ public class PacmanCollision : MonoBehaviour {
         switch (collision.gameObject.tag)
         {
             case "Enemy":
-            if (!pacmanAttacking.PacmanIsTheBoyInTown)
+            if (!pacmanAttacking.IsVulnerable)
             {
                     GameObject fx = Instantiate(DeathFX, transform.position, Quaternion.identity);
                     fx.transform.parent = parent;
@@ -38,7 +38,7 @@ public class PacmanCollision : MonoBehaviour {
 
     public void GhostInstantiated()
     {
-        pacmanAttacking = FindObjectOfType<PacmanAttacking>();
+        pacmanAttacking = FindObjectOfType<GhostStates>();
     }
 
 }

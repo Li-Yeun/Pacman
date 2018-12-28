@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class IncreaseVision : MonoBehaviour {
+public class IncreaseVision : NetworkBehaviour {
     public bool activated;
     public Transform tr;
     public Light lt;
