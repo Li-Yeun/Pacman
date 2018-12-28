@@ -17,7 +17,7 @@ public class ParticleScript : MonoBehaviour {
     void TurnOffSmokes()
     {
         particleSystem.loop = false;
-        Invoke("DestroySmoke", 11);
+        Invoke("DestroySmoke", 11f);
     }
 
     void DestroySmoke()

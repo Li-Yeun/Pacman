@@ -5,27 +5,32 @@ using UnityEngine.Networking;
 
 public class EnvironementalEvents : NetworkBehaviour {
 
-    [SerializeField] GameObject Smoke, FireWorks, SandStorm, Water;
+    [SerializeField] GameObject Smoke, FireWorks, SandStorm, Water, Confusion;
     [SerializeField] Transform parent;
 
 	// Update is called once per frame
 	void Update () {
+        if (!hasAuthority)
+            return;
         if (Input.GetKeyDown("2"))
         {
-            CmdActivateEvent(Smoke);
+            ActivateEvent(Smoke);
         }
         else if (Input.GetKeyDown("4"))
         {
-            CmdActivateEvent(FireWorks);
+            ActivateEvent(FireWorks);
         }
         else if (Input.GetKeyDown("5"))
         {
-            CmdActivateEvent(SandStorm);
+            ActivateEvent(SandStorm);
+        }
+        else if (Input.GetKeyDown("6"))
+        {
+            ActivateEvent(Confusion);
         }
     }
 
-    [Command]
-    private void CmdActivateEvent(GameObject gameObject)
+    private void ActivateEvent(GameObject gameObject)
     {
         if (FindObjectsOfType<ParticleScript>().Length == 0)
         {

@@ -698,6 +698,7 @@ MonoBehaviour:
   FireWorks: {fileID: 100002, guid: 180149b1a35449044a27b451e816d2de, type: 2}
   SandStorm: {fileID: 100000, guid: 1f7aa4d40edff6e48b549003cad031e1, type: 2}
   Water: {fileID: 0}
+  Confusion: {fileID: 1167075366954008, guid: 79fa616c2031b4746842d6c8904f9f8d, type: 2}
   parent: {fileID: 0}
 --- !u!114 &114074681834381426
 MonoBehaviour:
@@ -764,7 +765,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeathFX: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 2}
   parent: {fileID: 0}
-  pacmanAttacking: {fileID: 0}
 --- !u!114 &114276165710159438
 MonoBehaviour:
   m_ObjectHideFlags: 1

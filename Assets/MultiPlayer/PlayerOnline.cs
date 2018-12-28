@@ -14,7 +14,7 @@ public class PlayerOnline : NetworkBehaviour {
     // Use this for initialization
     void Start () {
 
-                    sliderWallScript = FindObjectsOfType<SliderWallScript>();
+        sliderWallScript = FindObjectsOfType<SliderWallScript>();
         if (isLocalPlayer)
         {
             if (FindObjectsOfType<PacmanMovement>().Length == 0)
