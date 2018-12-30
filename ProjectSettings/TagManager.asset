@@ -15,6 +15,7 @@ TagManager:
   - Object Parent
   - Camera Parent
   - Ghost Parent
+  - Event
   layers:
   - Default
   - TransparentFX
