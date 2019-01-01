@@ -17,6 +17,7 @@ public class PacmanCollision : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        //todo Serverbased maken
         switch (collision.gameObject.tag)
         {
             case "Enemy":

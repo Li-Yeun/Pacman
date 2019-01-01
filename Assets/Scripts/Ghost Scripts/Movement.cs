@@ -203,4 +203,9 @@ public class Movement : NetworkBehaviour {
         }
 
     }
+
+    public void Reset()
+    {
+        DoRespawn();
+    }
 }

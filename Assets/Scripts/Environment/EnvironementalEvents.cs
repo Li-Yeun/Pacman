@@ -59,4 +59,15 @@ public class EnvironementalEvents : NetworkBehaviour {
         go.transform.parent = parent;
         NetworkServer.Spawn(go);
     }
+
+    public void Reset()
+    {
+        if(GameObject.FindGameObjectWithTag("Event") != null)
+        {
+            foreach(GameObject Event in GameObject.FindGameObjectsWithTag("Event"))
+            {
+                Destroy(Event);
+            }
+        }
+    }
 }

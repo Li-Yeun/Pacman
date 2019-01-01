@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// Deze class is verantwoordelijk voor het initialise van het level.
 /// </summary>
-public class Grid: MonoBehaviour {
+public class Grid : MonoBehaviour
+{
     private int TimesTeleporterCreated = 0;
     float Timer = 0;
     public GameObject block1;
@@ -15,13 +16,13 @@ public class Grid: MonoBehaviour {
     public GameObject SpawnPacman;
     public GameObject Citroen, Apple;
     [Header("Parents")]
-    [SerializeField] Transform PelletsParent,SlidingDoorParent,TeleporterParent,BuildingBlockParent,PowerPillParent,CitroenParent, SpawnerParent;
-    public char [,] gamegrid;
+    [SerializeField] Transform PelletsParent, SlidingDoorParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, SpawnerParent, AppleParent;
+    public char[,] gamegrid;
 
     void Start()
     {
         // Dit is de level layout, hier staat in waar wat wordt geplaatst in de grid op het moment dat het level geladen wordt.
-        gamegrid = new char [,] 
+        gamegrid = new char[,]
         {
             { 'b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b' },
             { 'b','e','e','e','e','e','e','b','e','b','p','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','p','b','e','b','e','e','e','e','e','e','b' },
@@ -58,8 +59,8 @@ public class Grid: MonoBehaviour {
         for (int z = 0; z < gamegrid.GetLongLength(1); z++)
             for (int x = 0; x < gamegrid.GetLongLength(0); x++)
             {
-                LoadBlock(gamegrid[x,z], z, x);
-            } 
+                LoadBlock(gamegrid[x, z], z, x);
+            }
     }
     /// <summary>
     ///  Deze methode doet aan de hand wat er daar op in de grid staat het object laden.
@@ -74,22 +75,22 @@ public class Grid: MonoBehaviour {
         {
             case 'b':
                 {
-                    InstantiateObject(block1,x,z);
+                    InstantiateObject(block1, x, z, BuildingBlockParent);
                 }
                 break;
             case 'e':
                 {
-                    InstantiateObject(pellet, x, z);
+                    InstantiateObject(pellet, x, z, PelletsParent);
                 }
                 break;
             case 'p':
                 {
-                    InstantiateObject(powerpill, x, z);
+                    InstantiateObject(powerpill, x, z, PowerPillParent);
                 }
                 break;
             case 'f':
                 {
-                    InstantiateObject(SlidingDoor, x, z);
+                    InstantiateObject(SlidingDoor, x, z, SlidingDoorParent);
                 }
                 break;
             case 't':
@@ -118,27 +119,27 @@ public class Grid: MonoBehaviour {
                 break;
             case 'k': // Werkt niet.
                 {
-                    InstantiateObject(SpawnPacman, x, z);
+                    InstantiateObject(SpawnPacman, x, z, SpawnerParent);
                 }
                 break;
             case 'c':
                 {
-                    InstantiateObject(Citroen, x, z);
+                    InstantiateObject(Citroen, x, z, CitroenParent);
                 }
                 break;
             case 'a':
                 {
-                    InstantiateObject(Apple, x, z);
+                    InstantiateObject(Apple, x, z, AppleParent);
                 }
                 break;
             default: break;
         }
     }
 
-    private void InstantiateObject(GameObject gameObject, int x, int z)
+    private void InstantiateObject(GameObject gameObject, int x, int z, Transform Parent)
     {
         GameObject gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
-        gameObjectt.transform.parent = BuildingBlockParent;
+        gameObjectt.transform.parent = Parent;
         if (gameObject == block1)
         {
             gameObjectt.transform.localPosition = new Vector3(x, 1.5f, z);
@@ -167,6 +168,17 @@ public class Grid: MonoBehaviour {
                 case 1: LoadBlock('c', 35, 1); break;
                 case 2: LoadBlock('c', 1, 21); break;
                 case 3: LoadBlock('c', 35, 21); break;
+            }
+        }
+    }
+
+    public void Reset()
+    {
+        if (GameObject.FindGameObjectWithTag("Fruit") != null)
+        {
+            foreach (GameObject Fruit in GameObject.FindGameObjectsWithTag("Fruit"))
+            {
+                Destroy(Fruit);
             }
         }
     }

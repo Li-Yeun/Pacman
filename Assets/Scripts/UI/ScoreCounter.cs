@@ -34,4 +34,9 @@ public class ScoreCounter : MonoBehaviour {
             Debug.Log("PACMAN WINS!");
         }
 	}
+
+    public void Reset()
+    {
+        counter = 0;
+    }
 }

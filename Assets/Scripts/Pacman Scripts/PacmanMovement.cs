@@ -154,4 +154,9 @@ public class PacmanMovement : NetworkBehaviour {
         GetComponent<Rigidbody>().useGravity = false;
         
     }
+
+    public void Reset()
+    {
+        StartDeathSequence();
+    }
 }

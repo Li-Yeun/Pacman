@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PelletBehaviour : MonoBehaviour {
 
-    bool pelleteaten;
+    public bool pelleteaten;
     private ScoreCounter pelletscore;
     public float Timer = 0;
 
@@ -33,7 +33,7 @@ public class PelletBehaviour : MonoBehaviour {
     void Update () {
 		if (pelleteaten)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             pelletscore.PelletPoints();
         }
 	}

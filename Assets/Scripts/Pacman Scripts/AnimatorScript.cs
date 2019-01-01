@@ -63,6 +63,9 @@ public class AnimatorScript : NetworkBehaviour {
                 Jump();
             }
         }
+
+        //Todo Herschrijven
+
         foreach (GameObject apple in Apple)
         {
             if (apple.GetComponent<SpecialTrigger2>().Collision)

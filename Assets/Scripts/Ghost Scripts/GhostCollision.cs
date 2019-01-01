@@ -15,7 +15,7 @@ public class GhostCollision : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-
+        //todo Serverbased maken
         switch (col.gameObject.tag)
         {
             case "Enemy": //Zorgt dat geestjes door elkaar kunnen bewegen

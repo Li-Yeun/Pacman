@@ -29,14 +29,18 @@ public class playerhealth : MonoBehaviour {
     }
     void Update () {
         if (health <= 0)
-        { Dead(); }
+        {
+            Dead();
+        }
+
+        //Todo optimize
         Healthbar();
 	}
 
     void Dead()
     {
-        NetworkManager networkManager = FindObjectOfType<NetworkManager>();
-        networkManager.ServerChangeScene(SceneManager.GetActiveScene().name);
+        PlayerOnline Player = FindObjectOfType<PlayerOnline>();
+        Player.CmdReset();
     }
 
     public void Healthbar()
@@ -62,5 +66,10 @@ public class playerhealth : MonoBehaviour {
     public void DecreaseHealth()
     {
         health--;
+    }
+
+    public void Reset()
+    {
+        health = 3;
     }
 }
