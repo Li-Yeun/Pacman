@@ -68,6 +68,11 @@ public class playerhealth : MonoBehaviour {
         health--;
     }
 
+    public void IncreaseHealth()
+    {
+        health++;
+    }
+
     public void Reset()
     {
         health = 3;
