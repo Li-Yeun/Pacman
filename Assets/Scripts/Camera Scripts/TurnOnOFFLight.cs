@@ -13,6 +13,11 @@ public class TurnOnOFFLight : MonoBehaviour {
     }
     void OnPreRender()
     {
+        if(DisableLights == null)
+        {
+            Debug.Log("No Lights On Pre Render");
+            return;
+        }
         foreach (Light light in DisableLights)
         {
             light.enabled = true;
@@ -27,6 +32,11 @@ public class TurnOnOFFLight : MonoBehaviour {
 
     void OnPostRender()
     {
+        if (DisableLights == null)
+        {
+            Debug.Log("No Lights On Post Render");
+            return;
+        }
         foreach (Light light in DisableLights)
         {
             light.enabled = false;

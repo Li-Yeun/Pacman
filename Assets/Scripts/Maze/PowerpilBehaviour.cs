@@ -39,10 +39,14 @@ public class PowerpilBehaviour : MonoBehaviour {
         {
             gameObject.SetActive(false);
             powerpilscore.PowerpilPoints();
+
+            if(AnimationScriptSpookjes == null)
+            {
+                Debug.Log("No Ghosts");
+                return;
+            }
             foreach (GhostStates Ghost in AnimationScriptSpookjes)
             {
-                if (Ghost == null)
-                    Debug.Log("No Ghosts");
                 Ghost.Vulnerable();
             }
         }   
