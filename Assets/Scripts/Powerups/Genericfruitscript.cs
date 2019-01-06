@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CitroenPowerup : MonoBehaviour
-{
-    private PacmanMovement pacmanMovement;
-    // Use this for initialization
-
+public class Genericfruitscript : MonoBehaviour {
 
     void OnTriggerStay(Collider col)
     {
@@ -17,13 +13,7 @@ public class CitroenPowerup : MonoBehaviour
                 break;
             case "Player":
                 Destroy(gameObject);
-                pacmanMovement.Speed.x++;
-                pacmanMovement.Speed.z++;
                 break;
         }
-    }
-    public void PacmanInstantiated()
-    {
-        pacmanMovement = FindObjectOfType<PacmanMovement>();
     }
 }

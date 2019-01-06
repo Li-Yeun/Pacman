@@ -6,7 +6,6 @@ public class FruitChecker : MonoBehaviour
 {
     void Start()
     {
-
         foreach (FruitChecker cp in FindObjectsOfType<FruitChecker>())
         {
             if (cp.transform.position.x == gameObject.transform.position.x && cp.transform.position.y == gameObject.transform.position.y && cp != this)
@@ -14,13 +13,5 @@ public class FruitChecker : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-    }
-
-    //TODO wissen
-    public void PacmanInstantiated()
-    {
-        AnimatorScript animatorScript = FindObjectOfType<AnimatorScript>();
-        animatorScript.Apple.Add(gameObject);
     }
 }

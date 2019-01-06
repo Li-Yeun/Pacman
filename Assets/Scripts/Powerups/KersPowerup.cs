@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class KersPowerup : MonoBehaviour {
 
-    public playerhealth PlayerHealth;
-
-	// Use this for initialization
-	void Start () {
-        PlayerHealth = FindObjectOfType<playerhealth>();
-        SameFruitChecker();
-	}
+    private playerhealth PlayerHealth;
 
     void OnTriggerStay(Collider col)
     {
@@ -25,15 +19,8 @@ public class KersPowerup : MonoBehaviour {
                 break;
         }
     }
-
-    void SameFruitChecker()
+    public void PacmanInstantiated()
     {
-        foreach (KersPowerup kp in FindObjectsOfType<KersPowerup>())
-        {
-            if (kp.transform.position.x == gameObject.transform.position.x && kp.transform.position.y == gameObject.transform.position.y && kp != this)
-            {
-                Destroy(gameObject);
-            }
-        }
+        PlayerHealth = FindObjectOfType<playerhealth>();
     }
 }

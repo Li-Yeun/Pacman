@@ -14,9 +14,10 @@ public class Grid : MonoBehaviour
     public GameObject SlidingDoor;
     public GameObject Teleporter;
     public GameObject SpawnPacman;
-    public GameObject Citroen, Apple;
-    [Header("Parents")]
-    [SerializeField] Transform PelletsParent, SlidingDoorParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, SpawnerParent, AppleParent;
+    [Header ("Fruit")]
+    public GameObject Citroen, Apple, Kers;
+    [Header("Parent")]
+    [SerializeField] Transform PelletsParent, SlidingDoorParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, SpawnerParent, AppleParent, KersParent;
     public char[,] gamegrid;
 
     void Start()
@@ -33,7 +34,7 @@ public class Grid : MonoBehaviour
             { 'b','b','e','b','e','e','e','e','e','b','e','b','b','e','b','e','e','e','b','e','e','e','b','e','b','b','e','b','e','e','e','e','e','b','e','b','b' },
             { 't','e','e','b','e','b','b','b','e','b','e','e','e','e','b','e','b','e','b','e','b','e','b','e','e','e','e','b','e','b','b','b','e','b','e','e','t' },
             { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','e','e','e','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
-            { 'b','b','e','b','b','f','b','b','b','b','e','e','b','e','b','e','b','b','o','b','b','e','b','e','b','e','e','b','b','b','b','f','b','b','e','b','b' },
+            { 'b','b','e','b','b','f','b','b','b','b','e','e','b','e','b','e','b','b','k','b','b','e','b','e','b','e','e','b','b','b','b','f','b','b','e','b','b' },
             { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','s','s','s','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
             { 'b','p','b','b','b','b','b','b','e','e','e','e','e','e','b','e','b','s','s','s','b','e','e','e','e','e','e','e','e','b','b','b','b','b','b','p','b' },
             { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','b','b','b','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
@@ -41,7 +42,7 @@ public class Grid : MonoBehaviour
             { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
             { 't','e','e','b','e','b','e','b','e','b','e','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','e','b','e','b','e','b','e','b','e','e','t' },
             { 'b','b','e','b','e','b','e','b','e','b','e','b','b','f','b','b','b','e','b','e','b','b','b','f','b','b','e','b','e','b','e','b','e','b','e','b','b' },
-            { 'b','e','e','e','e','b','e','b','e','b','e','e','b','e','e','e','e','e','k','e','e','e','e','e','b','e','e','b','e','b','e','b','e','e','e','e','b' },
+            { 'b','e','e','e','e','b','e','b','e','b','e','e','b','e','e','e','e','e','j','e','e','e','e','e','b','e','e','b','e','b','e','b','e','e','e','e','b' },
             { 'b','e','b','b','b','b','e','b','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','b','e','b','b','b','b','e','b' },
             { 'b','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','e','e','b','e','e','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','b' },
             { 'b','e','b','e','b','b','e','b','e','b','e','b','b','b','b','b','b','e','b','e','b','b','b','b','b','b','e','b','e','b','e','b','b','e','b','e','b' },
@@ -76,6 +77,11 @@ public class Grid : MonoBehaviour
             case 'b':
                 {
                     InstantiateObject(block1, x, z, BuildingBlockParent);
+                }
+                break;
+            case 'k':
+                {
+                    InstantiateObject(Kers, x, z, KersParent);
                 }
                 break;
             case 'e':
@@ -117,7 +123,7 @@ public class Grid : MonoBehaviour
                     }
                 }
                 break;
-            case 'k': // Werkt niet.
+            case 'j': // Werkt niet.
                 {
                     InstantiateObject(SpawnPacman, x, z, SpawnerParent);
                 }
@@ -140,6 +146,8 @@ public class Grid : MonoBehaviour
     {
         GameObject gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
         gameObjectt.transform.parent = Parent;
+
+
         if (gameObject == block1)
         {
             gameObjectt.transform.localPosition = new Vector3(x, 1.5f, z);

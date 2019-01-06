@@ -284,7 +284,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990302627283604}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4, y: 4, z: 4}
+  m_LocalPosition: {x: 17.182737, y: 1.4228398, z: 13.476499}
   m_LocalScale: {x: 0.90000093, y: 0.9, z: 0.90000093}
   m_Children:
   - {fileID: 4999663831320144}
@@ -329,7 +329,7 @@ Transform:
   m_GameObject: {fileID: 1720645800818078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 2, z: 3}
+  m_LocalScale: {x: 3, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4947751106676220}
   m_RootOrder: 4
@@ -678,7 +678,6 @@ MonoBehaviour:
   Pacman: {fileID: 114330916325753022}
   PacmanAnimationObject: {fileID: 1430176403655028, guid: be22c57443c9882439047dd41dc2b289,
     type: 2}
-  PacmanParentParent: {fileID: 0}
   Jumper: {fileID: 114276165710159438}
   JumperOuterWalls: {fileID: 114074681834381426}
   Apple: []
@@ -849,7 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aabfc74e07c0414b928a05fd8ea0330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 2
   Health3: {fileID: 2800000, guid: eea667c23156de945a077df1e6f8412c, type: 3}
   Health2: {fileID: 2800000, guid: b9bdc5768fd30f541a3ed62e9acf01e9, type: 3}
   Health1: {fileID: 2800000, guid: 026c164b082f8cb4fa5d135059409c70, type: 3}

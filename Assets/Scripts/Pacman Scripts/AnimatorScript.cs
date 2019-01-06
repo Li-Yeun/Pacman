@@ -31,7 +31,7 @@ public class AnimatorScript : NetworkBehaviour {
 
     [SerializeField] PacmanMovement Pacman;
     [SerializeField] GameObject PacmanAnimationObject;
-    [SerializeField] Transform PacmanParentParent;
+    private Transform PacmanParentParent; // was een empty serielizedfield
 
     GameObject go;
     [Header("Jump Ookay")] 
