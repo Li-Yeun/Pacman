@@ -214,10 +214,8 @@ GameObject:
   - component: {fileID: 114067745242666560}
   - component: {fileID: 114071927505651976}
   - component: {fileID: 114557836394759504}
-  - component: {fileID: 114596046132242732}
   - component: {fileID: 114860781626154706}
   - component: {fileID: 114520310560575174}
-  - component: {fileID: 114930383593051142}
   m_Layer: 0
   m_Name: Pacman
   m_TagString: Player
@@ -805,6 +803,7 @@ MonoBehaviour:
   LockMovement: 0
   currentKey: 0
   p_Key: 0
+  Reversecontrols: 0
 --- !u!114 &114520310560575174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -838,23 +837,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HomingMissles: {fileID: 1379048216843572}
---- !u!114 &114596046132242732
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1990302627283604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aabfc74e07c0414b928a05fd8ea0330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  health_img:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  pacman_healthicon: {fileID: 21300000, guid: 333500ee40f98c047babd59572e66fca, type: 3}
 --- !u!114 &114627085745521892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -919,20 +901,6 @@ MonoBehaviour:
     i15: 222
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114930383593051142
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1990302627283604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aabfc74e07c0414b928a05fd8ea0330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  health_img: []
-  pacman_healthicon: {fileID: 0}
 --- !u!135 &135796094062668830
 SphereCollider:
   m_ObjectHideFlags: 1
