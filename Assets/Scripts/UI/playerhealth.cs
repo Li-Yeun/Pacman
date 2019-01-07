@@ -8,33 +8,44 @@ using UnityEngine.Networking;
 
 public class playerhealth : MonoBehaviour {
 
-    public int health = 3;
-    public Texture2D Health3;
-    public Texture2D Health2;
-    public Texture2D Health1;
-    public Texture2D currentHealth;
-    Rect rec;
+    public int health;
+    public Image[] health_img;
+    public Sprite pacman_healthicon;
+  //  public Texture2D Health3;
+   // public Texture2D Health2;
+   // public Texture2D Health1;
+   // public Texture2D currentHealth;
+   // Rect rec;
 
-    private float lengte = 300, breedte = 300;
-    private float xpos = 90, ypos = 850;
+   // private float lengte = 300, breedte = 300;
+   // private float xpos = 90, ypos = 850;
 
-    private void Start()
-    {
-        rec.size = new Vector2(lengte, breedte);
-        rec.position = new Vector2(xpos, ypos);
-    }
-    private void OnGUI()
-    {
-        GUI.DrawTexture(rec, currentHealth, ScaleMode.ScaleToFit);
-    }
+   // private void Start()
+   // {
+       // rec.size = new Vector2(lengte, breedte);
+       // rec.position = new Vector2(xpos, ypos);
+   // }
+    //private void OnGUI()
+   // {
+     //   GUI.DrawTexture(rec, currentHealth, ScaleMode.ScaleToFit);
+   // }
+
     void Update () {
         if (health <= 0)
         {
             Dead();
         }
 
+        for (int i = 0; i < health_img.Length; i++)
+        {
+            if (i < health) { 
+                health_img[i].enabled = true;
+            health_img[i].sprite = pacman_healthicon; }
+            else { health_img[i].enabled = false; }
+        }
+
         //Todo optimize
-        Healthbar();
+       // Healthbar();
 	}
 
     void Dead()
@@ -45,22 +56,34 @@ public class playerhealth : MonoBehaviour {
 
     public void Healthbar()
     {
-        switch(health)
+       /* switch(health)
         {
             case 3:
-                currentHealth = Health3;
+                health1.gameObject.SetActive(true);
+                health2.gameObject.SetActive(true);
+                health3.gameObject.SetActive(true);
+                // currentHealth = Health3;
                 break;
             case 2:
-                currentHealth = Health2;
+                health1.gameObject.SetActive(true);
+                health2.gameObject.SetActive(true);
+                health3.gameObject.SetActive(false);
+                //currentHealth = Health2;
                 break;
             case 1:
-                currentHealth = Health1;
+                health1.gameObject.SetActive(true);
+                health2.gameObject.SetActive(false);
+                health3.gameObject.SetActive(false);
+                //currentHealth = Health1;
                 break;
             default:
-                currentHealth = Health3;
+                health1.gameObject.SetActive(true);
+                health2.gameObject.SetActive(true);
+                health3.gameObject.SetActive(true);
+                //currentHealth = Health3;
                 health = 3;
                 break;
-        }
+        }   */
     }
 
     public void DecreaseHealth()

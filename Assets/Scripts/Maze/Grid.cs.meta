@@ -3,7 +3,29 @@ guid: 1f48fb64526449f498fcb6cb46faf949
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - block1: {fileID: 1007248904377124, guid: 8ae547de3eddb36459c3676db8784df5, type: 2}
+  - pellet: {fileID: 1403524952478584, guid: c182280d107d8414ebdfa8de91efd5af, type: 2}
+  - powerpill: {fileID: 1330084163278984, guid: c9b0b84dfd214d247afd892733fecf78,
+      type: 2}
+  - SlidingDoor: {fileID: 1670355100042582, guid: 9dd446b7a72286f4096223ed61f1195a,
+      type: 2}
+  - Teleporter: {fileID: 1513580549421540, guid: 07448547b0bd03f48b410db7c55bb0a6,
+      type: 2}
+  - SpawnPacman: {instanceID: 0}
+  - Citroen: {instanceID: 0}
+  - Apple: {instanceID: 0}
+  - Kers: {instanceID: 0}
+  - Melon: {instanceID: 0}
+  - PelletsParent: {instanceID: 0}
+  - SlidingDoorParent: {instanceID: 0}
+  - TeleporterParent: {instanceID: 0}
+  - BuildingBlockParent: {instanceID: 0}
+  - PowerPillParent: {instanceID: 0}
+  - CitroenParent: {instanceID: 0}
+  - SpawnerParent: {instanceID: 0}
+  - AppleParent: {instanceID: 0}
+  - KersParent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

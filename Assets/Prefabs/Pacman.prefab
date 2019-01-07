@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 114596046132242732}
   - component: {fileID: 114860781626154706}
   - component: {fileID: 114520310560575174}
+  - component: {fileID: 114930383593051142}
   m_Layer: 0
   m_Name: Pacman
   m_TagString: Player
@@ -284,7 +285,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990302627283604}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 17.182737, y: 1.4228398, z: 13.476499}
+  m_LocalPosition: {x: -564.3504, y: -247.00517, z: -3786.7776}
   m_LocalScale: {x: 0.90000093, y: 0.9, z: 0.90000093}
   m_Children:
   - {fileID: 4999663831320144}
@@ -848,11 +849,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aabfc74e07c0414b928a05fd8ea0330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
-  Health3: {fileID: 2800000, guid: eea667c23156de945a077df1e6f8412c, type: 3}
-  Health2: {fileID: 2800000, guid: b9bdc5768fd30f541a3ed62e9acf01e9, type: 3}
-  Health1: {fileID: 2800000, guid: 026c164b082f8cb4fa5d135059409c70, type: 3}
-  currentHealth: {fileID: 2800000, guid: eea667c23156de945a077df1e6f8412c, type: 3}
+  health: 3
+  health_img:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  pacman_healthicon: {fileID: 21300000, guid: 333500ee40f98c047babd59572e66fca, type: 3}
 --- !u!114 &114627085745521892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -917,6 +919,20 @@ MonoBehaviour:
     i15: 222
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114930383593051142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990302627283604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aabfc74e07c0414b928a05fd8ea0330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  health_img: []
+  pacman_healthicon: {fileID: 0}
 --- !u!135 &135796094062668830
 SphereCollider:
   m_ObjectHideFlags: 1

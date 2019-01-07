@@ -21,6 +21,7 @@ public class PacmanMovement : NetworkBehaviour {
     public int currentDirection, p_Direction;
     public bool LockMovement;
     public KeyCode currentKey, p_Key;
+    public bool Reversecontrols = false;
 
     public Vector3 Position { get { return gameObject.transform.position; }
         set { gameObject.transform.position = value; }
@@ -60,7 +61,23 @@ public class PacmanMovement : NetworkBehaviour {
 
     private void FirstPersonMode()
     {
+        if ( Reversecontrols)
+        {
             if (Input.GetKeyDown(KeyCode.S))
+            {
+                HandleKeyInput(KeyCode.S, 2);
+            }
+            else if (Input.GetKey(KeyCode.A) && !right.Collision && !LockMovement)
+            {
+                HandleKeyInput(KeyCode.A, 1);
+            }
+            else if (Input.GetKey(KeyCode.D) && !left.Collision && !LockMovement)
+            {
+                HandleKeyInput(KeyCode.D, -1);
+            }
+        }
+       else
+           if (Input.GetKeyDown(KeyCode.S))
             {
                 HandleKeyInput(KeyCode.S, 2);
             }
@@ -117,24 +134,17 @@ public class PacmanMovement : NetworkBehaviour {
 
     private void Rotation()
     {
-        if (currentDirection == 0)
+        switch (currentDirection)
         {
-            rb.rotation = Quaternion.Euler(RotateList[0]);
+            case 0: rb.rotation = Quaternion.Euler(RotateList[0]);
+                     break;
+            case 1: rb.rotation = Quaternion.Euler(RotateList[1]);
+                     break;
+            case 2: rb.rotation = Quaternion.Euler(RotateList[2]);
+                     break;
+            case 3: rb.rotation = Quaternion.Euler(RotateList[3]);
+                     break;
         }
-        else if (currentDirection == 2)
-        {
-            rb.rotation = Quaternion.Euler(RotateList[2]);
-        }
-        else if (currentDirection == 3)
-        {
-            rb.rotation = Quaternion.Euler(RotateList[3]);
-        }
-        else if (currentDirection == 1)
-        {
-            rb.rotation = Quaternion.Euler(RotateList[1]);
-        }
-
-
     }
 
     public void StartDeathSequence() // Gebruik deze methode wanneer Pacman de "Enemy" heeft geraakt.

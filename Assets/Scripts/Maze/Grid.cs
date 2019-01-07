@@ -15,9 +15,9 @@ public class Grid : MonoBehaviour
     public GameObject Teleporter;
     public GameObject SpawnPacman;
     [Header ("Fruit")]
-    public GameObject Citroen, Apple, Kers;
+    public GameObject Citroen, Apple, Kers, Melon;
     [Header("Parent")]
-    [SerializeField] Transform PelletsParent, SlidingDoorParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, SpawnerParent, AppleParent, KersParent;
+    [SerializeField] Transform PelletsParent, SlidingDoorParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, MelonParent, SpawnerParent, AppleParent, KersParent;
     public char[,] gamegrid;
 
     void Start()
@@ -136,6 +136,11 @@ public class Grid : MonoBehaviour
             case 'a':
                 {
                     InstantiateObject(Apple, x, z, AppleParent);
+                }
+                break;
+            case 'm':
+                {
+                    InstantiateObject(Melon, x, z, MelonParent);
                 }
                 break;
             default: break;
