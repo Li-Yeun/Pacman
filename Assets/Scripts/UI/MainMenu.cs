@@ -14,18 +14,21 @@ public class MainMenu : MonoBehaviour {
     public string gamescene, multiplayerscene;
     public GameObject About, buttonexplain;
 
-
+    
     public void startgame()
     { SceneManager.LoadScene(gamescene); }
 
+    //loads multiplayer scenario
     public void Multiplayer()
     { SceneManager.LoadScene(multiplayerscene); }
 
+    //enables button explanation popupscreen
     public void Buttonexplain()
     {
         buttonexplain.SetActive(true);  
     }
 
+    //enables about menu popupscreen
     public void AboutGame()
     {
         About.SetActive(true);

@@ -15,29 +15,30 @@ public class HUD : MonoBehaviour {
     public GameObject pausemenu;
     public GameObject optionmenu;
 
+    //opens pausescreen
     public void Pause()
     {
         pausemenu.SetActive(true);
-        
     }
 
+    //go back to mainmenu
     public void Mainmenu()
     {
         SceneManager.LoadScene(gamescene);
     }
 
+    //opens option menu
     public void Options()
     {
         optionmenu.SetActive(true);
     }
-
-
+    
     public void Quitgame()
     {
         Application.Quit();
     }
-
-
+    
+    //disables menu 
     public void Continu()
     {
         pausemenu.SetActive(false);
