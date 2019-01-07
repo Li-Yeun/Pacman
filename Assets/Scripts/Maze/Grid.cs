@@ -2,20 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Deze class is verantwoordelijk voor het initialise van het level.
+/// Deze class is verantwoordelijk voor het initialise van het level. 
+/// Dit doet hij door instances te maken van voorwerpen en die op de juiste plaats van het grid erin te zetten.
 /// </summary>
 public class Grid : MonoBehaviour
 {
     private int TimesTeleporterCreated = 0;
     float Timer = 0;
+    // De muren van het spel
     public GameObject block1;
+
+    // De gele bolletjes die pacman op eet.
     public GameObject pellet;
+
+    // De pil die zorgt dat pacman de geestjes op kan eten ipv an andersom.
     public GameObject powerpill;
+
+    // De deuren die alleen pacman kan bedienen.
     public GameObject SlidingDoor;
+
+    // De teleporters aan de zijkant van de map.
     public GameObject Teleporter;
+
+    // De spawnlocation van Pacman (werkt alleen voor respawns for some reason niet de eerste spawn) TODO
     public GameObject SpawnPacman;
+    
+    /// <summary>
+    /// Citroen maakt Pacman sneller
+    /// Apple laat pacman onder de grond / onzichtbaar gaan
+    /// Kers geeft Pacman één leven extra
+    /// Melon tbd
+    /// ---
+    /// </summary>
     [Header ("Fruit")]
     public GameObject Citroen, Apple, Kers, Melon;
+
+    /// <summary>
+    /// Dit zijn de locations waarin de instances gezet worden deze zijn alleen ter sortering verder niks.
+    /// </summary>
     [Header("Parent")]
     [SerializeField] Transform PelletsParent, SlidingDoorParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, MelonParent, SpawnerParent, AppleParent, KersParent;
     public char[,] gamegrid;
@@ -123,7 +147,7 @@ public class Grid : MonoBehaviour
                     }
                 }
                 break;
-            case 'j': // Werkt niet.
+            case 'j': 
                 {
                     InstantiateObject(SpawnPacman, x, z, SpawnerParent);
                 }
@@ -157,6 +181,7 @@ public class Grid : MonoBehaviour
         {
             gameObjectt.transform.localPosition = new Vector3(x, 1.5f, z);
 
+            // Zorgt zodat de muren aan de zijkant van het veld een andere tag hebben zodat pacman niet uit het veld kan.
             if (x == 0 || z == 0 || x == gamegrid.GetLongLength(1) - 1 || z == gamegrid.GetLongLength(0) - 1)
             { gameObjectt.tag = "BoundingWall"; }
             else
