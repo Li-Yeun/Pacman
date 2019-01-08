@@ -13,6 +13,7 @@ public class Grid : MonoBehaviour
     float Timer = 0;
     // De muren van het spel
     public GameObject block1;
+    public GameObject block2;
 
     // De gele bolletjes die pacman op eet.
     public GameObject pellet;
@@ -107,6 +108,7 @@ public class Grid : MonoBehaviour
                     InstantiateObject(block1, x, z, BuildingBlockParent);
                 }
                 break;
+
             case 'k':
                 {
                     InstantiateObject(Kers, x, z, KersParent);
@@ -181,28 +183,40 @@ public class Grid : MonoBehaviour
     }
     #endregion 
 
-    private void InstantiateObject(GameObject gameObject, int x, int z, Transform Parent)
-    {
-        GameObject gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
-        gameObjectt.transform.parent = Parent;
+    private void InstantiateObject(GameObject gameObject, int x, int z, Transform Parent) { 
 
-
+    GameObject gameObjectt;
         if (gameObject == block1)
-        {
-            gameObjectt.transform.localPosition = new Vector3(x, 1.5f, z);
+                    {
+                        // Zorgt zodat de muren aan de zijkant van het veld een andere tag hebben zodat pacman niet uit het veld kan.
+                        if (x == 0 || z == 0 || x == gamegrid.GetLongLength(1) - 1 || z == gamegrid.GetLongLength(0) - 1)
+                        {
+                if (x == 0 || x == gamegrid.GetLongLength(1) - 1)
+                {
+                    gameObjectt = Instantiate(block2, Vector3.zero, gameObject.transform.rotation);
+                    gameObjectt.transform.eulerAngles = new Vector3(0, 90, 0);
+                }
+                else
+                {
+                    gameObjectt = Instantiate(block2, Vector3.zero, gameObject.transform.rotation);
+                }
+                               gameObjectt.tag = "BoundingWall";
+                        }
+                        else
+                        {
+                             gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
+                                gameObjectt.tag = "Maze";
+                        }
+                        gameObjectt.transform.parent = Parent;
+                        gameObjectt.transform.localPosition = new Vector3(x, 1.5f, z);
+                    }
+            
+                    else
+                        gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
+                        gameObjectt.transform.parent = Parent;
+                        gameObjectt.transform.localPosition = new Vector3(x, 1, z);
 
-            // Zorgt zodat de muren aan de zijkant van het veld een andere tag hebben zodat pacman niet uit het veld kan.
-            if (x == 0 || z == 0 || x == gamegrid.GetLongLength(1) - 1 || z == gamegrid.GetLongLength(0) - 1)
-            { gameObjectt.tag = "BoundingWall"; }
-            else
-            {
-                gameObjectt.tag = "Maze";
-            }
-        }
-        else
-            gameObjectt.transform.localPosition = new Vector3(x, 1, z);
     }
-
     private void Update()
     {
         Timer += Time.deltaTime;
