@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Laat de powerpil verdwijnen als pacman deze eet
-/// Triggerd ook het event dat pacman de spookjes kan gaan eten ipv andersom.
+/// Makes the powerpil disappear from the map when Pacman eats it
+/// Triggers the event that Pacman can eat the ghosts instead of the other way around
 /// </summary>
 public class PowerpilBehaviour : MonoBehaviour {
 

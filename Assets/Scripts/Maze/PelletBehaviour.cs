@@ -18,18 +18,27 @@ public class PelletBehaviour : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        /// <summary>
+        /// Checks if the thing colliding with the pellet is Pacman
+        /// If Pacman collides with the pellet the pellet gets eaten and disappears from the map and the player is awarded 10 points
+        /// If something other than Pacman collides with a pellet nothing happens
+        /// </summary>
         if (other.tag == "Player")
         {
             EatPellet();
         }
     }
 
+    // Confirms the pellet has been eaten
     public bool EatPellet()
     {
         return pelleteaten = true;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Update is called once per frame
+    /// Checks if the pellet is already eaten in which case it will be deactivated
+    /// </summary>
     void Update () {
 		if (pelleteaten)
         {
