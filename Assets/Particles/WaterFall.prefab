@@ -112,7 +112,6 @@ GameObject:
   - component: {fileID: 198591442354025992}
   - component: {fileID: 114088230756747452}
   - component: {fileID: 199674109131283464}
-  - component: {fileID: 114054212789323830}
   m_Layer: 0
   m_Name: WaterFall
   m_TagString: Event
@@ -267,38 +266,6 @@ Transform:
   m_Father: {fileID: 4105711494001672}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &114054212789323830
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1445893848108974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 42
-    i1: 10
-    i2: 111
-    i3: 192
-    i4: 22
-    i5: 100
-    i6: 250
-    i7: 116
-    i8: 41
-    i9: 82
-    i10: 22
-    i11: 2
-    i12: 127
-    i13: 105
-    i14: 138
-    i15: 159
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
 --- !u!114 &114088230756747452
 MonoBehaviour:
   m_ObjectHideFlags: 1

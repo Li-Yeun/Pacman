@@ -15,7 +15,7 @@ public class Movement : NetworkBehaviour {
     private Transform respawn;                        //locatie van spawnpunt
 
     [Header("Ghost Behaviour")]
-    [SerializeField] int speed = 100;                          //beweegsnelheid
+    [SerializeField] public int speed = 100;                          //beweegsnelheid
     [SerializeField] int Respawntime = 4;                      //tijd voordat speler weer kan besturen
 
     [Header("Control Options")]

@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class EnvironementalEvents : NetworkBehaviour {
 
-    [SerializeField] GameObject Smoke, FireWorks, SandStorm, WaterFall, WaterTopDown, WaterFirstPerson, Confusion;
+    [SerializeField] GameObject Smoke, FireWorks, SandStorm, Water, Confusion;
     [SerializeField] Transform parent;
 
 	// Update is called once per frame
@@ -30,7 +30,7 @@ public class EnvironementalEvents : NetworkBehaviour {
         }
         else if (Input.GetKeyDown("7"))
         {
-            ActivateMultipleEvents(WaterFall, WaterTopDown,WaterFirstPerson);
+            ActivateEvent(Water);
         }
     }
 
@@ -42,7 +42,7 @@ public class EnvironementalEvents : NetworkBehaviour {
         }
     }
 
-
+    /*
     private void ActivateMultipleEvents(GameObject gameObject1, GameObject gameObject2, GameObject gameObject3)
     {
         if (GameObject.FindGameObjectWithTag("Event") == null)
@@ -52,6 +52,7 @@ public class EnvironementalEvents : NetworkBehaviour {
             Spawn(gameObject3);
         }
     }
+    */
 
     private void Spawn(GameObject gameObject)
     {

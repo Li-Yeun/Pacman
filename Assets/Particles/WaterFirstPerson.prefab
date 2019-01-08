@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 114895850693871490}
   - component: {fileID: 114042833699492594}
   - component: {fileID: 114921024721064466}
-  - component: {fileID: 114774086919089488}
   m_Layer: 11
   m_Name: WaterFirstPerson
   m_TagString: Untagged
@@ -99,38 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 40
---- !u!114 &114774086919089488
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852377968124326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 81
-    i1: 146
-    i2: 213
-    i3: 83
-    i4: 133
-    i5: 32
-    i6: 197
-    i7: 244
-    i8: 185
-    i9: 59
-    i10: 251
-    i11: 137
-    i12: 93
-    i13: 17
-    i14: 205
-    i15: 232
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
 --- !u!114 &114895850693871490
 MonoBehaviour:
   m_ObjectHideFlags: 1
