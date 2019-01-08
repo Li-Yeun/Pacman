@@ -2,51 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class reversecontrolsPowerup : MonoBehaviour {
-
-    public GameObject Melon;
+/// <summary>
+/// This scripts reverses the movement controls of pacman when the melon is eaten.
+/// </summary>
+public class reversecontrolsPowerup : MonoBehaviour
+{
     private PacmanMovement pacmanMovement;
-    float timer = 0;
-    float seconds = 15;
-
-    void Start ()
-    {
-        Melon = this.gameObject;
-    }
 
     public void PacmanInstantiated()
     {
         pacmanMovement = FindObjectOfType<PacmanMovement>();
     }
 
-void OnTriggerStay(Collider col)
+    void OnTriggerStay(Collider col)
     {
         //checks if collides with player or pellet, if collides with player then reverse the controls of the player
         switch (col.gameObject.tag)
         {
             case "Pellet":
-                Destroy(Melon);
+                Destroy(col);
                 break;
-            case "Player":                      
-                Melon.SetActive(false);
+            case "Player":
+                gameObject.SetActive(false); ///transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 200, gameObject.transform.position.z);
                 pacmanMovement.Reversecontrols = true;
+                Invoke("Resett", 15f);
                 break;
         }
     }
-
-    private void Update()
+    private void Resett()
     {
-        //checkt if controls power up is active 
-        if (pacmanMovement.Reversecontrols == true )        
-        {
-            timer += Time.deltaTime;
-
-            //remove the powerup effect and reset the timer
-            if (timer > seconds)
-            {
-                pacmanMovement.Reversecontrols = false;     
-                timer = 0;
-            }
-        }
+        pacmanMovement.Reversecontrols = false;
+        Destroy(gameObject);
     }
 }
