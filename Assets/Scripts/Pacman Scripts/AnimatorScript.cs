@@ -106,7 +106,7 @@ public class AnimatorScript : NetworkBehaviour {
             case 2: animator2.Play("PacmanAnimationJump4"); break;
             case 3: animator2.Play("PacmanAnimationJump2"); break;
         }
-        animatorBodyMesh.Play("PacmanSalto");
+        animatorBodyMesh.Play("PacmanSalto"); // Li-Yeun <3
     }
 
     void ScoutingJump()

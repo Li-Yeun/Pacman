@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4025406132437518}
   - component: {fileID: 33430200780932026}
   - component: {fileID: 23143293398294184}
+  - component: {fileID: 95484480477502002}
   m_Layer: 0
   m_Name: orange
   m_TagString: Untagged
@@ -114,6 +115,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1008186115762452}
   m_Mesh: {fileID: 4300000, guid: ebb11f305a3fa0941b51c9edc1e63cbc, type: 3}
+--- !u!95 &95484480477502002
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1008186115762452}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b5297131c495b147a6f2e29a438b0bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114930965202456738
 MonoBehaviour:
   m_ObjectHideFlags: 1
