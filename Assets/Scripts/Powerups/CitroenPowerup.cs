@@ -7,7 +7,10 @@ public class CitroenPowerup : MonoBehaviour
     private PacmanMovement pacmanMovement;
     // Use this for initialization
 
-
+    private void Start()
+    {
+        PacmanInstantiated();
+    }
     void OnTriggerStay(Collider col)
     {
         switch (col.gameObject.tag)
