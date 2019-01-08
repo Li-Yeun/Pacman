@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class Grid : MonoBehaviour
 {
+    #region Base Values
+
     private int TimesTeleporterCreated = 0;
     float Timer = 0;
     // De muren van het spel
@@ -43,6 +45,7 @@ public class Grid : MonoBehaviour
     [Header("Parent")]
     [SerializeField] Transform PelletsParent, SlidingDoorParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, MelonParent, SpawnerParent, AppleParent, KersParent, OrangeParent;
     public char[,] gamegrid;
+    #endregion
 
     void Start()
     {
@@ -76,6 +79,7 @@ public class Grid : MonoBehaviour
         SpawnGrid();
     }
 
+    #region GridConverter
     /// <summary>
     /// Deze methode gaat alle locaties van de grid af.
     /// </summary>
@@ -175,6 +179,7 @@ public class Grid : MonoBehaviour
             default: break;
         }
     }
+    #endregion 
 
     private void InstantiateObject(GameObject gameObject, int x, int z, Transform Parent)
     {
