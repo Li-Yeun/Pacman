@@ -76,7 +76,7 @@ public class Grid : MonoBehaviour
             { 'b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b' },
         };
         SpawnGrid();
-        InvokeRepeating("SpawnRandomFruit", Random.Range(0, 10), Random.Range(0, 10));
+        InvokeRepeating("SpawnRandomFruit", Random.Range(0, 3), Random.Range(0, 3));
     }
 
     #region GridConverter

@@ -5,6 +5,10 @@ using UnityEngine;
 public class KersPowerup : MonoBehaviour {
 
     private playerhealth PlayerHealth;
+    private void Start()
+    {
+        PacmanInstantiated();
+    }
 
     void OnTriggerStay(Collider col)
     {

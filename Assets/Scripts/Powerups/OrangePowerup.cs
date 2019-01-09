@@ -10,6 +10,8 @@ using UnityEngine;
 public class OrangePowerup : MonoBehaviour
 {
     // Variable for measuring how long the powerup has been running for (in seconds)
+    [SerializeField] Material material, defaulthMaterial;
+
     float passedTime = 0;
 
     // Constant which holds how long the powerup should last (in seconds) 
@@ -39,9 +41,8 @@ public class OrangePowerup : MonoBehaviour
                     
                     if (Maze.GetComponentInChildren<SliderWallScript>()) { continue; }
                     // Creates a variable indicating the preferred alpha of the maze wall color and changes the maze wall color alpha to said variable value
-
-                    Maze.GetComponent<Renderer>().material.color = new Color(Maze.GetComponent<Renderer>().material.color.r, Maze.GetComponent<Renderer>().material.color.g, Maze.GetComponent<Renderer>().material.color.b,transparency);
-               
+                    Maze.GetComponentInChildren<Renderer>().material = material;
+                    Maze.GetComponentInChildren<Renderer>().material.color = new Color(Maze.GetComponentInChildren<Renderer>().material.color.r, Maze.GetComponentInChildren<Renderer>().material.color.g, Maze.GetComponentInChildren<Renderer>().material.color.b,transparency = 0f);
                 }
                 break;
         }
@@ -49,7 +50,6 @@ public class OrangePowerup : MonoBehaviour
 
     private void Update()
     {
-        if (active)
         {
             passedTime += Time.deltaTime;
 
@@ -60,8 +60,8 @@ public class OrangePowerup : MonoBehaviour
                 {
                     if (Maze.GetComponentInChildren<SliderWallScript>()) { continue; }
                     // Returns the maze wall's color alpha back to the way it was (1f = full opacity) in the same manner as when the opacity was lowered before
-                    transparency = 1f;
-                    Maze.GetComponent<Renderer>().material.color = new Color(Maze.GetComponent<Renderer>().material.color.r, Maze.GetComponent<Renderer>().material.color.g, Maze.GetComponent<Renderer>().material.color.b, transparency);
+                    Maze.GetComponentInChildren<Renderer>().material = defaulthMaterial;
+
                 }
                 Destroy(gameObject);
             }
@@ -73,7 +73,7 @@ public class OrangePowerup : MonoBehaviour
                     foreach (GameObject Maze in GameObject.FindGameObjectsWithTag("Maze"))
                     {
                         if (Maze.GetComponentInChildren<SliderWallScript>()) { continue; }
-                        Maze.GetComponent<Renderer>().material.color = new Color(Maze.GetComponent<Renderer>().material.color.r, Maze.GetComponent<Renderer>().material.color.g, Maze.GetComponent<Renderer>().material.color.b, transparency);
+                        Maze.GetComponentInChildren<Renderer>().material.color = new Color(Maze.GetComponentInChildren<Renderer>().material.color.r, Maze.GetComponentInChildren<Renderer>().material.color.g, Maze.GetComponentInChildren<Renderer>().material.color.b, transparency);
                         transparency = 1.5f;
                     }
                 }
@@ -82,7 +82,7 @@ public class OrangePowerup : MonoBehaviour
                     foreach (GameObject Maze in GameObject.FindGameObjectsWithTag("Maze"))
                     {
                         if (Maze.GetComponentInChildren<SliderWallScript>()) { continue; }
-                        Maze.GetComponent<Renderer>().material.color = new Color(Maze.GetComponent<Renderer>().material.color.r, Maze.GetComponent<Renderer>().material.color.g, Maze.GetComponent<Renderer>().material.color.b, transparency);
+                        Maze.GetComponentInChildren<Renderer>().material.color = new Color(Maze.GetComponentInChildren<Renderer>().material.color.r, Maze.GetComponentInChildren<Renderer>().material.color.g, Maze.GetComponentInChildren<Renderer>().material.color.b, transparency);
                         transparency = 0.5f;
 
                     }

@@ -9,6 +9,10 @@ public class reversecontrolsPowerup : MonoBehaviour
 {
     private PacmanMovement pacmanMovement;
 
+    private void Start()
+    {
+        PacmanInstantiated();
+    }
     public void PacmanInstantiated()
     {
         pacmanMovement = FindObjectOfType<PacmanMovement>();

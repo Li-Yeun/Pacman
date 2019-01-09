@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4025406132437518}
   - component: {fileID: 33430200780932026}
   - component: {fileID: 23143293398294184}
-  - component: {fileID: 95484480477502002}
   m_Layer: 0
   m_Name: orange
   m_TagString: Untagged
@@ -39,6 +38,7 @@ GameObject:
   - component: {fileID: 4924394792490702}
   - component: {fileID: 114930965202456738}
   - component: {fileID: 135725742054058340}
+  - component: {fileID: 95420923107267866}
   m_Layer: 0
   m_Name: orange
   m_TagString: Untagged
@@ -115,13 +115,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1008186115762452}
   m_Mesh: {fileID: 4300000, guid: ebb11f305a3fa0941b51c9edc1e63cbc, type: 3}
---- !u!95 &95484480477502002
+--- !u!95 &95420923107267866
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1008186115762452}
+  m_GameObject: {fileID: 1100645026223400}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4b5297131c495b147a6f2e29a438b0bc, type: 2}
@@ -144,6 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313519ba423b51e48bf62ab487882066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 13bfcce8e864d2d4ca9e9dcc55d208a4, type: 2}
+  defaulthMaterial: {fileID: 2100000, guid: 1a14663bc16cbd94c844607ee11ace3b, type: 2}
 --- !u!135 &135725742054058340
 SphereCollider:
   m_ObjectHideFlags: 1
