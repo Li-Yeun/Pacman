@@ -1911,7 +1911,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4924394792490702, guid: 71b9a4ad7971f12488be27349e3d2f87, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 95484480477502002, guid: 71b9a4ad7971f12488be27349e3d2f87, type: 2}
@@ -4538,7 +4538,7 @@ GameObject:
   - component: {fileID: 2108373392}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Maze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

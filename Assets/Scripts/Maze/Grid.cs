@@ -139,6 +139,7 @@ public class Grid : MonoBehaviour
                     GameObject Teleporterr = Instantiate(Teleporter, Vector3.zero, SlidingDoor.transform.rotation);
                     Teleporterr.transform.parent = TeleporterParent;
                     Teleporterr.transform.localPosition = new Vector3(x, 1, z);
+                    if (x == 0|| x == gamegrid.GetLongLength(1) - 1) { Teleporterr.transform.eulerAngles = new Vector3(180, 90, 0); }
                     TeleportScript2 TeleporterScript = Teleporterr.GetComponent<TeleportScript2>();
                     //Vanwege de methode waarin de grid wordt aangemaakt had ik 2 opties om de goeie teleporters te linken aan elkaar. 
                     //1 Was meerdere instances maken die al gelinkt waren en die dan laten spawnen.

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23738647960269254}
   m_Layer: 0
   m_Name: Straightwall
-  m_TagString: Untagged
+  m_TagString: Maze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,10 +36,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4552463312253254}
-  - component: {fileID: 65740533267413998}
+  - component: {fileID: 65719108193634580}
   m_Layer: 0
   m_Name: Straightwall
-  m_TagString: Untagged
+  m_TagString: Maze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1092556435077726}
   m_Mesh: {fileID: 4300000, guid: 04519d0864c605d46891ced1c9b5bd41, type: 3}
---- !u!65 &65740533267413998
+--- !u!65 &65719108193634580
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
