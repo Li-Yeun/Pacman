@@ -1560,6 +1560,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block1: {fileID: 1007248904377124, guid: 8ae547de3eddb36459c3676db8784df5, type: 2}
   block2: {fileID: 1800982219127794, guid: 44ce345b3334a5d4188b92b23bf41e40, type: 2}
+  block3: {fileID: 1610346306729956, guid: f15b2ac79eec38243b3abda1424e2bce, type: 2}
+  block4: {fileID: 1398027994450538, guid: 268707feef0c41e48a3ea3dd56145b61, type: 2}
+  block5: {fileID: 1974592261893020, guid: 1a11360518fd20c479aa00055b37fd9f, type: 2}
+  block6: {fileID: 1047504076526074, guid: 8ee8e4109a4b9834a8b1344e63bee10a, type: 2}
   pellet: {fileID: 1403524952478584, guid: c182280d107d8414ebdfa8de91efd5af, type: 2}
   powerpill: {fileID: 1330084163278984, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   SlidingDoor: {fileID: 1670355100042582, guid: 9dd446b7a72286f4096223ed61f1195a,
@@ -3026,88 +3030,6 @@ Transform:
   m_Father: {fileID: 1504235252}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1446803575
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -564.3504
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -247.00517
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -3786.7776
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114276165710159438, guid: 33b8e3e30ca18474b9e2124c286d85de,
-        type: 2}
-      propertyPath: Firststring
-      value: Maze
-      objectReference: {fileID: 0}
-    - target: {fileID: 114074681834381426, guid: 33b8e3e30ca18474b9e2124c286d85de,
-        type: 2}
-      propertyPath: Firststring
-      value: Maze
-      objectReference: {fileID: 0}
-    - target: {fileID: 114136721807397628, guid: 33b8e3e30ca18474b9e2124c286d85de,
-        type: 2}
-      propertyPath: Firststring
-      value: Maze
-      objectReference: {fileID: 0}
-    - target: {fileID: 114148793324972426, guid: 33b8e3e30ca18474b9e2124c286d85de,
-        type: 2}
-      propertyPath: Firststring
-      value: Maze
-      objectReference: {fileID: 0}
-    - target: {fileID: 114276165710159438, guid: 33b8e3e30ca18474b9e2124c286d85de,
-        type: 2}
-      propertyPath: Secondstring
-      value: BoundingWall
-      objectReference: {fileID: 0}
-    - target: {fileID: 114074681834381426, guid: 33b8e3e30ca18474b9e2124c286d85de,
-        type: 2}
-      propertyPath: Secondstring
-      value: BoundingWall
-      objectReference: {fileID: 0}
-    - target: {fileID: 114136721807397628, guid: 33b8e3e30ca18474b9e2124c286d85de,
-        type: 2}
-      propertyPath: Secondstring
-      value: BoundingWall
-      objectReference: {fileID: 0}
-    - target: {fileID: 114148793324972426, guid: 33b8e3e30ca18474b9e2124c286d85de,
-        type: 2}
-      propertyPath: Secondstring
-      value: BoundingWall
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1504235251
 GameObject:
   m_ObjectHideFlags: 0
@@ -3560,7 +3482,7 @@ Light:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1665467813}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}

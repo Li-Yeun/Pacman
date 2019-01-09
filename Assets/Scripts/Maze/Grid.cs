@@ -8,11 +8,10 @@ using UnityEngine;
 public class Grid : MonoBehaviour
 {
     #region Base Values
-
+    int counter = 0;
     private int TimesTeleporterCreated = 0;
     // De muren van het spel
-    public GameObject block1;
-    public GameObject block2;
+    public GameObject block1, block2, block3, block4, block5, block6;
 
     // De gele bolletjes die pacman op eet.
     public GameObject pellet;
@@ -28,7 +27,7 @@ public class Grid : MonoBehaviour
 
     // De spawnlocatwion van Pacman (werkt alleen voor respawns for some reason niet de eerste spawn) TODO
     public GameObject SpawnPacman;
-    
+
     /// <summary>
     /// Citroen maakt Pacman sneller
     /// Apple laat pacman onder de grond / onzichtbaar gaan
@@ -36,7 +35,7 @@ public class Grid : MonoBehaviour
     /// Melon tbd
     /// ---
     /// </summary>
-    [Header ("Fruit")]
+    [Header("Fruit")]
     public GameObject Citroen, Apple, Kers, Melon, Orange;
 
     /// <summary>
@@ -158,7 +157,7 @@ public class Grid : MonoBehaviour
                     }
                 }
                 break;
-            case 'j': 
+            case 'j':
                 {
                     InstantiateObject(SpawnPacman, x, z, SpawnerParent);
                 }
@@ -188,9 +187,10 @@ public class Grid : MonoBehaviour
     }
     #endregion 
 
-    private void InstantiateObject(GameObject gameObject, int x, int z, Transform Parent) { 
+    private void InstantiateObject(GameObject gameObject, int x, int z, Transform Parent)
+    {
 
-    GameObject gameObjectt;
+        GameObject gameObjectt;
         //Spawncode voor de blokken.
         if (gameObject == block1)
         {
@@ -206,9 +206,84 @@ public class Grid : MonoBehaviour
                 }
                 gameObjectt.tag = "BoundingWall";
             }
+
             else
             {
-                gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
+                int chosenblock = 0;
+                if (gamegrid[z, x - 1] != 'b' && gamegrid[z, x + 1] != 'b' && gamegrid[z - 1, x] == 'b' && gamegrid[z + 1, x] != 'b') { chosenblock = 1; }
+                else if (gamegrid[z, x - 1] != 'b' && gamegrid[z, x + 1] == 'b' && gamegrid[z - 1, x] == 'b' && gamegrid[z + 1, x] != 'b') { chosenblock = 2; }
+                else if (gamegrid[z, x - 1] != 'b' && gamegrid[z, x + 1] == 'b' && gamegrid[z - 1, x] == 'b' && gamegrid[z + 1, x] == 'b') { chosenblock = 3; }
+                else if (gamegrid[z, x - 1] != 'b' && gamegrid[z, x + 1] == 'b' && gamegrid[z - 1, x] != 'b' && gamegrid[z + 1, x] != 'b') { chosenblock = 4; }
+                else if (gamegrid[z, x - 1] != 'b' && gamegrid[z, x + 1] == 'b' && gamegrid[z - 1, x] != 'b' && gamegrid[z + 1, x] == 'b') { chosenblock = 5; }
+                else if (gamegrid[z, x - 1] == 'b' && gamegrid[z, x + 1] == 'b' && gamegrid[z - 1, x] != 'b' && gamegrid[z + 1, x] == 'b') { chosenblock = 6; }
+                else if (gamegrid[z, x - 1] != 'b' && gamegrid[z, x + 1] != 'b' && gamegrid[z - 1, x] != 'b' && gamegrid[z + 1, x] == 'b') { chosenblock = 7; }
+                else if (gamegrid[z, x - 1] == 'b' && gamegrid[z, x + 1] != 'b' && gamegrid[z - 1, x] != 'b' && gamegrid[z + 1, x] == 'b') { chosenblock = 8; }
+                else if (gamegrid[z, x - 1] == 'b' && gamegrid[z, x + 1] != 'b' && gamegrid[z - 1, x] == 'b' && gamegrid[z + 1, x] == 'b') { chosenblock = 9; }
+                else if (gamegrid[z, x - 1] == 'b' && gamegrid[z, x + 1] != 'b' && gamegrid[z - 1, x] != 'b' && gamegrid[z + 1, x] != 'b') { chosenblock = 10; }
+                else if (gamegrid[z, x - 1] == 'b' && gamegrid[z, x + 1] != 'b' && gamegrid[z - 1, x] == 'b' && gamegrid[z + 1, x] != 'b') { chosenblock = 11; }
+                else if (gamegrid[z, x - 1] == 'b' && gamegrid[z, x + 1] == 'b' && gamegrid[z - 1, x] == 'b' && gamegrid[z + 1, x] != 'b') { chosenblock = 12; }
+                else if (gamegrid[z, x - 1] == 'b' && gamegrid[z, x + 1] == 'b' && gamegrid[z - 1, x] != 'b' && gamegrid[z + 1, x] != 'b') { chosenblock = 13; }
+                else if (gamegrid[z, x - 1] != 'b' && gamegrid[z, x + 1] != 'b' && gamegrid[z - 1, x] == 'b' && gamegrid[z + 1, x] == 'b') { chosenblock = 14; }
+
+
+                switch (chosenblock) {
+                    case 1:
+                        gameObjectt = Instantiate(block3, Vector3.zero, gameObject.transform.rotation);
+                        gameObjectt.transform.eulerAngles = new Vector3(0, 90, 0);
+                        break;
+                    case 4:
+                        gameObjectt = Instantiate(block3, Vector3.zero, gameObject.transform.rotation);
+                        gameObjectt.transform.eulerAngles = new Vector3(0, 180, 0);
+                        break;
+                    case 7:
+                        gameObjectt = Instantiate(block3, Vector3.zero, gameObject.transform.rotation);
+                        gameObjectt.transform.eulerAngles = new Vector3(0, 270, 0);
+                        break;
+                    case 10:
+                        gameObjectt = Instantiate(block3, Vector3.zero, gameObject.transform.rotation);
+                        break;
+                    case 13:
+                        gameObjectt = Instantiate(block4, Vector3.zero, gameObject.transform.rotation);
+                        break;
+                    case 14:
+                        gameObjectt = Instantiate(block4, Vector3.zero, gameObject.transform.rotation);
+                        gameObjectt.transform.eulerAngles = new Vector3(0, 90, 0);
+                        break;
+                    case 2:
+                        gameObjectt = Instantiate(block5, Vector3.zero, gameObject.transform.rotation);
+                        gameObjectt.transform.eulerAngles = new Vector3(0, 180, 0);
+                        break;
+                    case 8:
+                        gameObjectt = Instantiate(block5, Vector3.zero, gameObject.transform.rotation);
+
+                        break;
+                    case 5:
+                        gameObjectt = Instantiate(block5, Vector3.zero, gameObject.transform.rotation);
+                        gameObjectt.transform.eulerAngles = new Vector3(0, 270, 0);
+                        break;
+                    case 11:
+                        gameObjectt = Instantiate(block5, Vector3.zero, gameObject.transform.rotation);
+                        gameObjectt.transform.eulerAngles = new Vector3(0, 90, 0);
+                        break;
+                    case 3:
+                        gameObjectt = Instantiate(block6, Vector3.zero, gameObject.transform.rotation);
+                        gameObjectt.transform.eulerAngles = new Vector3(0, 270, 0);
+                        break;
+                    case 9:
+                        gameObjectt = Instantiate(block6, Vector3.zero, gameObject.transform.rotation);
+                        gameObjectt.transform.eulerAngles = new Vector3(0, 90, 0);
+                        break;
+                    case 6:
+                        gameObjectt = Instantiate(block6, Vector3.zero, gameObject.transform.rotation);
+                        break;
+                    case 12:
+                        gameObjectt = Instantiate(block6, Vector3.zero, gameObject.transform.rotation);
+                        gameObjectt.transform.eulerAngles = new Vector3(0, 180, 0);
+                        break;
+                    default:
+                        gameObjectt = Instantiate(powerpill, Vector3.zero, gameObject.transform.rotation);
+                        break;
+                }
                 gameObjectt.tag = "Maze";
             }
             gameObjectt.transform.parent = Parent;
@@ -248,7 +323,7 @@ public class Grid : MonoBehaviour
                 case 2: LoadBlock('m', x, y); break;
                 case 3: LoadBlock('o', x, y); break;
             }
-            gamegrid[y,x] = 'd';
+            gamegrid[y, x] = 'd';
             Spawned = true;
         }
 
