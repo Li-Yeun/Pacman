@@ -710,7 +710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collision: 0
-  inputstring: BoundingWall
+  Firststring: BoundingWall
+  Secondstring: BoundingWall
 --- !u!114 &114136721807397628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -723,7 +724,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collision: 0
-  inputstring: Maze
+  Firststring: Maze
+  Secondstring: BoundingWall
 --- !u!114 &114148793324972426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -736,7 +738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collision: 0
-  inputstring: Maze
+  Firststring: Maze
+  Secondstring: BoundingWall
 --- !u!114 &114165193448897144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -749,7 +752,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collision: 0
-  inputstring: TeleportShit
+  Firststring: TeleportShit
+  Secondstring: TeleportShit
 --- !u!114 &114263557970263148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -775,7 +779,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collision: 0
-  inputstring: Maze
+  Firststring: Maze
+  Secondstring: Maze
 --- !u!114 &114330916325753022
 MonoBehaviour:
   m_ObjectHideFlags: 1

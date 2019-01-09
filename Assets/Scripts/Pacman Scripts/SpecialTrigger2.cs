@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpecialTrigger2 : MonoBehaviour {
 
     public bool Collision;
-    [SerializeField] string Firststring, Secondstring;
+    [SerializeField] string Firststring = "Maze";
+    [SerializeField] string Secondstring = "BoundingWall";
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == Firststring || other.gameObject.tag == Secondstring)
