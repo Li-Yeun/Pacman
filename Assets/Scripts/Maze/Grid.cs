@@ -10,7 +10,6 @@ public class Grid : MonoBehaviour
     #region Base Values
 
     private int TimesTeleporterCreated = 0;
-    float Timer = 0;
     // De muren van het spel
     public GameObject block1;
     public GameObject block2;
@@ -54,30 +53,31 @@ public class Grid : MonoBehaviour
         gamegrid = new char[,]
         {
             { 'b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b' },
-            { 'b','e','e','e','e','e','e','b','e','b','p','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','p','b','e','b','e','e','e','e','e','e','b' },
-            { 'b','e','b','b','b','b','e','e','e','b','e','b','b','e','b','b','b','e','b','e','b','b','b','e','b','b','e','b','e','e','e','b','b','b','b','e','b' },
+            { 'b','e','s','e','e','e','e','b','e','b','p','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','p','b','e','b','e','e','e','e','e','e','b' },
+            { 'b','s','b','b','b','b','e','e','e','b','e','b','b','e','b','b','b','e','b','e','b','b','b','e','b','b','e','b','e','e','e','b','b','b','b','e','b' },
             { 'b','e','b','b','e','e','e','b','e','b','e','b','b','e','b','b','b','e','b','e','b','b','b','e','b','b','e','b','e','b','e','e','e','b','b','e','b' },
-            { 'b','e','b','b','e','b','b','b','e','e','e','e','e','e','e','e','e','e','m','e','e','e','e','e','e','e','e','e','e','b','b','b','e','b','b','e','b' },
+            { 'b','e','b','b','e','b','b','b','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','b','b','b','e','b','b','e','b' },
             { 'b','e','e','e','e','b','b','b','e','b','e','b','b','e','b','e','b','b','b','b','b','e','b','e','b','b','e','b','e','b','b','b','e','e','e','e','b' },
             { 'b','b','e','b','e','e','e','e','e','b','e','b','b','e','b','e','e','e','b','e','e','e','b','e','b','b','e','b','e','e','e','e','e','b','e','b','b' },
             { 't','e','e','b','e','b','b','b','e','b','e','e','e','e','b','e','b','e','b','e','b','e','b','e','e','e','e','b','e','b','b','b','e','b','e','e','t' },
             { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','e','e','e','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
-            { 'b','b','e','b','b','f','b','b','b','b','e','e','b','e','b','e','b','b','k','b','b','e','b','e','b','e','e','b','b','b','b','f','b','b','e','b','b' },
+            { 'b','b','e','b','b','f','b','b','b','b','e','e','b','e','b','e','b','b','e','b','b','e','b','e','b','e','e','b','b','b','b','f','b','b','e','b','b' },
             { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','s','s','s','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
             { 'b','p','b','b','b','b','b','b','e','e','e','e','e','e','b','e','b','s','s','s','b','e','e','e','e','e','e','e','e','b','b','b','b','b','b','p','b' },
             { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','b','b','b','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
-            { 'b','b','e','b','b','f','b','b','b','b','e','e','b','e','b','e','e','e','a','e','e','e','b','e','b','e','e','b','b','b','b','f','b','b','e','b','b' },
+            { 'b','b','e','b','b','f','b','b','b','b','e','e','b','e','b','e','e','e','e','e','e','e','b','e','b','e','e','b','b','b','b','f','b','b','e','b','b' },
             { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
             { 't','e','e','b','e','b','e','b','e','b','e','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','e','b','e','b','e','b','e','b','e','e','t' },
             { 'b','b','e','b','e','b','e','b','e','b','e','b','b','f','b','b','b','e','b','e','b','b','b','f','b','b','e','b','e','b','e','b','e','b','e','b','b' },
-            { 'b','e','e','e','e','b','e','b','e','b','e','e','b','e','e','e','e','e','j','e','e','e','e','e','b','e','e','b','e','b','e','b','e','e','e','e','b' },
+            { 'b','e','e','e','e','b','e','b','e','b','e','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','e','b','e','b','e','b','e','e','e','e','b' },
             { 'b','e','b','b','b','b','e','b','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','b','e','b','b','b','b','e','b' },
             { 'b','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','e','e','b','e','e','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','b' },
             { 'b','e','b','e','b','b','e','b','e','b','e','b','b','b','b','b','b','e','b','e','b','b','b','b','b','b','e','b','e','b','e','b','b','e','b','e','b' },
-            { 'b','e','e','e','e','e','e','b','e','b','p','e','e','e','e','e','e','e','o','e','e','e','e','e','e','e','p','b','e','b','e','e','e','e','e','e','b' },
+            { 'b','e','e','e','e','e','e','b','e','b','p','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','p','b','e','b','e','e','e','e','e','e','b' },
             { 'b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b' },
         };
         SpawnGrid();
+        InvokeRepeating("SpawnRandomFruit", Random.Range(0, 10), Random.Range(0, 10));
     }
 
     #region GridConverter
@@ -115,6 +115,11 @@ public class Grid : MonoBehaviour
                 }
                 break;
             case 'e':
+                {
+                    InstantiateObject(pellet, x, z, PelletsParent);
+                }
+                break;
+            case 's':
                 {
                     InstantiateObject(pellet, x, z, PelletsParent);
                 }
@@ -186,52 +191,67 @@ public class Grid : MonoBehaviour
     private void InstantiateObject(GameObject gameObject, int x, int z, Transform Parent) { 
 
     GameObject gameObjectt;
+        //Spawncode voor de blokken.
         if (gameObject == block1)
-                    {
-                        // Zorgt zodat de muren aan de zijkant van het veld een andere tag hebben zodat pacman niet uit het veld kan.
-                        if (x == 0 || z == 0 || x == gamegrid.GetLongLength(1) - 1 || z == gamegrid.GetLongLength(0) - 1)
-                        {
+        {
+            // Zorgt zodat de muren aan de zijkant van het veld een andere tag hebben zodat pacman niet uit het veld kan.
+            if (x == 0 || z == 0 || x == gamegrid.GetLongLength(1) - 1 || z == gamegrid.GetLongLength(0) - 1)
+            {
+
+                // Zorgt voor een mooie rotatie van de meest buitentste blokken.
+                gameObjectt = Instantiate(block2, Vector3.zero, gameObject.transform.rotation);
                 if (x == 0 || x == gamegrid.GetLongLength(1) - 1)
                 {
-                    gameObjectt = Instantiate(block2, Vector3.zero, gameObject.transform.rotation);
                     gameObjectt.transform.eulerAngles = new Vector3(0, 90, 0);
                 }
-                else
-                {
-                    gameObjectt = Instantiate(block2, Vector3.zero, gameObject.transform.rotation);
-                }
-                               gameObjectt.tag = "BoundingWall";
-                        }
-                        else
-                        {
-                             gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
-                                gameObjectt.tag = "Maze";
-                        }
-                        gameObjectt.transform.parent = Parent;
-                        gameObjectt.transform.localPosition = new Vector3(x, 1.5f, z);
-                    }
-            
-                    else
-                        gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
-                        gameObjectt.transform.parent = Parent;
-                        gameObjectt.transform.localPosition = new Vector3(x, 1, z);
+                gameObjectt.tag = "BoundingWall";
+            }
+            else
+            {
+                gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
+                gameObjectt.tag = "Maze";
+            }
+            gameObjectt.transform.parent = Parent;
+            gameObjectt.transform.localPosition = new Vector3(x, 1f, z);
+        }
+        // Spawn code voor alles behalve de blokken.
+        else
+        {
+            gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
+            gameObjectt.transform.parent = Parent;
+            gameObjectt.transform.localPosition = new Vector3(x, 1, z);
+        }
 
     }
-    private void Update()
+    bool Spawned = true;
+    private void SpawnRandomFruit()
     {
-        Timer += Time.deltaTime;
-        float val = Random.value;
-        if (Timer > val * 10000)
+        Spawned = false;
+        for (int z = 0; z < gamegrid.GetLongLength(1); z++)
+            for (int x = 0; x < gamegrid.GetLongLength(0); x++)
+            {
+                Check(gamegrid[x, z], z, x);
+                if (Spawned)
+                {
+                    return;
+                }
+            }
+    }
+    private void Check(char TileType, int x, int y)
+    {
+        if (TileType == 's')
         {
-            Timer = 0;
             switch ((int)Random.Range(0, 4))
             {
-                case 0: LoadBlock('c', 1, 1); break;
-                case 1: LoadBlock('c', 35, 1); break;
-                case 2: LoadBlock('c', 1, 21); break;
-                case 3: LoadBlock('c', 35, 21); break;
+                case 0: LoadBlock('c', x, y); break;
+                case 1: LoadBlock('k', x, y); break;
+                case 2: LoadBlock('m', x, y); break;
+                case 3: LoadBlock('o', x, y); break;
             }
+            gamegrid[y,x] = 'd';
+            Spawned = true;
         }
+
     }
 
     public void Reset()
