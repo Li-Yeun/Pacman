@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class GhostCollision : MonoBehaviour
+public class GhostCollision : NetworkBehaviour
 {
     [Tooltip("FX prefab on player")] [SerializeField] GameObject DeathFX;
     private Transform Spawner;
@@ -15,7 +16,8 @@ public class GhostCollision : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        //todo Serverbased maken
+        if (!hasAuthority)
+            return;
         switch (col.gameObject.tag)
         {
             case "Enemy": //Zorgt dat geestjes door elkaar kunnen bewegen
@@ -27,15 +29,27 @@ public class GhostCollision : MonoBehaviour
                 {  //Zorgt dat het geestje doodgaat als pacman een powerpill op heeft.
                     if (pacmanAttacking.IsVulnerable)
                     {
-                        GameObject fx = Instantiate(DeathFX, transform.position, Quaternion.identity);
-                        fx.transform.parent = Spawner;
-                        gameObject.GetComponent<Movement>().dead = true;
+                        CmdDeathSequence();
                     }
                 }
                 break;
             default:
                 break;
         }
+    }
+
+    [CommandAttribute]
+    private void CmdDeathSequence()
+    {
+        RpcDeathSequence();
+    }
+
+    [ClientRpcAttribute]
+    private void RpcDeathSequence()
+    {
+        GameObject fx = Instantiate(DeathFX, transform.position, Quaternion.identity);
+        fx.transform.parent = Spawner;
+        gameObject.GetComponent<Movement>().dead = true;
     }
 
     public void GhostInstantiated()

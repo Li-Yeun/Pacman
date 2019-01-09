@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PacmanCollision : MonoBehaviour {
+public class PacmanCollision : NetworkBehaviour {
 
     [Tooltip("FX prefab on player")] [SerializeField] GameObject DeathFX;
     [SerializeField] Transform parent;
@@ -17,17 +18,16 @@ public class PacmanCollision : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        //todo Serverbased maken
+        if (!hasAuthority)
+            return;
+
         switch (collision.gameObject.tag)
         {
             case "Enemy":
             if (!pacmanAttacking.IsVulnerable)
-            {
-                    GameObject fx = Instantiate(DeathFX, transform.position, Quaternion.identity);
-                    fx.transform.parent = parent;
-                    Health.DecreaseHealth();
-                    SendMessage("StartDeathSequence");
-            }
+                {
+                    CmdDeathSequence();
+                }
                 break;
             case "Friendly":
                 break;
@@ -35,6 +35,20 @@ public class PacmanCollision : MonoBehaviour {
                 break;
         }
 
+    }
+
+    [CommandAttribute]
+    private void CmdDeathSequence()
+    {
+        RpcDeathSequence();
+    }
+    [ClientRpcAttribute]
+    private void RpcDeathSequence()
+    {
+        GameObject fx = Instantiate(DeathFX, transform.position, Quaternion.identity);
+        fx.transform.parent = parent;
+        Health.DecreaseHealth();
+        SendMessage("StartDeathSequence");
     }
 
     public void GhostInstantiated()

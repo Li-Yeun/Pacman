@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33421435060918540}
   - component: {fileID: 23816293182875112}
   - component: {fileID: 114895850693871490}
-  - component: {fileID: 114042833699492594}
   - component: {fileID: 114921024721064466}
   m_Layer: 11
   m_Name: WaterFirstPerson
@@ -86,18 +85,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1852377968124326}
   m_Mesh: {fileID: 4300006, guid: ba6a41dc489914734857bb5924eb70ad, type: 3}
---- !u!114 &114042833699492594
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852377968124326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c76496997fc8f294c94ff00bd157ac31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 40
 --- !u!114 &114895850693871490
 MonoBehaviour:
   m_ObjectHideFlags: 1

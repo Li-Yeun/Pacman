@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 114562851158869962}
   - component: {fileID: 114906402281635850}
   - component: {fileID: 114119674821883410}
-  - component: {fileID: 114484248446765988}
   m_Layer: 12
   m_Name: WaterThirdPerson
   m_TagString: Event
@@ -280,18 +279,6 @@ MonoBehaviour:
   sharedMaterial: {fileID: 2100000, guid: 656fde119942645aa8e062e04c119aa1, type: 2}
   waterQuality: 2
   edgeBlend: 1
---- !u!114 &114484248446765988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1991497417174304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c76496997fc8f294c94ff00bd157ac31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 40
 --- !u!114 &114562851158869962
 MonoBehaviour:
   m_ObjectHideFlags: 1
