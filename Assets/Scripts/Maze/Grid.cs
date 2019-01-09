@@ -26,7 +26,7 @@ public class Grid : MonoBehaviour
     // De teleporters aan de zijkant van de map.
     public GameObject Teleporter;
 
-    // De spawnlocation van Pacman (werkt alleen voor respawns for some reason niet de eerste spawn) TODO
+    // De spawnlocatwion van Pacman (werkt alleen voor respawns for some reason niet de eerste spawn) TODO
     public GameObject SpawnPacman;
     
     /// <summary>
