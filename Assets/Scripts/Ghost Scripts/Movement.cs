@@ -11,7 +11,6 @@ public class Movement : NetworkBehaviour {
 
     [Header("General")]
     [SerializeField] SpecialTrigger2 front, left, right;               //colliders voor navigatie
-    [SerializeField] NavMeshAgent agent;                       //navigatie voor teruggaan naar spawn
     private Transform respawn;                        //locatie van spawnpunt
 
     [Header("Ghost Behaviour")]
@@ -39,7 +38,6 @@ public class Movement : NetworkBehaviour {
     {
         gameObject.transform.parent = GameObject.FindGameObjectWithTag("Ghost Parent").transform;
         respawn = GameObject.FindGameObjectWithTag("Respawn").transform;
-        agent.enabled = false;
         Abilities = new bool[4];
         cooldowncounter = new float[4];
         DurationCounter = new float[4];
@@ -98,19 +96,16 @@ public class Movement : NetworkBehaviour {
     }       //Roteer de Character met 90 graden naar 1 rechts, -1 links
     void DoRespawn()
     {
-        agent.enabled = true;
         respawntimer += Time.deltaTime;
         if (respawntimer >= Respawntime)
         {
             dead = false;
-            agent.enabled = false;
             gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
             gameObject.transform.position = respawn.position;
             respawntimer = 0;
 
         }
-        agent.SetDestination(respawn.position);
-    }         //roept NavMeshAgent aan om de character naar spawn te sturen
+    }
     void AutoNav()
     {
         if (front.Collision)
