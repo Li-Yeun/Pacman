@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnOnOFFLight : MonoBehaviour {
+// The camera that this script is attachted too, will not render certain light sources.
+public class TurnOnOFFLight : MonoBehaviour { 
 
-    Light[] DisableLights;
-   // List<Light>EnableLights;
+    Light[] DisableLights;    // The light sources that the camera doesn't render
 
     public void Start()
     {
+        // Find all the lights that you don't want to render on this camera
         DisableLights = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Light>();
     }
     void OnPreRender()
     {
-        if(DisableLights == null)
+        if(DisableLights == null)       // Error prevention for null reference
         {
             Debug.Log("No Lights On Pre Render");
             return;
@@ -22,31 +23,22 @@ public class TurnOnOFFLight : MonoBehaviour {
         {
             light.enabled = true;
         }
-/*
-        foreach (Light light in EnableLights)
-        {
-            light.enabled = false;
-        }
-        */
     }
 
+    //This method disables the rendering of certain objects
     void OnPostRender()
     {
-        if (DisableLights == null)
+        if (DisableLights == null)      // Error prevention for null reference
         {
             Debug.Log("No Lights On Post Render");
             return;
         }
-        foreach (Light light in DisableLights)
+        else
         {
-            light.enabled = false;
+            foreach (Light light in DisableLights)
+            {
+                light.enabled = false;
+            }
         }
-
-        /*
-        foreach (Light light in EnableLights)
-        {
-            light.enabled = true;
-        }
-        */
     }
 }
