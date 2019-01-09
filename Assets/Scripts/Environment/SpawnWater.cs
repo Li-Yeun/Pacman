@@ -5,53 +5,51 @@ using UnityEngine.Networking;
 
 public class SpawnWater : NetworkBehaviour {
 
-    [SerializeField] GameObject WaterFirstPerson,WaterThirdPerson,Waterfall;
+    [SerializeField] GameObject WaterFirstPerson,WaterThirdPerson,Waterfall;      // Spawnable Prefabs
     [SerializeField] GameObject Pacman;
     [SerializeField] GameObject[] Ghosts;
-    float PacmanSpeed;
-    int GhostSpeed;
-    // Use this for initialization
+    float PacmanSpeed;   // The defaulth speed of Pacman
+    int GhostSpeed;      // The defaulth speed of the Ghosts
+
     void Start () {
         Pacman = GameObject.FindGameObjectWithTag("Player");
         Ghosts = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject water1 = Instantiate(WaterFirstPerson);
-        GameObject water2 = Instantiate(WaterThirdPerson);
-        Instantiate(Waterfall);
         PacmanSpeed = Pacman.GetComponent<PacmanMovement>().Speed.x;
-        if (Ghosts != null)
+        if (Ghosts.Length != 0)
         {
             GhostSpeed = Ghosts[0].GetComponent<Movement>().speed;
         }
-
-        Invoke("SlowDownMovement", 10f);
-        Destroy(water1,40f);
-        Destroy(water2,40f);
-        Invoke("ResetMovement", 39f);
+        SpawnPrefab(WaterFirstPerson, "SlowDownMovement", 10f);
+        SpawnPrefab(WaterThirdPerson, "ResetMovement", 39f);
+        Instantiate(Waterfall);
 
     }
 
+    public void SpawnPrefab(GameObject Event, string Method, float time)
+    {
+        GameObject gameObject = Instantiate(Event);
+        Invoke(Method, time);
+        Destroy(gameObject, 40f);
+    }
     public void SlowDownMovement()
     {
-        Pacman.GetComponent<PacmanMovement>().Speed.x = 0.5f;
-        Pacman.GetComponent<PacmanMovement>().Speed.z = 0.5f;
-        foreach(GameObject Ghost in Ghosts)
+        SetMovementSpeed(0.5f,1);
+    }
+
+    private void SetMovementSpeed(float PacmanMovementSpeed, int GhostMovementSpeed)
+    {
+        Pacman.GetComponent<PacmanMovement>().Speed.x = PacmanMovementSpeed;
+        Pacman.GetComponent<PacmanMovement>().Speed.z = PacmanMovementSpeed;
+        foreach (GameObject Ghost in Ghosts)
         {
             if (Ghost == null)
                 return;
-            Ghost.GetComponent<Movement>().speed = 1;
+            Ghost.GetComponent<Movement>().speed = GhostMovementSpeed;
         }
     }
 
     public void ResetMovement()
     {
-        Pacman.GetComponent<PacmanMovement>().Speed.x = PacmanSpeed;
-        Pacman.GetComponent<PacmanMovement>().Speed.z = PacmanSpeed;
-        foreach (GameObject Ghost in Ghosts)
-        {
-            if (Ghost == null)
-                return;
-            Ghost.GetComponent<Movement>().speed = GhostSpeed;
-        }
+        SetMovementSpeed(PacmanSpeed, GhostSpeed);
     }
-
 }
