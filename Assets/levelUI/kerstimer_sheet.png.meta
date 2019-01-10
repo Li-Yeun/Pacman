@@ -1,24 +1,24 @@
 fileFormatVersion: 2
-guid: 9a549206d4b9bdc449646a3fe5c54209
+guid: 6e1a055e8c3974d4cb9e2600a85b73e8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: appletimer_sheet_0
-    21300002: appletimer_sheet_1
-    21300004: appletimer_sheet_2
-    21300006: appletimer_sheet_3
-    21300008: appletimer_sheet_4
-    21300010: appletimer_sheet_5
-    21300012: appletimer_sheet_6
-    21300014: appletimer_sheet_7
-    21300016: appletimer_sheet_8
-    21300018: appletimer_sheet_9
-    21300020: appletimer_sheet_10
-    21300022: appletimer_sheet_11
-    21300024: appletimer_sheet_12
-    21300026: appletimer_sheet_13
-    21300028: appletimer_sheet_14
-    21300030: appletimer_sheet_15
-    21300032: appletimer_sheet_16
+    21300000: kerstimer_sheet_0
+    21300002: kerstimer_sheet_1
+    21300004: kerstimer_sheet_2
+    21300006: kerstimer_sheet_3
+    21300008: kerstimer_sheet_4
+    21300010: kerstimer_sheet_5
+    21300012: kerstimer_sheet_6
+    21300014: kerstimer_sheet_7
+    21300016: kerstimer_sheet_8
+    21300018: kerstimer_sheet_9
+    21300020: kerstimer_sheet_10
+    21300022: kerstimer_sheet_11
+    21300024: kerstimer_sheet_12
+    21300026: kerstimer_sheet_13
+    21300028: kerstimer_sheet_14
+    21300030: kerstimer_sheet_15
+    21300032: kerstimer_sheet_16
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -101,13 +101,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: appletimer_sheet_0
+      name: kerstimer_sheet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 13
         y: 0
-        width: 324
-        height: 319
+        width: 296
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,19 +115,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40929e3ef978dd44887dc822ee251fe5
+      spriteID: d924e6d81e7b9f2489bf9b54b5c8bd57
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_1
+      name: kerstimer_sheet_1
       rect:
         serializedVersion: 2
-        x: 316
+        x: 347
         y: 0
-        width: 327
-        height: 319
+        width: 296
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,19 +135,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a608261a3e817c9448d5bb5bcd717078
+      spriteID: aa8b4b26bba1ddc4db202fd763e010aa
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_2
+      name: kerstimer_sheet_2
       rect:
         serializedVersion: 2
-        x: 637
+        x: 678
         y: 0
-        width: 326
-        height: 319
+        width: 296
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,19 +155,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c466881976c00a0479dfea29f55297d0
+      spriteID: 30f160dd5dc1a274e8446f18a3b5a226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_3
+      name: kerstimer_sheet_3
       rect:
         serializedVersion: 2
-        x: 957
+        x: 1012
         y: 0
-        width: 325
-        height: 319
+        width: 296
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,19 +175,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a709113634a78f419a8d62e0c641aa6
+      spriteID: 086bcfb0bc47bd2489550155c4fe28b0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_4
+      name: kerstimer_sheet_4
       rect:
         serializedVersion: 2
-        x: 1275
+        x: 1340
         y: 0
-        width: 327
-        height: 319
+        width: 296
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,19 +195,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c1842091cc9e1e409e4fb4f27a95171
+      spriteID: 5495916bee1c715489a920dad304201a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_5
+      name: kerstimer_sheet_5
       rect:
         serializedVersion: 2
-        x: 1594
+        x: 1689
         y: 0
-        width: 327
-        height: 319
+        width: 296
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,19 +215,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea6a2e3d1231619499a1939b19de8d0f
+      spriteID: efb307d7a09c6924d9baedaaef90ec0c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_6
+      name: kerstimer_sheet_6
       rect:
         serializedVersion: 2
-        x: 1914
+        x: 2008
         y: 0
-        width: 327
-        height: 319
+        width: 296
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,19 +235,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5bea4880feb08f41aad9e16f09b14b5
+      spriteID: eaef36503007b2b4a8508addc24375c5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_7
+      name: kerstimer_sheet_7
       rect:
         serializedVersion: 2
-        x: 2236
+        x: 2322
         y: 0
-        width: 325
-        height: 319
+        width: 296
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,19 +255,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f35162e6a1657348afb5370e80e0320
+      spriteID: 9f1e7ed01ec9b4e48952057f42c23536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_8
+      name: kerstimer_sheet_8
       rect:
         serializedVersion: 2
-        x: 2555
+        x: 2638
         y: 0
-        width: 325
-        height: 319
+        width: 296
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,19 +275,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d447094e5a6a6d41b7f3a962b75f3b6
+      spriteID: 089e27d50f6c073489047834a5ceeffa
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_9
+      name: kerstimer_sheet_9
       rect:
         serializedVersion: 2
-        x: 2875
+        x: 2960
         y: 0
-        width: 325
-        height: 319
+        width: 293
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,19 +295,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52314b40393cf3c40997a40f03e4bd59
+      spriteID: 0d21eb8c47aae604e8f8702a8ef792ec
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_10
+      name: kerstimer_sheet_10
       rect:
         serializedVersion: 2
-        x: 3194
+        x: 3268
         y: 0
-        width: 325
-        height: 319
+        width: 296
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,19 +315,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8d79920e53b387428eb1b4740815e79
+      spriteID: e28dbdeb8a603634a9c6c6cda2e90882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_11
+      name: kerstimer_sheet_11
       rect:
         serializedVersion: 2
-        x: 3514
+        x: 3584
         y: 0
-        width: 327
-        height: 319
+        width: 293
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,19 +335,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e08d6819bc27c844596fa0b615e25df6
+      spriteID: d0ad7ac4ab0fc0347816ec0e2e3d7812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_12
+      name: kerstimer_sheet_12
       rect:
         serializedVersion: 2
-        x: 3834
+        x: 3919
         y: 0
-        width: 327
-        height: 319
+        width: 295
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,19 +355,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07c9387380917314d9c77947bad26333
+      spriteID: 4cef5a14ec57c30479a4caae37f733ac
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_13
+      name: kerstimer_sheet_13
       rect:
         serializedVersion: 2
-        x: 4153
+        x: 4235
         y: 0
-        width: 328
-        height: 319
+        width: 296
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -375,19 +375,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3d676f4c2f36994abf431a3723e4f6e
+      spriteID: 7391a2d648a455c439549666a9674c3c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_14
+      name: kerstimer_sheet_14
       rect:
         serializedVersion: 2
-        x: 4473
+        x: 4542
         y: 0
-        width: 327
-        height: 319
+        width: 293
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,19 +395,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e1d9791dd6860c47b784d58d9546271
+      spriteID: 706d4dcafc6fb8b4e9fd861b6838054e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_15
+      name: kerstimer_sheet_15
       rect:
         serializedVersion: 2
-        x: 4793
+        x: 4874
         y: 0
-        width: 327
-        height: 319
+        width: 295
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,19 +415,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4150eacb8589e854db691e571acff950
+      spriteID: 8990ef9c2ac094246a082108faab2c44
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: appletimer_sheet_16
+      name: kerstimer_sheet_16
       rect:
         serializedVersion: 2
-        x: 5115
+        x: 5213
         y: 0
-        width: 385
-        height: 319
+        width: 296
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -435,7 +435,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d960ad2f0132d2d41ae9cc4bf8c702e3
+      spriteID: a5c6a55016bce4d4bb7e70ed72c5b475
       vertices: []
       indices: 
       edges: []
@@ -443,7 +443,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6b9f340432db2614dba0863be193c444
+    spriteID: 5f3f59d8567d88346838b2bb9b95bcc7
     vertices: []
     indices: 
     edges: []
