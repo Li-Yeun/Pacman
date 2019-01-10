@@ -486,6 +486,34 @@ MonoBehaviour:
   - {fileID: 1908578163}
   - {fileID: 215278445}
   pacman_healthicon: {fileID: 21300000, guid: 333500ee40f98c047babd59572e66fca, type: 3}
+--- !u!1 &74478113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 74478114}
+  m_Layer: 0
+  m_Name: Meloenen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &74478114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 74478113}
+  m_LocalRotation: {x: -1, y: -0.0000001872535, z: -0.0000001872535, w: -3.5063874e-14}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 493863779}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -180, y: -0.00001525879, z: -0.00001525879}
 --- !u!1 &94208575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,6 +1719,7 @@ MonoBehaviour:
   Orange: {fileID: 1100645026223400, guid: 71b9a4ad7971f12488be27349e3d2f87, type: 2}
   Aardbei: {fileID: 1163221739206030, guid: e43c45db9374b3d4e96a3b64842c885c, type: 2}
   Appel: {fileID: 1755834371172606, guid: e1537287e3672ee4c83b45c2a0c45e09, type: 2}
+  Meloen: {fileID: 1114558948541288, guid: 1fe524795db013040a2103410ef8e393, type: 2}
   PelletsParent: {fileID: 713395708}
   TeleporterParent: {fileID: 1610990062}
   BuildingBlockParent: {fileID: 2108373392}
@@ -1703,6 +1732,7 @@ MonoBehaviour:
   OrangeParent: {fileID: 554541919}
   AardbeiParent: {fileID: 1038548936}
   AppelParent: {fileID: 197728077}
+  MeloenParent: {fileID: 74478114}
 --- !u!4 &485194055
 Transform:
   m_ObjectHideFlags: 0
@@ -1755,6 +1785,7 @@ Transform:
   m_Children:
   - {fileID: 1038548936}
   - {fileID: 197728077}
+  - {fileID: 74478114}
   - {fileID: 710820935}
   m_Father: {fileID: 485194055}
   m_RootOrder: 4
@@ -2000,7 +2031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &569324917
 Transform:
   m_ObjectHideFlags: 0
@@ -2125,7 +2156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &673004855
 Transform:
   m_ObjectHideFlags: 0
@@ -2287,7 +2318,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 493863779}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -180, y: -0.00001525879, z: -0.00001525879}
 --- !u!1 &713395707
 GameObject:
@@ -3790,7 +3821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1618367503
 Transform:
   m_ObjectHideFlags: 0

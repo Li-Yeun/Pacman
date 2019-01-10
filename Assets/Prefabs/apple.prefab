@@ -31,7 +31,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4142455829203154
 Transform:
   m_ObjectHideFlags: 1
@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collision: 0
-  inputstring: Player
+  Firststring: Maze
+  Secondstring: BoundingWall
 --- !u!114 &114608896115243890
 MonoBehaviour:
   m_ObjectHideFlags: 1
