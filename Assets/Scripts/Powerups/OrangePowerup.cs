@@ -30,7 +30,7 @@ public class OrangePowerup : MonoBehaviour
         {
             case "Pellet":
                 // Destroys the pallet so that the orange can take its place without them overlapping
-                Destroy(col.gameObject);
+                Destroy(col);
                 break;
             case "Player":
                 active = true;
@@ -38,8 +38,6 @@ public class OrangePowerup : MonoBehaviour
                 // Loops through all game objects to find those which make up the walls of the maze (excluding the exterior walls of the maze)
                 foreach (GameObject Maze in GameObject.FindGameObjectsWithTag("Maze"))
                 {
-                    
-                    if (Maze.GetComponentInChildren<SliderWallScript>()) { continue; }
                     // Creates a variable indicating the preferred alpha of the maze wall color and changes the maze wall color alpha to said variable value
                     Maze.GetComponentInChildren<Renderer>().material = material;
                     Maze.GetComponentInChildren<Renderer>().material.color = new Color(Maze.GetComponentInChildren<Renderer>().material.color.r, Maze.GetComponentInChildren<Renderer>().material.color.g, Maze.GetComponentInChildren<Renderer>().material.color.b,transparency = 0f);
@@ -58,7 +56,6 @@ public class OrangePowerup : MonoBehaviour
                 active = false;
                 foreach (GameObject Maze in GameObject.FindGameObjectsWithTag("Maze"))
                 {
-                    if (Maze.GetComponentInChildren<SliderWallScript>()) { continue; }
                     // Returns the maze wall's color alpha back to the way it was (1f = full opacity) in the same manner as when the opacity was lowered before
                     Maze.GetComponentInChildren<Renderer>().material = defaulthMaterial;
 
@@ -72,7 +69,6 @@ public class OrangePowerup : MonoBehaviour
                 {
                     foreach (GameObject Maze in GameObject.FindGameObjectsWithTag("Maze"))
                     {
-                        if (Maze.GetComponentInChildren<SliderWallScript>()) { continue; }
                         Maze.GetComponentInChildren<Renderer>().material.color = new Color(Maze.GetComponentInChildren<Renderer>().material.color.r, Maze.GetComponentInChildren<Renderer>().material.color.g, Maze.GetComponentInChildren<Renderer>().material.color.b, transparency);
                         transparency = 1.5f;
                     }
@@ -81,7 +77,6 @@ public class OrangePowerup : MonoBehaviour
                 {
                     foreach (GameObject Maze in GameObject.FindGameObjectsWithTag("Maze"))
                     {
-                        if (Maze.GetComponentInChildren<SliderWallScript>()) { continue; }
                         Maze.GetComponentInChildren<Renderer>().material.color = new Color(Maze.GetComponentInChildren<Renderer>().material.color.r, Maze.GetComponentInChildren<Renderer>().material.color.g, Maze.GetComponentInChildren<Renderer>().material.color.b, transparency);
                         transparency = 0.5f;
 

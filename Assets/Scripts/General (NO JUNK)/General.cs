@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class General : MonoBehaviour {
+public class General : MonoBehaviour
+{
     public void PacmanBroadcast()
     {
         BroadcastMessage("PacmanInstantiated");

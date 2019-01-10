@@ -19,9 +19,6 @@ public class Grid : MonoBehaviour
     // De pil die zorgt dat pacman de geestjes op kan eten ipv an andersom.
     public GameObject powerpill;
 
-    // De deuren die alleen pacman kan bedienen.
-    public GameObject SlidingDoor;
-
     // De teleporters aan de zijkant van de map.
     public GameObject Teleporter;
 
@@ -42,7 +39,7 @@ public class Grid : MonoBehaviour
     /// Dit zijn de locations waarin de instances gezet worden deze zijn alleen ter sortering verder niks.
     /// </summary>
     [Header("Parent")]
-    [SerializeField] Transform PelletsParent, SlidingDoorParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, MelonParent, SpawnerParent, AppleParent, KersParent, OrangeParent;
+    [SerializeField] Transform PelletsParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, MelonParent, SpawnerParent, AppleParent, KersParent, OrangeParent;
     public char[,] gamegrid;
     #endregion
 
@@ -60,14 +57,14 @@ public class Grid : MonoBehaviour
             { 'b','b','e','b','e','e','e','e','e','b','e','b','b','e','b','e','e','e','b','e','e','e','b','e','b','b','e','b','e','e','e','e','e','b','e','b','b' },
             { 't','e','e','b','e','b','b','b','e','b','e','e','e','e','b','e','b','e','b','e','b','e','b','e','e','e','e','b','e','b','b','b','e','b','e','e','t' },
             { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','e','e','e','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
-            { 'b','b','e','b','b','f','b','b','b','b','e','e','b','e','b','e','b','b','e','b','b','e','b','e','b','e','e','b','b','b','b','f','b','b','e','b','b' },
+            { 'b','b','e','b','b','e','b','b','b','b','e','e','b','e','b','e','b','b','e','b','b','e','b','e','b','e','e','b','b','b','b','e','b','b','e','b','b' },
             { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','s','s','s','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
             { 'b','p','b','b','b','b','b','b','e','e','e','e','e','e','b','e','b','s','s','s','b','e','e','e','e','e','e','e','e','b','b','b','b','b','b','p','b' },
             { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','b','b','b','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
-            { 'b','b','e','b','b','f','b','b','b','b','e','e','b','e','b','e','e','e','e','e','e','e','b','e','b','e','e','b','b','b','b','f','b','b','e','b','b' },
+            { 'b','b','e','b','b','e','b','b','b','b','e','e','b','e','b','e','e','e','e','e','e','e','b','e','b','e','e','b','b','b','b','e','b','b','e','b','b' },
             { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
             { 't','e','e','b','e','b','e','b','e','b','e','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','e','b','e','b','e','b','e','b','e','e','t' },
-            { 'b','b','e','b','e','b','e','b','e','b','e','b','b','f','b','b','b','e','b','e','b','b','b','f','b','b','e','b','e','b','e','b','e','b','e','b','b' },
+            { 'b','b','e','b','e','b','e','b','e','b','e','b','b','e','b','b','b','e','b','e','b','b','b','e','b','b','e','b','e','b','e','b','e','b','e','b','b' },
             { 'b','e','e','e','e','b','e','b','e','b','e','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','e','b','e','b','e','b','e','e','e','e','b' },
             { 'b','e','b','b','b','b','e','b','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','b','e','b','b','b','b','e','b' },
             { 'b','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','e','e','b','e','e','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','b' },
@@ -128,15 +125,10 @@ public class Grid : MonoBehaviour
                     InstantiateObject(powerpill, x, z, PowerPillParent);
                 }
                 break;
-            case 'f':
-                {
-                    InstantiateObject(SlidingDoor, x, z, SlidingDoorParent);
-                }
-                break;
             case 't':
                 {
                     TimesTeleporterCreated++;
-                    GameObject Teleporterr = Instantiate(Teleporter, Vector3.zero, SlidingDoor.transform.rotation);
+                    GameObject Teleporterr = Instantiate(Teleporter, Vector3.zero, TeleporterParent.transform.rotation);
                     Teleporterr.transform.parent = TeleporterParent;
                     Teleporterr.transform.localPosition = new Vector3(x, 1, z);
                     if (x == 0|| x == gamegrid.GetLongLength(1) - 1) { Teleporterr.transform.eulerAngles = new Vector3(180, 90, 0); }

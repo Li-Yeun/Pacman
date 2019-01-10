@@ -42,7 +42,7 @@ public class PelletBehaviour : MonoBehaviour {
     void Update () {
 		if (pelleteaten)
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
             pelletscore.PelletPoints();
         }
 	}

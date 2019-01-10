@@ -10,12 +10,10 @@ public class PlayerOnline : NetworkBehaviour {
     [SerializeField] GameObject FirstPerson, MiniMap, TopDownCamera;
     [SerializeField] GameObject MiniMapLight, GeneralLight;
     private General BroadCaster;
-    private SliderWallScript[] sliderWallScript;
+
 
     // Use this for initialization
     void Start () {
-
-        sliderWallScript = FindObjectsOfType<SliderWallScript>();
         BroadCaster = FindObjectOfType<General>();
         if (isLocalPlayer)
         {
@@ -36,13 +34,6 @@ public class PlayerOnline : NetworkBehaviour {
 
     public void Update()
     {
-        if(isLocalPlayer && Input.GetKeyDown("1"))
-        {
-            if (this.gameObject.name == "Player Pacman")
-            {
-                CmdOpenDoor();
-            }
-        }
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.R))
         {
             if (this.gameObject.name == "Player Pacman")
@@ -108,22 +99,6 @@ public class PlayerOnline : NetworkBehaviour {
         }
         
     }
-
-    [Command]
-    public void CmdOpenDoor()
-    {
-        RpcOpenDoor();
-    }
-
-    [ClientRpc]
-    public void RpcOpenDoor()
-    {
-        foreach (SliderWallScript Wall in sliderWallScript)
-        {
-            Wall.ActivateDoor = true;
-        }
-    }
-
     [Command]
     public void CmdReset()
     {
