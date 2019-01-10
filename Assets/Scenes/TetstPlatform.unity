@@ -1566,8 +1566,6 @@ MonoBehaviour:
   block6: {fileID: 1047504076526074, guid: 8ee8e4109a4b9834a8b1344e63bee10a, type: 2}
   pellet: {fileID: 1403524952478584, guid: c182280d107d8414ebdfa8de91efd5af, type: 2}
   powerpill: {fileID: 1330084163278984, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
-  SlidingDoor: {fileID: 1670355100042582, guid: 9dd446b7a72286f4096223ed61f1195a,
-    type: 2}
   Teleporter: {fileID: 1513580549421540, guid: 07448547b0bd03f48b410db7c55bb0a6, type: 2}
   SpawnPacman: {fileID: 501993956}
   Citroen: {fileID: 1334214873979808, guid: b1a5c0a04a306584c848f74858159131, type: 2}
@@ -1576,7 +1574,6 @@ MonoBehaviour:
   Melon: {fileID: 1482542802713326, guid: c1e4cf55e0e783441b2563e25e463187, type: 2}
   Orange: {fileID: 1100645026223400, guid: 71b9a4ad7971f12488be27349e3d2f87, type: 2}
   PelletsParent: {fileID: 713395708}
-  SlidingDoorParent: {fileID: 1145502500}
   TeleporterParent: {fileID: 1610990062}
   BuildingBlockParent: {fileID: 2108373392}
   PowerPillParent: {fileID: 903545344}
