@@ -3918,11 +3918,12 @@ MonoBehaviour:
   speed: 3
   Respawntime: 0
   Controls:
-  - x
-  - z
-  - c
-  - v
-  - b
+  - w
+  - a
+  - s
+  - d
+  - q
+  - e
   dead: 0
   Vision: {fileID: 114325951750609582}
   Cooldown:

@@ -19,6 +19,7 @@ public class Movement : NetworkBehaviour {
 
     [Header("Control Options")]
     [SerializeField] string[] Controls = new string[2];        //controls van spookje
+    bool goleft, goright;
 
     Vector3 Velocity;                                          //beweegsnelheid
     public bool dead = false;                                         //als true is de speler doodgegaan
@@ -75,15 +76,31 @@ public class Movement : NetworkBehaviour {
         {
             case 0:
                 Velocity = new Vector3(Time.deltaTime,0,0);
+                if (Input.GetKey(Controls[2])) { goleft = true; }
+                else { goleft = false; }
+                if (Input.GetKey(Controls[0])) { goright = true; }
+                else { goright = false; }
                 break;
             case 90:
                 Velocity = new Vector3(0, 0,-Time.deltaTime);
+                if (Input.GetKey(Controls[1])) { goleft = true; }
+                else { goleft = false; }
+                if (Input.GetKey(Controls[3])) { goright = true; }
+                else { goright = false; }
                 break;
             case 180:
                 Velocity = new Vector3(-Time.deltaTime, 0,0);
+                if (Input.GetKey(Controls[0])) { goleft = true; }
+                else { goleft = false; }
+                if (Input.GetKey(Controls[2])) { goright = true; }
+                else { goright = false; }
                 break;
             case 270:
                 Velocity = new Vector3(0,0,Time.deltaTime);
+                if (Input.GetKey(Controls[3])) { goleft = true; }
+                else { goleft = false; }
+                if (Input.GetKey(Controls[1])) { goright = true; }
+                else { goright = false; }
                 break;
         }
 
@@ -128,11 +145,11 @@ public class Movement : NetworkBehaviour {
     }           //zorgt voor automatisch draaien tegen muren
     void HandleInput()
     {
-        if (Input.GetKey(Controls[0]) && RotationCooldown == 0 && !right.Collision)
+        if (goleft && RotationCooldown == 0 && !right.Collision)
         {
             Rotate(1); 
         }
-        if (Input.GetKey(Controls[1]) && RotationCooldown == 0 && !left.Collision)
+        else if (goright && RotationCooldown == 0 && !left.Collision)
         {
             Rotate(-1);
         }
@@ -146,16 +163,15 @@ public class Movement : NetworkBehaviour {
         }
 
 
-        //TODO forloop van maken :/
-        if (Input.GetKey(Controls[2]) && !Abilities[0] && cooldowncounter[0] >= Cooldown[0])
+        if (Input.GetKey(Controls[4]) && !Abilities[0] && cooldowncounter[0] >= Cooldown[0])
         {
             Abilities[0] = true;
         }
-        if (Input.GetKey(Controls[3]) && !Abilities[1] && cooldowncounter[1] >= Cooldown[1])
+        if (Input.GetKey(Controls[5]) && !Abilities[1] && cooldowncounter[1] >= Cooldown[1])
         {
             Abilities[1] = true;
         }
-        if (Input.GetKey(Controls[4]) && !Abilities[2] && cooldowncounter[2] >= Cooldown[2])
+        if (Input.GetKey(Controls[6]) && !Abilities[2] && cooldowncounter[2] >= Cooldown[2])
         {
             Abilities[2] = true;
         }
@@ -197,10 +213,5 @@ public class Movement : NetworkBehaviour {
             cooldowncounter[1] += Time.deltaTime;
         }
 
-    }
-
-    public void Reset()
-    {
-        DoRespawn();
     }
 }
