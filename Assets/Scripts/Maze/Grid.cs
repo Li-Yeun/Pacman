@@ -33,13 +33,13 @@ public class Grid : MonoBehaviour
     /// ---
     /// </summary>
     [Header("Fruit")]
-    public GameObject Citroen, Apple, Kers, Melon, Orange;
+    public GameObject Citroen, Apple, Kers, Melon, Orange, Aardbei;
 
     /// <summary>
     /// Dit zijn de locations waarin de instances gezet worden deze zijn alleen ter sortering verder niks.
     /// </summary>
     [Header("Parent")]
-    [SerializeField] Transform PelletsParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, MelonParent, SpawnerParent, AppleParent, KersParent, OrangeParent;
+    [SerializeField] Transform PelletsParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, MelonParent, SpawnerParent, AppleParent, KersParent, OrangeParent, AardbeiParent;
     public char[,] gamegrid;
     #endregion
 
@@ -73,7 +73,7 @@ public class Grid : MonoBehaviour
             { 'b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b' },
         };
         SpawnGrid();
-        InvokeRepeating("SpawnRandomFruit", Random.Range(0, 3), Random.Range(0, 3));
+        InvokeRepeating("SpawnRandomFruit", Random.Range(0, 4), Random.Range(0, 4));
     }
 
     #region GridConverter
@@ -158,6 +158,11 @@ public class Grid : MonoBehaviour
             case 'c':
                 {
                     InstantiateObject(Citroen, x, z, CitroenParent);
+                }
+                break;
+            case 'w':
+                {
+                    InstantiateObject(Aardbei, x, z, AardbeiParent);
                 }
                 break;
             case 'a':
@@ -309,12 +314,13 @@ public class Grid : MonoBehaviour
     {
         if (TileType == 's')
         {
-            switch ((int)Random.Range(0, 4))
+            switch ((int)Random.Range(0, 5))
             {
                 case 0: LoadBlock('c', x, y); break;
                 case 1: LoadBlock('k', x, y); break;
                 case 2: LoadBlock('m', x, y); break;
                 case 3: LoadBlock('o', x, y); break;
+                case 4: LoadBlock('w', x, y); break;
             }
             gamegrid[y, x] = 'd';
             Spawned = true;
