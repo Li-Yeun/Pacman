@@ -1720,6 +1720,8 @@ MonoBehaviour:
   Aardbei: {fileID: 1163221739206030, guid: e43c45db9374b3d4e96a3b64842c885c, type: 2}
   Appel: {fileID: 1755834371172606, guid: e1537287e3672ee4c83b45c2a0c45e09, type: 2}
   Meloen: {fileID: 1114558948541288, guid: 1fe524795db013040a2103410ef8e393, type: 2}
+  Sinaasappel: {fileID: 1796113295347490, guid: 495f225b6fbab8d4d938e2bf5593d9b8,
+    type: 2}
   PelletsParent: {fileID: 713395708}
   TeleporterParent: {fileID: 1610990062}
   BuildingBlockParent: {fileID: 2108373392}
@@ -1733,6 +1735,7 @@ MonoBehaviour:
   AardbeiParent: {fileID: 1038548936}
   AppelParent: {fileID: 197728077}
   MeloenParent: {fileID: 74478114}
+  SinaasappelParent: {fileID: 1348131323}
 --- !u!4 &485194055
 Transform:
   m_ObjectHideFlags: 0
@@ -1767,7 +1770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 493863779}
   m_Layer: 0
-  m_Name: Power-ups
+  m_Name: Fruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1787,6 +1790,7 @@ Transform:
   - {fileID: 197728077}
   - {fileID: 74478114}
   - {fileID: 710820935}
+  - {fileID: 1348131323}
   m_Father: {fileID: 485194055}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3340,6 +3344,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4464193205433164, guid: 7034bb6ec5beb514da13788bce1adbed,
     type: 2}
   m_PrefabInternal: {fileID: 1256696776}
+--- !u!1 &1348131322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1348131323}
+  m_Layer: 0
+  m_Name: Sinaasappels
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1348131323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348131322}
+  m_LocalRotation: {x: -1, y: -0.0000001872535, z: -0.0000001872535, w: -3.5063874e-14}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 493863779}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -180, y: -0.00001525879, z: -0.00001525879}
 --- !u!1 &1406483053
 GameObject:
   m_ObjectHideFlags: 0

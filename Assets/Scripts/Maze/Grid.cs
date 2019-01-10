@@ -33,13 +33,13 @@ public class Grid : MonoBehaviour
     /// ---
     /// </summary>
     [Header("Fruit")]
-    public GameObject Citroen, Apple, Kers, Melon, Orange, Aardbei, Appel, Meloen;
+    public GameObject Citroen, Apple, Kers, Melon, Orange, Aardbei, Appel, Meloen, Sinaasappel;
 
     /// <summary>
     /// Dit zijn de locations waarin de instances gezet worden deze zijn alleen ter sortering verder niks.
     /// </summary>
     [Header("Parent")]
-    [SerializeField] Transform PelletsParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, MelonParent, SpawnerParent, AppleParent, KersParent, OrangeParent, AardbeiParent, AppelParent, MeloenParent;
+    [SerializeField] Transform PelletsParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, MelonParent, SpawnerParent, AppleParent, KersParent, OrangeParent, AardbeiParent, AppelParent, MeloenParent, SinaasappelParent;
     public char[,] gamegrid;
     #endregion
 
@@ -177,7 +177,7 @@ public class Grid : MonoBehaviour
                 break;
             case 'o':
                 {
-                    InstantiateObject(Orange, x, z, OrangeParent);
+                    InstantiateObject(Sinaasappel, x, z, SinaasappelParent);
                 }
                 break;
             case 'm':
