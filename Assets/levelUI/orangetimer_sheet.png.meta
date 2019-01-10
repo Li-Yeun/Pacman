@@ -115,7 +115,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2be64de0d0c7a14458e9587694e18d33
+      spriteID: 7950988547a94384f98e67962325a1d8
       vertices: []
       indices: 
       edges: []
@@ -126,7 +126,7 @@ TextureImporter:
         serializedVersion: 2
         x: 358
         y: 0
-        width: 331
+        width: 329
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -135,7 +135,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d15b43c873ecd64d8a873d18a153452
+      spriteID: 2303f4872394a0342b9dfb0d53638612
       vertices: []
       indices: 
       edges: []
@@ -144,9 +144,9 @@ TextureImporter:
       name: orangetimer_sheet_2
       rect:
         serializedVersion: 2
-        x: 700
+        x: 699
         y: 0
-        width: 326
+        width: 329
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -155,7 +155,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87b8e66a3d9609440b95912b2a8e1071
+      spriteID: 22cb333c576683b45887f791946d9d6c
       vertices: []
       indices: 
       edges: []
@@ -164,9 +164,9 @@ TextureImporter:
       name: orangetimer_sheet_3
       rect:
         serializedVersion: 2
-        x: 1047
+        x: 1049
         y: 0
-        width: 331
+        width: 326
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -175,7 +175,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4e4fd0d184d0ff4f92a8cfb0252a65b
+      spriteID: f6bde4ac5a5557b48b234a17873b634f
       vertices: []
       indices: 
       edges: []
@@ -184,9 +184,9 @@ TextureImporter:
       name: orangetimer_sheet_4
       rect:
         serializedVersion: 2
-        x: 1423
+        x: 1421
         y: 0
-        width: 326
+        width: 329
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -195,7 +195,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 814d3a9f7a311f644b6476a3445171e2
+      spriteID: a359a5dbe88256e4a9f3ae461aee6d75
       vertices: []
       indices: 
       edges: []
@@ -204,9 +204,9 @@ TextureImporter:
       name: orangetimer_sheet_5
       rect:
         serializedVersion: 2
-        x: 1813
+        x: 1814
         y: 0
-        width: 326
+        width: 328
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -215,7 +215,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e23aa4fdbaae5904db05a4c6b00f1589
+      spriteID: e0c15d8a9f9c03d40a1e243f53b4d7fd
       vertices: []
       indices: 
       edges: []
@@ -235,7 +235,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d12ef325ee5a7b84ba4017dd556d8663
+      spriteID: 1ee04229136fd6f48808a6782bc0c85e
       vertices: []
       indices: 
       edges: []
@@ -244,9 +244,9 @@ TextureImporter:
       name: orangetimer_sheet_7
       rect:
         serializedVersion: 2
-        x: 2547
+        x: 2551
         y: 0
-        width: 334
+        width: 328
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -255,7 +255,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c08ceabd43bc6534186f47f14d0a9bb2
+      spriteID: f2eb2b55eeedbdc48965cf424969ee7f
       vertices: []
       indices: 
       edges: []
@@ -264,9 +264,9 @@ TextureImporter:
       name: orangetimer_sheet_8
       rect:
         serializedVersion: 2
-        x: 2918
+        x: 2916
         y: 0
-        width: 326
+        width: 329
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -275,7 +275,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b29f01bf06b7e343aef3f901621afc8
+      spriteID: c3a11ba02e1f6c0428cdc7597acc34cc
       vertices: []
       indices: 
       edges: []
@@ -295,7 +295,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6aad8a96f1bc3c640a381a0597c27208
+      spriteID: 6b8d3c4df72e8914a8358ff9034ed7b6
       vertices: []
       indices: 
       edges: []
@@ -306,7 +306,7 @@ TextureImporter:
         serializedVersion: 2
         x: 3656
         y: 0
-        width: 331
+        width: 326
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -315,7 +315,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ad7bcf80df7f9d4883afdb7f0ca1de1
+      spriteID: 0d780df91c3535848b574f216399f74a
       vertices: []
       indices: 
       edges: []
@@ -326,7 +326,7 @@ TextureImporter:
         serializedVersion: 2
         x: 4028
         y: 0
-        width: 326
+        width: 328
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -335,7 +335,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e53da49ab6d48f748af28d89c870850b
+      spriteID: d92308b48cd986946a6b8f0d66f8aa76
       vertices: []
       indices: 
       edges: []
@@ -344,7 +344,7 @@ TextureImporter:
       name: orangetimer_sheet_12
       rect:
         serializedVersion: 2
-        x: 4401
+        x: 4402
         y: 0
         width: 329
         height: 320
@@ -355,7 +355,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31559e79fa50cf44bb2c31fac8790621
+      spriteID: a59360ee0bf9a604a9c4dc9ecc426e37
       vertices: []
       indices: 
       edges: []
@@ -364,7 +364,7 @@ TextureImporter:
       name: orangetimer_sheet_13
       rect:
         serializedVersion: 2
-        x: 4776
+        x: 4777
         y: 0
         width: 329
         height: 320
@@ -375,7 +375,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a39ef50a325c28f45ad18b374636371c
+      spriteID: bd160cb4e55b8bb4b8ce4a85c574bd0f
       vertices: []
       indices: 
       edges: []
@@ -395,7 +395,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 693547c42694995499d6982d28d44b60
+      spriteID: fa0e7a7adce3838438da71b47616cd78
       vertices: []
       indices: 
       edges: []
@@ -404,9 +404,9 @@ TextureImporter:
       name: orangetimer_sheet_15
       rect:
         serializedVersion: 2
-        x: 5500
+        x: 5505
         y: 0
-        width: 334
+        width: 328
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -415,7 +415,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cda91f784a863d4bbc342087d24b5e7
+      spriteID: d2545209ac513d04aabb91a79d7a52c5
       vertices: []
       indices: 
       edges: []
@@ -424,9 +424,9 @@ TextureImporter:
       name: orangetimer_sheet_16
       rect:
         serializedVersion: 2
-        x: 5859
+        x: 5861
         y: 0
-        width: 441
+        width: 376
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -435,7 +435,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64e2949f1c171f84fa3721c8c62d040d
+      spriteID: 7e7856d973790e443868add83ca51a62
       vertices: []
       indices: 
       edges: []
@@ -443,7 +443,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ab7edb29b75f99a48b0920cdebd2e00e
+    spriteID: b3a5fd8aabddfa24f9931dbaab5e6ef2
     vertices: []
     indices: 
     edges: []

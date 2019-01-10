@@ -113,7 +113,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4eea67f3e3565443b6eae5809400034
+      spriteID: d69314a7f2d9e67449acc2561af44f01
       vertices: []
       indices: 
       edges: []
@@ -124,7 +124,7 @@ TextureImporter:
         serializedVersion: 2
         x: 379
         y: 0
-        width: 326
+        width: 327
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -133,7 +133,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d4ee0bd44940b949a9da195d99892ee
+      spriteID: 99ac1fd051b855d498a9834c15b520b3
       vertices: []
       indices: 
       edges: []
@@ -142,9 +142,9 @@ TextureImporter:
       name: jumptimer_sheet_2
       rect:
         serializedVersion: 2
-        x: 737
+        x: 736
         y: 0
-        width: 328
+        width: 327
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -153,7 +153,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c93a9cf60d11ed747a118c3befb51610
+      spriteID: 0be85d1cf1eeb3046ad2e12797ca61ea
       vertices: []
       indices: 
       edges: []
@@ -162,9 +162,9 @@ TextureImporter:
       name: jumptimer_sheet_3
       rect:
         serializedVersion: 2
-        x: 1103
+        x: 1105
         y: 0
-        width: 328
+        width: 325
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -173,7 +173,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8df6115ec99e2b642957a11821582032
+      spriteID: 7b897a4a938d4cd4c9e5a0fc13312c48
       vertices: []
       indices: 
       edges: []
@@ -184,7 +184,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1478
         y: 0
-        width: 328
+        width: 327
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -193,7 +193,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baddae106c957ea41b5c8473879a73d7
+      spriteID: eef9b604cc697444d94b77df2427ce3a
       vertices: []
       indices: 
       edges: []
@@ -202,27 +202,7 @@ TextureImporter:
       name: jumptimer_sheet_5
       rect:
         serializedVersion: 2
-        x: 1835
-        y: 0
-        width: 326
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2082254db432f5442a3c9dc7ce603850
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jumptimer_sheet_6
-      rect:
-        serializedVersion: 2
-        x: 2184
+        x: 1834
         y: 0
         width: 328
         height: 320
@@ -233,7 +213,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f791bbbe92f1f0439e6a63639b5b0e2
+      spriteID: 90d58974922705f4284a17e60db3bfe0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jumptimer_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2186
+        y: 0
+        width: 327
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ab9a5dc714fdd418938a274ce13d43
       vertices: []
       indices: 
       edges: []
@@ -244,7 +244,7 @@ TextureImporter:
         serializedVersion: 2
         x: 2553
         y: 0
-        width: 328
+        width: 327
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -253,7 +253,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ab9b24540758334c9f8718f0a4fef61
+      spriteID: b98a70aa708f24b45b25d6ed01ac0e41
       vertices: []
       indices: 
       edges: []
@@ -264,7 +264,7 @@ TextureImporter:
         serializedVersion: 2
         x: 2899
         y: 0
-        width: 328
+        width: 327
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -273,7 +273,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07d34c8d149a00140ad268133be93d85
+      spriteID: 874ab4a1146464145a2cbf0dc11bb5a5
       vertices: []
       indices: 
       edges: []
@@ -282,7 +282,7 @@ TextureImporter:
       name: jumptimer_sheet_9
       rect:
         serializedVersion: 2
-        x: 3259
+        x: 3260
         y: 0
         width: 328
         height: 320
@@ -293,7 +293,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40f23a783ad05b24190689eb4c02e410
+      spriteID: d2126cb7949ec88409b99ae66b33b218
       vertices: []
       indices: 
       edges: []
@@ -302,7 +302,7 @@ TextureImporter:
       name: jumptimer_sheet_10
       rect:
         serializedVersion: 2
-        x: 3605
+        x: 3606
         y: 0
         width: 328
         height: 320
@@ -313,7 +313,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c21f49b6a94f7444eaeeb0489ff2e86f
+      spriteID: 8a6b5bb4da8a0f143a84598a3b35b495
       vertices: []
       indices: 
       edges: []
@@ -333,7 +333,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75caf7ccf1df5144dbef3a25daa396d1
+      spriteID: 5f4d4895d5cac3d4ea9cb4bdc01346fd
       vertices: []
       indices: 
       edges: []
@@ -353,7 +353,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3b11ef612ed24947a30717533f9d57e
+      spriteID: d059d7dd92a0df14c923584b58c38bdb
       vertices: []
       indices: 
       edges: []
@@ -362,7 +362,7 @@ TextureImporter:
       name: jumptimer_sheet_13
       rect:
         serializedVersion: 2
-        x: 4702
+        x: 4703
         y: 0
         width: 327
         height: 320
@@ -373,7 +373,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 458f951bcdf0154468aab93155a114c5
+      spriteID: 44a23172a98acc043af02c7ff9766339
       vertices: []
       indices: 
       edges: []
@@ -382,9 +382,9 @@ TextureImporter:
       name: jumptimer_sheet_14
       rect:
         serializedVersion: 2
-        x: 5058
+        x: 5059
         y: 0
-        width: 942
+        width: 350
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -393,7 +393,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ac999d1108b64848ab1f8b7db48581e
+      spriteID: e060c84cdd7033c47822450168068a06
       vertices: []
       indices: 
       edges: []
@@ -401,7 +401,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4d36f9d8425e74246bf7216157efe326
+    spriteID: 0b725fc9f6cdba4449c6b878ea67949a
     vertices: []
     indices: 
     edges: []

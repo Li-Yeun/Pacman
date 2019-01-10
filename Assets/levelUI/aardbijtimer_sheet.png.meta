@@ -105,7 +105,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 321
+        width: 318
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -114,7 +114,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32ca703d429277943ab840c5d6253035
+      spriteID: 6bbf8dfd0de394a4388f7642839bf1ff
       vertices: []
       indices: 
       edges: []
@@ -123,9 +123,9 @@ TextureImporter:
       name: aardbijtimer_sheet_1
       rect:
         serializedVersion: 2
-        x: 312
+        x: 444
         y: 0
-        width: 328
+        width: 325
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -134,7 +134,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21457d33c1c85cd42bacc508542fdce0
+      spriteID: 1d0e5832825a0b14a839364dcb37f6b3
       vertices: []
       indices: 
       edges: []
@@ -143,7 +143,7 @@ TextureImporter:
       name: aardbijtimer_sheet_2
       rect:
         serializedVersion: 2
-        x: 634
+        x: 942
         y: 0
         width: 325
         height: 320
@@ -154,7 +154,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce2819b638c347a42a2a86c973cc643b
+      spriteID: 29a04ca88cf4edf42a467b12212912f4
       vertices: []
       indices: 
       edges: []
@@ -163,167 +163,7 @@ TextureImporter:
       name: aardbijtimer_sheet_3
       rect:
         serializedVersion: 2
-        x: 954
-        y: 0
-        width: 328
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6c63310031719f48b65ba7646b057e8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: aardbijtimer_sheet_4
-      rect:
-        serializedVersion: 2
-        x: 1273
-        y: 0
-        width: 328
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae7803895ddf3b54ab25d4faf6dc257a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: aardbijtimer_sheet_5
-      rect:
-        serializedVersion: 2
-        x: 1595
-        y: 0
-        width: 325
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 408fd92704b5de245ab3ee827f4efb95
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: aardbijtimer_sheet_6
-      rect:
-        serializedVersion: 2
-        x: 1915
-        y: 0
-        width: 328
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4740b283dedb48b4a9a98a2bbe698767
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: aardbijtimer_sheet_7
-      rect:
-        serializedVersion: 2
-        x: 2234
-        y: 0
-        width: 328
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0254e6b0f9ee1814688de9aab8959fd5
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: aardbijtimer_sheet_8
-      rect:
-        serializedVersion: 2
-        x: 2553
-        y: 0
-        width: 328
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0d03e196c4d7164caf56a30455d00c7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: aardbijtimer_sheet_9
-      rect:
-        serializedVersion: 2
-        x: 2873
-        y: 0
-        width: 328
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c8441a31b68bb0429b7fb2c7ec1d5d7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: aardbijtimer_sheet_10
-      rect:
-        serializedVersion: 2
-        x: 3192
-        y: 0
-        width: 328
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b525652846d8e7488463b93d3e4c32c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: aardbijtimer_sheet_11
-      rect:
-        serializedVersion: 2
-        x: 3514
+        x: 1305
         y: 0
         width: 327
         height: 320
@@ -334,7 +174,167 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a427993124461d49931294f87f9bd59
+      spriteID: f912381bf5eb85c4db43da6c65e4d9ac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aardbijtimer_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 0
+        width: 326
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e2dfa36912c6c4592f665f0df802a6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aardbijtimer_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2035
+        y: 0
+        width: 328
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd81a04fae47b941be9a8b1f16e4d46
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aardbijtimer_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2386
+        y: 0
+        width: 328
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6505c17f46927654fbcd74aef6b8253c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aardbijtimer_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2755
+        y: 0
+        width: 326
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c32be8ba5ae934b84654ef64ea6a8c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aardbijtimer_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 3110
+        y: 0
+        width: 328
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aac73143bf7db74ea7f40b49e4333a5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aardbijtimer_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 3470
+        y: 0
+        width: 322
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0d3095704f69f45b1f6d1f3137f25b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aardbijtimer_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 3828
+        y: 0
+        width: 328
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbe22b8d566e984e9b90afae679240b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aardbijtimer_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 4179
+        y: 0
+        width: 328
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09f9851754b83c4e9c2e06335ae06f0
       vertices: []
       indices: 
       edges: []
@@ -343,9 +343,9 @@ TextureImporter:
       name: aardbijtimer_sheet_12
       rect:
         serializedVersion: 2
-        x: 3834
+        x: 4551
         y: 0
-        width: 328
+        width: 325
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -354,7 +354,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 712e1dbb56f50f64ba457859826692ab
+      spriteID: 4798702271db5214cb72afe4209a8e49
       vertices: []
       indices: 
       edges: []
@@ -363,9 +363,9 @@ TextureImporter:
       name: aardbijtimer_sheet_13
       rect:
         serializedVersion: 2
-        x: 4153
+        x: 4932
         y: 0
-        width: 328
+        width: 325
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -374,7 +374,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02ff6f7806e9a4d45aadacdfa70866a1
+      spriteID: 9058e3b3375d3c24d83a62288660dc95
       vertices: []
       indices: 
       edges: []
@@ -383,9 +383,9 @@ TextureImporter:
       name: aardbijtimer_sheet_14
       rect:
         serializedVersion: 2
-        x: 4472
+        x: 5298
         y: 0
-        width: 328
+        width: 326
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -394,7 +394,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91bf0f9ff9341da4eae3b62c39a420b5
+      spriteID: be706f747de087e44b5a475c0019d325
       vertices: []
       indices: 
       edges: []
@@ -403,9 +403,9 @@ TextureImporter:
       name: aardbijtimer_sheet_15
       rect:
         serializedVersion: 2
-        x: 4794
+        x: 5670
         y: 0
-        width: 1206
+        width: 330
         height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -414,7 +414,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bb226d2ed5901a48b72dc982171584a
+      spriteID: 76ff138329fc60343b5c0b52a78d1bc1
       vertices: []
       indices: 
       edges: []
@@ -422,7 +422,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 117d718e3744c8443b44820d72e55a2e
+    spriteID: d2fd10fef39543c4d93d9364c8bced9d
     vertices: []
     indices: 
     edges: []
