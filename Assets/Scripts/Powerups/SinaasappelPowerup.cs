@@ -31,14 +31,14 @@ public class SinaasappelPowerup : MonoBehaviour {
     IEnumerator Programma()
     {
         Switches(0f, 0);
-        yield return new WaitForSeconds(2/3*duratation);
-        while (duratation - 2/3*duratation >= 0)
+        yield return new WaitForSeconds((float) 8/9*duratation);
+        while (duratation - ((float) 8/9*duratation) > 0)
         {
-            Switches(0, 0);
-            yield return new WaitForSeconds(0.5f);
+            Switches(0f, 0);
+            yield return new WaitForSeconds(0.25f);
             Switches(0.5f, 0);
             duratation--;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.25f);
         }
         Switches(1f,1);
     }

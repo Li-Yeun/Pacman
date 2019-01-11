@@ -26,9 +26,6 @@ public class AnimatorScript : NetworkBehaviour {
     [Header("Animators")]
     Animator animator2;
     [SerializeField] Animator animatorBodyMesh;
-
-
-
     [SerializeField] PacmanMovement Pacman;
     [SerializeField] GameObject PacmanAnimationObject;
     private Transform PacmanParentParent; // was een empty serielizedfield
@@ -38,7 +35,6 @@ public class AnimatorScript : NetworkBehaviour {
     [SerializeField] SpecialTrigger2 Jumper;
     [SerializeField] SpecialTrigger2 JumperOuterWalls;
     [SerializeField] SpecialTrigger2 TeleporterClose;
-    public List<GameObject> Apple;
     public bool AnimationPlaying = false;
 
     void Start()
@@ -62,19 +58,6 @@ public class AnimatorScript : NetworkBehaviour {
             if (!Jumper.Collision && !JumperOuterWalls.Collision && !TeleporterClose.Collision && !AnimationPlaying)
             {
                 Jump();
-            }
-        }
-
-        //Todo Herschrijven
-
-        foreach (GameObject apple in Apple)
-        {
-            if (apple.GetComponent<SpecialTrigger2>().Collision)
-            {
-                ScoutingJump();
-                Destroy(apple);
-                Apple.Remove(apple);
-                return;
             }
         }
     }
@@ -107,12 +90,6 @@ public class AnimatorScript : NetworkBehaviour {
             case 2: animator2.Play("PacmanAnimationJump4"); break;
             case 3: animator2.Play("PacmanAnimationJump2"); break;
         }
-        animatorBodyMesh.Play("PacmanSalto"); // Li-Yeun <3
-    }
-
-    void ScoutingJump()
-    {
-        StartAnimation(2f, false);
-        animatorBodyMesh.Play("Apple");
+        animatorBodyMesh.Play("PacmanSalto");
     }
 }

@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4116538868298574}
   - component: {fileID: 135971262755551436}
   - component: {fileID: 114930100796446022}
-  - component: {fileID: 114721070724183298}
   - component: {fileID: 95462436938020158}
   m_Layer: 0
   m_Name: Aarbei
@@ -163,17 +162,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114721070724183298
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1163221739206030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3bd9f07d9639548bc7ea4554a6f7cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114930100796446022
 MonoBehaviour:
   m_ObjectHideFlags: 1

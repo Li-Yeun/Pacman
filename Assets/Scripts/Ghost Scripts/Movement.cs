@@ -62,6 +62,8 @@ public class Movement : NetworkBehaviour {
 
     void FixedUpdate()
     {
+        if (!hasAuthority)
+            return;
         if (!dead)
         {
             MoveForward();
@@ -171,10 +173,13 @@ public class Movement : NetworkBehaviour {
         {
             Abilities[1] = true;
         }
+        //TODO check effe proxy.
+        /*
         if (Input.GetKey(Controls[6]) && !Abilities[2] && cooldowncounter[2] >= Cooldown[2])
         {
             Abilities[2] = true;
         }
+        */
     }
 
     void DoAbilities()

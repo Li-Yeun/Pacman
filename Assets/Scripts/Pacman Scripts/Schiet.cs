@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUps : MonoBehaviour {
-
+public class Schiet : MonoBehaviour
+{
+    /*
     [SerializeField] GameObject HomingMissles;
 	// Use this for initialization
 	void Start () {
@@ -16,5 +17,5 @@ public class PowerUps : MonoBehaviour {
         {
             HomingMissles.SetActive(!HomingMissles.active);
         }
-    }
+    }*/
 }
