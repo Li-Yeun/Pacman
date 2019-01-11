@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AppelPowerup : MonoBehaviour {
 
+    public float duration = 15f;
+
     void OnTriggerStay(Collider col)
     {
         switch (col.gameObject.tag)

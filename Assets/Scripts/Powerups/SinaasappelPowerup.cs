@@ -11,7 +11,8 @@ public class SinaasappelPowerup : MonoBehaviour {
 
     // Variable for measuring how long the powerup has been running for (in seconds)
     [SerializeField] Material transmaterial, defaulthMaterial;
-    public float duratation = 15;
+    public float duration = 15;
+
     void OnTriggerStay(Collider col)
     {
         // Changes the flow of control based on the object with which the orange collides
@@ -31,13 +32,13 @@ public class SinaasappelPowerup : MonoBehaviour {
     IEnumerator Programma()
     {
         Switches(0f, 0);
-        yield return new WaitForSeconds((float) 8/9*duratation);
-        while (duratation - ((float) 8/9*duratation) > 0)
+        yield return new WaitForSeconds((float) 8/9*duration);
+        while (duration - ((float) 8/9*duration) > 0)
         {
             Switches(0f, 0);
             yield return new WaitForSeconds(0.25f);
             Switches(0.5f, 0);
-            duratation--;
+            duration--;
             yield return new WaitForSeconds(0.25f);
         }
         Switches(1f,1);

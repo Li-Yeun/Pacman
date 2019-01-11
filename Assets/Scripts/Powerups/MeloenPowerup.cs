@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeloenPowerup : MonoBehaviour {
 
-    public float duratation = 15f;
+    public float duration = 15f;
 
     void OnTriggerStay(Collider col)
     {
@@ -26,7 +26,7 @@ public class MeloenPowerup : MonoBehaviour {
 
     IEnumerator Resett(PacmanMovement pacmanMovement)
     {
-        yield return new WaitForSeconds(duratation);
+        yield return new WaitForSeconds(duration);
         pacmanMovement.Reversecontrols = false;
         Destroy(gameObject);
     }

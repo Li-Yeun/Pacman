@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AardbeiPowerup : MonoBehaviour {
 
-    public float duratation = 15f;
+    public float duration = 15f;
+
     void OnTriggerStay(Collider col)
     {
         switch (col.gameObject.tag)
@@ -25,7 +26,7 @@ public class AardbeiPowerup : MonoBehaviour {
     {
         pacmanMovement.Speed.x++;
         pacmanMovement.Speed.z++;
-        yield return new WaitForSeconds(duratation);
+        yield return new WaitForSeconds(duration);
         pacmanMovement.Speed.x--;
         pacmanMovement.Speed.z--;
         Destroy(gameObject);
