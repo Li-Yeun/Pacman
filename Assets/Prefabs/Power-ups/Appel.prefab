@@ -52,8 +52,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4653034029807060}
   - component: {fileID: 135399167228866452}
-  - component: {fileID: 114225227870312740}
   - component: {fileID: 114824634422817544}
+  - component: {fileID: 95119051793860540}
   m_Layer: 0
   m_Name: Appel
   m_TagString: Fruit
@@ -144,17 +144,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1129995465435102}
   m_Mesh: {fileID: 4300000, guid: a376f219e154b044aa18c78fc28690c5, type: 3}
---- !u!114 &114225227870312740
-MonoBehaviour:
+--- !u!95 &95119051793860540
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1755834371172606}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3bd9f07d9639548bc7ea4554a6f7cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b5297131c495b147a6f2e29a438b0bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114824634422817544
 MonoBehaviour:
   m_ObjectHideFlags: 1

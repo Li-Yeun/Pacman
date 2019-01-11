@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 135971262755551436}
   - component: {fileID: 114930100796446022}
   - component: {fileID: 114721070724183298}
+  - component: {fileID: 95462436938020158}
   m_Layer: 0
   m_Name: Aarbei
   m_TagString: Fruit
@@ -144,6 +145,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1294526909288456}
   m_Mesh: {fileID: 4300000, guid: 763d7e4d055f5a64e877cbeafedf55e4, type: 3}
+--- !u!95 &95462436938020158
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1163221739206030}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b5297131c495b147a6f2e29a438b0bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114721070724183298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e6c9fe6b926d6441b1f9ac4d009404a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duratation: 15
 --- !u!135 &135971262755551436
 SphereCollider:
   m_ObjectHideFlags: 1

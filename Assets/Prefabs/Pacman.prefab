@@ -283,7 +283,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990302627283604}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -564.3504, y: -247.00517, z: -3786.7776}
+  m_LocalPosition: {x: -7.5095663, y: 1.4228398, z: -6.5672827}
   m_LocalScale: {x: 0.90000093, y: 0.9, z: 0.90000093}
   m_Children:
   - {fileID: 4999663831320144}
@@ -679,6 +679,7 @@ MonoBehaviour:
     type: 2}
   Jumper: {fileID: 114276165710159438}
   JumperOuterWalls: {fileID: 114074681834381426}
+  TeleporterClose: {fileID: 114165193448897144}
   Apple: []
   AnimationPlaying: 0
 --- !u!114 &114071927505651976

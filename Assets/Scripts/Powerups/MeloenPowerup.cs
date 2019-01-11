@@ -4,18 +4,7 @@ using UnityEngine;
 
 public class MeloenPowerup : MonoBehaviour {
 
-    private PacmanMovement pacmanMovement;
-
-    private void Start()
-    {
-        PacmanInstantiated();
-    }
-
-    public void PacmanInstantiated()
-    {
-        pacmanMovement = FindObjectOfType<PacmanMovement>();
-    }
-
+    public float duratation = 15f;
     void OnTriggerStay(Collider col)
     {
         //checks if collides with player or pellet, if collides with player then reverse the controls of the player
@@ -25,15 +14,18 @@ public class MeloenPowerup : MonoBehaviour {
                 Destroy(col);
                 break;
             case "Player":
-                gameObject.SetActive(false); ///transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 200, gameObject.transform.position.z);
+                gameObject.GetComponent<SphereCollider>().enabled = false;
+                gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+                PacmanMovement pacmanMovement = col.GetComponent<PacmanMovement>();
                 pacmanMovement.Reversecontrols = true;
-                Invoke("Resett", 15f);
+                StartCoroutine(Resett(pacmanMovement));
                 break;
         }
     }
 
-    private void Resett()
+    IEnumerator Resett(PacmanMovement pacmanMovement)
     {
+        yield return new WaitForSeconds(duratation);
         pacmanMovement.Reversecontrols = false;
         Destroy(gameObject);
     }

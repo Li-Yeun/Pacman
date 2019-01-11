@@ -35,8 +35,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4879628756050274}
   - component: {fileID: 135646817827149576}
-  - component: {fileID: 114507723306968402}
   - component: {fileID: 114194765444357568}
+  - component: {fileID: 95114492419707008}
   m_Layer: 0
   m_Name: Kers
   m_TagString: Fruit
@@ -144,6 +144,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1924065297108906}
   m_Mesh: {fileID: 4300000, guid: 1217c68e8355f2c4a87c78d67d622a9d, type: 3}
+--- !u!95 &95114492419707008
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812946625595330}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b5297131c495b147a6f2e29a438b0bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114194765444357568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,17 +171,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01ccba29694c201408d76c76bdf5e108, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114507723306968402
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1812946625595330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3bd9f07d9639548bc7ea4554a6f7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &135646817827149576

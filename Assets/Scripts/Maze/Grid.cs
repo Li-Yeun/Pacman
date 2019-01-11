@@ -33,13 +33,15 @@ public class Grid : MonoBehaviour
     /// ---
     /// </summary>
     [Header("Fruit")]
-    public GameObject Citroen, Apple, Kers, Melon, Orange, Aardbei, Appel, Meloen, Sinaasappel;
+    public GameObject Kers, Aardbei, Appel, Meloen, Sinaasappel;
 
     /// <summary>
     /// Dit zijn de locations waarin de instances gezet worden deze zijn alleen ter sortering verder niks.
     /// </summary>
     [Header("Parent")]
-    [SerializeField] Transform PelletsParent, TeleporterParent, BuildingBlockParent, PowerPillParent, CitroenParent, MelonParent, SpawnerParent, AppleParent, KersParent, OrangeParent, AardbeiParent, AppelParent, MeloenParent, SinaasappelParent;
+    [SerializeField] Transform PelletsParent, TeleporterParent, BuildingBlockParent, PowerPillParent, SpawnerParent;
+    [Header("Parent fruits")]
+    [SerializeField] Transform KersParent, AardbeiParent, AppelParent, MeloenParent, SinaasappelParent;
     public char[,] gamegrid;
     #endregion
 
@@ -73,7 +75,7 @@ public class Grid : MonoBehaviour
             { 'b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b' },
         };
         SpawnGrid();
-        InvokeRepeating("SpawnRandomFruit", Random.Range(0, 7), Random.Range(0, 7));
+        InvokeRepeating("SpawnRandomFruit", Random.Range(0, 4f), Random.Range(0, 4f));
     }
 
     #region GridConverter
@@ -104,12 +106,6 @@ public class Grid : MonoBehaviour
                     InstantiateObject(block1, x, z, BuildingBlockParent);
                 }
                 break;
-
-            case 'k':
-                {
-                    InstantiateObject(Kers, x, z, KersParent);
-                }
-                break;
             case 'e':
                 {
                     InstantiateObject(pellet, x, z, PelletsParent);
@@ -117,7 +113,7 @@ public class Grid : MonoBehaviour
                 break;
             case 's':
                 {
-                    InstantiateObject(pellet, x, z, PelletsParent);
+                    ;
                 }
                 break;
             case 'p':
@@ -155,22 +151,12 @@ public class Grid : MonoBehaviour
                     InstantiateObject(SpawnPacman, x, z, SpawnerParent);
                 }
                 break;
-            case 'c':
-                {
-                    InstantiateObject(Citroen, x, z, CitroenParent);
-                }
-                break;
             case 'w':
                 {
                     InstantiateObject(Aardbei, x, z, AardbeiParent);
                 }
                 break;
             case 'a':
-                {
-                    InstantiateObject(Apple, x, z, AppleParent);
-                }
-                break;
-            case 'l':
                 {
                     InstantiateObject(Appel, x, z, AppelParent);
                 }
@@ -183,6 +169,11 @@ public class Grid : MonoBehaviour
             case 'm':
                 {
                     InstantiateObject(Meloen, x, z, MeloenParent);
+                }
+                break;
+            case 'k':
+                {
+                    InstantiateObject(Kers, x, z, KersParent);
                 }
                 break;
             default: break;
@@ -315,20 +306,19 @@ public class Grid : MonoBehaviour
                 }
             }
     }
-    private void Check(char TileType, int x, int y)
+    private void Check(char TileType, int x, int z)
     {
         if (TileType == 's')
         {
-            switch ((int)Random.Range(0, 7))
+            switch ((int)Random.Range(0, 5))
             {
-                case 0: LoadBlock('c', x, y); break;
-                case 1: LoadBlock('k', x, y); break;
-                case 2: LoadBlock('m', x, y); break;
-                case 3: LoadBlock('o', x, y); break;
-                case 4: LoadBlock('w', x, y); break;
-                case 5: LoadBlock('l', x, y); break;
+                case 0: LoadBlock('w', x, z); break;
+                case 1: LoadBlock('a', x, z); break;
+                case 2: LoadBlock('o', x, z); break;
+                case 3: LoadBlock('m', x, z); break;
+                case 4: LoadBlock('k', x, z); break;
             }
-            gamegrid[y, x] = 'd';
+            gamegrid[z, x] = 'd';
             Spawned = true;
         }
 

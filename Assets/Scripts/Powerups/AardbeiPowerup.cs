@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class AardbeiPowerup : MonoBehaviour {
 
-    private PacmanMovement pacmanMovement;
-
-    // Use this for initialization
-    void Start () {
-        PacmanInstantiated();
-    }
-
+    public float duratation = 15f;
     void OnTriggerStay(Collider col)
     {
         switch (col.gameObject.tag)
@@ -19,15 +13,21 @@ public class AardbeiPowerup : MonoBehaviour {
                 Destroy(col.gameObject);
                 break;
             case "Player":
-                Destroy(gameObject);
-                pacmanMovement.Speed.x++;
-                pacmanMovement.Speed.z++;
+                gameObject.GetComponent<SphereCollider>().enabled = false;
+                gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+                PacmanMovement pacmanMovement = col.GetComponent<PacmanMovement>();
+                StartCoroutine(Resett(pacmanMovement));
                 break;
         }
+        
     }
-
-    public void PacmanInstantiated()
+    private IEnumerator Resett(PacmanMovement pacmanMovement)
     {
-        pacmanMovement = FindObjectOfType<PacmanMovement>();
+        pacmanMovement.Speed.x++;
+        pacmanMovement.Speed.z++;
+        yield return new WaitForSeconds(duratation);
+        pacmanMovement.Speed.x--;
+        pacmanMovement.Speed.z--;
+        Destroy(gameObject);
     }
 }

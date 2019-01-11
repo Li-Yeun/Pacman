@@ -23,10 +23,15 @@ public class PelletBehaviour : MonoBehaviour {
         /// If Pacman collides with the pellet the pellet gets eaten and disappears from the map and the player is awarded 10 points
         /// If something other than Pacman collides with a pellet nothing happens
         /// </summary>
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             EatPellet();
         }
+        else if (other.CompareTag("Fruit"))
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     // Confirms the pellet has been eaten

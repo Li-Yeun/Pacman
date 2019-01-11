@@ -37,6 +37,7 @@ public class AnimatorScript : NetworkBehaviour {
     [Header("Jump Ookay")] 
     [SerializeField] SpecialTrigger2 Jumper;
     [SerializeField] SpecialTrigger2 JumperOuterWalls;
+    [SerializeField] SpecialTrigger2 TeleporterClose;
     public List<GameObject> Apple;
     public bool AnimationPlaying = false;
 
@@ -58,7 +59,7 @@ public class AnimatorScript : NetworkBehaviour {
             return;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!Jumper.Collision && !JumperOuterWalls.Collision && !AnimationPlaying)
+            if (!Jumper.Collision && !JumperOuterWalls.Collision && !TeleporterClose.Collision && !AnimationPlaying)
             {
                 Jump();
             }

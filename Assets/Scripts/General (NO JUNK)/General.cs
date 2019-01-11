@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class General : MonoBehaviour
 {
-    public void PacmanBroadcast()
+    /*public void PacmanBroadcast()
     {
         BroadcastMessage("PacmanInstantiated");
-    }
+    }*/
 
     public void GhostBroadcast()
     {
