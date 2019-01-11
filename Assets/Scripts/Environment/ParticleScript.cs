@@ -5,12 +5,12 @@ using UnityEngine;
 public class ParticleScript : MonoBehaviour {
 
     ParticleSystem particleSystem;
-	void Start () {
+    void Start() {
         particleSystem = GetComponent<ParticleSystem>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update() {
         Invoke("TurnOffSmokes", 10f);
     }
 
@@ -22,6 +22,9 @@ public class ParticleScript : MonoBehaviour {
 
     void DestroySmoke()
     {
+        if (gameObject.name != "WaterFall")
+            FindObjectOfType<EnvironementalEvents>().ResetTimer();
+
         Destroy(gameObject);
     }
 }

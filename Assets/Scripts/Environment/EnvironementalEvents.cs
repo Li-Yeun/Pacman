@@ -7,11 +7,29 @@ public class EnvironementalEvents : NetworkBehaviour {
 
     [SerializeField] GameObject Smoke, FireWorks, SandStorm, Water, Confusion;
     [SerializeField] Transform parent;
+    [SerializeField] float EventCooldown;
+    GameObject[] Events;
+    float timer = 0f;
+    bool Lock = false;
 
-	// Update is called once per frame
-	void Update () {
+    private void Start()
+    {
+        GameObject[] AllEvents = { Smoke, FireWorks, SandStorm, Water, Confusion };
+        Events = AllEvents;
+    }
+    
+    void Update () {
         if (!hasAuthority)
             return;
+        //TODO sync doet raar (Invoke)
+        timer += Time.deltaTime;
+        if (timer >= EventCooldown && Lock == false)
+        {
+            Lock = true;
+            int Event = Random.Range(0, Events.Length);
+            ActivateEvent(Events[Event]);
+        }
+
         if (Input.GetKeyDown("2"))
         {
             ActivateEvent(Smoke);
@@ -61,6 +79,11 @@ public class EnvironementalEvents : NetworkBehaviour {
         NetworkServer.Spawn(go);
     }
 
+    public void ResetTimer()
+    {
+        timer = 0f;
+        Lock = false;
+    }
     public void Reset()
     {
         if(GameObject.FindGameObjectWithTag("Event") != null)

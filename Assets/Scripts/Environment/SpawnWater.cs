@@ -12,6 +12,7 @@ public class SpawnWater : NetworkBehaviour {
     int GhostSpeed;      // The defaulth speed of the Ghosts
 
     void Start () {
+
         Pacman = GameObject.FindGameObjectWithTag("Player");
         Ghosts = GameObject.FindGameObjectsWithTag("Enemy");
         PacmanSpeed = Pacman.GetComponent<PacmanMovement>().Speed.x;
@@ -50,6 +51,7 @@ public class SpawnWater : NetworkBehaviour {
 
     public void ResetMovement()
     {
+        FindObjectOfType<EnvironementalEvents>().ResetTimer();
         SetMovementSpeed(PacmanSpeed, GhostSpeed);
     }
 }
