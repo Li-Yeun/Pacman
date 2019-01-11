@@ -47,7 +47,7 @@ public class PelletBehaviour : MonoBehaviour {
     void Update () {
 		if (pelleteaten)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);  //niet destroyen is belangrijkr voor de reset!
             pelletscore.PelletPoints();
         }
 	}

@@ -219,4 +219,10 @@ public class Movement : NetworkBehaviour {
         }
 
     }
+
+    // niet wissen Proxy
+    public void Reset()
+    {
+        DoRespawn();
+    }
 }
