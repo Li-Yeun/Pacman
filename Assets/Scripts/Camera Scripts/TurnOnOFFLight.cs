@@ -21,7 +21,8 @@ public class TurnOnOFFLight : MonoBehaviour {
         }
         foreach (Light light in DisableLights)
         {
-            light.enabled = true;
+            if (light.name == "PacMan Body Light")
+                light.enabled = true;
         }
     }
 
@@ -37,6 +38,7 @@ public class TurnOnOFFLight : MonoBehaviour {
         {
             foreach (Light light in DisableLights)
             {
+                if(light.name == "PacMan Body Light")
                 light.enabled = false;
             }
         }

@@ -35,11 +35,20 @@ public class AnimatorScript : NetworkBehaviour {
     [SerializeField] SpecialTrigger2 Jumper;
     [SerializeField] SpecialTrigger2 JumperOuterWalls;
     [SerializeField] SpecialTrigger2 TeleporterClose;
+
+    Light JumpLight;
     public bool AnimationPlaying = false;
 
     void Start()
     {
+        Light[] PacmanLights = GetComponentsInChildren<Light>();
+        foreach (Light light in PacmanLights)
+        {
+            if (light.name == "Jump Light")
+                JumpLight = light;
+        }
         Overzetten();
+        
     }
     public void Overzetten()
     {
@@ -57,7 +66,7 @@ public class AnimatorScript : NetworkBehaviour {
         {
             if (!Jumper.Collision && !JumperOuterWalls.Collision && !TeleporterClose.Collision && !AnimationPlaying)
             {
-                Jump();
+                CmdJump();
             }
         }
     }
@@ -68,6 +77,7 @@ public class AnimatorScript : NetworkBehaviour {
         if (LockMovements)
             Pacman.AnimationLock = true;
         Invoke("EndAnimation", duratation);
+        JumpLight.enabled = true;
     }
 
     void EndAnimation()
@@ -78,11 +88,19 @@ public class AnimatorScript : NetworkBehaviour {
         Pacman.Position = new Vector3(Pacman.Position.x, 2, Pacman.Position.z);
         Pacman.AnimationLock = false;
         AnimationPlaying = false;
+        JumpLight.enabled = false;
     }
 
-    void Jump()
+    [CommandAttribute]
+    public void CmdJump()
     {
-        StartAnimation(1f,true);
+        RpcJump();
+    }
+
+    [ClientRpcAttribute]
+    public void RpcJump()
+    {
+        StartAnimation(1f, true);
         switch (Pacman.currentDirection)
         {
             case 0: animator2.Play("PacmanAnimationJump3"); break;
