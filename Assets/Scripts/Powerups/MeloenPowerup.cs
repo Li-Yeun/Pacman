@@ -5,6 +5,7 @@ using UnityEngine;
 public class MeloenPowerup : MonoBehaviour {
 
     public float duratation = 15f;
+
     void OnTriggerStay(Collider col)
     {
         //checks if collides with player or pellet, if collides with player then reverse the controls of the player
