@@ -100,6 +100,9 @@ public class AnimatorScript : NetworkBehaviour {
     [ClientRpcAttribute]
     public void RpcJump()
     {
+        timeranimation timerAnimation = FindObjectOfType<timeranimation>();
+        timerAnimation.JumpTimer();
+
         StartAnimation(1f, true);
         switch (Pacman.currentDirection)
         {

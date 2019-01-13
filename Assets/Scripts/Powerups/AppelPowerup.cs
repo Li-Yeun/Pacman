@@ -15,6 +15,8 @@ public class AppelPowerup : MonoBehaviour {
                 break;
             case "Player":
                 Destroy(gameObject);
+                timeranimation timerAnimation = FindObjectOfType<timeranimation>();
+                timerAnimation.AppelTimer();
                 break;
         }
     }

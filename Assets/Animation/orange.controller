@@ -8,7 +8,7 @@ AnimatorController:
   m_Name: orange
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Timer
+  - m_Name: OrangeTimer
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -27,7 +27,7 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &1101521686218904576
+--- !u!1101 &1101118042466507264
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -35,7 +35,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Timer
+    m_ConditionEvent: OrangeTimer
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102274822527200598}
@@ -82,7 +82,7 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 1101521686218904576}
+  - {fileID: 1101118042466507264}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0

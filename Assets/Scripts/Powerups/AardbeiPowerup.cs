@@ -17,6 +17,8 @@ public class AardbeiPowerup : MonoBehaviour {
                 gameObject.GetComponent<SphereCollider>().enabled = false;
                 gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
                 PacmanMovement pacmanMovement = col.GetComponent<PacmanMovement>();
+                timeranimation timerAnimation = FindObjectOfType<timeranimation>();
+                timerAnimation.AardbeiTimer();
                 StartCoroutine(Resett(pacmanMovement));
                 break;
         }
