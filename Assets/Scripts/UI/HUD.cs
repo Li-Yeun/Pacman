@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 public class HUD : MonoBehaviour {
@@ -20,6 +21,9 @@ public class HUD : MonoBehaviour {
     public void Pause()
     {
         pausemenu.SetActive(true);
+        NetworkManagerHUD hud = FindObjectOfType<NetworkManagerHUD>();
+        if (hud != null)
+            hud.showGUI = true;
     }
 
     //go back to mainmenu
@@ -43,6 +47,9 @@ public class HUD : MonoBehaviour {
     public void Continu()
     {
         pausemenu.SetActive(false);
+        NetworkManagerHUD hud = FindObjectOfType<NetworkManagerHUD>();
+        if (hud != null)
+            hud.showGUI = false;
     }
 
     public void ChoosePacman()
