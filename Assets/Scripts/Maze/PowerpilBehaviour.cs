@@ -51,6 +51,7 @@ public class PowerpilBehaviour : MonoBehaviour {
             }
         }   
 	}
+
     public void GhostInstantiated()
     {
         AnimationScriptSpookjes = FindObjectsOfType<GhostStates>();
