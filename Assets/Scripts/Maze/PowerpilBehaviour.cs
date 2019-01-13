@@ -9,12 +9,10 @@ public class PowerpilBehaviour : MonoBehaviour {
 
     [SerializeField] bool powerpileaten;
     private GhostStates[] AnimationScriptSpookjes;
-    private ScoreCounter powerpilscore;
 
     // Use this for initialization
     void Start ()
     {
-        powerpilscore = FindObjectOfType<ScoreCounter>();
         powerpileaten = false;
 	}
 
@@ -38,7 +36,7 @@ public class PowerpilBehaviour : MonoBehaviour {
 		if (powerpileaten)
         {
             gameObject.SetActive(false);
-            powerpilscore.PowerpilPoints();
+            FindObjectOfType<ScoreCounter>().PowerpilPoints();
 
             if(AnimationScriptSpookjes == null)
             {

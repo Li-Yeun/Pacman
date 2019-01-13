@@ -5,13 +5,12 @@ using UnityEngine;
 public class PelletBehaviour : MonoBehaviour {
 
     public bool pelleteaten;
-    private ScoreCounter pelletscore;
     public float Timer = 0;
 
     // Use this for initialization
     void Start ()
     {
-        pelletscore = FindObjectOfType<ScoreCounter>();
+        
         pelleteaten = false;
     }
 
@@ -46,8 +45,8 @@ public class PelletBehaviour : MonoBehaviour {
     void Update () {
 		if (pelleteaten)
         {
+            FindObjectOfType<ScoreCounter>().PelletPoints();
             gameObject.SetActive(false);  //niet destroyen is belangrijkr voor de reset!
-            pelletscore.PelletPoints();
         }
 	}
 }
