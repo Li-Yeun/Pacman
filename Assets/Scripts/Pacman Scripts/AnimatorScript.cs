@@ -38,6 +38,8 @@ public class AnimatorScript : NetworkBehaviour {
 
     Light JumpLight;
     public bool AnimationPlaying = false;
+    public float JumpCooldown = 15f;
+    public bool Jumping = false;
 
     void Start()
     {
@@ -62,15 +64,21 @@ public class AnimatorScript : NetworkBehaviour {
     {
         if (!hasAuthority)
             return;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !Jumping)
         {
             if (!Jumper.Collision && !JumperOuterWalls.Collision && !TeleporterClose.Collision && !AnimationPlaying)
             {
+                Jumping = true;
                 CmdJump();
+                Invoke("Resett",15f);
             }
         }
     }
 
+    void Resett()
+    {
+        Jumping = false;
+    }
     void StartAnimation(float duratation, bool LockMovements)
     {
         AnimationPlaying = true;
