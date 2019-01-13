@@ -14,6 +14,8 @@ public class AppelPowerup : MonoBehaviour {
                 Destroy(col.gameObject);
                 break;
             case "Player":
+                ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
+                fruitscore.FruitPoints();
                 Destroy(gameObject);
                 appelTimer timerAnimation = FindObjectOfType<appelTimer>();
                 timerAnimation.AppelTimer();

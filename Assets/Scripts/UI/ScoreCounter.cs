@@ -25,6 +25,12 @@ public class ScoreCounter : MonoBehaviour {
         counter += 10;
     }
 
+    // Adds points to the scorecounter when a fruit is eaten
+    public void FruitPoints()
+    {
+        counter += 100;
+    }
+
 	// Update is called once per frame
 	void Update () {
         scoreCounter.text = "SCORE: " + counter;
