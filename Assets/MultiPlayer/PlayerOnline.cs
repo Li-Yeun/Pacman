@@ -14,6 +14,9 @@ public class PlayerOnline : NetworkBehaviour {
 
     // Use this for initialization
     void Start () {
+        NetworkManagerHUD hud = FindObjectOfType<NetworkManagerHUD>();
+        if (hud != null)
+            hud.showGUI = false;
         BroadCaster = FindObjectOfType<General>();
         if (isLocalPlayer)
         {
