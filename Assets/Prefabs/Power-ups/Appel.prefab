@@ -187,5 +187,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 15
-  Doppelganger: {fileID: 4702360685858640, guid: c7ba18de2ff8948428fad9e6af9b6d43,
+  Doppelganger: {fileID: 1990302627283604, guid: c7ba18de2ff8948428fad9e6af9b6d43,
     type: 3}
