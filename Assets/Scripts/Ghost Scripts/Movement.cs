@@ -176,15 +176,6 @@ public class Movement : NetworkBehaviour {
             speedTimer timerAnimation = FindObjectOfType<speedTimer>();
             timerAnimation.SpeedTimer();
         }
-        //TODO check effe proxy.
-        /*
-        if (Input.GetKey(Controls[6]) && !Abilities[2] && cooldowncounter[2] >= Cooldown[2])
-        {
-            Abilities[2] = true;
-            wallsTimer timerAnimation = FindObjectOfType<wallsTimer>();
-            timerAnimation.WallsTimer();
-        }
-        */
     }
     void DoAbilities()
     {
