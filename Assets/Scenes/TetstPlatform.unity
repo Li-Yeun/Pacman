@@ -2568,6 +2568,48 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 782394294}
   m_CullTransparentMesh: 0
+--- !u!1001 &792809936
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -7.5095663
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.4228398
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -6.5672827
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702360685858640, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 33b8e3e30ca18474b9e2124c286d85de, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &795939153
 GameObject:
   m_ObjectHideFlags: 0
@@ -3253,6 +3295,48 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1201117654}
   m_CullTransparentMesh: 0
+--- !u!1001 &1224969096
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4464193205433164, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 19.2428
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464193205433164, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.4228398
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464193205433164, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.9099808
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464193205433164, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464193205433164, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464193205433164, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464193205433164, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464193205433164, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1244299138
 GameObject:
   m_ObjectHideFlags: 0
@@ -5278,7 +5362,7 @@ GameObject:
   - component: {fileID: 2108373392}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Maze
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
