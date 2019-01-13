@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sinaasTimer : MonoBehaviour {
+public class wallsTimer : MonoBehaviour {
 
-    //starts Orange UI timer
+    //start de walking walls Timer UI animatie
     Animator anim;
 
     void Start()
@@ -12,6 +12,7 @@ public class sinaasTimer : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 
-    public void OrangeTimer()
-    { anim.SetTrigger("OrangeTimer"); }
+    public void WallsTimer()
+    { anim.SetTrigger("WallsTimer"); }
 }
+

@@ -15,6 +15,8 @@ public class KersPowerup : MonoBehaviour
             case "Player":
                 playerhealth Playerhealth = GameObject.FindObjectOfType<playerhealth>();
                 Playerhealth.health++;
+                kersTimer timerAnimation = FindObjectOfType<kersTimer>();
+                timerAnimation.KersTimer();
                 Destroy(gameObject);
                 break;
         }

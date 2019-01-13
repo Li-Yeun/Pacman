@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sinaasTimer : MonoBehaviour {
+public class viseonTimer : MonoBehaviour {
 
-    //starts Orange UI timer
+    //start de increased viseon Timer UI animatie
     Animator anim;
 
     void Start()
@@ -12,6 +12,6 @@ public class sinaasTimer : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 
-    public void OrangeTimer()
-    { anim.SetTrigger("OrangeTimer"); }
+    public void ViseonTimer()
+    { anim.SetTrigger("ViseonTimer"); }
 }

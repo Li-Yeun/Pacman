@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sinaasTimer : MonoBehaviour {
+public class kersTimer : MonoBehaviour {
 
-    //starts Orange UI timer
+    //start de kers UI animatie
     Animator anim;
 
     void Start()
@@ -12,6 +12,7 @@ public class sinaasTimer : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 
-    public void OrangeTimer()
-    { anim.SetTrigger("OrangeTimer"); }
+    public void KersTimer()
+    { anim.SetTrigger("KersTimer"); }
+
 }

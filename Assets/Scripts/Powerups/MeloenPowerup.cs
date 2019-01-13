@@ -18,10 +18,8 @@ public class MeloenPowerup : MonoBehaviour {
                 gameObject.GetComponent<SphereCollider>().enabled = false;
                 gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
                 PacmanMovement pacmanMovement = col.GetComponent<PacmanMovement>();
-
                 melonTimer timerAnimation = FindObjectOfType<melonTimer>();
                 timerAnimation.MelonTimer();
-
                 pacmanMovement.Reversecontrols = true;
                 StartCoroutine(Resett(pacmanMovement));
               
