@@ -11,7 +11,7 @@ public class Grid : MonoBehaviour
     int counter = 0;
     private int TimesTeleporterCreated = 0;
     // De muren van het spel
-    public GameObject block1, block2, block3, block4, block5, block6;
+    public GameObject block1, block2, block3, block4, block5, block6, block7;
 
     // De gele bolletjes die pacman op eet.
     public GameObject pellet;
@@ -60,7 +60,7 @@ public class Grid : MonoBehaviour
             { 't','e','e','b','e','b','b','b','e','b','e','e','e','e','b','e','b','e','e','e','b','e','b','e','e','e','e','b','e','b','b','b','e','b','e','e','t' },
             { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','b','e','b','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
             { 'b','b','e','b','b','e','b','b','b','b','e','e','b','e','b','e','b','s','s','s','b','e','b','e','b','e','e','b','b','b','b','e','b','b','e','b','b' },
-            { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','s','e','s','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
+            { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','s','b','s','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
             { 'b','p','b','b','b','b','b','b','e','e','e','e','e','e','b','e','b','s','s','s','b','e','e','e','e','e','e','e','e','b','b','b','b','b','b','p','b' },
             { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','b','e','b','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
             { 'b','b','e','b','b','e','b','b','b','b','e','e','b','e','b','e','e','e','e','e','e','e','b','e','b','e','e','b','b','b','b','e','b','b','e','b','b' },
@@ -217,7 +217,8 @@ public class Grid : MonoBehaviour
                 else if (gamegrid[z, x - 1] == 'b' && gamegrid[z, x + 1] == 'b' && gamegrid[z - 1, x] == 'b' && gamegrid[z + 1, x] != 'b') { chosenblock = 12; }
                 else if (gamegrid[z, x - 1] == 'b' && gamegrid[z, x + 1] == 'b' && gamegrid[z - 1, x] != 'b' && gamegrid[z + 1, x] != 'b') { chosenblock = 13; }
                 else if (gamegrid[z, x - 1] != 'b' && gamegrid[z, x + 1] != 'b' && gamegrid[z - 1, x] == 'b' && gamegrid[z + 1, x] == 'b') { chosenblock = 14; }
-
+                else if (gamegrid[z, x - 1] == 'b' && gamegrid[z, x + 1] == 'b' && gamegrid[z - 1, x] == 'b' && gamegrid[z + 1, x] == 'b') { chosenblock = 15; }
+                else if (gamegrid[z, x - 1] != 'b' && gamegrid[z, x + 1] != 'b' && gamegrid[z - 1, x] != 'b' && gamegrid[z + 1, x] != 'b') { chosenblock = 16; }
 
                 switch (chosenblock) {
                     case 1:
@@ -272,6 +273,12 @@ public class Grid : MonoBehaviour
                     case 12:
                         gameObjectt = Instantiate(block6, Vector3.zero, gameObject.transform.rotation);
                         gameObjectt.transform.eulerAngles = new Vector3(0, 180, 0);
+                        break;
+                    case 15:
+                        gameObjectt = Instantiate(block7, Vector3.zero, gameObject.transform.rotation);
+                        break;
+                    case 16:
+                        gameObjectt = Instantiate(block1, Vector3.zero, gameObject.transform.rotation);
                         break;
                     default:
                         gameObjectt = Instantiate(powerpill, Vector3.zero, gameObject.transform.rotation);
