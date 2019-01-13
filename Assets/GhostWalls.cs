@@ -18,6 +18,8 @@ public class GhostWalls : MonoBehaviour
             GhostWalkingCD = true;
             Invoke("StopGhostWalking", GhostWalkingDuration);
             Invoke("CDduration", GhostWalkingCDDuration);
+            wallsTimer timerAnimation = FindObjectOfType<wallsTimer>();
+            timerAnimation.WallsTimer();
         }
     }
     void OnTriggerEnter(Collider other)
