@@ -127,21 +127,24 @@ public class Movement : NetworkBehaviour {
     }
     void AutoNav()
     {
-        if (front.Collision)
+        if (!gameObject.GetComponentInChildren<GhostWalls>().GhostWalking && RotationCooldown == 0)
         {
-             if (!right.Collision)
+            if (front.Collision)
             {
-                Rotate(1);
+                if (!right.Collision)
+                {
+                    Rotate(1);
 
-            }
-            else if (!left.Collision)
-            {
-                Rotate(-1);
+                }
+                else if (!left.Collision)
+                {
+                    Rotate(-1);
 
-            }
-            else if (left.Collision)
-            {
-                Rotate(2);
+                }
+                else if (left.Collision)
+                {
+                    Rotate(2);
+                }
             }
         }
     }           //zorgt voor automatisch draaien tegen muren
@@ -149,7 +152,7 @@ public class Movement : NetworkBehaviour {
     {
         if (goleft && RotationCooldown == 0 && !right.Collision)
         {
-            Rotate(1); 
+            Rotate(1);
         }
         else if (goright && RotationCooldown == 0 && !left.Collision)
         {
@@ -163,8 +166,6 @@ public class Movement : NetworkBehaviour {
                 RotationCooldown = 0;
             }
         }
-
-
         if (Input.GetKey(Controls[4]) && !Abilities[0] && cooldowncounter[0] >= Cooldown[0])
         {
             Abilities[0] = true;
@@ -185,7 +186,6 @@ public class Movement : NetworkBehaviour {
         }
         */
     }
-
     void DoAbilities()
     {
         if (Abilities[0])

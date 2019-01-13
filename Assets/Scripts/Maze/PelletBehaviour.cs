@@ -8,7 +8,6 @@ public class PelletBehaviour : MonoBehaviour {
     private ScoreCounter pelletscore;
     public float Timer = 0;
 
-
     // Use this for initialization
     void Start ()
     {

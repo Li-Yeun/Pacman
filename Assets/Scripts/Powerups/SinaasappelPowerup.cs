@@ -19,10 +19,12 @@ public class SinaasappelPowerup : MonoBehaviour {
         switch (col.gameObject.tag)
         {
             case "Pellet":
-                // Destroys the pallet so that the orange can take its place without them overlapping
+                // Destroys the pellet so that the orange can take its place without them overlapping
                 Destroy(col);
                 break;
             case "Player":
+                ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
+                fruitscore.FruitPoints();
                 gameObject.GetComponent<SphereCollider>().enabled = false;
                 gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
                 StartCoroutine(Programma());
@@ -31,6 +33,7 @@ public class SinaasappelPowerup : MonoBehaviour {
                 break;
         }
     }
+
     IEnumerator Programma()
     {
         Switches(0f, 0);

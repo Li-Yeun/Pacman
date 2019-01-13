@@ -1880,12 +1880,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f48fb64526449f498fcb6cb46faf949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block1: {fileID: 1007248904377124, guid: 8ae547de3eddb36459c3676db8784df5, type: 2}
+  block1: {fileID: 1710632659565674, guid: 14aab987edbf3ea4988dffa4b4b8e8fc, type: 2}
   block2: {fileID: 1800982219127794, guid: 44ce345b3334a5d4188b92b23bf41e40, type: 2}
   block3: {fileID: 1610346306729956, guid: f15b2ac79eec38243b3abda1424e2bce, type: 2}
   block4: {fileID: 1398027994450538, guid: 268707feef0c41e48a3ea3dd56145b61, type: 2}
   block5: {fileID: 1974592261893020, guid: 1a11360518fd20c479aa00055b37fd9f, type: 2}
   block6: {fileID: 1047504076526074, guid: 8ee8e4109a4b9834a8b1344e63bee10a, type: 2}
+  block7: {fileID: 1135046424636866, guid: ce7309782fb8f5246b66460d6b746f4a, type: 2}
   pellet: {fileID: 1403524952478584, guid: c182280d107d8414ebdfa8de91efd5af, type: 2}
   powerpill: {fileID: 1330084163278984, guid: c9b0b84dfd214d247afd892733fecf78, type: 2}
   Teleporter: {fileID: 1513580549421540, guid: 07448547b0bd03f48b410db7c55bb0a6, type: 2}
@@ -5513,7 +5514,7 @@ GameObject:
   - component: {fileID: 2108373392}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Maze
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

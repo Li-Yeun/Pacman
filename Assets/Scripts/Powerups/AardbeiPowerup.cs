@@ -14,6 +14,8 @@ public class AardbeiPowerup : MonoBehaviour {
                 Destroy(col.gameObject);
                 break;
             case "Player":
+                ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
+                fruitscore.FruitPoints();
                 gameObject.GetComponent<SphereCollider>().enabled = false;
                 gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
                 PacmanMovement pacmanMovement = col.GetComponent<PacmanMovement>();
@@ -24,6 +26,7 @@ public class AardbeiPowerup : MonoBehaviour {
         }
         
     }
+
     private IEnumerator Resett(PacmanMovement pacmanMovement)
     {
         pacmanMovement.Speed.x++;

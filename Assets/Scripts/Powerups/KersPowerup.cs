@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class KersPowerup : MonoBehaviour
 {
-
     void OnTriggerStay(Collider col)
     {
         switch (col.gameObject.tag)
@@ -13,6 +12,8 @@ public class KersPowerup : MonoBehaviour
                 Destroy(col.gameObject);
                 break;
             case "Player":
+                ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
+                fruitscore.FruitPoints();
                 playerhealth Playerhealth = GameObject.FindObjectOfType<playerhealth>();
                 Playerhealth.health++;
                 kersTimer timerAnimation = FindObjectOfType<kersTimer>();
