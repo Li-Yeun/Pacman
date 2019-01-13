@@ -26,7 +26,7 @@ public class SinaasappelPowerup : MonoBehaviour {
                 gameObject.GetComponent<SphereCollider>().enabled = false;
                 gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
                 StartCoroutine(Programma());
-                timeranimation timerAnimation = FindObjectOfType<timeranimation>();
+                sinaasTimer timerAnimation = FindObjectOfType<sinaasTimer>();
                 timerAnimation.OrangeTimer();
                 break;
         }

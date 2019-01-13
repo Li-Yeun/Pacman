@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class timeranimation : MonoBehaviour {
-
+public class aardbeiTimer : MonoBehaviour
+{
     Animator anim;
 
     void Start()
@@ -11,6 +11,6 @@ public class timeranimation : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 
-    public void JumpTimer()
-    { anim.SetTrigger("JumpTimer"); }
+    public void AardbeiTimer()
+    { anim.SetTrigger("AardbeiTimer"); }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class timeranimation : MonoBehaviour {
+public class sinaasTimer : MonoBehaviour {
 
     Animator anim;
 
@@ -11,6 +11,6 @@ public class timeranimation : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 
-    public void JumpTimer()
-    { anim.SetTrigger("JumpTimer"); }
+    public void OrangeTimer()
+    { anim.SetTrigger("OrangeTimer"); }
 }
