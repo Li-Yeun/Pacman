@@ -5,10 +5,7 @@ using UnityEngine;
 public class AppelPowerup : MonoBehaviour {
 
     public float duration = 15f;
-
-    public GameObject Doppelganger;
-
-    [SerializeField] Transform parent;
+    public Transform Doppelganger;
 
     void OnTriggerStay(Collider col)
     {
@@ -18,8 +15,7 @@ public class AppelPowerup : MonoBehaviour {
                 Destroy(col.gameObject);
                 break;
             case "Player":
-                GameObject DoppelGanger = Instantiate(Doppelganger, col.gameObject.transform.position, col.gameObject.transform.rotation);
-                DoppelGanger.transform.parent = parent;
+                Instantiate(Doppelganger, col.gameObject.transform.position, col.gameObject.transform.rotation);
                 ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
                 fruitscore.FruitPoints();
                 Destroy(gameObject);

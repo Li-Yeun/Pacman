@@ -24,7 +24,6 @@ public class Doppleganger : NetworkBehaviour {
     void Start ()
     {
         Rotate(0);
-        
     }
 
     
