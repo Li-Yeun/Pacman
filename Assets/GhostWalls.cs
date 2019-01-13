@@ -12,7 +12,7 @@ public class GhostWalls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && !GhostWalkingCD)
         {
             GhostWalking = true;
             GhostWalkingCD = true;

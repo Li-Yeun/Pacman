@@ -748,6 +748,8 @@ MonoBehaviour:
   JumperOuterWalls: {fileID: 114074681834381426}
   TeleporterClose: {fileID: 114165193448897144}
   AnimationPlaying: 0
+  JumpCooldown: 15
+  Jumping: 0
 --- !u!114 &114071927505651976
 MonoBehaviour:
   m_ObjectHideFlags: 1
