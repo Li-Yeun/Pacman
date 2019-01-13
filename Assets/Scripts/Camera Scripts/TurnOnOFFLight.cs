@@ -10,6 +10,8 @@ public class TurnOnOFFLight : MonoBehaviour {
     public void Start()
     {
         // Find all the lights that you don't want to render on this camera
+        if (GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Light>() == null)
+            return;
         DisableLights = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Light>();
     }
     void OnPreRender()

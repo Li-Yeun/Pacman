@@ -15,11 +15,14 @@ public class PlayerOnline : NetworkBehaviour {
     // Use this for initialization
     void Start () {
         NetworkManagerHUD hud = FindObjectOfType<NetworkManagerHUD>();
+
         if (hud != null)
             hud.showGUI = false;
         BroadCaster = FindObjectOfType<General>();
         if (isLocalPlayer)
         {
+            FindObjectOfType<HUD>().ChooseCharacter.SetActive(true);
+              /*
             if (FindObjectsOfType<PacmanMovement>().Length == 0)
             {
                 CmdSpawnMyPacman();
@@ -30,11 +33,25 @@ public class PlayerOnline : NetworkBehaviour {
                 CmdSpawnMyGhost();
                 NormalSpawnMyGhost();
             }
-
-
+            */
         }
     }
 
+    public void SpawnPacman()
+    {
+        if (!isLocalPlayer)
+            return;
+        CmdSpawnMyPacman();
+        NormalSpawnMyPacman();
+    }
+
+    public void SpawnGhost()
+    {
+        if (!isLocalPlayer)
+            return;
+        CmdSpawnMyGhost();
+        NormalSpawnMyGhost();
+    }
     public void Update()
     {
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.R))

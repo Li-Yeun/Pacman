@@ -14,6 +14,7 @@ public class HUD : MonoBehaviour {
     public string gamescene;
     public GameObject pausemenu;
     public GameObject optionmenu;
+    public GameObject ChooseCharacter;
 
     //opens pausescreen
     public void Pause()
@@ -42,5 +43,19 @@ public class HUD : MonoBehaviour {
     public void Continu()
     {
         pausemenu.SetActive(false);
+    }
+
+    public void ChoosePacman()
+    {
+        PlayerOnline Player= FindObjectOfType<PlayerOnline>();
+        Player.SpawnPacman();
+        ChooseCharacter.SetActive(false);
+
+    }
+    public void CHooseGhost()
+    {
+        PlayerOnline Player = FindObjectOfType<PlayerOnline>();
+        Player.SpawnGhost();
+        ChooseCharacter.SetActive(false);
     }
 }
