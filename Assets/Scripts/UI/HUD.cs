@@ -16,6 +16,8 @@ public class HUD : MonoBehaviour {
     public GameObject pausemenu;
     public GameObject optionmenu;
     public GameObject ChooseCharacter;
+    public GameObject PacmanHUD;
+    public GameObject GhostHUD;
 
     //opens pausescreen
     public void Pause()

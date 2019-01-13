@@ -73,6 +73,7 @@ public class PlayerOnline : NetworkBehaviour {
 
     void NormalSpawnMyPacman()
     {
+        FindObjectOfType<HUD>().PacmanHUD.SetActive(true);
         Instantiate(FirstPerson);
         Instantiate(MiniMap);
         Instantiate(MiniMapLight);
@@ -89,6 +90,7 @@ public class PlayerOnline : NetworkBehaviour {
 
     void NormalSpawnMyGhost()
     {
+      FindObjectOfType<HUD>().GhostHUD.SetActive(true);
       Instantiate(TopDownCamera);
     }
 
