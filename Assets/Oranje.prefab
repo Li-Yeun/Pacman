@@ -4039,6 +4039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950f6b3eebbd4f540891c1adff39cdc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Orange
   front: {fileID: 114953086515780090}
   left: {fileID: 114971550072650604}
   right: {fileID: 114987494556310854}

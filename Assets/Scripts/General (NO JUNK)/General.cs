@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class General : MonoBehaviour
 {
-    /*public void PacmanBroadcast()
+    public void PacmanBroadcast()
     {
+        if(FindObjectOfType<CharacterSelection>() != null)
         BroadcastMessage("PacmanInstantiated");
-    }*/
+    }
 
     public void GhostBroadcast()
     {

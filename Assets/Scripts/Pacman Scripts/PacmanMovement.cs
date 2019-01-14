@@ -40,6 +40,7 @@ public class PacmanMovement : NetworkBehaviour {
         rb = GetComponent<Rigidbody>();
         currentDirection = 0;
         LockMovement = false;
+        FindObjectOfType<General>().PacmanBroadcast();
     }
 
     void Update()
