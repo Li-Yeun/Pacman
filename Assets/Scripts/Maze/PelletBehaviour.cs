@@ -10,7 +10,6 @@ public class PelletBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        
         pelleteaten = false;
     }
 

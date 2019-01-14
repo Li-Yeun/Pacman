@@ -233,6 +233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825155018d00c924f834714c3d54daad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: Pacman
+  mode: Spectate
   turnspeed: 8
-  tag: Spectate
+  tag: Player

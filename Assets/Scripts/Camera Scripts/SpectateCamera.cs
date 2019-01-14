@@ -18,7 +18,7 @@ public class SpectateCamera : MonoBehaviour {
             {
                 Debug.Log("Pacman");
                 PacmanCamera.SetActive(!PacmanCamera.activeSelf);
-                PacmanCamera.SetActive(!GhostCamera.activeSelf);
+                GhostCamera.SetActive(!GhostCamera.activeSelf);
             }
         }
 	}

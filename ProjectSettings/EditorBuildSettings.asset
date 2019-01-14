@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TetstPlatform.unity
     guid: 301720838c53f7f4f9486d699643660c
   - enabled: 1
-    path: Assets/Scenes/MultiyPlayer.unity
+    path: Assets/Scenes/MultiPlayerBackUp.unity
     guid: 193c008eb0d3c574f959eb8008afad4b
   m_configObjects: {}
