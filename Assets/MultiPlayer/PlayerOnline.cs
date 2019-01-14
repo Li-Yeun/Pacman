@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class PlayerOnline : NetworkBehaviour {
 
     [SerializeField] GameObject[] GhostObject;
-    [SerializeField] GameObject PacmanObject;
+    [SerializeField] GameObject PacmanObject,Spectator;
     [SerializeField] GameObject FirstPerson, MiniMap, TopDownCamera;
     [SerializeField] GameObject MiniMapLight, GeneralLight;
     [SerializeField] GameObject Decoy, Decoy_Camera;
@@ -24,7 +24,7 @@ public class PlayerOnline : NetworkBehaviour {
         {
             if (GameObject.FindGameObjectsWithTag("Player").Length == 1 && GameObject.FindGameObjectsWithTag("Enemy").Length == 4)
             {
-                Instantiate(TopDownCamera);
+                Spectate();
             }
             else
                 FindObjectOfType<HUD>().ChooseCharacter.SetActive(true);
@@ -58,6 +58,12 @@ public class PlayerOnline : NetworkBehaviour {
         CmdSpawnMyGhost(number);
         NormalSpawnMyGhost();
     }
+
+    public void Spectate()
+    {
+        Instantiate(Spectator);
+    }
+
     public void Update()
     {
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.R))
@@ -114,8 +120,9 @@ public class PlayerOnline : NetworkBehaviour {
         if(GameObject.FindGameObjectsWithTag("Enemy").Length == 4)
         {
             Debug.Log("Max Ghost");
+            Spectate();
             return;
-        }
+        }       
         GameObject Ghost = Instantiate(GhostObject[number]);
         NetworkServer.SpawnWithClientAuthority(Ghost, connectionToClient);
         RpcChangeGhostName();
@@ -132,6 +139,8 @@ public class PlayerOnline : NetworkBehaviour {
     {
         transform.name = "Player Pacman";
     }
+
+    //todo herschrijven
     [ClientRpc]
     void RpcChangeGhostName()
     {

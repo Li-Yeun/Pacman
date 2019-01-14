@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4586542941477568}
   - component: {fileID: 20006186982650824}
   - component: {fileID: 81749761266728008}
-  - component: {fileID: 114758210892138690}
   - component: {fileID: 114397706199126032}
   m_Layer: 0
   m_Name: First Person Camera
@@ -101,37 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825155018d00c924f834714c3d54daad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: Pacman
   turnspeed: 8
   tag: Player
---- !u!114 &114758210892138690
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923607694538722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 62
-    i1: 31
-    i2: 253
-    i3: 100
-    i4: 43
-    i5: 205
-    i6: 115
-    i7: 116
-    i8: 74
-    i9: 68
-    i10: 167
-    i11: 42
-    i12: 72
-    i13: 107
-    i14: 19
-    i15: 183
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1

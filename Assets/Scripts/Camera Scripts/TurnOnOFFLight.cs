@@ -10,9 +10,10 @@ public class TurnOnOFFLight : MonoBehaviour {
     public void Start()
     {
         // Find all the lights that you don't want to render on this camera
-        if (GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Light>() == null)
-            return;
-        DisableLights = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Light>();
+        if (GameObject.FindGameObjectsWithTag("Player").Length == 1)
+        {
+            DisableLights = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Light>();
+        }
     }
     void OnPreRender()
     {
@@ -44,5 +45,9 @@ public class TurnOnOFFLight : MonoBehaviour {
                 light.enabled = false;
             }
         }
+    }
+    public void PacmanInstantiated()
+    {
+        DisableLights = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Light>();
     }
 }

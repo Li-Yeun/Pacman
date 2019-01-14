@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class FPMulticamera : NetworkBehaviour
+public class FPMulticamera : MonoBehaviour
 {
+    [SerializeField] public string mode;
     private Transform tr_Target;
     public float turnspeed = 0.1f;
     Vector3 Offset = Vector3.zero;
@@ -14,15 +14,31 @@ public class FPMulticamera : NetworkBehaviour
 
     private void Start()
     {
-        gameObject.transform.parent = GameObject.FindGameObjectWithTag("Camera Parent").transform;
-        PacmanMovement Target = GameObject.FindGameObjectWithTag(tag).GetComponent<PacmanMovement>();
-        tr_Target = Target.gameObject.transform;
+        if(mode == "Pacman")
+            gameObject.transform.parent = GameObject.FindGameObjectWithTag("Camera Parent").transform;
+
+        if (GameObject.FindGameObjectsWithTag("Player").Length == 1)
+        {
+            PacmanMovement Target = GameObject.FindGameObjectWithTag(tag).GetComponent<PacmanMovement>();
+            tr_Target = Target.gameObject.transform;
+        }
     }
 
     void Update ()
     {
+        if (tr_Target == null)
+            return;
          gameObject.transform.position = tr_Target.position + Offset;
          TargetAngle = tr_Target.rotation * Quaternion.Euler(0, R_offset.y, 0);
          gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, TargetAngle, turnspeed * Time.deltaTime);
+    }
+
+    public void PacmanInstantiated()
+    {
+        if(mode == "Spectate")
+        {
+            PacmanMovement Target = GameObject.FindGameObjectWithTag(tag).GetComponent<PacmanMovement>();
+            tr_Target = Target.gameObject.transform;
+        }
     }
 }

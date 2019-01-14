@@ -91,6 +91,7 @@ MonoBehaviour:
   - {fileID: 1644202480521738, guid: 985a062186852e942a0920a316f5535d, type: 2}
   PacmanObject: {fileID: 1990302627283604, guid: 33b8e3e30ca18474b9e2124c286d85de,
     type: 2}
+  Spectator: {fileID: 1923607694538722, guid: 631d2ff31186c564fb68364cccf4c60f, type: 2}
   FirstPerson: {fileID: 1923607694538722, guid: 3e1ffd642bcd73744a44a72a486b13b7,
     type: 2}
   MiniMap: {fileID: 1892565082899440, guid: 5ca267dcd3237bb42845ea06d64d0478, type: 2}

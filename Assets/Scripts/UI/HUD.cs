@@ -20,6 +20,8 @@ public class HUD : MonoBehaviour {
     public GameObject GhostHUD;
     public GameObject PacmanError, GhostError,ColorGhostError;
     public GameObject AllGhost;
+    public GameObject Spectator;
+
     //opens pausescreen
     public void Pause()
     {
@@ -55,12 +57,22 @@ public class HUD : MonoBehaviour {
             hud.showGUI = false;
     }
 
+    public void Spectate()
+    {
+        PlayerOnline Player = FindObjectOfType<PlayerOnline>();
+        Player.Spectate();
+        ChooseCharacter.SetActive(false);
+        GhostError.SetActive(false);
+        ColorGhostError.SetActive(false);
+        Spectator.SetActive(false);
+    }
     public void ChoosePacman()
     {
-        PlayerOnline Player= FindObjectOfType<PlayerOnline>();
+        PlayerOnline Player = FindObjectOfType<PlayerOnline>();
         Player.SpawnPacman();
         ChooseCharacter.SetActive(false);
         GhostError.SetActive(false);
+        Spectator.SetActive(false);
     }
     public void PacmanLocked()
     {
@@ -74,6 +86,7 @@ public class HUD : MonoBehaviour {
     {
         AllGhost.SetActive(true);
         Characters.SetActive(false);
+        PacmanError.SetActive(false);
 
     }
 
@@ -101,6 +114,7 @@ public class HUD : MonoBehaviour {
         ChooseCharacter.SetActive(false);
         PacmanError.SetActive(false);
         ColorGhostError.SetActive(false);
+        Spectator.SetActive(false);
     }
 
     public void ColorGhostErrorMessage()

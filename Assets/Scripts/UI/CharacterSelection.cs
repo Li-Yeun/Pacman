@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CharacterSelection : MonoBehaviour {
 
+    [SerializeField] GameObject Spectator;
     [SerializeField] GameObject ChoosePacman, LockedPacman;
     [SerializeField] GameObject ChooseGhost, LockedGhost;
     void Start ()
     {
+        Spectator.SetActive(true);
         CheckPacman();
         CheckGhost();
     }
