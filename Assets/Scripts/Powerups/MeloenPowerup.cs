@@ -19,20 +19,21 @@ public class MeloenPowerup : MonoBehaviour {
                 fruitscore.FruitPoints();
                 gameObject.GetComponent<SphereCollider>().enabled = false;
                 gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
-                Movement GhostMovement = col.GetComponent<Movement>();
+                foreach (Movement movement in FindObjectsOfType<Movement>())
+                {
+                    movement.reversecontrols = true;
+                    StartCoroutine(Resett(movement));
+                }
                 melonTimer timerAnimation = FindObjectOfType<melonTimer>();
                 timerAnimation.MelonTimer();
-                GhostMovement.reversecontrols = true;
-                StartCoroutine(Resett(GhostMovement));
-              
                 break;
         }
     }
 
-    IEnumerator Resett(Movement GhostMovement)
+    IEnumerator Resett(Movement movement)
     {
         yield return new WaitForSeconds(duration);
-        GhostMovement.reversecontrols = false;
+        movement.reversecontrols = false;
         Destroy(gameObject);
     }
 }
