@@ -25,7 +25,7 @@ public class Movement : NetworkBehaviour {
     public bool dead = false;                                         //als true is de speler doodgegaan
     float RotationCooldown = 0;                                //tijd voordat er weer gedraaid kan worden
     float respawntimer = 0;
-
+    public bool reversecontrols = false;
 
     bool[] Abilities;               //welke ability geactiveerd is
     public IncreaseVision Vision;   //extern script van ability 0, zit op bodylight
@@ -150,18 +150,34 @@ public class Movement : NetworkBehaviour {
     }           //zorgt voor automatisch draaien tegen muren
     void HandleInput()
     {
-        if (goleft && RotationCooldown == 0 && !right.Collision)
+        if (reversecontrols == false)
         {
-            Rotate(1);
+            if (goleft && RotationCooldown == 0 && !right.Collision)
+            {
+                Rotate(1);
+            }
+            else if (goright && RotationCooldown == 0 && !left.Collision)
+            {
+                Rotate(-1);
+            }
         }
-        else if (goright && RotationCooldown == 0 && !left.Collision)
+        else
         {
-            Rotate(-1);
+            
+            if (goleft && RotationCooldown == 0 && !left.Collision)
+            {
+                Rotate(-1);
+            }
+            else if (goright && RotationCooldown == 0 && !right.Collision)
+            {
+                Rotate(1);
+            }
         }
-        if(RotationCooldown >= 1)
+
+        if (RotationCooldown >= 1)
         {
             RotationCooldown += Time.deltaTime;
-            if(RotationCooldown >= 1.2f)
+            if (RotationCooldown >= 1.2f)
             {
                 RotationCooldown = 0;
             }

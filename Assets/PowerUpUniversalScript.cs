@@ -34,9 +34,9 @@ public class PowerUpUniversalScript : MonoBehaviour
                     break;
                 case "Meloen":
                     {
-                        PacmanMovement pacmanMovement = gameObject.GetComponent<PacmanMovement>();
-                        pacmanMovement.Reversecontrols = true;
-                        StartCoroutine(Resett((pacmanMovement), col));
+                        Movement GhostMovement = gameObject.GetComponent<Movement>();
+                        GhostMovement.reversecontrols = true;
+                        StartCoroutine(Resett((GhostMovement), col));
                     }
                     break;
                 case "Sinasappel":
@@ -59,10 +59,10 @@ public class PowerUpUniversalScript : MonoBehaviour
     }
     #endregion
     #region Meloen
-    IEnumerator Resett(PacmanMovement pacmanMovement, Collider col)
+    IEnumerator Resett(Movement GhostMovement, Collider col)
     {
         yield return new WaitForSeconds(duratation);
-        pacmanMovement.Reversecontrols = false;
+        GhostMovement.reversecontrols = false;
         Destroy(col);
     }
     #endregion

@@ -19,20 +19,20 @@ public class MeloenPowerup : MonoBehaviour {
                 fruitscore.FruitPoints();
                 gameObject.GetComponent<SphereCollider>().enabled = false;
                 gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
-                PacmanMovement pacmanMovement = col.GetComponent<PacmanMovement>();
+                Movement GhostMovement = col.GetComponent<Movement>();
                 melonTimer timerAnimation = FindObjectOfType<melonTimer>();
                 timerAnimation.MelonTimer();
-                pacmanMovement.Reversecontrols = true;
-                StartCoroutine(Resett(pacmanMovement));
+                GhostMovement.reversecontrols = true;
+                StartCoroutine(Resett(GhostMovement));
               
                 break;
         }
     }
 
-    IEnumerator Resett(PacmanMovement pacmanMovement)
+    IEnumerator Resett(Movement GhostMovement)
     {
         yield return new WaitForSeconds(duration);
-        pacmanMovement.Reversecontrols = false;
+        GhostMovement.reversecontrols = false;
         Destroy(gameObject);
     }
 }

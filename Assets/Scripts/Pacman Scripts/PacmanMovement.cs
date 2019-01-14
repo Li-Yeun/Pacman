@@ -23,7 +23,6 @@ public class PacmanMovement : NetworkBehaviour {
     public int currentDirection, p_Direction;
     public bool LockMovement;
     public KeyCode currentKey, p_Key;
-    public bool Reversecontrols = false;
 
 
 
@@ -64,22 +63,7 @@ public class PacmanMovement : NetworkBehaviour {
 
     private void FirstPersonMode()
     {
-        if ( Reversecontrols)
-        {
-            if (Input.GetKeyDown(Controls[1]))
-            {
-                HandleKeyInput(Controls[1], 2);
-            }
-            else if (Input.GetKey(Controls[0]) && !right.Collision && !LockMovement)
-            {
-                HandleKeyInput(Controls[0], 1);
-            }
-            else if (Input.GetKey(Controls[2]) && !left.Collision && !LockMovement)
-            {
-                HandleKeyInput(Controls[2], -1);
-            }
-        }
-       else
+      
            if (Input.GetKeyDown(Controls[1]))
             {
                 HandleKeyInput(Controls[1], 2);
