@@ -84,8 +84,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4e9c96826d8d64ca769edf9c9a475f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GhostObject: {fileID: 1386731014217534, guid: 7034bb6ec5beb514da13788bce1adbed,
-    type: 2}
+  GhostObject:
+  - {fileID: 1386731014217534, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
+  - {fileID: 1386731014217534, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
+  - {fileID: 1023560705824012, guid: 156e7654144b39d4f83afb9b699710c6, type: 2}
+  - {fileID: 1023560705824012, guid: 156e7654144b39d4f83afb9b699710c6, type: 2}
   PacmanObject: {fileID: 1990302627283604, guid: 33b8e3e30ca18474b9e2124c286d85de,
     type: 2}
   FirstPerson: {fileID: 1923607694538722, guid: 3e1ffd642bcd73744a44a72a486b13b7,
@@ -96,4 +99,7 @@ MonoBehaviour:
   MiniMapLight: {fileID: 1492236938368748, guid: ab692e9273b8c6a4cb0951363d4d5269,
     type: 2}
   GeneralLight: {fileID: 1583380133374922, guid: d2e44daf971ced84ea15a9a3cbc2bffe,
+    type: 2}
+  Decoy: {fileID: 1475211390249698, guid: 11d99ab671c1048409d1790057823827, type: 2}
+  Decoy_Camera: {fileID: 1251268095582994, guid: d0585eed3b3eca244b61a73ea78cc205,
     type: 2}

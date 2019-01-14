@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class PlayerOnline : NetworkBehaviour {
 
-    [SerializeField] GameObject GhostObject;
+    [SerializeField] GameObject[] GhostObject;
     [SerializeField] GameObject PacmanObject;
     [SerializeField] GameObject FirstPerson, MiniMap, TopDownCamera;
     [SerializeField] GameObject MiniMapLight, GeneralLight;
@@ -22,19 +22,24 @@ public class PlayerOnline : NetworkBehaviour {
         BroadCaster = FindObjectOfType<General>();
         if (isLocalPlayer)
         {
-            FindObjectOfType<HUD>().ChooseCharacter.SetActive(true);
-              /*
-            if (FindObjectsOfType<PacmanMovement>().Length == 0)
+            if (GameObject.FindGameObjectsWithTag("Player").Length == 1 && GameObject.FindGameObjectsWithTag("Enemy").Length == 4)
             {
-                CmdSpawnMyPacman();
-                NormalSpawnMyPacman();
+                Instantiate(TopDownCamera);
             }
             else
-            {
-                CmdSpawnMyGhost();
-                NormalSpawnMyGhost();
-            }
-            */
+                FindObjectOfType<HUD>().ChooseCharacter.SetActive(true);
+            /*
+          if (FindObjectsOfType<PacmanMovement>().Length == 0)
+          {
+              CmdSpawnMyPacman();
+              NormalSpawnMyPacman();
+          }
+          else
+          {
+              CmdSpawnMyGhost();
+              NormalSpawnMyGhost();
+          }
+          */
         }
     }
 
@@ -106,7 +111,13 @@ public class PlayerOnline : NetworkBehaviour {
     [Command]
     void CmdSpawnMyGhost()
     {
-        GameObject Ghost = Instantiate(GhostObject);
+        if(GameObject.FindGameObjectsWithTag("Enemy").Length == 4)
+        {
+            Debug.Log("Max Ghost");
+            return;
+        }
+        int number = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        GameObject Ghost = Instantiate(GhostObject[number]);
         NetworkServer.SpawnWithClientAuthority(Ghost, connectionToClient);
         RpcChangeGhostName();
     }
