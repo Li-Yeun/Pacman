@@ -18,7 +18,7 @@ public class HUD : MonoBehaviour {
     public GameObject ChooseCharacter, Characters;
     public GameObject PacmanHUD;
     public GameObject GhostHUD;
-    public GameObject PacmanError, GhostError;
+    public GameObject PacmanError, GhostError,ColorGhostError;
     public GameObject AllGhost;
     //opens pausescreen
     public void Pause()
@@ -77,11 +77,34 @@ public class HUD : MonoBehaviour {
 
     }
 
-    public void ChooseColorGhost()
+    public void RedGhost()
+    {
+        ChooseColorGhost(0);
+    }
+    public void BlueGhost()
+    {
+        ChooseColorGhost(1);
+    }
+    public void OrangeGhost()
+    {
+        ChooseColorGhost(2);
+    }
+    public void PinkGhost()
+    {
+        ChooseColorGhost(3);
+    }
+
+    public void ChooseColorGhost(int number)
     {
         PlayerOnline Player = FindObjectOfType<PlayerOnline>();
-        Player.SpawnGhost();
+        Player.SpawnGhost(number);
         ChooseCharacter.SetActive(false);
         PacmanError.SetActive(false);
+        ColorGhostError.SetActive(false);
+    }
+
+    public void ColorGhostErrorMessage()
+    {
+        ColorGhostError.SetActive(true);
     }
 }

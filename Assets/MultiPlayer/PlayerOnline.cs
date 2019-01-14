@@ -51,11 +51,11 @@ public class PlayerOnline : NetworkBehaviour {
         NormalSpawnMyPacman();
     }
 
-    public void SpawnGhost()
+    public void SpawnGhost(int number)
     {
         if (!isLocalPlayer)
             return;
-        CmdSpawnMyGhost();
+        CmdSpawnMyGhost(number);
         NormalSpawnMyGhost();
     }
     public void Update()
@@ -109,14 +109,13 @@ public class PlayerOnline : NetworkBehaviour {
     }
 
     [Command]
-    void CmdSpawnMyGhost()
+    void CmdSpawnMyGhost(int number)
     {
         if(GameObject.FindGameObjectsWithTag("Enemy").Length == 4)
         {
             Debug.Log("Max Ghost");
             return;
         }
-        int number = GameObject.FindGameObjectsWithTag("Enemy").Length;
         GameObject Ghost = Instantiate(GhostObject[number]);
         NetworkServer.SpawnWithClientAuthority(Ghost, connectionToClient);
         RpcChangeGhostName();

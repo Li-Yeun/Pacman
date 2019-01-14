@@ -36,7 +36,7 @@ public class CharacterSelection : MonoBehaviour {
         else
         {
             LockedPacman.SetActive(true);
-            ChoosePacman.SetActive(false);
+            ChoosePacman.SetActive(false);  
         }
     }
 
