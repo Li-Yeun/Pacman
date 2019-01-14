@@ -85,10 +85,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GhostObject:
+  - {fileID: 1356418371725904, guid: de7de4d690a705f429aa06286d6491e8, type: 2}
+  - {fileID: 1612460337488906, guid: ace4bed335777424da2ed915e4bd4366, type: 2}
   - {fileID: 1386731014217534, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
-  - {fileID: 1386731014217534, guid: 7034bb6ec5beb514da13788bce1adbed, type: 2}
-  - {fileID: 1023560705824012, guid: 156e7654144b39d4f83afb9b699710c6, type: 2}
-  - {fileID: 1023560705824012, guid: 156e7654144b39d4f83afb9b699710c6, type: 2}
+  - {fileID: 1644202480521738, guid: 985a062186852e942a0920a316f5535d, type: 2}
   PacmanObject: {fileID: 1990302627283604, guid: 33b8e3e30ca18474b9e2124c286d85de,
     type: 2}
   FirstPerson: {fileID: 1923607694538722, guid: 3e1ffd642bcd73744a44a72a486b13b7,
