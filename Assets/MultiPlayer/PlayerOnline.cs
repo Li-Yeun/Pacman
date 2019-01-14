@@ -9,6 +9,7 @@ public class PlayerOnline : NetworkBehaviour {
     [SerializeField] GameObject PacmanObject;
     [SerializeField] GameObject FirstPerson, MiniMap, TopDownCamera;
     [SerializeField] GameObject MiniMapLight, GeneralLight;
+    [SerializeField] GameObject Decoy, Decoy_Camera;
     private General BroadCaster;
 
 
@@ -61,6 +62,28 @@ public class PlayerOnline : NetworkBehaviour {
                 CmdReset();
             }
         }
+
+        if (isLocalPlayer && Input.GetKeyDown("8"))
+        {
+            if (this.gameObject.name == "Player Pacman")
+            {
+                SpawnDecoy();
+            }
+        }
+
+    }
+
+    public void SpawnDecoy()
+    {
+        CmdSpawnDecoy();
+        Instantiate(Decoy_Camera);
+    }
+
+    [Command]
+    public void CmdSpawnDecoy()
+    {
+        GameObject go = Instantiate(Decoy);
+        NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
     }
     [Command]
     void CmdSpawnMyPacman()

@@ -23,6 +23,10 @@ public class PacmanCollision : NetworkBehaviour {
 
         switch (collision.gameObject.tag)
         {
+            case "Player":
+            case "Decoy":
+                Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+                break;
             case "Enemy":
             if (!pacmanAttacking.IsVulnerable)
                 {

@@ -9,33 +9,32 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1923607694538722}
+  m_RootGameObject: {fileID: 1251268095582994}
   m_IsPrefabAsset: 1
---- !u!1 &1923607694538722
+--- !u!1 &1251268095582994
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4586542941477568}
-  - component: {fileID: 20006186982650824}
-  - component: {fileID: 81749761266728008}
-  - component: {fileID: 114758210892138690}
-  - component: {fileID: 114397706199126032}
+  - component: {fileID: 4367057690901980}
+  - component: {fileID: 20177766938877550}
+  - component: {fileID: 114523756638324032}
+  - component: {fileID: 114783687658322902}
   m_Layer: 0
-  m_Name: First Person Camera
+  m_Name: Decoy Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4586542941477568
+--- !u!4 &4367057690901980
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923607694538722}
+  m_GameObject: {fileID: 1251268095582994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -43,12 +42,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &20006186982650824
+--- !u!20 &20177766938877550
 Camera:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923607694538722}
+  m_GameObject: {fileID: 1251268095582994}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -59,56 +58,36 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.01
+    x: 0.39
+    y: 0.68
+    width: 0.27
+    height: 0.29
+  near clip plane: 0.3
   far clip plane: 1000
-  field of view: 90
+  field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 59703
+    m_Bits: 32567
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &81749761266728008
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923607694538722}
-  m_Enabled: 1
---- !u!114 &114397706199126032
+--- !u!114 &114523756638324032
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923607694538722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 825155018d00c924f834714c3d54daad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turnspeed: 8
-  tag: Player
---- !u!114 &114758210892138690
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923607694538722}
+  m_GameObject: {fileID: 1251268095582994}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
@@ -117,21 +96,34 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 62
-    i1: 31
-    i2: 253
-    i3: 100
-    i4: 43
-    i5: 205
-    i6: 115
-    i7: 116
-    i8: 74
-    i9: 68
+    i0: 208
+    i1: 88
+    i2: 94
+    i3: 237
+    i4: 59
+    i5: 62
+    i6: 202
+    i7: 36
+    i8: 75
+    i9: 97
     i10: 167
-    i11: 42
-    i12: 72
-    i13: 107
-    i14: 19
-    i15: 183
+    i11: 62
+    i12: 167
+    i13: 140
+    i14: 194
+    i15: 5
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114783687658322902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1251268095582994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825155018d00c924f834714c3d54daad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnspeed: 9
+  tag: Decoy

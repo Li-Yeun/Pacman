@@ -5,6 +5,8 @@ using UnityEngine.Networking;
 
 public class PacmanMovement : NetworkBehaviour {
 
+    [SerializeField] KeyCode[] Controls;
+
     [Header("Directional Speed")]
     [SerializeField] public Vector3 Speed;
 
@@ -22,6 +24,8 @@ public class PacmanMovement : NetworkBehaviour {
     public bool LockMovement;
     public KeyCode currentKey, p_Key;
     public bool Reversecontrols = false;
+
+
 
     public Vector3 Position { get { return gameObject.transform.position; }
         set { gameObject.transform.position = value; }
@@ -62,38 +66,38 @@ public class PacmanMovement : NetworkBehaviour {
     {
         if ( Reversecontrols)
         {
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(Controls[1]))
             {
-                HandleKeyInput(KeyCode.S, 2);
+                HandleKeyInput(Controls[1], 2);
             }
-            else if (Input.GetKey(KeyCode.A) && !right.Collision && !LockMovement)
+            else if (Input.GetKey(Controls[0]) && !right.Collision && !LockMovement)
             {
-                HandleKeyInput(KeyCode.A, 1);
+                HandleKeyInput(Controls[0], 1);
             }
-            else if (Input.GetKey(KeyCode.D) && !left.Collision && !LockMovement)
+            else if (Input.GetKey(Controls[2]) && !left.Collision && !LockMovement)
             {
-                HandleKeyInput(KeyCode.D, -1);
+                HandleKeyInput(Controls[2], -1);
             }
         }
        else
-           if (Input.GetKeyDown(KeyCode.S))
+           if (Input.GetKeyDown(Controls[1]))
             {
-                HandleKeyInput(KeyCode.S, 2);
+                HandleKeyInput(Controls[1], 2);
             }
-            else if (Input.GetKey(KeyCode.A) && !left.Collision && !LockMovement)
+            else if (Input.GetKey(Controls[0]) && !left.Collision && !LockMovement)
             {
-                HandleKeyInput(KeyCode.A, -1);
+                HandleKeyInput(Controls[0], -1);
             }
-            else if (Input.GetKey(KeyCode.D) && !right.Collision && !LockMovement)
+            else if (Input.GetKey(Controls[2]) && !right.Collision && !LockMovement)
             {
-                HandleKeyInput(KeyCode.D, 1);
+                HandleKeyInput(Controls[2], 1);
             }
        
     }
     
     private void HandleKeyInput(KeyCode KeyInput, int Direction)
     {
-        if (KeyInput != KeyCode.S)
+        if (KeyInput != Controls[1])
         {
             LockMovement = true;
             Invoke("UnlockMovement", 0.5f);

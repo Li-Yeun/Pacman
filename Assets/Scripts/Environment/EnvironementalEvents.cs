@@ -17,8 +17,8 @@ public class EnvironementalEvents : NetworkBehaviour {
         GameObject[] AllEvents = { Smoke, FireWorks, SandStorm, Water, Confusion };
         Events = AllEvents;
     }
-    
-    void Update () {
+
+    void Update() {
         if (!hasAuthority)
             return;
         //TODO sync doet raar (Invoke)

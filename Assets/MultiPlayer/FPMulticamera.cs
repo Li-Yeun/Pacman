@@ -10,11 +10,12 @@ public class FPMulticamera : NetworkBehaviour
     Vector3 Offset = Vector3.zero;
     private Vector3 R_offset = new Vector3(0,-90,0);
     private Quaternion TargetAngle;
+    [SerializeField] string tag;
 
     private void Start()
     {
         gameObject.transform.parent = GameObject.FindGameObjectWithTag("Camera Parent").transform;
-        PacmanMovement Target = FindObjectOfType<PacmanMovement>();
+        PacmanMovement Target = GameObject.FindGameObjectWithTag(tag).GetComponent<PacmanMovement>();
         tr_Target = Target.gameObject.transform;
     }
 
