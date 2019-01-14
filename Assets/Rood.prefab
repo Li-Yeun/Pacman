@@ -4019,6 +4019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950f6b3eebbd4f540891c1adff39cdc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Red
   front: {fileID: 114043464025606332}
   left: {fileID: 114147520016679684}
   right: {fileID: 114624426221438624}

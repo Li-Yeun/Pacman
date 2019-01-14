@@ -4069,6 +4069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950f6b3eebbd4f540891c1adff39cdc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Pink
   front: {fileID: 114004567486766802}
   left: {fileID: 114661017570428566}
   right: {fileID: 114105268231700296}

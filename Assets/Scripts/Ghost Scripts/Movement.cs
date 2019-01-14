@@ -9,6 +9,8 @@ using UnityEngine.Networking;
 
 public class Movement : NetworkBehaviour {
 
+    public string name; //Checken welke ghost er bestaan bij character selectie;
+
     [Header("General")]
     [SerializeField] SpecialTrigger2 front, left, right;               //colliders voor navigatie
     private Transform respawn;                        //locatie van spawnpunt

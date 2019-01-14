@@ -15,10 +15,11 @@ public class HUD : MonoBehaviour {
     public string gamescene;
     public GameObject pausemenu;
     public GameObject optionmenu;
-    public GameObject ChooseCharacter;
+    public GameObject ChooseCharacter, Characters;
     public GameObject PacmanHUD;
     public GameObject GhostHUD;
     public GameObject PacmanError, GhostError;
+    public GameObject AllGhost;
     //opens pausescreen
     public void Pause()
     {
@@ -69,7 +70,14 @@ public class HUD : MonoBehaviour {
     {
         GhostError.SetActive(true);
     }
-    public void CHooseGhost()
+    public void ChooseGhost()
+    {
+        AllGhost.SetActive(true);
+        Characters.SetActive(false);
+
+    }
+
+    public void ChooseColorGhost()
     {
         PlayerOnline Player = FindObjectOfType<PlayerOnline>();
         Player.SpawnGhost();

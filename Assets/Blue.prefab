@@ -3955,6 +3955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950f6b3eebbd4f540891c1adff39cdc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Blue
   front: {fileID: 114715995278484294}
   left: {fileID: 114759327691288254}
   right: {fileID: 114074931950441828}
