@@ -14,6 +14,7 @@ public class PlayerOnline : NetworkBehaviour
     private General BroadCaster;
     private Grid OriginalGrid;
     public bool SpawnDecoyBool = false;
+    List<Gridbased> griddbased;
 
     // Use this for initialization
     void Start()
@@ -44,6 +45,8 @@ public class PlayerOnline : NetworkBehaviour
               NormalSpawnMyGhost();
           }
           */
+            griddbased = new List<Gridbased>();
+            
         }
     }
 
@@ -189,38 +192,34 @@ public class PlayerOnline : NetworkBehaviour
 
     public void RepeatSpawn()
     {
-        InvokeRepeating("SpawnRandomFruit", Random.Range(0, 4f), Random.Range(0, 4f));
+        Save();
+        InvokeRepeating("SpawnRandomFruit", Random.Range(15, 30f), Random.Range(15, 30f));// Spawns the fruit every 15-30 seconds somewhere on the map (indicated with an s)
     }
 
-    bool Spawned = true;
-    private void SpawnRandomFruit()
+    private void Save()
     {
-        Spawned = false;
         for (int z = 0; z < OriginalGrid.gamegrid.GetLongLength(1); z++)
             for (int x = 0; x < OriginalGrid.gamegrid.GetLongLength(0); x++)
             {
-                Check(OriginalGrid.gamegrid[x, z], z, x);
-                if (Spawned)
+                if (OriginalGrid.gamegrid[x, z] == 's')
                 {
-                    return;
+                    griddbased.Add(new Gridbased(z, x));
                 }
             }
     }
-    private void Check(char TileType, int x, int z)
+    private void SpawnRandomFruit()
     {
-        if (TileType == 's')
+        if (griddbased.Count == 0) { return; }
+        Gridbased gridbased = griddbased[Random.Range(0, griddbased.Count)];
+        switch (Random.Range(0,5))
         {
-            switch ((int)Random.Range(0, 5))
-            {
-                case 0: LoadBlock('w', x, z); break;
-                case 1: LoadBlock('a', x, z); break;
-                case 2: LoadBlock('o', x, z); break;
-                case 3: LoadBlock('m', x, z); break;
-                case 4: LoadBlock('k', x, z); break;
-            }
-            OriginalGrid.gamegrid[z, x] = 'd';
-            Spawned = true;
+            case 0: LoadBlock('w', gridbased.x, gridbased.z); break;
+            case 1: LoadBlock('a', gridbased.x, gridbased.z); break;
+            case 2: LoadBlock('o', gridbased.x, gridbased.z); break;
+            case 3: LoadBlock('m', gridbased.x, gridbased.z); break;
+            case 4: LoadBlock('k', gridbased.x, gridbased.z); break;
         }
+        griddbased.Remove(gridbased);
     }
 
     public void LoadBlock(char TileType, int x, int z)
@@ -262,5 +261,16 @@ public class PlayerOnline : NetworkBehaviour
         gameObjectt.transform.parent = Parent.transform;
         gameObjectt.transform.localPosition = new Vector3(x, 1, z);
         NetworkServer.SpawnWithClientAuthority(gameObjectt, connectionToClient);
+    }
+}
+
+public class Gridbased
+{
+    public int x;
+    public int z;
+    public Gridbased(int _x,int _z)
+    {
+        x = _x;
+        z = _z;
     }
 }

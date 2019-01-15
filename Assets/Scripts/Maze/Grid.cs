@@ -51,27 +51,27 @@ public class Grid : MonoBehaviour
         gamegrid = new char[,]
         {
             { 'b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b' },
-            { 'b','e','s','e','e','e','e','b','e','b','p','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','p','b','e','b','e','e','e','e','e','e','b' },
-            { 'b','s','b','b','b','b','e','e','e','b','e','b','b','e','b','b','b','e','b','e','b','b','b','e','b','b','e','b','e','e','e','b','b','b','b','e','b' },
+            { 'b','s','e','e','e','e','e','b','e','b','p','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','p','b','e','b','e','e','e','e','e','s','b' },
+            { 'b','e','b','b','b','b','e','e','e','b','e','b','b','e','b','b','b','e','b','e','b','b','b','e','b','b','e','b','e','e','e','b','b','b','b','e','b' },
             { 'b','e','b','b','e','e','e','b','e','b','e','b','b','e','b','b','b','e','b','e','b','b','b','e','b','b','e','b','e','b','e','e','e','b','b','e','b' },
             { 'b','e','b','b','e','b','b','b','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','b','b','b','e','b','b','e','b' },
             { 'b','e','e','e','e','b','b','b','e','b','e','b','b','e','b','e','b','b','b','b','b','e','b','e','b','b','e','b','e','b','b','b','e','e','e','e','b' },
             { 'b','b','e','b','e','e','e','e','e','b','e','b','b','e','b','e','e','e','b','e','e','e','b','e','b','b','e','b','e','e','e','e','e','b','e','b','b' },
-            { 't','e','e','b','e','b','b','b','e','b','e','e','e','e','b','e','b','e','e','e','b','e','b','e','e','e','e','b','e','b','b','b','e','b','e','e','t' },
-            { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','b','e','b','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
-            { 'b','b','e','b','b','e','b','b','b','b','e','e','b','e','b','e','b','s','s','s','b','e','b','e','b','e','e','b','b','b','b','e','b','b','e','b','b' },
-            { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','s','b','s','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
-            { 'b','p','b','b','b','b','b','b','e','e','e','e','e','e','b','e','b','s','s','s','b','e','e','e','e','e','e','e','e','b','b','b','b','b','b','p','b' },
+            { 't','e','e','b','e','b','b','b','e','b','s','e','e','e','b','e','b','e','e','e','b','e','b','e','e','e','s','b','e','b','b','b','e','b','e','e','t' },
+            { 'b','b','e','b','e','e','e','e','s','b','b','e','b','e','b','e','b','b','e','b','b','e','b','e','b','e','b','b','s','e','e','e','e','b','e','b','b' },
+            { 'b','b','e','b','b','e','b','b','b','b','e','e','b','e','b','e','b','e','e','s','b','e','b','e','b','e','e','b','b','b','b','e','b','b','e','b','b' },
+            { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','e','b','e','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
+            { 'b','p','b','b','b','b','b','b','e','e','e','e','e','e','b','e','b','s','e','e','b','e','e','e','e','e','e','e','e','b','b','b','b','b','b','p','b' },
             { 'b','e','e','e','e','e','e','e','e','b','e','b','b','e','b','e','b','b','e','b','b','e','b','e','b','b','e','b','e','e','e','e','e','e','e','e','b' },
             { 'b','b','e','b','b','e','b','b','b','b','e','e','b','e','b','e','e','e','e','e','e','e','b','e','b','e','e','b','b','b','b','e','b','b','e','b','b' },
-            { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
-            { 't','e','e','b','e','b','e','b','e','b','e','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','e','b','e','b','e','b','e','b','e','e','t' },
+            { 'b','b','e','b','e','e','e','e','s','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','s','e','e','e','e','b','e','b','b' },
+            { 't','e','e','b','e','b','e','b','e','b','s','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','s','b','e','b','e','b','e','b','e','e','t' },
             { 'b','b','e','b','e','b','e','b','e','b','e','b','b','e','b','b','b','e','b','e','b','b','b','e','b','b','e','b','e','b','e','b','e','b','e','b','b' },
             { 'b','e','e','e','e','b','e','b','e','b','e','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','e','b','e','b','e','b','e','e','e','e','b' },
             { 'b','e','b','b','b','b','e','b','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','b','e','b','b','b','b','e','b' },
             { 'b','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','e','e','b','e','e','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','b' },
             { 'b','e','b','e','b','b','e','b','e','b','e','b','b','b','b','b','b','e','b','e','b','b','b','b','b','b','e','b','e','b','e','b','b','e','b','e','b' },
-            { 'b','e','e','e','e','e','e','b','e','b','p','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','p','b','e','b','e','e','e','e','e','e','b' },
+            { 'b','s','e','e','e','e','e','b','e','b','p','e','e','e','e','e','e','e','e','e','e','e','e','e','e','e','p','b','e','b','e','e','e','e','e','s','b' },
             { 'b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b' },
         };
         SpawnGrid();
@@ -296,37 +296,7 @@ public class Grid : MonoBehaviour
             gameObjectt.transform.localPosition = new Vector3(x, 1, z);
         }
     }
-    bool Spawned = true;
-    private void SpawnRandomFruit()
-    {
-        Spawned = false;
-        for (int z = 0; z < gamegrid.GetLongLength(1); z++)
-            for (int x = 0; x < gamegrid.GetLongLength(0); x++)
-            {
-                Check(gamegrid[x, z], z, x);
-                if (Spawned)
-                {
-                    return;
-                }
-            }
-    }
-    private void Check(char TileType, int x, int z)
-    {
-        if (TileType == 's')
-        {
-            switch ((int)Random.Range(0, 5))
-            {
-                case 0: LoadBlock('w', x, z); break;
-                case 1: LoadBlock('a', x, z); break;
-                case 2: LoadBlock('o', x, z); break;
-                case 3: LoadBlock('m', x, z); break;
-                case 4: LoadBlock('k', x, z); break;
-            }
-            gamegrid[z, x] = 'd';
-            Spawned = true;
-        }
-    }
-
+  
     public void Reset()
     {
         if (GameObject.FindGameObjectWithTag("Fruit") != null)
