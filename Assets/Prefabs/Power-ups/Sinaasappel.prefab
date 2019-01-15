@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 135884806495067838}
   - component: {fileID: 114533688352587466}
   - component: {fileID: 95781235975080952}
+  - component: {fileID: 114259335565335214}
   m_Layer: 0
   m_Name: Sinaasappel
   m_TagString: Fruit
@@ -133,6 +134,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114259335565335214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1796113295347490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 73
+    i1: 95
+    i2: 34
+    i3: 91
+    i4: 111
+    i5: 186
+    i6: 184
+    i7: 212
+    i8: 217
+    i9: 56
+    i10: 226
+    i11: 191
+    i12: 85
+    i13: 147
+    i14: 217
+    i15: 184
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114533688352587466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transmaterial: {fileID: 2100000, guid: 13bfcce8e864d2d4ca9e9dcc55d208a4, type: 2}
   defaulthMaterial: {fileID: 2100000, guid: 1a14663bc16cbd94c844607ee11ace3b, type: 2}
-  duratation: 15
+  duration: 15
 --- !u!135 &135884806495067838
 SphereCollider:
   m_ObjectHideFlags: 1

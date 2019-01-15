@@ -39,9 +39,9 @@ public class Grid : MonoBehaviour
     /// Dit zijn de locations waarin de instances gezet worden deze zijn alleen ter sortering verder niks.
     /// </summary>
     [Header("Parent")]
-    [SerializeField] Transform PelletsParent, TeleporterParent, BuildingBlockParent, PowerPillParent, SpawnerParent;
+    [SerializeField] public Transform PelletsParent, TeleporterParent, BuildingBlockParent, PowerPillParent, SpawnerParent;
     [Header("Parent fruits")]
-    [SerializeField] Transform KersParent, AardbeiParent, AppelParent, MeloenParent, SinaasappelParent;
+    [SerializeField] public Transform KersParent, AardbeiParent, AppelParent, MeloenParent, SinaasappelParent;
     public char[,] gamegrid;
     #endregion
 
@@ -67,7 +67,7 @@ public class Grid : MonoBehaviour
             { 'b','b','e','b','e','e','e','e','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','e','e','e','e','b','e','b','b' },
             { 't','e','e','b','e','b','e','b','e','b','e','e','e','e','e','e','e','e','b','e','e','e','e','e','e','e','e','b','e','b','e','b','e','b','e','e','t' },
             { 'b','b','e','b','e','b','e','b','e','b','e','b','b','e','b','b','b','e','b','e','b','b','b','e','b','b','e','b','e','b','e','b','e','b','e','b','b' },
-            { 'b','e','e','e','e','b','e','b','e','b','e','e','b','e','e','a','e','e','e','e','e','e','e','e','b','e','e','b','e','b','e','b','e','e','e','e','b' },
+            { 'b','e','e','e','e','b','e','b','e','b','e','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','e','b','e','b','e','b','e','e','e','e','b' },
             { 'b','e','b','b','b','b','e','b','e','b','b','e','b','e','b','e','b','b','b','b','b','e','b','e','b','e','b','b','e','b','e','b','b','b','b','e','b' },
             { 'b','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','e','e','b','e','e','e','b','e','e','e','e','e','e','e','e','e','e','e','b','e','b' },
             { 'b','e','b','e','b','b','e','b','e','b','e','b','b','b','b','b','b','e','b','e','b','b','b','b','b','b','e','b','e','b','e','b','b','e','b','e','b' },
@@ -75,7 +75,6 @@ public class Grid : MonoBehaviour
             { 'b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','t','b','b','b','b','b','b','b','b' },
         };
         SpawnGrid();
-        InvokeRepeating("SpawnRandomFruit", Random.Range(0, 4f), Random.Range(0, 4f));
     }
 
     #region GridConverter

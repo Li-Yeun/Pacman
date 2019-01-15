@@ -1,30 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class AardbeiPowerup : MonoBehaviour {
+public class AardbeiPowerup : NetworkBehaviour
+{
 
     public float duration = 15f;
 
-    void OnTriggerStay(Collider col)
+    void OnTriggerEnter(Collider col)
     {
+        if (!hasAuthority)
+            return;
         switch (col.gameObject.tag)
         {
             case "Pellet":
                 Destroy(col.gameObject);
                 break;
             case "Player":
-                ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
-                fruitscore.FruitPoints();
-                gameObject.GetComponent<SphereCollider>().enabled = false;
-                gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
-                PacmanMovement pacmanMovement = col.GetComponent<PacmanMovement>();
-                aardbeiTimer timerAnimation = FindObjectOfType<aardbeiTimer>();
-                timerAnimation.AardbeiTimer();
-                StartCoroutine(Resett(pacmanMovement));
+                Debug.Log(5);
+                CmdCollision(col.gameObject);
                 break;
         }
-        
+    }
+
+    [CommandAttribute]
+    public void CmdCollision(GameObject col)
+    {
+        RpcCollision(col);
+    }
+
+    [ClientRpcAttribute]
+    private void RpcCollision(GameObject col)
+    {
+        ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
+        fruitscore.FruitPoints();
+        gameObject.GetComponent<SphereCollider>().enabled = false;
+        gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+        PacmanMovement pacmanMovement = col.GetComponent<PacmanMovement>();
+        if (FindObjectsOfType<aardbeiTimer>().Length == 1)
+        {
+            aardbeiTimer timerAnimation = FindObjectOfType<aardbeiTimer>();
+            timerAnimation.AardbeiTimer();
+        }
+        StartCoroutine(Resett(pacmanMovement));
     }
 
     private IEnumerator Resett(PacmanMovement pacmanMovement)
@@ -36,4 +55,5 @@ public class AardbeiPowerup : MonoBehaviour {
         pacmanMovement.Speed.z--;
         Destroy(gameObject);
     }
+
 }

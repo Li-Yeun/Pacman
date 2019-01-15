@@ -2,20 +2,23 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 /// <summary>
 /// This script is responsable for making the blocks transparent when the orange is picked up.
 /// It's inefficient as shit but it works.
 /// Todo make this beter
 /// </summary>
-public class SinaasappelPowerup : MonoBehaviour {
-
+public class SinaasappelPowerup : NetworkBehaviour
+{
     // Variable for measuring how long the powerup has been running for (in seconds)
     [SerializeField] Material transmaterial, defaulthMaterial;
     public float duration = 15;
 
-    void OnTriggerStay(Collider col)
+    void OnTriggerEnter(Collider col)
     {
         // Changes the flow of control based on the object with which the orange collides
+        if (!hasAuthority)
+            return;
         switch (col.gameObject.tag)
         {
             case "Pellet":
@@ -23,22 +26,42 @@ public class SinaasappelPowerup : MonoBehaviour {
                 Destroy(col);
                 break;
             case "Player":
-                ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
-                fruitscore.FruitPoints();
-                gameObject.GetComponent<SphereCollider>().enabled = false;
-                gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
-                StartCoroutine(Programma());
-                sinaasTimer timerAnimation = FindObjectOfType<sinaasTimer>();
-                timerAnimation.OrangeTimer();
+                Debug.Log(1);
+                CmdCollision();
                 break;
         }
     }
 
+
+    [CommandAttribute]
+    public void CmdCollision()
+    {
+        RpcCollision();
+    }
+
+    [ClientRpcAttribute]
+    private void RpcCollision()
+    {
+        ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
+        fruitscore.FruitPoints();
+        gameObject.GetComponent<SphereCollider>().enabled = false;
+        gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+        StartCoroutine(Programma());
+        if (FindObjectsOfType<sinaasTimer>().Length == 1)
+        {
+            sinaasTimer timerAnimation = FindObjectOfType<sinaasTimer>();
+            timerAnimation.OrangeTimer();
+        }
+    }
+
+
+
+
     IEnumerator Programma()
     {
         Switches(0f, 0);
-        yield return new WaitForSeconds((float) 8/9*duration);
-        while (duration - ((float) 8/9*duration) > 0)
+        yield return new WaitForSeconds((float)8 / 9 * duration);
+        while (duration - ((float)8 / 9 * duration) > 0)
         {
             Switches(0f, 0);
             yield return new WaitForSeconds(0.25f);
@@ -46,7 +69,7 @@ public class SinaasappelPowerup : MonoBehaviour {
             duration--;
             yield return new WaitForSeconds(0.25f);
         }
-        Switches(1f,1);
+        Switches(1f, 1);
     }
 
     public void Switches(float transparancy, int matrialuse)

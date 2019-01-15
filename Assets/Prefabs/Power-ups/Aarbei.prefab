@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 135971262755551436}
   - component: {fileID: 114930100796446022}
   - component: {fileID: 95462436938020158}
+  - component: {fileID: 114985592072226202}
   m_Layer: 0
   m_Name: Aarbei
   m_TagString: Fruit
@@ -173,7 +174,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e6c9fe6b926d6441b1f9ac4d009404a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duratation: 15
+  duration: 15
+--- !u!114 &114985592072226202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1163221739206030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 228
+    i1: 60
+    i2: 69
+    i3: 219
+    i4: 147
+    i5: 116
+    i6: 179
+    i7: 212
+    i8: 233
+    i9: 106
+    i10: 59
+    i11: 100
+    i12: 132
+    i13: 44
+    i14: 136
+    i15: 92
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!135 &135971262755551436
 SphereCollider:
   m_ObjectHideFlags: 1

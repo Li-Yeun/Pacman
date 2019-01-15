@@ -21,7 +21,7 @@ public class HUD : MonoBehaviour {
     public GameObject PacmanError, GhostError,ColorGhostError;
     public GameObject AllGhost;
     public GameObject Spectator;
-
+    public GameObject GeneralHUD;
     //opens pausescreen
     public void Pause()
     {

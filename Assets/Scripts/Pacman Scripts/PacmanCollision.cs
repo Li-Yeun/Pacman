@@ -8,13 +8,7 @@ public class PacmanCollision : NetworkBehaviour {
     [Tooltip("FX prefab on player")] [SerializeField] GameObject DeathFX;
     [SerializeField] Transform parent;
     GhostStates pacmanAttacking;
-    playerhealth Health;
 
-    private void Start()
-    {
-        Health = FindObjectOfType<playerhealth>();
-       // pacmanAttacking = pacmanAttacking.GetComponent<PacmanAttacking>();
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -51,6 +45,7 @@ public class PacmanCollision : NetworkBehaviour {
     {
         GameObject fx = Instantiate(DeathFX, transform.position, Quaternion.identity);
         fx.transform.parent = parent;
+        playerhealth Health = FindObjectOfType<playerhealth>();
         Health.DecreaseHealth();
         SendMessage("StartDeathSequence");
     }

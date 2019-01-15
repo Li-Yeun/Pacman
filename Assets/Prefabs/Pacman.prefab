@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 114557836394759504}
   - component: {fileID: 114860781626154706}
   - component: {fileID: 114520310560575174}
+  - component: {fileID: 114675716620582434}
   m_Layer: 0
   m_Name: Pacman
   m_TagString: Player
@@ -875,7 +876,6 @@ MonoBehaviour:
   LockMovement: 0
   currentKey: 0
   p_Key: 0
-  Reversecontrols: 0
 --- !u!114 &114520310560575174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -940,6 +940,17 @@ MonoBehaviour:
     i15: 222
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114675716620582434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990302627283604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c5b67c03d58074584a854643e33d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114860781626154706
 MonoBehaviour:
   m_ObjectHideFlags: 1
