@@ -77,6 +77,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1225189393573894
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4765321252928470}
+  - component: {fileID: 33824082169918704}
+  - component: {fileID: 65896951221485220}
+  - component: {fileID: 114989158263291388}
+  m_Layer: 0
+  m_Name: TeleportClose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1335154844255744
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +174,7 @@ GameObject:
   - component: {fileID: 65059123049798312}
   - component: {fileID: 114165193448897144}
   m_Layer: 0
-  m_Name: TeleportClose
+  m_Name: TeleportJumpClose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,7 +331,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990302627283604}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -7.5095663, y: 1.4228398, z: -6.5672827}
+  m_LocalPosition: {x: 2.5707192, y: 1.4228398, z: -0.4814253}
   m_LocalScale: {x: 0.90000093, y: 0.9, z: 0.90000093}
   m_Children:
   - {fileID: 4999663831320144}
@@ -351,6 +369,19 @@ Transform:
   m_Father: {fileID: 4947751106676220}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4765321252928470
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225189393573894}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4947751106676220}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4879001926510492
 Transform:
   m_ObjectHideFlags: 1
@@ -358,11 +389,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1720645800818078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 2, z: 1}
+  m_LocalPosition: {x: -1.2, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 2, z: 0.99999946}
   m_Children: []
   m_Father: {fileID: 4947751106676220}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4947751106676220
 Transform:
@@ -378,6 +409,7 @@ Transform:
   - {fileID: 4665406293924228}
   - {fileID: 4750474034648292}
   - {fileID: 4421364530904774}
+  - {fileID: 4765321252928470}
   - {fileID: 4879001926510492}
   m_Father: {fileID: 4702360685858640}
   m_RootOrder: 5
@@ -505,6 +537,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1720645800818078}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33824082169918704
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225189393573894}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33889639311927502
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -583,6 +622,18 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1807048419904614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65896951221485220
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225189393573894}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -867,7 +918,7 @@ MonoBehaviour:
   Speed: {x: 2, y: 0, z: 2}
   left: {fileID: 114148793324972426}
   right: {fileID: 114136721807397628}
-  Movement: {fileID: 114165193448897144}
+  Movement: {fileID: 114989158263291388}
   rb: {fileID: 54224212824454748}
   AnimationLock: 0
   Teleporterlock: 0
@@ -983,6 +1034,20 @@ MonoBehaviour:
     i15: 222
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114989158263291388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1225189393573894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collision: 0
+  Firststring: TeleportShit
+  Secondstring: TeleportShit
 --- !u!135 &135796094062668830
 SphereCollider:
   m_ObjectHideFlags: 1
