@@ -44,8 +44,11 @@ public class PelletBehaviour : MonoBehaviour {
     void Update () {
 		if (pelleteaten)
         {
-            ScoreCounter scoreCounter = FindObjectOfType<ScoreCounter>();
-            scoreCounter.PelletPoints();
+            if (FindObjectsOfType<ScoreCounter>().Length == 1)
+            {
+                ScoreCounter scoreCounter = FindObjectOfType<ScoreCounter>();
+                scoreCounter.PelletPoints();
+            }
             gameObject.SetActive(false);  //niet destroyen is belangrijkr voor de reset!
         }
 	}

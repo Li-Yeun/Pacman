@@ -6,10 +6,6 @@ using UnityEngine.Networking;
 public class AppelPowerup : NetworkBehaviour
 {
 
-    public float duration = 15f;
-
-    public GameObject Doppelganger;
-
     [SerializeField] Transform parent;
 
     void OnTriggerEnter(Collider col)
@@ -37,6 +33,8 @@ public class AppelPowerup : NetworkBehaviour
     [ClientRpcAttribute]
     private void RpcCollision()
     {
+        PlayerOnline Player = FindObjectOfType<PlayerOnline>();
+        Player.SpawnDecoyBool = true;
         ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
         fruitscore.FruitPoints();
         Destroy(gameObject);

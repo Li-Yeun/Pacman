@@ -13,7 +13,7 @@ public class PlayerOnline : NetworkBehaviour
     [SerializeField] GameObject Decoy, Decoy_Camera;
     private General BroadCaster;
     private Grid OriginalGrid;
-
+    public bool SpawnDecoyBool = false;
 
     // Use this for initialization
     void Start()
@@ -78,7 +78,7 @@ public class PlayerOnline : NetworkBehaviour
             }
         }
 
-        if (isLocalPlayer && Input.GetKeyDown("8"))
+        if (isLocalPlayer && Input.GetKeyDown("8") && SpawnDecoyBool == true)
         {
             if (this.gameObject.name == "Player Pacman")
             {
@@ -90,6 +90,7 @@ public class PlayerOnline : NetworkBehaviour
 
     public void SpawnDecoy()
     {
+        SpawnDecoyBool = false;
         CmdSpawnDecoy();
         Instantiate(Decoy_Camera);
     }
