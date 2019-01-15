@@ -17,6 +17,7 @@ TagManager:
   - Ghost Parent
   - Event
   - Decoy
+  - Decoy Camera
   layers:
   - Default
   - TransparentFX

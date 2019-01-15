@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 20177766938877550}
   - component: {fileID: 114523756638324032}
   - component: {fileID: 114783687658322902}
+  - component: {fileID: 114652681132757756}
   m_Layer: 0
   m_Name: Decoy Camera
-  m_TagString: Untagged
+  m_TagString: Decoy Camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +115,18 @@ MonoBehaviour:
     i15: 5
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114652681132757756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1251268095582994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76496997fc8f294c94ff00bd157ac31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 15
 --- !u!114 &114783687658322902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,5 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825155018d00c924f834714c3d54daad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 
   turnspeed: 9
   tag: Decoy

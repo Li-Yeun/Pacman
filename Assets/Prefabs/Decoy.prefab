@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 114544554106789020}
   - component: {fileID: 114507284100489514}
   - component: {fileID: 114205979355559512}
+  - component: {fileID: 114015198512874650}
   m_Layer: 0
   m_Name: Decoy
   m_TagString: Decoy
@@ -726,6 +727,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114015198512874650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475211390249698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76496997fc8f294c94ff00bd157ac31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 15
 --- !u!114 &114056245889333376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -764,7 +777,6 @@ MonoBehaviour:
   LockMovement: 0
   currentKey: 0
   p_Key: 0
-  Reversecontrols: 0
 --- !u!114 &114205979355559512
 MonoBehaviour:
   m_ObjectHideFlags: 1

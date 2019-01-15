@@ -45,9 +45,18 @@ public class PacmanCollision : NetworkBehaviour {
     {
         GameObject fx = Instantiate(DeathFX, transform.position, Quaternion.identity);
         fx.transform.parent = parent;
-        playerhealth Health = FindObjectOfType<playerhealth>();
-        Health.DecreaseHealth();
-        SendMessage("StartDeathSequence");
+        if (gameObject.tag == "Player")
+        {
+            playerhealth Health = FindObjectOfType<playerhealth>();
+            Health.DecreaseHealth();
+            SendMessage("StartDeathSequence");
+        }
+        else
+        {
+            Destroy(gameObject);
+            GameObject DecoyCamera = GameObject.FindGameObjectWithTag("Decoy Camera");
+            Destroy(DecoyCamera);
+        }
     }
 
     public void GhostInstantiated()

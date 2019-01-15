@@ -11,7 +11,7 @@ public class TeleportScript2 : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if ((collider.CompareTag("Player") || collider.CompareTag("Enemy")) && !Lockk )
+        if ((collider.CompareTag("Player") || collider.CompareTag("Enemy") || collider.CompareTag("Decoy")) && !Lockk )
         {
             foreach (TeleportScript2 tp in FindObjectsOfType<TeleportScript2>())
             {
