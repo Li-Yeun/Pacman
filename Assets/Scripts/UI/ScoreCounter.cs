@@ -10,7 +10,7 @@ public class ScoreCounter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        scoreCounter.text = "SCORE: " + counter;
+        scoreCounter.text = "" + counter;
 	}
 	
     // Adds points to the scorecounter when a powerpil is eaten
@@ -33,7 +33,7 @@ public class ScoreCounter : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        scoreCounter.text = "SCORE: " + counter;
+        scoreCounter.text = "" + counter;
 
         if (FindObjectsOfType<PelletBehaviour>().Length == 0 && FindObjectsOfType<PowerpilBehaviour>().Length == 0)
         {
