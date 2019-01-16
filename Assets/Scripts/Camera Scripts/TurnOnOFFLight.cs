@@ -19,7 +19,6 @@ public class TurnOnOFFLight : MonoBehaviour {
     {
         if(DisableLights == null)       // Error prevention for null reference
         {
-            Debug.Log("No Lights On Pre Render");
             return;
         }
         foreach (Light light in DisableLights)
@@ -34,7 +33,6 @@ public class TurnOnOFFLight : MonoBehaviour {
     {
         if (DisableLights == null)      // Error prevention for null reference
         {
-            Debug.Log("No Lights On Post Render");
             return;
         }
         else
