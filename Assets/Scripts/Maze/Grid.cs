@@ -292,6 +292,10 @@ public class Grid : MonoBehaviour
         {
             gameObjectt = Instantiate(gameObject, Vector3.zero, gameObject.transform.rotation);
             gameObjectt.transform.parent = Parent;
+            if(gameObjectt.CompareTag("Pellet"))
+            {
+                gameObjectt.transform.localPosition = new Vector3(x, 1.2f, z);
+            } else
             gameObjectt.transform.localPosition = new Vector3(x, 1, z);
         }
     }
