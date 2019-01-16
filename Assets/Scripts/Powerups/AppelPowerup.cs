@@ -44,7 +44,4 @@ public class AppelPowerup : NetworkBehaviour
             timerAnimation.AppelTimer();
         }
     }
-
-
-
 }

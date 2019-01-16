@@ -17,14 +17,12 @@ public class TeleportScript2 : MonoBehaviour
         if ((collider.CompareTag("Player") || collider.CompareTag("Enemy") || collider.CompareTag("Decoy")) && !Lockk )
         {
             
-            foreach (TeleportScript2 tp in FindObjectsOfType<TeleportScript2>())
+            foreach (TeleportReceiver tp in FindObjectsOfType<TeleportReceiver>())
             {
-                if (tp.code == code && tp != this)
+                if (tp.code == code && tp.gameObject.transform.parent.parent.gameObject != this.gameObject)
                 {
-                    tp.Lockk = true;
                     Debug.Log(2);
                     collider.GetComponent<SmoothSync>().teleportAnyObjectFromServer(tp.transform.position, collider.transform.rotation, collider.transform.localScale);
- 
                 }
             }
         }
@@ -32,9 +30,6 @@ public class TeleportScript2 : MonoBehaviour
 
     void OnTriggerExit (Collider collider)
     {
-        if ((collider.CompareTag("Player") || collider.CompareTag("Enemy") || collider.CompareTag("Decoy")))
-        {
-            this.gameObject.GetComponent<TeleportScript2>().Lockk = false;
-        }
+        this.gameObject.GetComponent<TeleportScript2>().Lockk = false;
     }
 }

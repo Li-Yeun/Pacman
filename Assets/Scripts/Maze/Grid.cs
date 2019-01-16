@@ -125,7 +125,6 @@ public class Grid : MonoBehaviour
                     GameObject Teleporterr = Instantiate(Teleporter, Vector3.zero, TeleporterParent.transform.rotation);
                     Teleporterr.transform.parent = TeleporterParent;
                     Teleporterr.transform.localPosition = new Vector3(x, 1, z);
-                    if (x == 0|| x == gamegrid.GetLongLength(1) - 1) { Teleporterr.transform.eulerAngles = new Vector3(180, 90, 0); }
                     TeleportScript2 TeleporterScript = Teleporterr.GetComponent<TeleportScript2>();
                     //Vanwege de methode waarin de grid wordt aangemaakt had ik 2 opties om de goeie teleporters te linken aan elkaar. 
                     //1 Was meerdere instances maken die al gelinkt waren en die dan laten spawnen.
@@ -133,14 +132,14 @@ public class Grid : MonoBehaviour
                     //Ik vond zelf dit een betere optie omdat het en minder verschillende blokken vereist en uiteindelijk code lijnen scheelt.
                     switch (TimesTeleporterCreated)
                     {
-                        default: TeleporterScript.code = 0; break;
-                        case 1: TeleporterScript.code = 1; break;
-                        case 2: TeleporterScript.code = 0; break;
-                        case 3: TeleporterScript.code = 3; break;
-                        case 4: TeleporterScript.code = 3; break;
-                        case 5: TeleporterScript.code = 2; break;
-                        case 6: TeleporterScript.code = 2; break;
-                        case 7: TeleporterScript.code = 1; break;
+                        default: TeleporterScript.code = 0; Teleporterr.transform.localRotation = Quaternion.Euler(0f, 270f, 0f); break; 
+                        case 1: TeleporterScript.code = 1; Teleporterr.transform.localRotation = Quaternion.Euler(0f,90f,0f); break;
+                        case 2: TeleporterScript.code = 0; Teleporterr.transform.localRotation = Quaternion.Euler(0f, 90f, 0f); break;
+                        case 3: TeleporterScript.code = 3; break; //Werkt zo al.
+                        case 4: TeleporterScript.code = 3; Teleporterr.transform.localRotation = Quaternion.Euler(0f, 180f, 0f); break;
+                        case 5: TeleporterScript.code = 2; break; // Werkt zo al.
+                        case 6: TeleporterScript.code = 2; Teleporterr.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);    break;
+                        case 7: TeleporterScript.code = 1; Teleporterr.transform.localRotation = Quaternion.Euler(0f, 270f, 0f); break;
                     }
                 }
                 break;
