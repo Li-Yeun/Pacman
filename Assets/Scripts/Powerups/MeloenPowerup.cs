@@ -37,7 +37,10 @@ public class MeloenPowerup : NetworkBehaviour
         ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
         fruitscore.FruitPoints();
         gameObject.GetComponent<SphereCollider>().enabled = false;
-        gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+        foreach (MeshRenderer meshrender in gameObject.GetComponentsInChildren<MeshRenderer>())
+        {
+            meshrender.enabled = false;
+        }
         foreach (Movement movement in FindObjectsOfType<Movement>())
         {
             movement.reversecontrols = true;

@@ -35,8 +35,11 @@ public class AardbeiPowerup : NetworkBehaviour
     {
         ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
         fruitscore.FruitPoints();
-        gameObject.GetComponent<SphereCollider>().enabled = false;
-        gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+        gameObject.GetComponentInChildren<SphereCollider>().enabled = false;
+        foreach (MeshRenderer meshrender in gameObject.GetComponentsInChildren<MeshRenderer>())
+        {
+            meshrender.enabled = false;
+        }
         PacmanMovement pacmanMovement = col.GetComponent<PacmanMovement>();
         if (FindObjectsOfType<aardbeiTimer>().Length == 1)
         {
