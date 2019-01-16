@@ -13,6 +13,14 @@ public class SpawnWater : NetworkBehaviour {
 
     void Start () {
 
+        Camera[] camera = FindObjectsOfType<Camera>();
+        foreach (Camera cam in camera)
+        {
+            if (cam == null)
+                return;
+            else if (cam.name == "Top Down Camera(Clone)")
+                cam.orthographic = !cam.orthographic;
+        }
         Pacman = GameObject.FindGameObjectWithTag("Player");
         Ghosts = GameObject.FindGameObjectsWithTag("Enemy");
         PacmanSpeed = Pacman.GetComponent<PacmanMovement>().Speed.x;
@@ -21,7 +29,7 @@ public class SpawnWater : NetworkBehaviour {
             GhostSpeed = Ghosts[0].GetComponent<Movement>().speed;
         }
         SpawnPrefab(WaterFirstPerson, "SlowDownMovement", 10f);
-        SpawnPrefab(WaterThirdPerson, "ResetMovement", 39f);
+        SpawnPrefab(WaterThirdPerson, "ResetMovement", 40f);
         Instantiate(Waterfall);
 
     }
@@ -51,7 +59,30 @@ public class SpawnWater : NetworkBehaviour {
 
     public void ResetMovement()
     {
+        Camera[] camera = FindObjectsOfType<Camera>();
+        foreach (Camera cam in camera)
+        {
+            if (cam == null)
+                return;
+            else if (cam.name == "Top Down Camera(Clone)")
+                cam.orthographic = !cam.orthographic;
+        }
         FindObjectOfType<EnvironementalEvents>().ResetTimer();
         SetMovementSpeed(PacmanSpeed, GhostSpeed);
+    }
+
+    public void Reset()
+    {
+        Camera[] camera = FindObjectsOfType<Camera>();
+        foreach (Camera cam in camera)
+        {
+            if (cam == null)
+                return;
+            else if (cam.name == "Top Down Camera(Clone)")
+                cam.orthographic = true;
+        }
+        FindObjectOfType<EnvironementalEvents>().ResetTimer();
+        SetMovementSpeed(PacmanSpeed, GhostSpeed);
+        Destroy(gameObject);
     }
 }

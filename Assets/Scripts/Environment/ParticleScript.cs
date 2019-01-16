@@ -27,4 +27,12 @@ public class ParticleScript : MonoBehaviour {
 
         Destroy(gameObject);
     }
+
+    private void Reset()
+    {
+        if (gameObject.name != "WaterFall")
+            FindObjectOfType<EnvironementalEvents>().ResetTimer();
+
+        Destroy(gameObject);
+    }
 }

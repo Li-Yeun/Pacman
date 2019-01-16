@@ -84,14 +84,4 @@ public class EnvironementalEvents : NetworkBehaviour {
         timer = 0f;
         Lock = false;
     }
-    public void Reset()
-    {
-        if(GameObject.FindGameObjectWithTag("Event") != null)
-        {
-            foreach(GameObject Event in GameObject.FindGameObjectsWithTag("Event"))
-            {
-                Destroy(Event);
-            }
-        }
-    }
 }
