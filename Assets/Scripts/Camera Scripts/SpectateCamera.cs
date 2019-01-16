@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpectateCamera : MonoBehaviour {
 
     [SerializeField] GameObject PacmanCamera, GhostCamera;
+    [SerializeField] GameObject DirectionLight;
     
 	// Use this for initialization
 	void Start () {
@@ -16,9 +17,9 @@ public class SpectateCamera : MonoBehaviour {
         {
             if (GameObject.FindGameObjectsWithTag("Player").Length == 1)
             {
-                Debug.Log("Pacman");
                 PacmanCamera.SetActive(!PacmanCamera.activeSelf);
                 GhostCamera.SetActive(!GhostCamera.activeSelf);
+                DirectionLight.SetActive(!DirectionLight.activeSelf);
             }
         }
 	}
