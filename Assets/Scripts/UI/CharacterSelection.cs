@@ -5,8 +5,8 @@ using UnityEngine;
 public class CharacterSelection : MonoBehaviour {
 
     [SerializeField] GameObject Spectator;
-    [SerializeField] GameObject ChoosePacman, LockedPacman;
-    [SerializeField] GameObject ChooseGhost, LockedGhost;
+    [SerializeField] GameObject[] ChooseGhost;
+    [SerializeField] GameObject ChoosePacman, LockedPacman, LockedGhost;
     void Start ()
     {
         Spectator.SetActive(true);
@@ -16,15 +16,28 @@ public class CharacterSelection : MonoBehaviour {
 
     private void CheckGhost()
     {
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length < 4)
-        {
-            LockedGhost.SetActive(false);
-            ChooseGhost.SetActive(true);
-        }
-        else
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length >= 4)
         {
             LockedGhost.SetActive(true);
-            ChooseGhost.SetActive(false);
+            foreach (GameObject Ghost in ChooseGhost)
+            {
+                Ghost.SetActive(false);
+            }
+        } else
+        {
+            LockedGhost.SetActive(false);
+            for(int i = 0; i< ChooseGhost.Length; i++)
+            {
+                if(i == GameObject.FindGameObjectsWithTag("Enemy").Length)
+                {
+                    ChooseGhost[i].SetActive(true);
+                }
+                else
+                {
+                    ChooseGhost[i].SetActive(false);
+                }
+            }
+            
         }
     }
 
