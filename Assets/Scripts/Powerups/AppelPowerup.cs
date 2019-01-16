@@ -33,8 +33,11 @@ public class AppelPowerup : NetworkBehaviour
     [ClientRpcAttribute]
     private void RpcCollision()
     {
-        PlayerOnline Player = FindObjectOfType<PlayerOnline>();
-        Player.SpawnDecoyBool = true;
+        PlayerOnline[] Player = FindObjectsOfType<PlayerOnline>();
+        foreach (PlayerOnline player in Player)
+        {
+            player.SpawnDecoyBool = true;
+        }
         ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
         fruitscore.FruitPoints();
         Destroy(gameObject);
