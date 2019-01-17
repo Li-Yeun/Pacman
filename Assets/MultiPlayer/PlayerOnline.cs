@@ -81,7 +81,7 @@ public class PlayerOnline : NetworkBehaviour
             }
         }
 
-        if (isLocalPlayer && Input.GetKeyDown("8")) && SpawnDecoyBool == true)
+        if ((isLocalPlayer && Input.GetKeyDown("8")) && (SpawnDecoyBool == true))
         {
             if (GameObject.Find("Decoy(Clone)") != null)
                 return;
