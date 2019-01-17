@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4814949831742360}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.2 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4996264614411700}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.6 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 4216923406730482}
   - component: {fileID: 33949323234934150}
   - component: {fileID: 23814503450533670}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.2_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4599477064937420}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.7 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4155935347394132}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.12 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 4499958000050468}
   - component: {fileID: 33268003904374126}
   - component: {fileID: 23700959560085708}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.3_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4686155006805376}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: UnderAttackFlashingWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 4994891817949966}
   - component: {fileID: 33394755466688174}
   - component: {fileID: 23945914492739526}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.6_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 4392113665192848}
   - component: {fileID: 33389283053367218}
   - component: {fileID: 23557328178790832}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: UnderAttackFlashingWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4502513873322116}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.4 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 4481135892008568}
   - component: {fileID: 33174363647578558}
   - component: {fileID: 23770741989801540}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.5_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4603856495716586}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 4853384995809758}
   - component: {fileID: 33008667121365038}
   - component: {fileID: 23200408410573360}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.4_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4422382581530562}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.8 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4917578725191424}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.3 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4111299342843528}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Top Down View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4973559797444030}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: UnderAttackFlashingBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4423017331891464}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.1 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 4980832551003642}
   - component: {fileID: 33384181434615632}
   - component: {fileID: 23042744853067954}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.13_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,7 +599,7 @@ GameObject:
   - component: {fileID: 4220616202977908}
   - component: {fileID: 33166225764352382}
   - component: {fileID: 23913442722927532}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,7 +648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4765530879064516}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.13 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4492478846735962}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.10 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 4478360664920810}
   - component: {fileID: 33934270386987928}
   - component: {fileID: 23649509516931100}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.12_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +731,7 @@ GameObject:
   - component: {fileID: 4744829748552298}
   - component: {fileID: 33886058197320386}
   - component: {fileID: 23898383928981640}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.8_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4276956347725274}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.5 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -825,7 +825,7 @@ GameObject:
   - component: {fileID: 4449537202870630}
   - component: {fileID: 33883329729450614}
   - component: {fileID: 23188742494992244}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.9_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +859,7 @@ GameObject:
   - component: {fileID: 4234931843359244}
   - component: {fileID: 33915253864047812}
   - component: {fileID: 23553523686256280}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: UnderAttackFlashingBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4588131509927244}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.11 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -923,7 +923,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4288078231748810}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje 2.9 (2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -940,7 +940,7 @@ GameObject:
   - component: {fileID: 4635721174103606}
   - component: {fileID: 33520229491120510}
   - component: {fileID: 23053512350046744}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.11_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1095,7 @@ GameObject:
   - component: {fileID: 4286713147875098}
   - component: {fileID: 33884896100221438}
   - component: {fileID: 23254110300513082}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.7_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 4261517216526520}
   - component: {fileID: 33750510693346190}
   - component: {fileID: 23635042058042162}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.10_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1178,7 +1178,7 @@ GameObject:
   - component: {fileID: 4224169046509318}
   - component: {fileID: 33656136551360308}
   - component: {fileID: 23828990187259966}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Spookje_2.1_(2Dish)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1212,7 +1212,7 @@ GameObject:
   - component: {fileID: 4554407512423536}
   - component: {fileID: 95442219439255986}
   - component: {fileID: 114658918567608204}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Animated Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3909,7 +3909,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 589623
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
@@ -4070,10 +4070,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Orange
+  animation: {fileID: 0}
   front: {fileID: 114953086515780090}
   left: {fileID: 114971550072650604}
   right: {fileID: 114987494556310854}
-  speed: 3
+  speed: 2.3
   Respawntime: 0
   Controls:
   - w

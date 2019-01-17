@@ -19,7 +19,7 @@ public class Movement : NetworkBehaviour {
     private Transform respawn;                        //locatie van spawnpunt
 
     [Header("Ghost Behaviour")]
-    [SerializeField] public int speed = 100;                          //beweegsnelheid
+    [SerializeField] public float speed;                        //beweegsnelheid
     [SerializeField] int Respawntime = 4;                      //tijd voordat speler weer kan besturen
 
     [Header("Control Options")]
@@ -222,7 +222,7 @@ public class Movement : NetworkBehaviour {
 
         if (Abilities[1])
         {
-            SpeedMultiplier = 1.3f;
+            SpeedMultiplier = 1.5f;
             cooldowncounter[1] = 0;
             DurationCounter[1] += Time.deltaTime;
             if(DurationCounter[1] >= Duration[1])

@@ -30,6 +30,7 @@ public class EnvironementalEvents : NetworkBehaviour {
             ActivateEvent(Events[Event]);
         }
 
+        /*
         if (Input.GetKeyDown("2"))
         {
             ActivateEvent(Smoke);
@@ -50,6 +51,7 @@ public class EnvironementalEvents : NetworkBehaviour {
         {
             ActivateEvent(Water);
         }
+        */
     }
 
     private void ActivateEvent(GameObject gameObject)

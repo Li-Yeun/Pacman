@@ -17,10 +17,12 @@ public class GhostStates : MonoBehaviour
 
     void Update()
     {
+        /*  //Debug
         if (Input.GetKeyDown("8"))
         {
             Vulnerable();
         }
+        */
 
         if (animator.GetBool("PacmanIsOnTheHunt"))
         {

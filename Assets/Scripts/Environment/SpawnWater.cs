@@ -9,7 +9,7 @@ public class SpawnWater : NetworkBehaviour {
     [SerializeField] GameObject Pacman;
     [SerializeField] GameObject[] Ghosts;
     float PacmanSpeed;   // The defaulth speed of Pacman
-    int GhostSpeed;      // The defaulth speed of the Ghosts
+    float GhostSpeed;      // The defaulth speed of the Ghosts
 
     void Start () {
 
@@ -53,10 +53,10 @@ public class SpawnWater : NetworkBehaviour {
     }
     public void SlowDownMovement()
     {
-        SetMovementSpeed(0.9f,1);
+        SetMovementSpeed(1.2f,1);
     }
 
-    private void SetMovementSpeed(float PacmanMovementSpeed, int GhostMovementSpeed)
+    private void SetMovementSpeed(float PacmanMovementSpeed, float GhostMovementSpeed)
     {
         Pacman.GetComponent<PacmanMovement>().Speed.x = PacmanMovementSpeed;
         Pacman.GetComponent<PacmanMovement>().Speed.z = PacmanMovementSpeed;
