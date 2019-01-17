@@ -182,11 +182,11 @@ public class Movement : NetworkBehaviour {
                 RotationCooldown = 0;
             }
         }
-        if (Input.GetKey(Controls[4]) && !Abilities[0] && cooldowncounter[0] >= Cooldown[0])
+        if (Input.GetKey(KeyCode.Space) && !Abilities[0] && cooldowncounter[0] >= Cooldown[0] && name == "Blue")
         {
             Abilities[0] = true;
         }
-        if (Input.GetKey(Controls[5]) && !Abilities[1] && cooldowncounter[1] >= Cooldown[1])
+        else if (Input.GetKey(KeyCode.Space) && !Abilities[1] && cooldowncounter[1] >= Cooldown[1] && (name == "Red" || name == "Orange")) //todo Orange weghalen en invisible ability geven
         {
             Abilities[1] = true;
             speedTimer timerAnimation = FindObjectOfType<speedTimer>();

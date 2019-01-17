@@ -22,6 +22,7 @@ public class HUD : MonoBehaviour {
     public GameObject AllGhost;
     public GameObject Spectator,SpectateButton;
     public GameObject GeneralHUD;
+    [SerializeField] GameObject SpeedAbiliy, MovingThroughWallsAbility, IncreaseVisionAbility;
     //opens pausescreen
     public void Pause()
     {
@@ -99,18 +100,22 @@ public class HUD : MonoBehaviour {
     public void RedGhost()
     {
         ChooseColorGhost(0);
+        SpeedAbiliy.SetActive(true);
     }
     public void BlueGhost()
     {
         ChooseColorGhost(1);
+        IncreaseVisionAbility.SetActive(true);
     }
     public void OrangeGhost()
     {
         ChooseColorGhost(2);
+        SpeedAbiliy.SetActive(true); //todo ander ability
     }
     public void PinkGhost()
     {
         ChooseColorGhost(3);
+        MovingThroughWallsAbility.SetActive(true);
     }
 
     public void ChooseColorGhost(int number)
