@@ -10,14 +10,7 @@ public class GhostSelection : MonoBehaviour {
     private Movement[] CurrentGhost;
     // Use this for initialization
     void Start () {
-	    if(FindObjectsOfType<Movement>().Length != 0)
-        {
-            CheckColorGhost();
-        }
-    }
 
-    public void GhostInstantiated()
-    {
         CheckColorGhost();
     }
 
@@ -26,6 +19,9 @@ public class GhostSelection : MonoBehaviour {
         CurrentGhost = FindObjectsOfType<Movement>();
         foreach (Movement ghost in CurrentGhost)
         {
+            if (ghost == null)
+                return;
+
             switch (ghost.name)
             {
                 case "Red":
@@ -47,4 +43,10 @@ public class GhostSelection : MonoBehaviour {
             }
         }
     }
+
+    public void GhostInstantiated()
+    {
+        CheckColorGhost();
+    }
+
 }

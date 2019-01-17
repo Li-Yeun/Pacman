@@ -69,8 +69,11 @@ public class HUD : MonoBehaviour {
     }
     public void ChoosePacman()
     {
-        PlayerOnline Player = FindObjectOfType<PlayerOnline>();
-        Player.SpawnPacman();
+        PlayerOnline[] Player = FindObjectsOfType<PlayerOnline>();
+        foreach (PlayerOnline player in Player)
+        {
+            player.SpawnPacman();
+        }
         ChooseCharacter.SetActive(false);
         GhostError.SetActive(false);
         Spectator.SetActive(false);
@@ -112,8 +115,11 @@ public class HUD : MonoBehaviour {
 
     public void ChooseColorGhost(int number)
     {
-        PlayerOnline Player = FindObjectOfType<PlayerOnline>();
-        Player.SpawnGhost(number);
+        PlayerOnline[] Player = FindObjectsOfType<PlayerOnline>();
+        foreach (PlayerOnline player in Player)
+        {
+            player.SpawnGhost(number);
+        }
         ChooseCharacter.SetActive(false);
         PacmanError.SetActive(false);
         ColorGhostError.SetActive(false);

@@ -11,6 +11,7 @@ public class PlayerOnline : NetworkBehaviour
     [SerializeField] GameObject FirstPerson, MiniMap, TopDownCamera;
     [SerializeField] GameObject MiniMapLight, GeneralLight;
     [SerializeField] GameObject Decoy, Decoy_Camera;
+    [SerializeField] GameObject HUD;
     private General BroadCaster;
     private Grid OriginalGrid;
     public bool SpawnDecoyBool = false;
@@ -25,26 +26,11 @@ public class PlayerOnline : NetworkBehaviour
         if (hud != null)
             hud.showGUI = false;
         BroadCaster = FindObjectOfType<General>();
+
         if (isLocalPlayer)
         {
-            if (GameObject.FindGameObjectsWithTag("Player").Length == 1 && GameObject.FindGameObjectsWithTag("Enemy").Length == 4)
-            {
-                Spectate();
-            }
-            else
-                FindObjectOfType<HUD>().ChooseCharacter.SetActive(true);
-            /*
-          if (FindObjectsOfType<PacmanMovement>().Length == 0)
-          {
-              CmdSpawnMyPacman();
-              NormalSpawnMyPacman();
-          }
-          else
-          {
-              CmdSpawnMyGhost();
-              NormalSpawnMyGhost();
-          }
-          */
+            //Instantiate(HUD, GameObject.Find("EveryObject").transform);
+            FindObjectOfType<HUD>().ChooseCharacter.SetActive(true);
             griddbased = new List<Gridbased>();
             
         }
@@ -130,15 +116,9 @@ public class PlayerOnline : NetworkBehaviour
     [Command]
     void CmdSpawnMyGhost(int number)
     {
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 4)
-        {
-            Debug.Log("Max Ghost");
-            Spectate();
-            return;
-        }
         GameObject Ghost = Instantiate(GhostObject[number]);
         NetworkServer.SpawnWithClientAuthority(Ghost, connectionToClient);
-        RpcChangeGhostName();
+        RpcChangeGhostName(number);
     }
 
     void NormalSpawnMyGhost()
@@ -156,22 +136,21 @@ public class PlayerOnline : NetworkBehaviour
 
     //todo herschrijven
     [ClientRpc]
-    void RpcChangeGhostName()
+    void RpcChangeGhostName(int number)
     {
-        int number = FindObjectsOfType<PlayerOnline>().Length - 1;
         switch (number)
         {
             case 1:
-                transform.name = "Blue Ghost";
+                transform.name = "Red Ghost";
                 break;
             case 2:
-                transform.name = "Orange Ghost";
+                transform.name = "Blue Ghost";
                 break;
             case 3:
-                transform.name = "Pink Ghost";
+                transform.name = "Orange Ghost";
                 break;
             case 4:
-                transform.name = "Red Ghost";
+                transform.name = "Pink Ghost";
                 break;
             default:
                 break;

@@ -104,3 +104,5 @@ MonoBehaviour:
   Decoy: {fileID: 1475211390249698, guid: 11d99ab671c1048409d1790057823827, type: 2}
   Decoy_Camera: {fileID: 1251268095582994, guid: d0585eed3b3eca244b61a73ea78cc205,
     type: 2}
+  HUD: {fileID: 1294734642314046, guid: a99a2de58f030264f9a30767c9e8e39d, type: 2}
+  SpawnDecoyBool: 0
