@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class ActivateChildren : MonoBehaviour {
 
+    [SerializeField] string name;
     public void Reset()
     {
         gameObject.SetActiveRecursively(true);
-        foreach (PelletBehaviour Pellet in GetComponentsInChildren<PelletBehaviour>())
+        if (name == "Pellets")
         {
-            Pellet.pelleteaten = false;
+            foreach (PelletBehaviour pellet in GetComponentsInChildren<PelletBehaviour>())
+            {
+                pellet.pelleteaten = false;
+            }
         }
-
+        else if (name == "PowerPills")
+        {
+            foreach (PowerpilBehaviour powerPill in GetComponentsInChildren<PowerpilBehaviour>())
+            {
+                powerPill.powerpileaten = false;
+            }
+        }
     }
 }

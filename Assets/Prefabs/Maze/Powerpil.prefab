@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23252421080467228}
   - component: {fileID: 135990491145725128}
   - component: {fileID: 114083136525375162}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Powerpil
   m_TagString: Pellet
   m_Icon: {fileID: 0}

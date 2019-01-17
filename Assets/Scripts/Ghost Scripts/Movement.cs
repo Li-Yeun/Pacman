@@ -10,6 +10,7 @@ using UnityEngine.Networking;
 public class Movement : NetworkBehaviour {
 
     public string name; //Checken welke ghost er bestaan bij character selectie;
+    [SerializeField] Animation animation;
 
     [Header("General")]
     [SerializeField] SpecialTrigger2 front, left, right;               //colliders voor navigatie

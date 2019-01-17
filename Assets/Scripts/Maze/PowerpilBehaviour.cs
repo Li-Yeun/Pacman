@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class PowerpilBehaviour : MonoBehaviour {
 
-    [SerializeField] bool powerpileaten;
+    [SerializeField] public bool powerpileaten;
     private GhostStates[] AnimationScriptSpookjes;
 
     // Use this for initialization
