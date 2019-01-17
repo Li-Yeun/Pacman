@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour {
 
-    public Text scoreCounter;
+    private Text scoreCounter;
     int counter = 0;
 
 	// Use this for initialization
 	void Start () {
+        scoreCounter = GetComponent<Text>();
         scoreCounter.text = "" + counter;
 	}
 	

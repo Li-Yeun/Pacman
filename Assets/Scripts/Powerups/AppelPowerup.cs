@@ -47,4 +47,9 @@ public class AppelPowerup : NetworkBehaviour
             timerAnimation.AppelTimer();
         }
     }
+
+    public void Reset()
+    {
+        Destroy(gameObject);
+    }
 }

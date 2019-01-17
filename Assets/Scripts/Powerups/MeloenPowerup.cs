@@ -53,13 +53,15 @@ public class MeloenPowerup : NetworkBehaviour
         }
     }
 
-
-
-
     IEnumerator Resett(Movement movement)
     {
         yield return new WaitForSeconds(duration);
         movement.reversecontrols = false;
+        Destroy(gameObject);
+    }
+
+    public void Reset()
+    {
         Destroy(gameObject);
     }
 }

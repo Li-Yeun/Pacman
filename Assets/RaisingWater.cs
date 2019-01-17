@@ -7,20 +7,36 @@ public class RaisingWater : MonoBehaviour {
     [SerializeField] Vector3 StartOffset;
     [SerializeField] float Speed;
     Vector3 defaulthPos;
+    public bool Lock = false;
 	void Start () {
         defaulthPos = gameObject.transform.position;
         gameObject.transform.position -= StartOffset;
 	}
 	
 	void Update () {
-		if(gameObject.transform.position.y < defaulthPos.y)
+
+        if (Lock == false)
         {
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + Speed * Time.deltaTime, gameObject.transform.position.z);
-        }
-        else
+            if (gameObject.transform.position.y < defaulthPos.y)
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + Speed * Time.deltaTime, gameObject.transform.position.z);
+            }
+            else
+            {
+                gameObject.transform.position = defaulthPos;
+            }
+        } else
         {
-            gameObject.transform.position = defaulthPos;
+            if (gameObject.transform.position.y >= defaulthPos.y - StartOffset.y)
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - Speed * Time.deltaTime*2, gameObject.transform.position.z);
+            }
+            else
+            {
+                gameObject.transform.position = defaulthPos - StartOffset;
+            }
         }
 
+        
 	}
 }

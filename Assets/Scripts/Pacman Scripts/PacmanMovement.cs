@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using Smooth;
 
 public class PacmanMovement : NetworkBehaviour {
 
@@ -23,6 +24,7 @@ public class PacmanMovement : NetworkBehaviour {
     public int currentDirection, p_Direction;
     public bool LockMovement;
     public KeyCode currentKey, p_Key;
+    private Vector3 resetSpeed;
 
 
 
@@ -40,6 +42,7 @@ public class PacmanMovement : NetworkBehaviour {
         rb = GetComponent<Rigidbody>();
         currentDirection = 0;
         LockMovement = false;
+        resetSpeed = Speed;
         FindObjectOfType<General>().PacmanBroadcast();
     }
 
@@ -137,7 +140,7 @@ public class PacmanMovement : NetworkBehaviour {
 
     public void StartDeathSequence() // Gebruik deze methode wanneer Pacman de "Enemy" heeft geraakt.
     {
-        transform.position = Spawner.transform.position;
+        GetComponent<SmoothSync>().teleportAnyObjectFromServer(Spawner.transform.position, gameObject.transform.rotation, gameObject.transform.localScale);
         GetComponent<Rigidbody>().useGravity = true;
         Invoke("DisableGravity", 1f);
     }
@@ -155,6 +158,7 @@ public class PacmanMovement : NetworkBehaviour {
 
     public void Reset()
     {
+        Speed = resetSpeed;
         StartDeathSequence();
     }
 }

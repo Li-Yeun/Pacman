@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Networking;
+using Smooth;
+
 /// <summary>
 /// Insert alle functies van wat deze classe doet. Thanks.
 /// </summary>
@@ -122,10 +124,8 @@ public class Movement : NetworkBehaviour {
         if (respawntimer >= Respawntime)
         {
             dead = false;
-            gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
-            gameObject.transform.position = respawn.position;
+            GetComponent<SmoothSync>().teleportAnyObjectFromServer(respawn.transform.position, Quaternion.Euler(0,0,0), gameObject.transform.localScale);
             respawntimer = 0;
-
         }
     }
     void AutoNav()
@@ -137,12 +137,10 @@ public class Movement : NetworkBehaviour {
                 if (!right.Collision)
                 {
                     Rotate(1);
-
                 }
                 else if (!left.Collision)
                 {
                     Rotate(-1);
-
                 }
                 else if (left.Collision)
                 {
@@ -166,7 +164,6 @@ public class Movement : NetworkBehaviour {
         }
         else
         {
-            
             if (goleft && RotationCooldown == 0 && !left.Collision)
             {
                 Rotate(-1);
@@ -242,9 +239,9 @@ public class Movement : NetworkBehaviour {
 
     }
 
-    // niet wissen Proxy
     public void Reset()
     {
+        reversecontrols = false;
         DoRespawn();
     }
 }

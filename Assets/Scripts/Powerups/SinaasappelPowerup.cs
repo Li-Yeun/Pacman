@@ -92,4 +92,14 @@ public class SinaasappelPowerup : NetworkBehaviour
             renderer.material.color = new Color(renderer.material.color.r, renderer.material.color.g, renderer.material.color.b, transparancy);
         }
     }
+
+    public void Reset()
+    {
+        foreach (GameObject Maze in GameObject.FindGameObjectsWithTag("Maze"))
+        {
+            Renderer renderer = Maze.GetComponentInChildren<Renderer>();
+            renderer.material = defaulthMaterial;
+            Destroy(gameObject);
+        }
+    }
 }

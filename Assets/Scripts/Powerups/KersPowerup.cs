@@ -42,6 +42,11 @@ public class KersPowerup : NetworkBehaviour
         Destroy(gameObject);
     }
 
+    public void Reset()
+    {
+        Destroy(gameObject);
+    }
+
 
 
 }

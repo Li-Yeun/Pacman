@@ -19,7 +19,7 @@ public class SpawnWater : NetworkBehaviour {
             if (cam == null)
                 return;
             else if (cam.name == "Top Down Camera(Clone)")
-                cam.orthographic = !cam.orthographic;
+                cam.orthographic = false;
         }
         Pacman = GameObject.FindGameObjectWithTag("Player");
         Ghosts = GameObject.FindGameObjectsWithTag("Enemy");
@@ -28,12 +28,23 @@ public class SpawnWater : NetworkBehaviour {
         {
             GhostSpeed = Ghosts[0].GetComponent<Movement>().speed;
         }
-        SpawnPrefab(WaterFirstPerson, "SlowDownMovement", 10f);
-        SpawnPrefab(WaterThirdPerson, "ResetMovement", 40f);
+        SpawnPrefab(WaterFirstPerson, "SlowDownMovement", 9f);
+        SpawnPrefab(WaterThirdPerson, "ResetMovement", 37f);
+        Invoke("ResetWater", 34f);
         Instantiate(Waterfall);
 
     }
 
+    private void ResetWater()
+    {
+        RaisingWater[] allWater = FindObjectsOfType<RaisingWater>();
+        {
+            foreach (RaisingWater water in allWater)
+            {
+                water.Lock = true;
+            }
+        }
+    }
     public void SpawnPrefab(GameObject Event, string Method, float time)
     {
         GameObject gameObject = Instantiate(Event);
@@ -42,7 +53,7 @@ public class SpawnWater : NetworkBehaviour {
     }
     public void SlowDownMovement()
     {
-        SetMovementSpeed(0.5f,1);
+        SetMovementSpeed(0.9f,1);
     }
 
     private void SetMovementSpeed(float PacmanMovementSpeed, int GhostMovementSpeed)
@@ -65,7 +76,7 @@ public class SpawnWater : NetworkBehaviour {
             if (cam == null)
                 return;
             else if (cam.name == "Top Down Camera(Clone)")
-                cam.orthographic = !cam.orthographic;
+                cam.orthographic = true;
         }
         FindObjectOfType<EnvironementalEvents>().ResetTimer();
         SetMovementSpeed(PacmanSpeed, GhostSpeed);

@@ -9,7 +9,6 @@ public class PacmanCollision : NetworkBehaviour {
     [SerializeField] Transform parent;
     GhostStates pacmanAttacking;
 
-
     private void OnCollisionEnter(Collision collision)
     {
         if (!hasAuthority)
@@ -22,7 +21,9 @@ public class PacmanCollision : NetworkBehaviour {
                 Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
                 break;
             case "Enemy":
-            if (!pacmanAttacking.IsVulnerable)
+                Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+                StartCoroutine(ResetCollisionDetection(collision));
+                if (!pacmanAttacking.IsVulnerable)
                 {
                     CmdDeathSequence();
                 }
@@ -33,6 +34,12 @@ public class PacmanCollision : NetworkBehaviour {
                 break;
         }
 
+    }
+
+    IEnumerator ResetCollisionDetection(Collision collision)
+    {
+        yield return new WaitForSeconds(1f);
+        Physics.IgnoreCollision(collision.collider, GetComponent<Collider>(),false);
     }
 
     [CommandAttribute]

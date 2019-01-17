@@ -16,7 +16,7 @@ public class SelfDestruct : MonoBehaviour {
                 if (cam == null)
                     return;
                 else if (cam.name == "Top Down Camera(Clone)")
-                    cam.orthographic = !cam.orthographic;
+                    cam.orthographic = false;
             }
         }
         
@@ -35,7 +35,7 @@ public class SelfDestruct : MonoBehaviour {
                     if (cam == null)
                         return;
                     else if (cam.name == "Top Down Camera(Clone)")
-                        cam.orthographic = !cam.orthographic;
+                        cam.orthographic = true;
                 }
             }
             FindObjectOfType<EnvironementalEvents>().ResetTimer();

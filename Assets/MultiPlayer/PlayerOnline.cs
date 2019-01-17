@@ -54,7 +54,10 @@ public class PlayerOnline : NetworkBehaviour
 
     public void Spectate()
     {
+        if (!isLocalPlayer)
+            return;
         Instantiate(Spectator);
+        FindObjectOfType<HUD>().GeneralHUD.SetActive(true);
     }
 
     public void Update()

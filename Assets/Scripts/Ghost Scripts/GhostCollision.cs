@@ -27,6 +27,7 @@ public class GhostCollision : NetworkBehaviour
                 break;
             case "Player":
                 {  //Zorgt dat het geestje doodgaat als pacman een powerpill op heeft.
+                    Physics.IgnoreCollision(col.collider, GetComponent<Collider>());
                     if (pacmanAttacking.IsVulnerable)
                     {
                         CmdDeathSequence();
