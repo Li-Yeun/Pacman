@@ -4104,7 +4104,7 @@ MonoBehaviour:
   front: {fileID: 114004567486766802}
   left: {fileID: 114661017570428566}
   right: {fileID: 114105268231700296}
-  speed: 2.3
+  speed: 2
   Respawntime: 0
   Controls:
   - w

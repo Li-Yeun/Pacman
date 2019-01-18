@@ -28,6 +28,7 @@ public class GhostCollision : NetworkBehaviour
             case "Player":
                 {  //Zorgt dat het geestje doodgaat als pacman een powerpill op heeft.
                     Physics.IgnoreCollision(col.collider, GetComponent<Collider>());
+                    StartCoroutine(ResetCollisionDetection(col));
                     if (pacmanAttacking.IsVulnerable)
                     {
                         CmdDeathSequence();
@@ -37,6 +38,12 @@ public class GhostCollision : NetworkBehaviour
             default:
                 break;
         }
+    }
+
+    IEnumerator ResetCollisionDetection(Collision col)
+    {
+        yield return new WaitForSeconds(1f);
+        Physics.IgnoreCollision(col.collider, GetComponent<Collider>(), false);
     }
 
     [CommandAttribute]
