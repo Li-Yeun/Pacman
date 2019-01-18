@@ -86,6 +86,7 @@ public class SinaasappelPowerup : NetworkBehaviour
             else
             {
                 renderer.material = defaulthMaterial;
+                FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
                 Destroy(gameObject);
             }
             renderer.material.color = new Color(renderer.material.color.r, renderer.material.color.g, renderer.material.color.b, transparancy);
@@ -100,5 +101,6 @@ public class SinaasappelPowerup : NetworkBehaviour
             renderer.material = defaulthMaterial;
             Destroy(gameObject);
         }
+        FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
     }
 }

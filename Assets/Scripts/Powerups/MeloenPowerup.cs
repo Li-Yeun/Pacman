@@ -56,11 +56,13 @@ public class MeloenPowerup : NetworkBehaviour
     {
         yield return new WaitForSeconds(duration);
         movement.reversecontrols = false;
+        FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
         Destroy(gameObject);
     }
 
     public void Reset()
     {
+        FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
         Destroy(gameObject);
     }
 }

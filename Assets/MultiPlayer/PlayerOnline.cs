@@ -15,7 +15,7 @@ public class PlayerOnline : NetworkBehaviour
     private General BroadCaster;
     private Grid OriginalGrid;
     public bool SpawnDecoyBool = false;
-    List<Gridbased> griddbased;
+    public List<Gridbased> griddbased;
 
     // Use this for initialization
     void Start()
@@ -177,7 +177,7 @@ public class PlayerOnline : NetworkBehaviour
     public void RepeatSpawn()
     {
         Save();
-        InvokeRepeating("SpawnRandomFruit", Random.Range(5, 15f), Random.Range(5, 15f));// Spawns the fruit every 5-15 seconds somewhere on the map (indicated with an s)
+        InvokeRepeating("SpawnRandomFruit", Random.Range(1, 2f), Random.Range(1, 2f));// Spawns the fruit every 5-15 seconds somewhere on the map (indicated with an s)
     }
 
     private void Save()
