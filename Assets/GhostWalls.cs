@@ -28,7 +28,6 @@ public class GhostWalls : MonoBehaviour
         {
             if (GhostWalking)
             {
-                Debug.Log("Walls Ghosted");
                 other.GetComponentInChildren<BoxCollider>().isTrigger = true;
             }
         }

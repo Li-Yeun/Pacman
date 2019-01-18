@@ -21,7 +21,6 @@ public class TeleportScript2 : MonoBehaviour
             {
                 if (tp.code == code && tp.gameObject.transform.parent.parent.gameObject != this.gameObject)
                 {
-                    Debug.Log(2);
                     collider.GetComponent<SmoothSync>().teleportAnyObjectFromServer(tp.transform.position, collider.transform.rotation, collider.transform.localScale);
                 }
             }

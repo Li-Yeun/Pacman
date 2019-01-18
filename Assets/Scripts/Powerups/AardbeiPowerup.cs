@@ -18,7 +18,6 @@ public class AardbeiPowerup : NetworkBehaviour
                 Destroy(col.gameObject);
                 break;
             case "Player":
-                Debug.Log(5);
                 CmdCollision(col.gameObject);
                 break;
         }

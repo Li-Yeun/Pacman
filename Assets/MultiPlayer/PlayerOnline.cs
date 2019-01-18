@@ -177,7 +177,7 @@ public class PlayerOnline : NetworkBehaviour
     public void RepeatSpawn()
     {
         Save();
-        InvokeRepeating("SpawnRandomFruit", Random.Range(15, 30f), Random.Range(15, 30f));// Spawns the fruit every 15-30 seconds somewhere on the map (indicated with an s)
+        InvokeRepeating("SpawnRandomFruit", Random.Range(5, 15f), Random.Range(5, 15f));// Spawns the fruit every 5-15 seconds somewhere on the map (indicated with an s)
     }
 
     private void Save()

@@ -15,7 +15,6 @@ public class KersPowerup : NetworkBehaviour
                 Destroy(col.gameObject);
                 break;
             case "Player":
-                Debug.Log(3);
                 CmdCollision();
                 break;
         }

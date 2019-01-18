@@ -26,7 +26,6 @@ public class SinaasappelPowerup : NetworkBehaviour
                 Destroy(col);
                 break;
             case "Player":
-                Debug.Log(1);
                 CmdCollision();
                 break;
         }

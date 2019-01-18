@@ -18,7 +18,6 @@ public class AppelPowerup : NetworkBehaviour
                 Destroy(col.gameObject);
                 break;
             case "Player":
-                Debug.Log(4);
                 CmdCollision();
                 break;
         }

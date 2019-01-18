@@ -19,7 +19,6 @@ public class MeloenPowerup : NetworkBehaviour
                 Destroy(col);
                 break;
             case "Player":
-                Debug.Log(2);
                 CmdCollision();
                 break;
         }
