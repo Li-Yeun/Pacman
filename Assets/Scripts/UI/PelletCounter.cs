@@ -9,6 +9,7 @@ public class PelletCounter : MonoBehaviour {
     [SerializeField] int counter;
     private Text pelletCounter;
     private int resetCounter;
+    public GameObject pacmanwins;
 
     // Use this for initialization
     void Start()
@@ -29,10 +30,10 @@ public class PelletCounter : MonoBehaviour {
         pelletCounter.text = "X " + counter;
         if (counter <= 0)
         {
-            //TODO winscreen
-            PlayerOnline Player = FindObjectOfType<PlayerOnline>();
-            Player.CmdReset();
-            Debug.Log("PACMAN WINS!");
+            pacmanwins.SetActive(true);
+           // PlayerOnline Player = FindObjectOfType<PlayerOnline>();
+            //Player.CmdReset();
+            
         }
     }
 

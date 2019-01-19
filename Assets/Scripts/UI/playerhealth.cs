@@ -11,6 +11,7 @@ public class playerhealth : MonoBehaviour {
     public int health;
     public Image[] health_img;
     public Sprite pacman_healthicon;
+    public GameObject ghostwins;
 
     void Update () {
         //check if player is dead
@@ -31,8 +32,9 @@ public class playerhealth : MonoBehaviour {
 
     void Dead()
     {
-        PlayerOnline Player = FindObjectOfType<PlayerOnline>();
-        Player.CmdReset();
+        ghostwins.SetActive(true);
+        //PlayerOnline Player = FindObjectOfType<PlayerOnline>();
+        //Player.CmdReset();
     }
 
 
