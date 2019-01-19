@@ -96,7 +96,10 @@ public class HUD : MonoBehaviour {
         SpectateButton.SetActive(true);
 
     }
-
+    public void Playagain()
+    { PlayerOnline Player = FindObjectOfType<PlayerOnline>();
+        Player.CmdPlayagain();
+    }
     public void RedGhost()
     {
         ChooseColorGhost(0);

@@ -35,7 +35,13 @@ public class PlayerOnline : NetworkBehaviour
             
         }
     }
-
+    [Command]
+    public void CmdPlayagain()
+    {
+       FindObjectOfType<PelletCounter>().pacmanwins.SetActive(false);
+       FindObjectOfType<playerhealth>().ghostwins.SetActive(false);
+       CmdReset();
+    }
     public void SpawnPacman()
     {
         if (!isLocalPlayer)
