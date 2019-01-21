@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 114958411236432512}
   - component: {fileID: 114436591410926756}
   - component: {fileID: 114435929414905856}
+  - component: {fileID: 114337728637033606}
   m_Layer: 13
   m_Name: Oranje
   m_TagString: Enemy
@@ -3933,6 +3934,17 @@ MonoBehaviour:
   GhostWalkingCD: 0
   GhostWalkingDuration: 2
   GhostWalkingCDDuration: 15
+--- !u!114 &114337728637033606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356418371725904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa3a9b5ba0822f48a8090e275d4d1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114361653174334632
 MonoBehaviour:
   m_ObjectHideFlags: 1
