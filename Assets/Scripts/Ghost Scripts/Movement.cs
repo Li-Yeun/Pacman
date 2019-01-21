@@ -186,7 +186,7 @@ public class Movement : NetworkBehaviour {
         {
             Abilities[0] = true;
         }
-        else if (Input.GetKey(KeyCode.Space) && !Abilities[1] && cooldowncounter[1] >= Cooldown[1] && (name == "Red" || name == "Orange")) //todo Orange weghalen en invisible ability geven
+        else if (Input.GetKey(KeyCode.Space) && !Abilities[1] && cooldowncounter[1] >= Cooldown[1] && (name == "Red")) //todo Orange weghalen en invisible ability geven
         {
             Abilities[1] = true;
             speedTimer timerAnimation = FindObjectOfType<speedTimer>();

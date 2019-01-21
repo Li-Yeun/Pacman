@@ -44,6 +44,10 @@ public class PacmanMovement : NetworkBehaviour {
         LockMovement = false;
         resetSpeed = Speed;
         FindObjectOfType<General>().PacmanBroadcast();
+        if(FindObjectsOfType<Movement>().Length == 4)
+        {
+            FindObjectOfType<General>().ResetBroadCast();
+        }
     }
 
     void Update()
@@ -154,6 +158,14 @@ public class PacmanMovement : NetworkBehaviour {
     {
         GetComponent<Rigidbody>().useGravity = false;
         
+    }
+
+    public void GhostInstantiated()
+    {
+        if (FindObjectsOfType<Movement>().Length == 4)
+        {
+            FindObjectOfType<General>().ResetBroadCast();
+        }
     }
 
     public void Reset()
