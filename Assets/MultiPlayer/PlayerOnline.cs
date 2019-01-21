@@ -15,7 +15,8 @@ public class PlayerOnline : NetworkBehaviour
     private General BroadCaster;
     private Grid OriginalGrid;
     public bool SpawnDecoyBool = false;
-    public List<Gridbased> griddbased;
+    public List<Gridbased> griddbased, originalgrid;
+ 
 
     // Use this for initialization
     void Start()
@@ -182,6 +183,8 @@ public class PlayerOnline : NetworkBehaviour
     [ClientRpc]
     public void RpcReset()
     {
+        if (isLocalPlayer && this.gameObject.name == "Player Pacman")
+        { griddbased = new List<Gridbased>(); Save(); }
         BroadCaster.ResetBroadCast();
     }
 

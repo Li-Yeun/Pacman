@@ -72,6 +72,7 @@ public class SinaasappelPowerup : NetworkBehaviour
             yield return new WaitForSeconds(0.25f);
         }
         Switches(1f, 1);
+        FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
     }
 
     public void Switches(float transparancy, int matrialuse)
@@ -86,7 +87,6 @@ public class SinaasappelPowerup : NetworkBehaviour
             else
             {
                 renderer.material = defaulthMaterial;
-                FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
                 Destroy(gameObject);
             }
             renderer.material.color = new Color(renderer.material.color.r, renderer.material.color.g, renderer.material.color.b, transparancy);
@@ -101,6 +101,5 @@ public class SinaasappelPowerup : NetworkBehaviour
             renderer.material = defaulthMaterial;
             Destroy(gameObject);
         }
-        FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
     }
 }

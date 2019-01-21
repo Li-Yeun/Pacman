@@ -50,7 +50,6 @@ public class AppelPowerup : NetworkBehaviour
 
     public void Reset()
     {
-        FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
         Destroy(gameObject);
     }
 }
