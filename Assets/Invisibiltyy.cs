@@ -68,7 +68,7 @@ public class Invisibiltyy : NetworkBehaviour
     }
     public void Reset()
     {
-        Invis = true;
+        Invis = false;
         CmdInvis();
     }
     public static void SetLayerRecursively(GameObject go, int layerNumber)
