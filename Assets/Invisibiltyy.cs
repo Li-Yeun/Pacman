@@ -8,7 +8,6 @@ public class Invisibiltyy : NetworkBehaviour
     bool Invis = false;
     GhostStates[] Ghosts;
     Light[] lights;
-    public GameObject actiefUI, dissabledUI;
 
     public void Start()
     {
