@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelfDestruct : MonoBehaviour {
+public class SelfDestruct : MonoBehaviour
+{
     [SerializeField] float time;
     float realtime = 0;
 
-	void Start () {
+    void Start()
+    {
 
-        if(gameObject.name == "Water Trippy(Clone)")
+        if (gameObject.name == "Water Trippy(Clone)")
         {
             Camera[] camera = FindObjectsOfType<Camera>();
-            foreach(Camera cam in camera)
+            foreach (Camera cam in camera)
             {
                 if (cam == null)
                     return;
@@ -19,13 +21,13 @@ public class SelfDestruct : MonoBehaviour {
                     cam.orthographic = false;
             }
         }
-        
-	}
+
+    }
 
     private void Update()
     {
         realtime += Time.deltaTime;
-        if(realtime >= time)
+        if (realtime >= time)
         {
             if (gameObject.name == "Water Trippy(Clone)")
             {
@@ -59,5 +61,8 @@ public class SelfDestruct : MonoBehaviour {
         FindObjectOfType<EnvironementalEvents>().ResetTimer();
         Destroy(gameObject);
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy")) { Reset(); }
+    }
 }
