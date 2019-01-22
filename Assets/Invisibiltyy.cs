@@ -8,6 +8,8 @@ public class Invisibiltyy : NetworkBehaviour
     bool Invis = false;
     GhostStates[] Ghosts;
     Light[] lights;
+    public GameObject actiefUI, dissabledUI;
+
     public void Start()
     {
         Ghosts = gameObject.GetComponentsInChildren<GhostStates>();
@@ -20,6 +22,17 @@ public class Invisibiltyy : NetworkBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             CmdInvis();
+        }
+
+        if (Invis)
+        {
+            FindObjectOfType<HUD>().invisibileT.SetActive(true);
+            FindObjectOfType<HUD>().invisibileF.SetActive(false);
+        }
+        else
+        {
+            FindObjectOfType<HUD>().invisibileT.SetActive(false);
+            FindObjectOfType<HUD>().invisibileF.SetActive(true);
         }
     }
     [CommandAttribute]

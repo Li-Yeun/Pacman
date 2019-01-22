@@ -22,6 +22,7 @@ public class HUD : MonoBehaviour {
     public GameObject AllGhost;
     public GameObject Spectator,SpectateButton;
     public GameObject GeneralHUD;
+    public GameObject invisibileT, invisibileF;
     [SerializeField] GameObject SpeedAbiliy, MovingThroughWallsAbility, IncreaseVisionAbility;
     //opens pausescreen
     public void Pause()
@@ -113,7 +114,7 @@ public class HUD : MonoBehaviour {
     public void OrangeGhost()
     {
         ChooseColorGhost(2);
-        SpeedAbiliy.SetActive(true); //todo ander ability
+        invisibileF.SetActive(true); //todo ander ability
     }
     public void PinkGhost()
     {
