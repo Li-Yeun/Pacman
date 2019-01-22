@@ -6,12 +6,11 @@ using UnityEngine.Networking;
 public class Invisibiltyy : NetworkBehaviour
 {
     bool Invis = false;
-    GhostStates[] Ghosts;
     Light[] lights;
-
+    GhostStates[] ghostStates;
     public void Start()
     {
-        Ghosts = gameObject.GetComponentsInChildren<GhostStates>();
+        ghostStates = GetComponentsInChildren<GhostStates>();
         lights = GetComponentsInChildren<Light>();
     }
     void Update()
@@ -43,9 +42,24 @@ public class Invisibiltyy : NetworkBehaviour
     private void RpcInvis()
     {
         Invis = !Invis;
-        foreach (GhostStates Ghost in Ghosts)
+        
+        foreach (GhostStates ghost in ghostStates)
         {
-            Ghost.gameObject.SetActive(!Invis);
+            if (!Invis)
+            {
+                if (ghost.gameObject.CompareTag("3Dview"))
+                {
+                    SetLayerRecursively(ghost.gameObject, 11);
+                }
+                else
+                {
+                    SetLayerRecursively(ghost.gameObject, 12);
+                }
+            }
+            else
+            {
+                SetLayerRecursively(ghost.gameObject, 20);
+            }
         }
         foreach (Light light in lights)
         {
@@ -56,5 +70,12 @@ public class Invisibiltyy : NetworkBehaviour
     {
         Invis = true;
         CmdInvis();
+    }
+    public static void SetLayerRecursively(GameObject go, int layerNumber)
+    {
+        foreach (Transform trans in go.GetComponentsInChildren<Transform>(true))
+        {
+            trans.gameObject.layer = layerNumber;
+        }
     }
 }

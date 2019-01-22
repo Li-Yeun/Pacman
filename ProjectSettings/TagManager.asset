@@ -18,6 +18,7 @@ TagManager:
   - Event
   - Decoy
   - Decoy Camera
+  - 3Dview
   layers:
   - Default
   - TransparentFX
@@ -39,7 +40,7 @@ TagManager:
   - Red Ghost
   - Pink Ghost
   - Orange Ghost
-  - 
+  - InVisi
   - 
   - 
   - 

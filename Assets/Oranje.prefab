@@ -1198,7 +1198,7 @@ GameObject:
   - component: {fileID: 114361653174334632}
   m_Layer: 11
   m_Name: Animated Ghost 3D
-  m_TagString: Untagged
+  m_TagString: 3Dview
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1466,7 +1466,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1356418371725904}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 1039.33, y: 486.04172, z: -1335.585}
+  m_LocalPosition: {x: 2.7923248, y: 1.4228413, z: 5.0811095}
   m_LocalScale: {x: 0.99, y: 0.99, z: 0.99}
   m_Children:
   - {fileID: 4060692903851302}
@@ -3945,8 +3945,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa3a9b5ba0822f48a8090e275d4d1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actiefUI: {fileID: 0}
-  dissabledUI: {fileID: 0}
 --- !u!114 &114361653174334632
 MonoBehaviour:
   m_ObjectHideFlags: 1
