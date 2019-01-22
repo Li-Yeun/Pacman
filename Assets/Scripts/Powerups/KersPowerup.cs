@@ -33,11 +33,11 @@ public class KersPowerup : NetworkBehaviour
         fruitscore.FruitPoints();
         playerhealth Playerhealth = GameObject.FindObjectOfType<playerhealth>();
         Playerhealth.health++;
-        /* if (FindObjectsOfType<sinaasTimer>().Length == 1)
+        if (FindObjectsOfType<kersTimer>().Length == 1)
         {
             kersTimer timerAnimation = FindObjectOfType<kersTimer>();
             timerAnimation.KersTimer();
-        }*/
+        }
         FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
         Destroy(gameObject);
     }
