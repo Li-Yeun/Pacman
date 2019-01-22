@@ -12,7 +12,13 @@ public class MainMenu : MonoBehaviour {
     public string gamescene, multiplayerscene;
     public GameObject buttonexplain, black;
 
-    
+    public AudioClip Audio;
+    public AudioSource audioSource;
+
+    void Start()
+    { audioSource.clip = Audio; }
+
+    //starts game
     public void startgame()
     { SceneManager.LoadScene(gamescene);
         black.SetActive(true); }
@@ -23,8 +29,12 @@ public class MainMenu : MonoBehaviour {
         buttonexplain.SetActive(true);  
     }
 
+    //quits game
     public void ExitGame()
     {
         Application.Quit();
     }
+
+    public void Buttonclick()
+    { audioSource.Play(); }
 }
