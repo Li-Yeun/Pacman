@@ -6,7 +6,7 @@ public class GhostWalls : MonoBehaviour
 {
     public bool GhostWalking = false;
     public bool GhostWalkingCD = false;
-    public float GhostWalkingDuration = 2f;
+    public float GhostWalkingDuration = 5f;
     public float GhostWalkingCDDuration = 15f;
 
     // Update is called once per frame

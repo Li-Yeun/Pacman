@@ -9,7 +9,7 @@ public class PlayerOnline : NetworkBehaviour
     [SerializeField] GameObject[] GhostObject;
     [SerializeField] GameObject PacmanObject, Spectator;
     [SerializeField] GameObject FirstPerson, MiniMap, TopDownCamera;
-    [SerializeField] GameObject MiniMapLight, GeneralLight;
+    [SerializeField] GameObject MiniMapLight, GeneralLight, PacmanBodyLight;
     [SerializeField] GameObject Decoy, Decoy_Camera;
     [SerializeField] GameObject HUD;
     private General BroadCaster;
@@ -96,13 +96,23 @@ public class PlayerOnline : NetworkBehaviour
         GameObject go = Instantiate(Decoy);
         NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
     }
+
     [Command]
     void CmdSpawnMyPacman()
     {
         GameObject Pacman = Instantiate(PacmanObject);
         NetworkServer.SpawnWithClientAuthority(Pacman, connectionToClient);
         RpcChangePacmanName();
+        RpcSpawnMyPacman(Pacman);
 
+    }
+    [ClientRpc]
+    void RpcSpawnMyPacman(GameObject Object)
+    {
+        if(isLocalPlayer && this.gameObject.name == "Player Pacman")
+        {
+            Instantiate(PacmanBodyLight, Object.transform);
+        }
     }
 
     void NormalSpawnMyPacman()

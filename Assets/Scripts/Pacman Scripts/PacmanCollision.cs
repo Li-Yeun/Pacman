@@ -9,6 +9,11 @@ public class PacmanCollision : NetworkBehaviour {
     [SerializeField] Transform parent;
     GhostStates pacmanAttacking;
 
+    public void Start()
+    {
+        pacmanAttacking = FindObjectOfType<GhostStates>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (!hasAuthority)
