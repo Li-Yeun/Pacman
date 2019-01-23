@@ -8,29 +8,32 @@ public class EnvironementalEvents : NetworkBehaviour {
     [SerializeField] GameObject Smoke, FireWorks, SandStorm, Water, Confusion;
     [SerializeField] Transform parent;
     [SerializeField] float EventCooldown;
-    GameObject[] Events;
+    private List<GameObject> Events;
     float timer = 0f;
     bool Lock = false;
 
     private void Start()
     {
-        GameObject[] AllEvents = { Smoke, FireWorks, SandStorm, Water, Confusion };
-        Events = AllEvents;
+        Events = new List<GameObject> { Smoke, FireWorks, SandStorm, Water, Confusion };
     }
 
     void Update() {
         if (!hasAuthority)
             return;
-        //TODO sync doet raar (Invoke)
+
         timer += Time.deltaTime;
         if (timer >= EventCooldown && Lock == false)
         {
             Lock = true;
-            int Event = Random.Range(0, Events.Length);
+            int Event = Random.Range(0, Events.Count);
             ActivateEvent(Events[Event]);
+            Events.Remove(Events[Event]);
+            if (Events.Count <= 0)
+            {
+                Events = new List<GameObject> { Smoke, FireWorks, SandStorm, Water, Confusion };
+            }
         }
 
-        /*
         if (Input.GetKeyDown("2"))
         {
             ActivateEvent(Smoke);
@@ -51,7 +54,6 @@ public class EnvironementalEvents : NetworkBehaviour {
         {
             ActivateEvent(Water);
         }
-        */
     }
 
     private void ActivateEvent(GameObject gameObject)
