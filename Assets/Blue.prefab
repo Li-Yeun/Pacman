@@ -392,6 +392,24 @@ GameObject:
   - component: {fileID: 4759502236435502}
   - component: {fileID: 108319232590905412}
   - component: {fileID: 114325951750609582}
+  - component: {fileID: 122396099564709376}
+  m_Layer: 0
+  m_Name: Increase Vision Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1318175282065926
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4412113323721030}
+  - component: {fileID: 108656890660727312}
+  - component: {fileID: 122278929315929868}
   m_Layer: 0
   m_Name: Ghost Body Light
   m_TagString: Untagged
@@ -1874,6 +1892,19 @@ Transform:
   m_Father: {fileID: 4285142586937466}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4412113323721030
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318175282065926}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1.0000007, y: 1.000001, z: 1.0000007}
+  m_Children: []
+  m_Father: {fileID: 4714679221998764}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4430770755712980
 Transform:
   m_ObjectHideFlags: 1
@@ -2152,6 +2183,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4012338916873024}
+  - {fileID: 4412113323721030}
   - {fileID: 4759502236435502}
   m_Father: {fileID: 4464193205433164}
   m_RootOrder: 3
@@ -2189,12 +2221,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1312975900702446}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1.0000007, y: 1.000001, z: 1.0000007}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 3.0000002, z: 0}
+  m_LocalScale: {x: 1.0000007, y: 1.0000008, z: 1.0000007}
   m_Children: []
   m_Father: {fileID: 4714679221998764}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4774215452636264
 Transform:
@@ -3890,6 +3922,43 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
+  m_Color: {r: 0, g: 0.19215687, b: 0.99215686, a: 1}
+  m_Intensity: 9
+  m_Range: 1
+  m_SpotAngle: 155.8
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 1
+  m_Flare: {fileID: 0}
+  m_RenderMode: 1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 130871
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!108 &108656890660727312
+Light:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318175282065926}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 9
   m_Range: 5
@@ -3969,6 +4038,7 @@ MonoBehaviour:
   - d
   - q
   - e
+  IncreaseVisionLight: {fileID: 1312975900702446}
   dead: 0
   reversecontrols: 0
   Vision: {fileID: 114325951750609582}
@@ -3996,7 +4066,7 @@ MonoBehaviour:
   activated: 0
   tr: {fileID: 4759502236435502}
   lt: {fileID: 108319232590905412}
-  T_Range: 10
+  T_Range: 12
   T_Intensity: 12
   T_Height: 5.5
   Speed: 1
@@ -4150,6 +4220,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimePassed: 0
+--- !u!122 &122278929315929868
+Halo:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318175282065926}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294783232
+  m_Size: 2.74
+--- !u!122 &122396099564709376
+Halo:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1312975900702446}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294783232
+  m_Size: 2.74
 --- !u!135 &135568656032951548
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -29,6 +29,7 @@ public class IncreaseVision : NetworkBehaviour {
             tr.localPosition = new Vector3(0, Mathf.SmoothDamp(tr.localPosition.y, Height, ref Ref[0], Speed), 0);
             lt.range = Mathf.SmoothDamp(lt.range, Range, ref Ref[1], Speed);
             lt.intensity = Mathf.SmoothDamp(lt.intensity, Intensity, ref Ref[2], Speed);
+            Invoke("DisableLight", 2.5f);
         }
         else if (activated)
         {
@@ -41,5 +42,9 @@ public class IncreaseVision : NetworkBehaviour {
 
 	}
 
-    
+    private void DisableLight()
+    {
+        gameObject.SetActive(false);
+    }
+
 }

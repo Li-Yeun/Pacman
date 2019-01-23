@@ -151,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4398852400862768}
   - component: {fileID: 108005853201068094}
-  - component: {fileID: 114182920044123586}
+  - component: {fileID: 122270002973126454}
   m_Layer: 0
   m_Name: Ghost Body Light
   m_TagString: Untagged
@@ -3990,24 +3990,6 @@ MonoBehaviour:
   Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
---- !u!114 &114182920044123586
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1140273985832700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff4d4273c6411e340926ace88a9fa8a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activated: 0
-  tr: {fileID: 4398852400862768}
-  lt: {fileID: 108005853201068094}
-  T_Range: 10
-  T_Intensity: 12
-  T_Height: 5.5
-  Speed: 1
 --- !u!114 &114397508164756488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4065,9 +4047,10 @@ MonoBehaviour:
   - d
   - q
   - e
+  IncreaseVisionLight: {fileID: 0}
   dead: 0
   reversecontrols: 0
-  Vision: {fileID: 114182920044123586}
+  Vision: {fileID: 0}
   Cooldown:
   - 5
   - 5
@@ -4214,6 +4197,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimePassed: 0
+--- !u!122 &122270002973126454
+Halo:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140273985832700}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278197952
+  m_Size: 2.74
 --- !u!135 &135959495608369738
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -244,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4239031959761458}
   - component: {fileID: 108638283358157662}
-  - component: {fileID: 114884774684646452}
+  - component: {fileID: 122738769887551364}
   m_Layer: 0
   m_Name: Ghost Body Light
   m_TagString: Untagged
@@ -4070,24 +4070,6 @@ MonoBehaviour:
   GhostWalkingCD: 0
   GhostWalkingDuration: 2
   GhostWalkingCDDuration: 15
---- !u!114 &114884774684646452
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1154223415612894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff4d4273c6411e340926ace88a9fa8a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activated: 0
-  tr: {fileID: 4239031959761458}
-  lt: {fileID: 108638283358157662}
-  T_Range: 10
-  T_Intensity: 12
-  T_Height: 5.5
-  Speed: 1
 --- !u!114 &114888665410430196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4113,9 +4095,10 @@ MonoBehaviour:
   - d
   - q
   - e
+  IncreaseVisionLight: {fileID: 0}
   dead: 0
   reversecontrols: 0
-  Vision: {fileID: 114884774684646452}
+  Vision: {fileID: 0}
   Cooldown:
   - 5
   - 5
@@ -4150,6 +4133,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathFX: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 2}
+--- !u!122 &122738769887551364
+Halo:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1154223415612894}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4292497663
+  m_Size: 2.74
 --- !u!135 &135657717316111894
 SphereCollider:
   m_ObjectHideFlags: 1

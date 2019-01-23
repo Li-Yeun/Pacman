@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Networking;
 using Smooth;
+using System;
 
 /// <summary>
 /// Insert alle functies van wat deze classe doet. Thanks.
@@ -24,6 +25,8 @@ public class Movement : NetworkBehaviour {
 
     [Header("Control Options")]
     [SerializeField] string[] Controls = new string[2];        //controls van spookje
+
+    [SerializeField] GameObject IncreaseVisionLight;
     bool goleft, goright;
 
     Vector3 Velocity;                                          //beweegsnelheid
@@ -206,6 +209,7 @@ public class Movement : NetworkBehaviour {
     {
         if (Abilities[0])
         {
+            IncreaseVisionLight.SetActive(true);
             Vision.activated = true;
             cooldowncounter[0] = 0;
             DurationCounter[0] += Time.deltaTime;
