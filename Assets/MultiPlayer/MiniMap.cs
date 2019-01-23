@@ -7,15 +7,16 @@ public class MiniMap : MonoBehaviour {
     Transform FollowTarget;
     float xOffset;
     float zOffset;
-	// Use this for initialization
-	void Start () {
-        PacmanMovement Target = FindObjectOfType<PacmanMovement>();
-        FollowTarget = Target.gameObject.transform;
-    }
-	
-	// Update is called once per frame
+
     void LateUpdate()
     {
+        if (FindObjectOfType<PacmanMovement>() == null)
+            return;
+        else
+        {
+            PacmanMovement Target = FindObjectOfType<PacmanMovement>();
+            FollowTarget = Target.gameObject.transform;
+        }
         xOffset = CheckBoundingBox(transform.position.x, FollowTarget.transform.position.x, -7.7f, 13.65f);
         zOffset = CheckBoundingBox(transform.position.z, FollowTarget.transform.position.z, -0.92f, 8.9f);
         transform.position = new Vector3(xOffset, transform.position.y, zOffset);

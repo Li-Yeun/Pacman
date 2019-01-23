@@ -73,7 +73,6 @@ GameObject:
   - component: {fileID: 23635939523120136}
   - component: {fileID: 135344107737188790}
   - component: {fileID: 54574806321127002}
-  - component: {fileID: 114132168253789258}
   - component: {fileID: 114544554106789020}
   - component: {fileID: 114507284100489514}
   - component: {fileID: 114015198512874650}
@@ -686,30 +685,6 @@ MonoBehaviour:
   Collision: 0
   Firststring: TeleportShit
   Secondstring: TeleportShit
---- !u!114 &114132168253789258
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1475211390249698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec54a26418c1874186671211e29c3d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Controls: 140100001201000013010000
-  Speed: {x: 2, y: 0, z: 2}
-  left: {fileID: 114700878512574982}
-  right: {fileID: 114379275318022750}
-  Movement: {fileID: 114056245889333376}
-  rb: {fileID: 54574806321127002}
-  AnimationLock: 0
-  Teleporterlock: 0
-  currentDirection: 0
-  p_Direction: 0
-  LockMovement: 0
-  currentKey: 0
-  p_Key: 0
 --- !u!114 &114379275318022750
 MonoBehaviour:
   m_ObjectHideFlags: 1

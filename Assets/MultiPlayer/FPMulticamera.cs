@@ -16,21 +16,20 @@ public class FPMulticamera : MonoBehaviour
     {
         if(mode == "Pacman")
             gameObject.transform.parent = GameObject.FindGameObjectWithTag("Camera Parent").transform;
-
-        if (GameObject.FindGameObjectsWithTag("Player").Length == 1)
-        {
-            PacmanMovement Target = GameObject.FindGameObjectWithTag(tag).GetComponent<PacmanMovement>();
-            tr_Target = Target.gameObject.transform;
-        }
     }
 
     void Update ()
     {
-        if (tr_Target == null)
+        if (FindObjectOfType<PacmanMovement>() == null)
             return;
-         gameObject.transform.position = tr_Target.position + Offset;
-         TargetAngle = tr_Target.rotation * Quaternion.Euler(0, R_offset.y, 0);
-         gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, TargetAngle, turnspeed * Time.deltaTime);
+        else
+        {
+            PacmanMovement Target = FindObjectOfType<PacmanMovement>().GetComponent<PacmanMovement>();
+            tr_Target = Target.gameObject.transform;
+        }
+        gameObject.transform.position = tr_Target.position + Offset;
+        TargetAngle = tr_Target.rotation * Quaternion.Euler(0, R_offset.y, 0);
+        gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, TargetAngle, turnspeed * Time.deltaTime);
     }
 
     public void PacmanInstantiated()
