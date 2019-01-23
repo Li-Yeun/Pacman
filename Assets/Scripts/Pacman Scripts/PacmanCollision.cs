@@ -65,9 +65,9 @@ public class PacmanCollision : NetworkBehaviour {
         }
         else
         {
-            Destroy(gameObject);
             GameObject DecoyCamera = GameObject.FindGameObjectWithTag("Decoy Camera");
             Destroy(DecoyCamera);
+            Destroy(gameObject);
         }
     }
 

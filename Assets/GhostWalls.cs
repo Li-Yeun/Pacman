@@ -14,6 +14,7 @@ public class GhostWalls : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !GhostWalkingCD && gameObject.GetComponentInParent<Movement>().name == "Pink")
         {
+            gameObject.transform.parent.parent.gameObject.GetComponentInChildren<ParticleSystem>().Play();
             GhostWalking = true;
             GhostWalkingCD = true;
             Invoke("StopGhostWalking", GhostWalkingDuration);
@@ -52,6 +53,7 @@ public class GhostWalls : MonoBehaviour
     private void StopGhostWalking()
     {
         GhostWalking = false;
+        gameObject.transform.parent.parent.gameObject.GetComponentInChildren<ParticleSystem>().Stop();
     }
     private void CDduration()
     {
