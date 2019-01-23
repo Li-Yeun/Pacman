@@ -127,7 +127,6 @@ public class AnimatorScript : NetworkBehaviour {
 
     public void Reset()
     {
-        Overzetten();
-        Resett();
+        EndAnimation();
     }
 }

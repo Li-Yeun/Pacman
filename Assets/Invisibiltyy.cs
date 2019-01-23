@@ -19,7 +19,9 @@ public class Invisibiltyy : NetworkBehaviour
             return;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            CmdInvis();
+            GetComponentInChildren<ParticleSystem>().Play();
+            Invoke("Invisible", 0.7f);
+            
         }
 
         if (Invis)
@@ -33,6 +35,12 @@ public class Invisibiltyy : NetworkBehaviour
             FindObjectOfType<HUD>().invisibileF.SetActive(true);
         }
     }
+
+    private void Invisible()
+    {
+        CmdInvis();
+    }
+
     [CommandAttribute]
     public void CmdInvis()
     {
