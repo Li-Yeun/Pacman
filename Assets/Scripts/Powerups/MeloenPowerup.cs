@@ -50,7 +50,11 @@ public class MeloenPowerup : NetworkBehaviour
             melonTimer timerAnimation = FindObjectOfType<melonTimer>();
             timerAnimation.MelonTimer();
         }
-        FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
+        PlayerOnline[] Players = FindObjectsOfType<PlayerOnline>();
+        foreach (PlayerOnline player in Players)
+        {
+            player.AddToGridList((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z);
+        }
     }
 
     IEnumerator Resett(Movement movement)

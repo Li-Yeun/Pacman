@@ -45,7 +45,11 @@ public class AppelPowerup : NetworkBehaviour
             appelTimer timerAnimation = FindObjectOfType<appelTimer>();
             timerAnimation.AppelTimer();
         }
-        FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
+        PlayerOnline[] Players = FindObjectsOfType<PlayerOnline>();
+        foreach (PlayerOnline player in Players)
+        {
+            player.AddToGridList((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z);
+        }
     }
 
     public void Reset()

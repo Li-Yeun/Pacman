@@ -72,7 +72,11 @@ public class SinaasappelPowerup : NetworkBehaviour
             yield return new WaitForSeconds(0.25f);
         }
         Switches(1f, 1);
-        FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
+        PlayerOnline[] Players = FindObjectsOfType<PlayerOnline>();
+        foreach (PlayerOnline player in Players)
+        {
+            player.AddToGridList((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z);
+        }
     }
 
     public void Switches(float transparancy, int matrialuse)

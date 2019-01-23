@@ -88,7 +88,7 @@ public class AnimatorScript : NetworkBehaviour {
         JumpLight.enabled = true;
     }
 
-    void EndAnimation()
+    public void EndAnimation()
     {
         Pacman.transform.parent = PacmanParentParent;
         Destroy(go);
@@ -123,10 +123,5 @@ public class AnimatorScript : NetworkBehaviour {
             case 3: animator2.Play("PacmanAnimationJump2"); break;
         }
         animatorBodyMesh.Play("PacmanSalto");
-    }
-
-    public void Reset()
-    {
-        EndAnimation();
     }
 }

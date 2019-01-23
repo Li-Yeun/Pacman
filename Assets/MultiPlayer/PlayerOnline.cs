@@ -264,6 +264,12 @@ public class PlayerOnline : NetworkBehaviour
         gameObjectt.transform.localPosition = new Vector3(x, 1, z);
         NetworkServer.SpawnWithClientAuthority(gameObjectt, connectionToClient);
     }
+
+    public void AddToGridList(int x, int y)
+    {
+        if(isLocalPlayer && this.gameObject.name == "Player Pacman")
+            griddbased.Add(new Gridbased(x,y));
+    }
 }
 
 public class Gridbased

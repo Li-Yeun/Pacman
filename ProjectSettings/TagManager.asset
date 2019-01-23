@@ -19,6 +19,7 @@ TagManager:
   - Decoy
   - Decoy Camera
   - 3Dview
+  - Pacman Respawn
   layers:
   - Default
   - TransparentFX

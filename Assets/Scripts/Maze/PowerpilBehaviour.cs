@@ -36,7 +36,6 @@ public class PowerpilBehaviour : MonoBehaviour {
 		if (powerpileaten)
         {
             gameObject.SetActive(false);
-            FindObjectOfType<ScoreCounter>().PowerpilPoints();
 
             if(AnimationScriptSpookjes == null)
             {

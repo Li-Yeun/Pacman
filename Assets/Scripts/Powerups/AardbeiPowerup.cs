@@ -55,7 +55,11 @@ public class AardbeiPowerup : NetworkBehaviour
         yield return new WaitForSeconds(duration);
         pacmanMovement.Speed.x--;
         pacmanMovement.Speed.z--;
-        FindObjectOfType<PlayerOnline>().griddbased.Add(new Gridbased((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z));
+        PlayerOnline[] Players = FindObjectsOfType<PlayerOnline>();
+        foreach (PlayerOnline player in Players)
+        {
+            player.AddToGridList((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z);
+        }
         Destroy(gameObject);
     }
 
