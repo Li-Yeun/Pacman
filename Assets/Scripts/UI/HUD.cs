@@ -98,9 +98,14 @@ public class HUD : MonoBehaviour {
 
     }
     public void Playagain()
-    { PlayerOnline Player = FindObjectOfType<PlayerOnline>();
-        Player.CmdPlayagain();
+    {
+        PlayerOnline[] Player = FindObjectsOfType<PlayerOnline>();
+        foreach (PlayerOnline player in Player)
+        {
+            player.CmdReset();
+        }
     }
+    
     public void RedGhost()
     {
         ChooseColorGhost(0);
@@ -114,7 +119,7 @@ public class HUD : MonoBehaviour {
     public void OrangeGhost()
     {
         ChooseColorGhost(2);
-        invisibileF.SetActive(true); //todo ander ability
+        invisibileF.SetActive(true);
     }
     public void PinkGhost()
     {

@@ -36,18 +36,7 @@ public class PlayerOnline : NetworkBehaviour
             
         }
     }
-    [Command]
-    public void CmdPlayagain()
-    {
-       RpcPlayagain();
-    }
-    [ClientRpc]
-    public void RpcPlayagain()
-    {
-        FindObjectOfType<PelletCounter>().pacmanwins.SetActive(false);
-        FindObjectOfType<playerhealth>().ghostwins.SetActive(false);
-        CmdReset();
-    }
+
     public void SpawnPacman()
     {
         if (!isLocalPlayer)
@@ -184,7 +173,12 @@ public class PlayerOnline : NetworkBehaviour
     public void RpcReset()
     {
         if (isLocalPlayer && this.gameObject.name == "Player Pacman")
-        { griddbased = new List<Gridbased>(); Save(); }
+        {
+            griddbased = new List<Gridbased>();
+            Save();
+        }
+        FindObjectOfType<PelletCounter>().pacmanwins.SetActive(false);
+        FindObjectOfType<playerhealth>().ghostwins.SetActive(false);
         BroadCaster.ResetBroadCast();
     }
 

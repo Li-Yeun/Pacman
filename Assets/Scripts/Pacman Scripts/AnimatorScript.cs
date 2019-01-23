@@ -124,4 +124,10 @@ public class AnimatorScript : NetworkBehaviour {
         }
         animatorBodyMesh.Play("PacmanSalto");
     }
+
+    public void Reset()
+    {
+        Overzetten();
+        Resett();
+    }
 }
