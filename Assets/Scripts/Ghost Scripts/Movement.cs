@@ -191,6 +191,7 @@ public class Movement : NetworkBehaviour {
             Abilities[1] = true;
             speedTimer timerAnimation = FindObjectOfType<speedTimer>();
             timerAnimation.SpeedTimer();
+            GetComponentInChildren<ParticleSystem>().Play();
         }
         //TODO check effe proxy.
         /*
@@ -227,6 +228,7 @@ public class Movement : NetworkBehaviour {
             DurationCounter[1] += Time.deltaTime;
             if(DurationCounter[1] >= Duration[1])
             {
+                GetComponentInChildren<ParticleSystem>().Stop();
                 Abilities[1] = false;
                 SpeedMultiplier = 1;
                 DurationCounter[1] = 0;
