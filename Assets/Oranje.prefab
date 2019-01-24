@@ -58,23 +58,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1134300471335608
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4131657414478984}
-  - component: {fileID: 114059476195673300}
-  - component: {fileID: 65807911653382140}
-  m_Layer: 0
-  m_Name: GhostWalls
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1141253823344118
 GameObject:
   m_ObjectHideFlags: 1
@@ -1382,19 +1365,6 @@ Transform:
   m_Father: {fileID: 4204433406794100}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!4 &4131657414478984
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1134300471335608}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4981881685094286}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4138383752501740
 Transform:
   m_ObjectHideFlags: 1
@@ -2360,7 +2330,6 @@ Transform:
   - {fileID: 4172836593854986}
   - {fileID: 4434978680325630}
   - {fileID: 4249250480499544}
-  - {fileID: 4131657414478984}
   m_Father: {fileID: 4204433406794100}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3828,18 +3797,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65807911653382140
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1134300471335608}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95442219439255986
 Animator:
   serializedVersion: 3
@@ -3950,21 +3907,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114059476195673300
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1134300471335608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a417d3fb8f5f20440bceb51e5d2026ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GhostWalking: 0
-  GhostWalkingCD: 0
-  GhostWalkingDuration: 2
-  GhostWalkingCDDuration: 15
 --- !u!114 &114337728637033606
 MonoBehaviour:
   m_ObjectHideFlags: 1

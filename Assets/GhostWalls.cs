@@ -4,30 +4,11 @@ using UnityEngine;
 
 public class GhostWalls : MonoBehaviour
 {
-    public bool GhostWalking = false;
-    public bool GhostWalkingCD = false;
-    public float GhostWalkingDuration = 5f;
-    public float GhostWalkingCDDuration = 15f;
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && !GhostWalkingCD && gameObject.GetComponentInParent<Movement>().name == "Pink")
-        {
-            gameObject.transform.parent.parent.gameObject.GetComponentInChildren<ParticleSystem>().Play();
-            GhostWalking = true;
-            GhostWalkingCD = true;
-            Invoke("StopGhostWalking", GhostWalkingDuration);
-            Invoke("CDduration", GhostWalkingCDDuration);
-            wallsTimer timerAnimation = FindObjectOfType<wallsTimer>();
-            timerAnimation.WallsTimer();
-        }
-    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Maze"))
         {
-            if (GhostWalking)
+            if (GetComponentInParent<WalkThroughWalls>().GhostWalking)
             {
                 other.GetComponentInChildren<BoxCollider>().isTrigger = true;
             }
@@ -37,7 +18,7 @@ public class GhostWalls : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Maze"))
         {
-            if (GhostWalking)
+            if (GetComponentInParent<WalkThroughWalls>().GhostWalking)
             {
                 other.GetComponentInChildren<BoxCollider>().isTrigger = true;
             }
@@ -49,14 +30,5 @@ public class GhostWalls : MonoBehaviour
         {
             other.GetComponent<BoxCollider>().isTrigger = false;
         }
-    }
-    private void StopGhostWalking()
-    {
-        GhostWalking = false;
-        gameObject.transform.parent.parent.gameObject.GetComponentInChildren<ParticleSystem>().Stop();
-    }
-    private void CDduration()
-    {
-        GhostWalkingCD = false;
     }
 }

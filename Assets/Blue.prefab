@@ -11,23 +11,6 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1386731014217534}
   m_IsPrefabAsset: 1
---- !u!1 &1000606619528740
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4467635823327524}
-  - component: {fileID: 114579811353017162}
-  - component: {fileID: 65289657308625444}
-  m_Layer: 0
-  m_Name: GhostWalls
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1008203241181834
 GameObject:
   m_ObjectHideFlags: 1
@@ -1950,19 +1933,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
---- !u!4 &4467635823327524
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000606619528740}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4515014580239510}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4515014580239510
 Transform:
   m_ObjectHideFlags: 1
@@ -1976,7 +1946,6 @@ Transform:
   - {fileID: 4272830320405682}
   - {fileID: 4774215452636264}
   - {fileID: 4677699951991198}
-  - {fileID: 4467635823327524}
   m_Father: {fileID: 4464193205433164}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3804,18 +3773,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65289657308625444
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000606619528740}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65386854918334940
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4070,21 +4027,6 @@ MonoBehaviour:
   T_Intensity: 12
   T_Height: 5.5
   Speed: 1
---- !u!114 &114579811353017162
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000606619528740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a417d3fb8f5f20440bceb51e5d2026ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GhostWalking: 0
-  GhostWalkingCD: 0
-  GhostWalkingDuration: 2
-  GhostWalkingCDDuration: 15
 --- !u!114 &114616068978091142
 MonoBehaviour:
   m_ObjectHideFlags: 1

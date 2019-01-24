@@ -133,21 +133,45 @@ public class Movement : NetworkBehaviour {
     }
     void AutoNav()
     {
-        if (!gameObject.GetComponentInChildren<GhostWalls>().GhostWalking && RotationCooldown == 0)
+        if (name == "Pink")
         {
-            if (front.Collision)
+            if (!GetComponent<WalkThroughWalls>().GhostWalking && RotationCooldown == 0)
             {
-                if (!right.Collision)
+                if (front.Collision)
                 {
-                    Rotate(1);
+                    if (!right.Collision)
+                    {
+                        Rotate(1);
+                    }
+                    else if (!left.Collision)
+                    {
+                        Rotate(-1);
+                    }
+                    else if (left.Collision)
+                    {
+                        Rotate(2);
+                    }
                 }
-                else if (!left.Collision)
+            }
+        }
+        else
+        {
+            if (RotationCooldown == 0)
+            {
+                if (front.Collision)
                 {
-                    Rotate(-1);
-                }
-                else if (left.Collision)
-                {
-                    Rotate(2);
+                    if (!right.Collision)
+                    {
+                        Rotate(1);
+                    }
+                    else if (!left.Collision)
+                    {
+                        Rotate(-1);
+                    }
+                    else if (left.Collision)
+                    {
+                        Rotate(2);
+                    }
                 }
             }
         }
@@ -196,6 +220,7 @@ public class Movement : NetworkBehaviour {
             timerAnimation.SpeedTimer();
             GetComponentInChildren<ParticleSystem>().Play();
         }
+
         //TODO check effe proxy.
         /*
         if (Input.GetKey(Controls[6]) && !Abilities[2] && cooldowncounter[2] >= Cooldown[2])
