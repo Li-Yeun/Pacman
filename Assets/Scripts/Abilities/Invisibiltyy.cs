@@ -5,9 +5,9 @@ using UnityEngine.Networking;
 
 public class Invisibiltyy : NetworkBehaviour
 {
-    bool Invis = false, Orange = false , Lock = false;
-    Light[] lights;
-    GhostStates[] ghostStates;
+    private bool Invis = false, Orange = false , Lock = false;
+    private Light[] lights;
+    private GhostStates[] ghostStates;
     public void Start()
     {
         ghostStates = GetComponentsInChildren<GhostStates>();
@@ -42,7 +42,7 @@ public class Invisibiltyy : NetworkBehaviour
         }
     }
 
-    IEnumerator Invisible()
+    private IEnumerator Invisible()
     {
         yield return new WaitForSeconds(0.7f);
         CmdInvis();
@@ -97,17 +97,19 @@ public class Invisibiltyy : NetworkBehaviour
             }
         }
     }
-    public void Reset()
-    {
-        Invis = false;
-        CmdInvis();
-        Lock = false;
-    }
-    public void SetLayerRecursively(GameObject go, int layerNumber)
+
+    private void SetLayerRecursively(GameObject go, int layerNumber)
     {
         foreach (Transform trans in go.GetComponentsInChildren<Transform>(true))
         {
             trans.gameObject.layer = layerNumber;
         }
+    }
+
+    public void Reset()
+    {
+        Invis = false;
+        CmdInvis();
+        Lock = false;
     }
 }

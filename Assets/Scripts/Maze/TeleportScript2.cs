@@ -9,7 +9,7 @@ using Smooth;
 public class TeleportScript2 : MonoBehaviour
 {
     public int code;
-    public bool Lockk = false ;
+    bool Lockk = false ;
 
     void OnTriggerEnter(Collider collider)
     {

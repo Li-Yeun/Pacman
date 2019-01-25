@@ -21,7 +21,6 @@ public class PlayerOnline : NetworkBehaviour
     // Use this for initialization
     void Start()
     {
-       // gameObject.transform.parent = GameObject.Find("EveryObject").transform;
         NetworkManagerHUD hud = FindObjectOfType<NetworkManagerHUD>();
 
         if (hud != null)
@@ -30,10 +29,30 @@ public class PlayerOnline : NetworkBehaviour
 
         if (isLocalPlayer)
         {
-            //Instantiate(HUD, GameObject.Find("EveryObject").transform);
             FindObjectOfType<HUD>().ChooseCharacter.SetActive(true);
             griddbased = new List<Gridbased>();
             
+        }
+    }
+
+    void Update()
+    {
+        if (isLocalPlayer && Input.GetKeyDown(KeyCode.R))
+        {
+            if (this.gameObject.name == "Player Pacman")
+            {
+                CmdReset();
+            }
+        }
+
+        if ((isLocalPlayer && Input.GetKeyDown("8")) && (SpawnDecoyBool == true))
+        {
+            if (GameObject.Find("Decoy(Clone)") != null)
+                return;
+            if (this.gameObject.name == "Player Pacman")
+            {
+                SpawnDecoy();
+            }
         }
     }
 
@@ -61,29 +80,7 @@ public class PlayerOnline : NetworkBehaviour
         FindObjectOfType<HUD>().GeneralHUD.SetActive(true);
     }
 
-    public void Update()
-    {
-        if (isLocalPlayer && Input.GetKeyDown(KeyCode.R))
-        {
-            if (this.gameObject.name == "Player Pacman")
-            {
-                CmdReset();
-            }
-        }
-
-        if ((isLocalPlayer && Input.GetKeyDown("8")) && (SpawnDecoyBool == true))
-        {
-            if (GameObject.Find("Decoy(Clone)") != null)
-                return;
-            if (this.gameObject.name == "Player Pacman")
-            {
-                SpawnDecoy();
-            }
-        }
-
-    }
-
-    public void SpawnDecoy()
+    private void SpawnDecoy()
     {
         SpawnDecoyBool = false;
         CmdSpawnDecoy();
@@ -91,14 +88,14 @@ public class PlayerOnline : NetworkBehaviour
     }
 
     [Command]
-    public void CmdSpawnDecoy()
+    private void CmdSpawnDecoy()
     {
         GameObject go = Instantiate(Decoy);
         NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
     }
 
     [Command]
-    void CmdSpawnMyPacman()
+    private void CmdSpawnMyPacman()
     {
         GameObject Pacman = Instantiate(PacmanObject);
         NetworkServer.SpawnWithClientAuthority(Pacman, connectionToClient);
@@ -107,7 +104,7 @@ public class PlayerOnline : NetworkBehaviour
 
     }
     [ClientRpc]
-    void RpcSpawnMyPacman(GameObject Object)
+    private void RpcSpawnMyPacman(GameObject Object)
     {
         if(isLocalPlayer && this.gameObject.name == "Player Pacman")
         {
@@ -115,7 +112,7 @@ public class PlayerOnline : NetworkBehaviour
         }
     }
 
-    void NormalSpawnMyPacman()
+    private void NormalSpawnMyPacman()
     {
         FindObjectOfType<HUD>().PacmanHUD.SetActive(true);
         FindObjectOfType<HUD>().GeneralHUD.SetActive(true);
@@ -128,14 +125,14 @@ public class PlayerOnline : NetworkBehaviour
     }
 
     [Command]
-    void CmdSpawnMyGhost(int number)
+    private void CmdSpawnMyGhost(int number)
     {
         GameObject Ghost = Instantiate(GhostObject[number]);
         NetworkServer.SpawnWithClientAuthority(Ghost, connectionToClient);
         RpcChangeGhostName(number);
     }
 
-    void NormalSpawnMyGhost()
+    private void NormalSpawnMyGhost()
     {
         FindObjectOfType<HUD>().GhostHUD.SetActive(true);
         FindObjectOfType<HUD>().GeneralHUD.SetActive(true);
@@ -143,14 +140,14 @@ public class PlayerOnline : NetworkBehaviour
     }
 
     [ClientRpc]
-    void RpcChangePacmanName()
+    private void RpcChangePacmanName()
     {
         transform.name = "Player Pacman";
     }
 
     //todo herschrijven
     [ClientRpc]
-    void RpcChangeGhostName(int number)
+    private void RpcChangeGhostName(int number)
     {
         switch (number)
         {
@@ -180,7 +177,7 @@ public class PlayerOnline : NetworkBehaviour
     }
 
     [ClientRpc]
-    public void RpcReset()
+    private void RpcReset()
     {
         if (isLocalPlayer && this.gameObject.name == "Player Pacman")
         {
@@ -192,7 +189,7 @@ public class PlayerOnline : NetworkBehaviour
         BroadCaster.ResetBroadCast();
     }
 
-    public void RepeatSpawn()
+    private void RepeatSpawn()
     {
         Save();
         InvokeRepeating("SpawnRandomFruit", Random.Range(5, 15f), Random.Range(5, 15f));// Spawns the fruit every 5-15 seconds somewhere on the map (indicated with an s)
@@ -224,7 +221,7 @@ public class PlayerOnline : NetworkBehaviour
         griddbased.Remove(gridbased);
     }
 
-    public void LoadBlock(char TileType, int x, int z)
+    private void LoadBlock(char TileType, int x, int z)
     {
         switch (TileType)
         {
@@ -257,7 +254,7 @@ public class PlayerOnline : NetworkBehaviour
         }
     }
     [Command]
-    public void CmdInstantiateObject(GameObject gameObjecttt, int x, int z, GameObject Parent)
+    private void CmdInstantiateObject(GameObject gameObjecttt, int x, int z, GameObject Parent)
     {
         GameObject gameObjectt = Instantiate(gameObjecttt, Vector3.zero, gameObjecttt.transform.rotation);
         gameObjectt.transform.parent = Parent.transform;

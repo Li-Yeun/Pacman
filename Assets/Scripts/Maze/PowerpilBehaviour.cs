@@ -17,18 +17,12 @@ public class PowerpilBehaviour : MonoBehaviour {
 	}
 
     //Checks if pacman hit the trigger and if this is true removes the powerpil
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            EatPowerpil();
+            powerpileaten = true;
         }
-    }
-
-    //Confirms powerpil has been eaten
-    public bool EatPowerpil()
-    {
-        return powerpileaten = true;
     }
 
     // Update is called once per frame

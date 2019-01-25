@@ -5,7 +5,7 @@ using UnityEngine;
 public class speedTimer : MonoBehaviour {
 
     //start de speedTimer UI animatie
-    Animator anim;
+    private Animator anim;
 
     void Start()
     {

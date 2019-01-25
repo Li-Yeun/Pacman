@@ -13,11 +13,9 @@ using System;
 public class Movement : NetworkBehaviour {
 
     public string name; //Checken welke ghost er bestaan bij character selectie;
-    [SerializeField] Animation animation;
 
     [Header("General")]
     [SerializeField] SpecialTrigger2 front, left, right;               //colliders voor navigatie
-    private Transform respawn;                        //locatie van spawnpunt
 
     [Header("Ghost Behaviour")]
     [SerializeField] public float speed;                        //beweegsnelheid
@@ -27,21 +25,19 @@ public class Movement : NetworkBehaviour {
     [SerializeField] string[] Controls = new string[2];        //controls van spookje
 
     [SerializeField] GameObject IncreaseVisionLight;
-    bool goleft, goright;
+    [SerializeField] IncreaseVision Vision;   //extern script van ability 0, zit op bodylight
+    [SerializeField] Animation animation;
 
-    Vector3 Velocity;                                          //beweegsnelheid
-    public bool dead = false;                                         //als true is de speler doodgegaan
-    float RotationCooldown = 0;                                //tijd voordat er weer gedraaid kan worden
-    float respawntimer = 0;
-    public bool reversecontrols = false;
+    public bool dead = false, reversecontrols = false;          //als true is de speler doodgegaan
+    public float[] Cooldown, Duration;        //instelbare cooldown per ability || instelbare Duration per ability
 
-    bool[] Abilities;               //welke ability geactiveerd is
-    public IncreaseVision Vision;   //extern script van ability 0, zit op bodylight
-    public float[] Cooldown;        //instelbare cooldown per ability
-    float[] cooldowncounter;        //counter die loopt als ability niet geactiveerd is
-    float[] DurationCounter;        //duration counter hoelang de ability geactiveerd is
-    public float[] Duration;        //instelbare Duration per ability
-    float SpeedMultiplier = 1;
+    private bool goleft, goright;
+    private float RotationCooldown = 0, respawntimer = 0, SpeedMultiplier = 1;    //tijd voordat er weer gedraaid kan worden
+    private Transform respawn;
+    private Vector3 Velocity;                                          //beweegsnelheid
+    private bool[] Abilities;               //welke ability geactiveerd is
+    private float[] cooldowncounter, DurationCounter;        //counter die loopt als ability niet geactiveerd is  || duration counter hoelang de ability geactiveerd is
+
 
     void Start ()
     {
@@ -80,7 +76,7 @@ public class Movement : NetworkBehaviour {
         }
     }
 
-    void MoveForward()
+    private void MoveForward()
     {
         switch ((int)gameObject.transform.eulerAngles.y)
         {
@@ -116,12 +112,12 @@ public class Movement : NetworkBehaviour {
 
         gameObject.transform.position += Velocity * speed * SpeedMultiplier;    
     }       //beweegt Character naar de kijkrichting
-    void Rotate(int i)
+    private void Rotate(int i)
     {
         gameObject.transform.Rotate(0,i*90,0);
         RotationCooldown = 1;
     }       //Roteer de Character met 90 graden naar 1 rechts, -1 links
-    void DoRespawn()
+    private void DoRespawn()
     {
         respawntimer += Time.deltaTime;
         if (respawntimer >= Respawntime)
@@ -131,7 +127,7 @@ public class Movement : NetworkBehaviour {
             respawntimer = 0;
         }
     }
-    void AutoNav()
+    private void AutoNav()
     {
         if (name == "Pink")
         {
@@ -176,7 +172,7 @@ public class Movement : NetworkBehaviour {
             }
         }
     }           //zorgt voor automatisch draaien tegen muren
-    void HandleInput()
+    private void HandleInput()
     {
         if (reversecontrols == false)
         {
@@ -220,17 +216,8 @@ public class Movement : NetworkBehaviour {
             timerAnimation.SpeedTimer();
             GetComponentInChildren<ParticleSystem>().Play();
         }
-
-        //TODO check effe proxy.
-        /*
-        if (Input.GetKey(Controls[6]) && !Abilities[2] && cooldowncounter[2] >= Cooldown[2])
-        {
-            Abilities[2] = true;
-            
-        }
-        */
     }
-    void DoAbilities()
+    private void DoAbilities()
     {
         if (Abilities[0])
         {

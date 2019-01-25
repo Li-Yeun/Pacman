@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParticleScript : MonoBehaviour {
 
-    ParticleSystem particleSystem;
+    private ParticleSystem particleSystem;
     void Start() {
         particleSystem = GetComponent<ParticleSystem>();
     }
@@ -14,13 +14,13 @@ public class ParticleScript : MonoBehaviour {
         Invoke("TurnOffSmokes", 10f);
     }
 
-    void TurnOffSmokes()
+    private void TurnOffSmokes()
     {
         particleSystem.loop = false;
         Invoke("DestroySmoke", 11f);
     }
 
-    void DestroySmoke()
+    private void DestroySmoke()
     {
         if (gameObject.name != "WaterFall")
             FindObjectOfType<EnvironementalEvents>().ResetTimer();
@@ -28,7 +28,7 @@ public class ParticleScript : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    private void Reset()
+    public void Reset()
     {
         if (gameObject.name != "WaterFall")
             FindObjectOfType<EnvironementalEvents>().ResetTimer();

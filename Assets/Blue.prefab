@@ -3955,7 +3955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebbde2a4b7c81f4f956339e6694343d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimePassed: 0
 --- !u!114 &114074931950441828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3967,9 +3966,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114115622631970870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3982,7 +3981,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Blue
-  animation: {fileID: 0}
   front: {fileID: 114715995278484294}
   left: {fileID: 114759327691288254}
   right: {fileID: 114074931950441828}
@@ -3996,9 +3994,10 @@ MonoBehaviour:
   - q
   - e
   IncreaseVisionLight: {fileID: 1312975900702446}
+  Vision: {fileID: 114325951750609582}
+  animation: {fileID: 0}
   dead: 0
   reversecontrols: 0
-  Vision: {fileID: 114325951750609582}
   Cooldown:
   - 5
   - 5
@@ -4020,13 +4019,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4d4273c6411e340926ace88a9fa8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activated: 0
-  tr: {fileID: 4759502236435502}
-  lt: {fileID: 108319232590905412}
   T_Range: 12
   T_Intensity: 12
   T_Height: 5.5
   Speed: 1
+  lt: {fileID: 108319232590905412}
+  activated: 0
+  tr: {fileID: 4759502236435502}
 --- !u!114 &114616068978091142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4121,9 +4120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114759327691288254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4135,9 +4134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114821553416077332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4161,7 +4160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebbde2a4b7c81f4f956339e6694343d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimePassed: 0
 --- !u!122 &122278929315929868
 Halo:
   m_ObjectHideFlags: 1

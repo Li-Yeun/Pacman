@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class AardbeiPowerup : NetworkBehaviour
 {
 
-    public float duration = 15f;
+    [SerializeField] float duration = 15f;
 
     void OnTriggerEnter(Collider col)
     {
@@ -24,7 +24,7 @@ public class AardbeiPowerup : NetworkBehaviour
     }
 
     [CommandAttribute]
-    public void CmdCollision(GameObject col)
+    private void CmdCollision(GameObject col)
     {
         RpcCollision(col);
     }

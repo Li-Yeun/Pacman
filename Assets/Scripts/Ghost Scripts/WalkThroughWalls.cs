@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class WalkThroughWalls : NetworkBehaviour {
+
+    [SerializeField] float GhostWalkingDuration = 5f;
+    [SerializeField] float GhostWalkingCDDuration = 15f;
+
     public bool GhostWalking = false;
     public bool GhostWalkingCD = false;
-    public float GhostWalkingDuration = 5f;
-    public float GhostWalkingCDDuration = 15f;
 
-    // Update is called once per frame
     void Update()
     {
         if (!hasAuthority)

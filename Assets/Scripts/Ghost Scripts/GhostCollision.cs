@@ -9,7 +9,7 @@ public class GhostCollision : NetworkBehaviour
     private Transform Spawner;
     private GhostStates pacmanAttacking;
 
-    private void Start()
+    void Start()
     {
         Spawner = GameObject.Find("SpawnAtRunTime").transform;
     }
@@ -40,7 +40,7 @@ public class GhostCollision : NetworkBehaviour
         }
     }
 
-    IEnumerator ResetCollisionDetection(Collision col)
+    private IEnumerator ResetCollisionDetection(Collision col)
     {
         yield return new WaitForSeconds(1f);
         Physics.IgnoreCollision(col.collider, GetComponent<Collider>(), false);

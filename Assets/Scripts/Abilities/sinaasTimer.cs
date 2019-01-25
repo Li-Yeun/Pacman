@@ -5,7 +5,7 @@ using UnityEngine;
 public class sinaasTimer : MonoBehaviour {
 
     //starts Orange UI timer
-    Animator anim;
+    private Animator anim;
 
     void Start()
     {

@@ -5,14 +5,14 @@ using UnityEngine;
 public class FPMulticamera : MonoBehaviour
 {
     [SerializeField] public string mode;
-    private Transform tr_Target;
-    public float turnspeed = 0.1f;
-    Vector3 Offset = Vector3.zero;
-    private Vector3 R_offset = new Vector3(0,-90,0);
-    private Quaternion TargetAngle;
     [SerializeField] string tag;
+    [SerializeField] float turnspeed = 0.1f;
 
-    private void Start()
+    private Vector3 Offset = Vector3.zero, R_offset = new Vector3(0, -90, 0);
+    private Transform tr_Target;
+    private Quaternion TargetAngle;
+
+    void Start()
     {
         if(mode == "Pacman")
             gameObject.transform.parent = GameObject.FindGameObjectWithTag("Camera Parent").transform;

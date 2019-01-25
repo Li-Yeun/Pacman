@@ -24,22 +24,22 @@ public class AnimatorScript : NetworkBehaviour {
 
     // Use this for initialization
     [Header("Animators")]
-    Animator animator2;
     [SerializeField] Animator animatorBodyMesh;
     [SerializeField] PacmanMovement Pacman;
     [SerializeField] GameObject PacmanAnimationObject;
-    private Transform PacmanParentParent; // was een empty serielizedfield
 
-    GameObject go;
+
     [Header("Jump Ookay")] 
     [SerializeField] SpecialTrigger2 Jumper;
     [SerializeField] SpecialTrigger2 JumperOuterWalls;
     [SerializeField] SpecialTrigger2 TeleporterClose;
+    [SerializeField] float JumpCooldown = 15f;
 
-    Light JumpLight;
-    public bool AnimationPlaying = false;
-    public float JumpCooldown = 15f;
-    public bool Jumping = false;
+    private Transform PacmanParentParent;
+    private Animator animator2;
+    private GameObject go;
+    private Light JumpLight;
+    private bool AnimationPlaying = false, Jumping = false;
 
     void Start()
     {
@@ -49,17 +49,10 @@ public class AnimatorScript : NetworkBehaviour {
             if (light.name == "Jump Light")
                 JumpLight = light;
         }
+
         Overzetten();
-        
     }
-    public void Overzetten()
-    {
-        go = Instantiate(PacmanAnimationObject);
-        animator2 = go.GetComponent<Animator>();
-        go.transform.parent = GameObject.FindGameObjectWithTag("Object Parent").transform;
-        Pacman.transform.parent = go.transform.transform;
-    }
-    // Update is called once per frame
+
     void Update()
     {
         if (!hasAuthority)
@@ -70,16 +63,25 @@ public class AnimatorScript : NetworkBehaviour {
             {
                 Jumping = true;
                 CmdJump();
-                Invoke("Resett",15f);
+                Invoke("Resett", 15f);
             }
         }
     }
 
-    void Resett()
+    private void Overzetten()
+    {
+        go = Instantiate(PacmanAnimationObject);
+        animator2 = go.GetComponent<Animator>();
+        go.transform.parent = GameObject.FindGameObjectWithTag("Object Parent").transform;
+        Pacman.transform.parent = go.transform.transform;
+    }
+
+    private void Resett()
     {
         Jumping = false;
     }
-    void StartAnimation(float duratation, bool LockMovements)
+
+    private void StartAnimation(float duratation, bool LockMovements)
     {
         AnimationPlaying = true;
         if (LockMovements)
@@ -100,13 +102,13 @@ public class AnimatorScript : NetworkBehaviour {
     }
 
     [CommandAttribute]
-    public void CmdJump()
+    private void CmdJump()
     {
         RpcJump();
     }
 
     [ClientRpcAttribute]
-    public void RpcJump()
+    private void RpcJump()
     {
         if (FindObjectsOfType<timeranimation>().Length == 1)
         {

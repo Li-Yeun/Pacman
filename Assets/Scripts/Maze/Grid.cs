@@ -8,22 +8,21 @@ using UnityEngine;
 public class Grid : MonoBehaviour
 {
     #region Base Values
-    int counter = 0;
-    private int TimesTeleporterCreated = 0;
+    private int counter = 0, TimesTeleporterCreated = 0;
     // De muren van het spel
-    public GameObject block1, block2, block3, block4, block5, block6, block7;
+    [SerializeField] GameObject block1, block2, block3, block4, block5, block6, block7;
 
     // De gele bolletjes die pacman op eet.
-    public GameObject pellet;
+    [SerializeField] GameObject pellet;
 
     // De pil die zorgt dat pacman de geestjes op kan eten ipv an andersom.
-    public GameObject powerpill;
+    [SerializeField] GameObject powerpill;
 
     // De teleporters aan de zijkant van de map.
-    public GameObject Teleporter;
+    [SerializeField] GameObject Teleporter;
 
     // De spawnlocatwion van Pacman (werkt alleen voor respawns for some reason niet de eerste spawn) TODO
-    public GameObject SpawnPacman;
+    [SerializeField] GameObject SpawnPacman;
 
     /// <summary>
     /// Citroen maakt Pacman sneller
@@ -33,7 +32,7 @@ public class Grid : MonoBehaviour
     /// ---
     /// </summary>
     [Header("Fruit")]
-    public GameObject Kers, Aardbei, Appel, Meloen, Sinaasappel;
+    [SerializeField] public GameObject Kers, Aardbei, Appel, Meloen, Sinaasappel;
 
     /// <summary>
     /// Dit zijn de locations waarin de instances gezet worden deze zijn alleen ter sortering verder niks.
@@ -42,6 +41,7 @@ public class Grid : MonoBehaviour
     [SerializeField] public Transform PelletsParent, TeleporterParent, BuildingBlockParent, PowerPillParent, SpawnerParent;
     [Header("Parent fruits")]
     [SerializeField] public Transform KersParent, AardbeiParent, AppelParent, MeloenParent, SinaasappelParent;
+
     public char[,] gamegrid;
     #endregion
 

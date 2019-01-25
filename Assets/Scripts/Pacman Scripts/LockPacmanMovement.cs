@@ -6,7 +6,7 @@ public class LockPacmanMovement : MonoBehaviour
 {
 
     [SerializeField] SpecialTrigger2 trigger;
-    PacmanMovement pacmanMove;
+    private PacmanMovement pacmanMove;
     private void Start()
     {
         pacmanMove = FindObjectOfType<PacmanMovement>();

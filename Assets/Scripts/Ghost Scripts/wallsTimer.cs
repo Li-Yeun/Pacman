@@ -5,9 +5,9 @@ using UnityEngine;
 public class wallsTimer : MonoBehaviour {
 
     //start de walking walls Timer UI animatie
-    Animator anim;
+    private Animator anim;
 
-    void Start()
+    private void Start()
     {
         anim = GetComponent<Animator>();
     }

@@ -6,18 +6,18 @@ using UnityEngine.Networking;
 public class EnvironementalEvents : NetworkBehaviour {
 
     [SerializeField] GameObject Smoke, FireWorks, SandStorm, Water, Confusion;
-    [SerializeField] Transform parent;
     [SerializeField] float EventCooldown;
     private List<GameObject> Events;
-    float timer = 0f;
-    bool Lock = false;
+    private float timer = 0f;
+    private bool Lock = false;
 
-    private void Start()
+    void Start()
     {
         Events = new List<GameObject> { Smoke, FireWorks, SandStorm, Water, Confusion };
     }
 
-    void Update() {
+    void Update()
+    {
         if (!hasAuthority)
             return;
 
@@ -64,22 +64,9 @@ public class EnvironementalEvents : NetworkBehaviour {
         }
     }
 
-    /*
-    private void ActivateMultipleEvents(GameObject gameObject1, GameObject gameObject2, GameObject gameObject3)
-    {
-        if (GameObject.FindGameObjectWithTag("Event") == null)
-        {
-            Spawn(gameObject1);
-            Spawn(gameObject2);
-            Spawn(gameObject3);
-        }
-    }
-    */
-
     private void Spawn(GameObject gameObject)
     {
-        GameObject go = Instantiate(gameObject);
-        go.transform.parent = parent;
+        GameObject go = Instantiate(gameObject); //TODO parent toevoegen
         NetworkServer.Spawn(go);
     }
 

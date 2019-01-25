@@ -5,11 +5,10 @@ using UnityEngine.Networking;
 
 public class SpawnWater : NetworkBehaviour {
 
-    [SerializeField] GameObject WaterFirstPerson,WaterThirdPerson,Waterfall;      // Spawnable Prefabs
+    [SerializeField] GameObject WaterFirstPerson, WaterThirdPerson, Waterfall;      // Spawnable Prefabs
     [SerializeField] GameObject Pacman;
     [SerializeField] GameObject[] Ghosts;
-    float PacmanSpeed;   // The defaulth speed of Pacman
-    float GhostSpeed;      // The defaulth speed of the Ghosts
+    private float PacmanSpeed, GhostSpeed;   // The defaulth speed of Pacman && The defaulth speed of the Ghosts
 
     void Start () {
 
@@ -18,6 +17,7 @@ public class SpawnWater : NetworkBehaviour {
         {
             if (cam == null)
                 return;
+
             else if (cam.name == "Top Down Camera(Clone)")
                 cam.orthographic = false;
         }
@@ -45,13 +45,13 @@ public class SpawnWater : NetworkBehaviour {
             }
         }
     }
-    public void SpawnPrefab(GameObject Event, string Method, float time)
+    private void SpawnPrefab(GameObject Event, string Method, float time)
     {
         GameObject gameObject = Instantiate(Event);
         Invoke(Method, time);
         Destroy(gameObject, 40f);
     }
-    public void SlowDownMovement()
+    private void SlowDownMovement()
     {
         SetMovementSpeed(1.2f,1);
     }
@@ -68,7 +68,7 @@ public class SpawnWater : NetworkBehaviour {
         }
     }
 
-    public void ResetMovement()
+    private void ResetMovement()
     {
         Camera[] camera = FindObjectsOfType<Camera>();
         foreach (Camera cam in camera)

@@ -5,15 +5,13 @@ using UnityEngine;
 public class PelletBehaviour : MonoBehaviour {
 
     public bool pelleteaten;
-    public float Timer = 0;
-
     // Use this for initialization
     void Start ()
     {
         pelleteaten = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         /// <summary>
         /// Checks if the thing colliding with the pellet is Pacman
@@ -22,19 +20,12 @@ public class PelletBehaviour : MonoBehaviour {
         /// </summary>
         if (other.CompareTag("Player") || other.CompareTag("Decoy"))
         {
-            EatPellet();
+            pelleteaten = true;
         }
         else if (other.CompareTag("Fruit"))
         {
             Destroy(gameObject);
         }
-
-    }
-
-    // Confirms the pellet has been eaten
-    public bool EatPellet()
-    {
-        return pelleteaten = true;
     }
 
     /// <summary>
@@ -50,9 +41,8 @@ public class PelletBehaviour : MonoBehaviour {
                 scoreCounter.PelletPoints();
                 PelletCounter pelletCounter = FindObjectOfType<PelletCounter>();
                 pelletCounter.DecreaseCounter();
-
             }
-            gameObject.SetActive(false);  //niet destroyen is belangrijkr voor de reset!
+            gameObject.SetActive(false);
         }
 	}
 }

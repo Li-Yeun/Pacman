@@ -6,7 +6,7 @@ public class GhostStates : MonoBehaviour
 {
 
     private Animator animator;
-    public float TimePassed = 0;
+    private float TimePassed = 0;
 
     void Start()
     {
@@ -17,13 +17,6 @@ public class GhostStates : MonoBehaviour
 
     void Update()
     {
-        /*  //Debug
-        if (Input.GetKeyDown("8"))
-        {
-            Vulnerable();
-        }
-        */
-
         if (animator.GetBool("PacmanIsOnTheHunt"))
         {
             TimePassed += Time.deltaTime;

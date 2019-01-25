@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class aardbeiTimer : MonoBehaviour
 {
-    Animator anim;
+    private Animator anim;
 
     void Start()
     {

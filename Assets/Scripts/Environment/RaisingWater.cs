@@ -6,15 +6,17 @@ public class RaisingWater : MonoBehaviour {
 
     [SerializeField] Vector3 StartOffset;
     [SerializeField] float Speed;
-    Vector3 defaulthPos;
     public bool Lock = false;
-	void Start () {
+    private Vector3 defaulthPos;
+
+    void Start ()
+    {
         defaulthPos = gameObject.transform.position;
         gameObject.transform.position -= StartOffset;
 	}
 	
-	void Update () {
-
+	void Update ()
+    {
         if (Lock == false)
         {
             if (gameObject.transform.position.y < defaulthPos.y)
@@ -36,7 +38,5 @@ public class RaisingWater : MonoBehaviour {
                 gameObject.transform.position = defaulthPos - StartOffset;
             }
         }
-
-        
 	}
 }

@@ -11,31 +11,25 @@ public class PacmanMovement : NetworkBehaviour {
     [Header("Directional Speed")]
     [SerializeField] public Vector3 Speed;
 
-    [Header("Spawner")]
-    GameObject[] Spawners;
-    GameObject DefaulthSpawner; // todo schrijf defaulth coordinaten
-    private GameObject Spawner;
-
     [Header("Special Triggers")]
     [SerializeField] SpecialTrigger2 left, right, Movement;
     Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0) };
 
-    GameObject[] Ghosts;
-    public Rigidbody rb;
     public bool AnimationLock = false;
-    public bool Teleporterlock = false;
-    public int currentDirection, p_Direction;
-    public bool LockMovement;
-    public KeyCode currentKey, p_Key;
+    public int currentDirection;
+
+    private bool Teleporterlock = false, LockMovement;
+    private KeyCode currentKey, p_Key;
     private Vector3 resetSpeed;
+    private Rigidbody rb;
+    private GameObject[] Ghosts, Spawners;
+    private GameObject Spawner;
 
-
-
-    public Vector3 Position { get { return gameObject.transform.position; }
+    public Vector3 Position
+    {
+        get { return gameObject.transform.position; }
         set { gameObject.transform.position = value; }
     }
-
-
 
     void Start()
     {
@@ -59,7 +53,6 @@ public class PacmanMovement : NetworkBehaviour {
         if (!hasAuthority)
             return;
         if (Movement.Collision) { Teleporterlock = true; } else { Teleporterlock = false; }
-        p_Direction = currentDirection;
         p_Key = currentKey;
         if (!AnimationLock)
         {
@@ -110,7 +103,7 @@ public class PacmanMovement : NetworkBehaviour {
         Rotation();
     }
 
-    public void Move_Player()
+    private void Move_Player()
     {
         if (currentDirection == 0)
         {
@@ -145,7 +138,7 @@ public class PacmanMovement : NetworkBehaviour {
         }
     }
 
-    public void StartDeathSequence() // Gebruik deze methode wanneer Pacman de "Enemy" heeft geraakt.
+    private void StartDeathSequence() // Gebruik deze methode wanneer Pacman de "Enemy" heeft geraakt.
     {
         GameObject[] Ghosts = GameObject.FindGameObjectsWithTag("Enemy");
         if (Ghosts.Length == 0)
@@ -193,10 +186,9 @@ public class PacmanMovement : NetworkBehaviour {
         LockMovement = false;
     }
 
-    public void DisableGravity()
+    private void DisableGravity()
     {
         GetComponent<Rigidbody>().useGravity = false;
-        
     }
 
     public void GhostInstantiated()

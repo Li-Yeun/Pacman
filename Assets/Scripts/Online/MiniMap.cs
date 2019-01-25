@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class MiniMap : MonoBehaviour {
 
-    Transform FollowTarget;
-    float xOffset;
-    float zOffset;
+    private Transform FollowTarget;
+    private float xOffset, zOffset;
 
     void LateUpdate()
     {

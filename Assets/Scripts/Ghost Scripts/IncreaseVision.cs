@@ -4,24 +4,22 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class IncreaseVision : NetworkBehaviour {
-    public bool activated;
-    public Transform tr;
-    public Light lt;
-    float Range;
-    float Intensity;
-    float Height;
-    float[] Ref = new float[3];
 
-    public float T_Range;
-    public float T_Intensity;
-    public float T_Height;
-    public float Speed;
+    [SerializeField] float T_Range, T_Intensity, T_Height, Speed;
+    [SerializeField] Light lt;
+    public bool activated;
+    private Transform tr;
+    private float Range, Intensity, Height;
+    private float[] Ref = new float[3];
+
     void Start()
     {
+        tr = transform;
         Range = lt.range;
         Intensity = lt.intensity;
         Height = tr.localPosition.y;
     }
+
 	void Update ()
     {
         if (!activated)
@@ -46,5 +44,4 @@ public class IncreaseVision : NetworkBehaviour {
     {
         gameObject.SetActive(false);
     }
-
 }

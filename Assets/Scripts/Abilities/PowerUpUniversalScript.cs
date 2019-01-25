@@ -5,7 +5,8 @@ using UnityEngine;
 public class PowerUpUniversalScript : MonoBehaviour
 {
     [SerializeField] Material transmaterial, defaulthMaterial;
-    public float duratation;
+    [SerializeField] float duratation;
+
     void OnTriggerStay(Collider col)
     {
         if (col.CompareTag("Fruit"))
@@ -59,7 +60,7 @@ public class PowerUpUniversalScript : MonoBehaviour
     }
     #endregion
     #region Meloen
-    IEnumerator Resett(Movement GhostMovement, Collider col)
+    private IEnumerator Resett(Movement GhostMovement, Collider col)
     {
         yield return new WaitForSeconds(duratation);
         GhostMovement.reversecontrols = false;
@@ -67,7 +68,7 @@ public class PowerUpUniversalScript : MonoBehaviour
     }
     #endregion
     #region Sinasappel
-    IEnumerator Programma(Collider col)
+    private IEnumerator Programma(Collider col)
     {
         Switches(0f, 0,col);
         yield return new WaitForSeconds((float)8 / 9 * duratation);
@@ -81,7 +82,7 @@ public class PowerUpUniversalScript : MonoBehaviour
         }
         Switches(1f, 1,col);
     }
-    public void Switches(float transparancy, int matrialuse, Collider col)
+    private void Switches(float transparancy, int matrialuse, Collider col)
     {
         foreach (GameObject Maze in GameObject.FindGameObjectsWithTag("Maze"))
         {

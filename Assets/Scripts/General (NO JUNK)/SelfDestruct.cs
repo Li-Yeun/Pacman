@@ -5,11 +5,10 @@ using UnityEngine;
 public class SelfDestruct : MonoBehaviour
 {
     [SerializeField] float time;
-    float realtime = 0;
+    private float timer = 0f;
 
     void Start()
     {
-
         if (gameObject.name == "Water Trippy(Clone)")
         {
             Camera[] camera = FindObjectsOfType<Camera>();
@@ -26,8 +25,8 @@ public class SelfDestruct : MonoBehaviour
 
     private void Update()
     {
-        realtime += Time.deltaTime;
-        if (realtime >= time)
+        timer += Time.deltaTime;
+        if (timer >= time)
         {
             if (gameObject.name == "Water Trippy(Clone)")
             {
@@ -60,9 +59,5 @@ public class SelfDestruct : MonoBehaviour
         }
         FindObjectOfType<EnvironementalEvents>().ResetTimer();
         Destroy(gameObject);
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy")) { Reset(); }
     }
 }

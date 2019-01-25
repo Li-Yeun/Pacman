@@ -5,7 +5,7 @@ using UnityEngine;
 public class kersTimer : MonoBehaviour {
 
     //start de kers UI animatie
-    Animator anim;
+    private Animator anim;
 
     void Start()
     {

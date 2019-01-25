@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class AppelPowerup : NetworkBehaviour
+public class KersPowerup : NetworkBehaviour
 {
-
-    [SerializeField] Transform parent;
-
     void OnTriggerEnter(Collider col)
     {
         if (!hasAuthority)
@@ -24,7 +21,7 @@ public class AppelPowerup : NetworkBehaviour
     }
 
     [CommandAttribute]
-    public void CmdCollision()
+    private void CmdCollision()
     {
         RpcCollision();
     }
@@ -32,28 +29,28 @@ public class AppelPowerup : NetworkBehaviour
     [ClientRpcAttribute]
     private void RpcCollision()
     {
-        PlayerOnline[] Player = FindObjectsOfType<PlayerOnline>();
-        foreach (PlayerOnline player in Player)
-        {
-            player.SpawnDecoyBool = true;
-        }
         ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
         fruitscore.FruitPoints();
-        Destroy(gameObject);
-        if (FindObjectsOfType<appelTimer>().Length == 1)
+        playerhealth Playerhealth = GameObject.FindObjectOfType<playerhealth>();
+        Playerhealth.health++;
+        if (FindObjectsOfType<kersTimer>().Length == 1)
         {
-            appelTimer timerAnimation = FindObjectOfType<appelTimer>();
-            timerAnimation.AppelTimer();
+            kersTimer timerAnimation = FindObjectOfType<kersTimer>();
+            timerAnimation.KersTimer();
         }
         PlayerOnline[] Players = FindObjectsOfType<PlayerOnline>();
         foreach (PlayerOnline player in Players)
         {
             player.AddToGridList((int)gameObject.transform.localPosition.x, (int)gameObject.transform.localPosition.z);
         }
+        Destroy(gameObject);
     }
 
     public void Reset()
     {
         Destroy(gameObject);
     }
+
+
+
 }

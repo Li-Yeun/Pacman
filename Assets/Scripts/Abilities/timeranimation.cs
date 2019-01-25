@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class timeranimation : MonoBehaviour {
     //start de jump UI animatie
-    Animator anim;
+    private Animator anim;
 
     void Start()
     {
@@ -12,5 +12,7 @@ public class timeranimation : MonoBehaviour {
     }
 
     public void JumpTimer()
-    { anim.SetTrigger("JumpTimer"); }
+    {
+        anim.SetTrigger("JumpTimer");
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class viseonTimer : MonoBehaviour {
 
     //start de increased viseon Timer UI animatie
-    Animator anim;
+    private Animator anim;
 
     void Start()
     {

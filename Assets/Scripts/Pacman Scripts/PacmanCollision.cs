@@ -7,14 +7,14 @@ public class PacmanCollision : NetworkBehaviour {
 
     [Tooltip("FX prefab on player")] [SerializeField] GameObject DeathFX;
     [SerializeField] Transform parent;
-    GhostStates pacmanAttacking;
+    private GhostStates pacmanAttacking;
 
-    public void Start()
+    void Start()
     {
         pacmanAttacking = FindObjectOfType<GhostStates>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (!hasAuthority)
             return;
@@ -41,7 +41,7 @@ public class PacmanCollision : NetworkBehaviour {
 
     }
 
-    IEnumerator ResetCollisionDetection(Collision collision)
+    private IEnumerator ResetCollisionDetection(Collision collision)
     {
         yield return new WaitForSeconds(1f);
         Physics.IgnoreCollision(collision.collider, GetComponent<Collider>(),false);
@@ -52,6 +52,7 @@ public class PacmanCollision : NetworkBehaviour {
     {
         RpcDeathSequence();
     }
+
     [ClientRpcAttribute]
     private void RpcDeathSequence()
     {

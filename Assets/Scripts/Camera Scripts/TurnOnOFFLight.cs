@@ -5,12 +5,12 @@ using UnityEngine;
 // The camera that this script is attachted too, will not render certain light sources.
 public class TurnOnOFFLight : MonoBehaviour { 
 
-    Light[] DisableLights;    // The light sources that the camera doesn't render
+    private Light[] DisableLights;    // The light sources that the camera doesn't render
 
     public void Start()
     {
         // Find all the lights that you don't want to render on this camera
-        if (GameObject.FindGameObjectsWithTag("Player").Length == 1)
+        if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             DisableLights = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Light>();
         }

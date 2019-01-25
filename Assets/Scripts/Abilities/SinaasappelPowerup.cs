@@ -12,7 +12,7 @@ public class SinaasappelPowerup : NetworkBehaviour
 {
     // Variable for measuring how long the powerup has been running for (in seconds)
     [SerializeField] Material transmaterial, defaulthMaterial;
-    public float duration = 15;
+    [SerializeField] float duration = 15;
 
     void OnTriggerEnter(Collider col)
     {
@@ -33,7 +33,7 @@ public class SinaasappelPowerup : NetworkBehaviour
 
 
     [CommandAttribute]
-    public void CmdCollision()
+    private void CmdCollision()
     {
         RpcCollision();
     }
@@ -59,7 +59,7 @@ public class SinaasappelPowerup : NetworkBehaviour
 
 
 
-    IEnumerator Programma()
+    private IEnumerator Programma()
     {
         Switches(0f, 0);
         yield return new WaitForSeconds((float)8 / 9 * duration);
@@ -79,7 +79,7 @@ public class SinaasappelPowerup : NetworkBehaviour
         }
     }
 
-    public void Switches(float transparancy, int matrialuse)
+    private void Switches(float transparancy, int matrialuse)
     {
         foreach (GameObject Maze in GameObject.FindGameObjectsWithTag("Maze"))
         {
