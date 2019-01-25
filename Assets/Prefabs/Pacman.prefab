@@ -231,9 +231,7 @@ GameObject:
   - component: {fileID: 114263557970263148}
   - component: {fileID: 114067745242666560}
   - component: {fileID: 114071927505651976}
-  - component: {fileID: 114557836394759504}
   - component: {fileID: 114860781626154706}
-  - component: {fileID: 114675716620582434}
   - component: {fileID: 114846026965846588}
   m_Layer: 0
   m_Name: Pacman
@@ -732,9 +730,7 @@ MonoBehaviour:
   Jumper: {fileID: 114276165710159438}
   JumperOuterWalls: {fileID: 114074681834381426}
   TeleporterClose: {fileID: 114165193448897144}
-  AnimationPlaying: 0
   JumpCooldown: 15
-  Jumping: 0
 --- !u!114 &114071927505651976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -751,7 +747,6 @@ MonoBehaviour:
   SandStorm: {fileID: 100000, guid: 1f7aa4d40edff6e48b549003cad031e1, type: 2}
   Water: {fileID: 1516446164514912, guid: d6caec8eabb18c04baf968a382a58451, type: 2}
   Confusion: {fileID: 1167075366954008, guid: 79fa616c2031b4746842d6c8904f9f8d, type: 2}
-  parent: {fileID: 0}
   EventCooldown: 60
 --- !u!114 &114074681834381426
 MonoBehaviour:
@@ -764,9 +759,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: BoundingWall
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114136721807397628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -778,9 +773,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114148793324972426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -792,9 +787,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114165193448897144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -806,9 +801,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: TeleportShit
   Secondstring: TeleportShit
+  Collision: 0
 --- !u!114 &114263557970263148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -833,9 +828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: Maze
+  Collision: 0
 --- !u!114 &114330916325753022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -852,25 +847,8 @@ MonoBehaviour:
   left: {fileID: 114148793324972426}
   right: {fileID: 114136721807397628}
   Movement: {fileID: 114989158263291388}
-  rb: {fileID: 54224212824454748}
   AnimationLock: 0
-  Teleporterlock: 0
   currentDirection: 0
-  p_Direction: 0
-  LockMovement: 0
-  currentKey: 0
-  p_Key: 0
---- !u!114 &114557836394759504
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1990302627283604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665a43a6645044244b4cffead813fc7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114627085745521892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -903,17 +881,6 @@ MonoBehaviour:
     i15: 222
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114675716620582434
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1990302627283604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c5b67c03d58074584a854643e33d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114846026965846588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1008,9 +975,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: TeleportShit
   Secondstring: TeleportShit
+  Collision: 0
 --- !u!135 &135796094062668830
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4360736156115670}
   - component: {fileID: 198993138532747096}
   - component: {fileID: 199452834563100976}
-  - component: {fileID: 114925814566133772}
   m_Layer: 0
   m_Name: Speed Boost
   m_TagString: Event
@@ -3918,9 +3917,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114065074491948878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3932,7 +3931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebbde2a4b7c81f4f956339e6694343d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimePassed: 0
 --- !u!114 &114147520016679684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3944,9 +3942,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114397508164756488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3991,7 +3989,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Red
-  animation: {fileID: 0}
   front: {fileID: 114043464025606332}
   left: {fileID: 114147520016679684}
   right: {fileID: 114624426221438624}
@@ -4005,9 +4002,10 @@ MonoBehaviour:
   - q
   - e
   IncreaseVisionLight: {fileID: 0}
+  Vision: {fileID: 0}
+  animation: {fileID: 0}
   dead: 0
   reversecontrols: 0
-  Vision: {fileID: 0}
   Cooldown:
   - 5
   - 5
@@ -4029,9 +4027,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114645502528859412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4095,38 +4093,6 @@ MonoBehaviour:
   maxPositionDifferenceForVelocitySyncing: 10
   ownerChangeIndicator: 1
   receivedStatesCounter: 0
---- !u!114 &114925814566133772
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1022597665250158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 172
-    i1: 228
-    i2: 190
-    i3: 211
-    i4: 53
-    i5: 119
-    i6: 116
-    i7: 36
-    i8: 218
-    i9: 46
-    i10: 217
-    i11: 21
-    i12: 228
-    i13: 189
-    i14: 67
-    i15: 102
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
 --- !u!114 &114970671889942598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4138,7 +4104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebbde2a4b7c81f4f956339e6694343d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimePassed: 0
 --- !u!122 &122270002973126454
 Halo:
   m_ObjectHideFlags: 1

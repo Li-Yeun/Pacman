@@ -1169,7 +1169,6 @@ GameObject:
   - component: {fileID: 4574138699042910}
   - component: {fileID: 198857745860285222}
   - component: {fileID: 199447151377397706}
-  - component: {fileID: 114026471045086254}
   m_Layer: 10
   m_Name: Pink Ability Fx
   m_TagString: Event
@@ -3994,41 +3993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
---- !u!114 &114026471045086254
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1901389463113116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 152
-    i1: 90
-    i2: 6
-    i3: 33
-    i4: 134
-    i5: 133
-    i6: 46
-    i7: 148
-    i8: 42
-    i9: 9
-    i10: 32
-    i11: 163
-    i12: 22
-    i13: 245
-    i14: 83
-    i15: 93
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
+  Collision: 0
 --- !u!114 &114105268231700296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4040,9 +4007,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114123856681854896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4097,7 +4064,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebbde2a4b7c81f4f956339e6694343d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimePassed: 0
 --- !u!114 &114661017570428566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4109,9 +4075,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114676679566225608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4174,10 +4140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9686dbcb6a1b6604a8b83996b6a5708f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GhostWalking: 0
-  GhostWalkingCD: 0
   GhostWalkingDuration: 5
   GhostWalkingCDDuration: 15
+  GhostWalking: 0
+  GhostWalkingCD: 0
 --- !u!114 &114837068307555796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4201,7 +4167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Pink
-  animation: {fileID: 0}
   front: {fileID: 114004567486766802}
   left: {fileID: 114661017570428566}
   right: {fileID: 114105268231700296}
@@ -4215,9 +4180,10 @@ MonoBehaviour:
   - q
   - e
   IncreaseVisionLight: {fileID: 0}
+  Vision: {fileID: 0}
+  animation: {fileID: 0}
   dead: 0
   reversecontrols: 0
-  Vision: {fileID: 0}
   Cooldown:
   - 5
   - 5
@@ -4239,7 +4205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebbde2a4b7c81f4f956339e6694343d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimePassed: 0
 --- !u!114 &114996761220882728
 MonoBehaviour:
   m_ObjectHideFlags: 1
