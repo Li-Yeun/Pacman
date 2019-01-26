@@ -212,24 +212,23 @@ public class Movement : NetworkBehaviour {
         }
         else if (Input.GetKey(KeyCode.Space) && !Abilities[1] && cooldowncounter[1] >= Cooldown[1] && (name == "Red")) //todo Orange weghalen en invisible ability geven
         {
+            CmdActivateSpeedParticles();
             Abilities[1] = true;
             speedTimer timerAnimation = FindObjectOfType<speedTimer>();
             timerAnimation.SpeedTimer();
-            GetComponentInChildren<ParticleSystem>().Play();
         }
     }
     private void DoAbilities()
     {
         if (Abilities[0])
         {
-            IncreaseVisionLight.SetActive(true);
-            Vision.activated = true;
+            CmdActivateVision();
             cooldowncounter[0] = 0;
             DurationCounter[0] += Time.deltaTime;
             if(DurationCounter[0] >= Duration[0])
             {
+                CmdDeactivateVision();
                 Abilities[0] = false;
-                Vision.activated = false;
                 DurationCounter[0] = 0;
             }
         }
@@ -245,7 +244,7 @@ public class Movement : NetworkBehaviour {
             DurationCounter[1] += Time.deltaTime;
             if(DurationCounter[1] >= Duration[1])
             {
-                GetComponentInChildren<ParticleSystem>().Stop();
+                CmdDeActivateSpeedParticles();
                 Abilities[1] = false;
                 SpeedMultiplier = 1;
                 DurationCounter[1] = 0;
@@ -256,6 +255,51 @@ public class Movement : NetworkBehaviour {
             cooldowncounter[1] += Time.deltaTime;
         }
 
+    }
+
+    [CommandAttribute]
+    private void CmdActivateVision()
+    {
+        RpcActivateVision();
+    }
+    [ClientRpcAttribute]
+    private void RpcActivateVision()
+    {
+        IncreaseVisionLight.SetActive(true);
+        Vision.activated = true;
+    }
+
+    [CommandAttribute]
+    private void CmdDeactivateVision()
+    {
+        RpcDeactivateVision();
+    }
+    [ClientRpcAttribute]
+    private void RpcDeactivateVision()
+    {
+        Vision.activated = false;
+    }
+
+    [CommandAttribute]
+    private void CmdActivateSpeedParticles()
+    {
+        RpcActivateSpeedParticles();
+    }
+    [ClientRpcAttribute]
+    private void RpcActivateSpeedParticles()
+    {
+        GetComponentInChildren<ParticleSystem>().Play();
+    }
+
+    [CommandAttribute]
+    private void CmdDeActivateSpeedParticles()
+    {
+        RpcDeActivateSpeedParticles();
+    }
+    [ClientRpcAttribute]
+    private void RpcDeActivateSpeedParticles()
+    {
+        GetComponentInChildren<ParticleSystem>().Stop();
     }
 
     public void Reset()
