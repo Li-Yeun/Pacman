@@ -5,7 +5,8 @@ using UnityEngine.Networking;
 
 public class Invisibiltyy : NetworkBehaviour
 {
-    private bool Invis = false, Orange = false , Lock = false;
+    public bool Invis = false;
+    private bool Orange = false , Lock = false;
     private Light[] lights;
     private GhostStates[] ghostStates;
     public void Start()
@@ -24,8 +25,8 @@ public class Invisibiltyy : NetworkBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && Orange && Lock == false)
         {
             Lock = true;
-            StartCoroutine(Invisible()); 
-            GetComponentInChildren<ParticleSystem>().Play();
+            CmdActivateInvisibleParticles();
+            StartCoroutine(Invisible());   
         }
         if (Orange)
         {
@@ -46,7 +47,6 @@ public class Invisibiltyy : NetworkBehaviour
     {
         yield return new WaitForSeconds(0.7f);
         CmdInvis();
-
     }
     [CommandAttribute]
     public void CmdInvis()
@@ -57,8 +57,7 @@ public class Invisibiltyy : NetworkBehaviour
     private void RpcInvis()
     {
         Invis = !Invis;
-        Lock = !Lock;
-        
+        Lock = false;
         foreach (GhostStates ghost in ghostStates)
         {
             if (!Invis)
@@ -81,12 +80,15 @@ public class Invisibiltyy : NetworkBehaviour
 
                 }
             }
-            else if (Orange)
+            else
             {
-                SetLayerRecursively(ghost.gameObject, 20);
+                if (Orange)
+                {
+                    SetLayerRecursively(ghost.gameObject, 20);
+                }
+                else if (!ghost.gameObject.CompareTag("3Dview") && !Orange)
+                { SetLayerRecursively(ghost.gameObject, 20); }
             }
-            else if (!ghost.gameObject.CompareTag("3Dview") && !Orange)
-            { SetLayerRecursively(ghost.gameObject, 20); }
         }
 
         if (Orange)
@@ -106,10 +108,48 @@ public class Invisibiltyy : NetworkBehaviour
         }
     }
 
+    [CommandAttribute]
+    private void CmdActivateInvisibleParticles()
+    {
+        RpcActivateInvisibleParticles();
+    }
+    [ClientRpcAttribute]
+    private void RpcActivateInvisibleParticles()
+    {
+        GetComponentInChildren<ParticleSystem>().Play();
+    }
+
     public void Reset()
     {
-        Invis = false;
-        CmdInvis();
+        foreach (GhostStates ghost in ghostStates)
+        {
+            if (ghost.gameObject.CompareTag("3Dview") && Orange)
+            {
+                SetLayerRecursively(ghost.gameObject, 11);
+            }
+            else if (!ghost.gameObject.CompareTag("3Dview"))
+            {
+                switch (gameObject.GetComponent<Movement>().name)
+                {
+                    case "Pink":
+                        SetLayerRecursively(ghost.gameObject, 18);
+                        break;
+                    case "Orange":
+                        SetLayerRecursively(ghost.gameObject, 19);
+                        break;
+                }
+            }
+        }
+
+        if (Orange)
+        {
+            foreach (Light light in lights)
+            {
+                light.enabled = true;
+            }
+        }
+
         Lock = false;
+        Invis = false;
     }
 }
