@@ -24,6 +24,7 @@ public class HUD : MonoBehaviour {
     public GameObject GeneralHUD;
     public GameObject invisibileT, invisibileF;
     [SerializeField] GameObject SpeedAbiliy, MovingThroughWallsAbility, IncreaseVisionAbility;
+    [SerializeField] public GameObject CollisionText;
     //opens pausescreen
     public void Pause()
     {

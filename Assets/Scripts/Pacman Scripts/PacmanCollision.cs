@@ -7,11 +7,14 @@ public class PacmanCollision : NetworkBehaviour {
 
     [Tooltip("FX prefab on player")] [SerializeField] GameObject DeathFX;
     [SerializeField] Transform parent;
+    [SerializeField] GameObject[] FireWorks;
     private GhostStates pacmanAttacking;
+    private HUD UI;
 
     void Start()
     {
         pacmanAttacking = FindObjectOfType<GhostStates>();
+        UI = FindObjectOfType<HUD>();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -30,7 +33,7 @@ public class PacmanCollision : NetworkBehaviour {
                 StartCoroutine(ResetCollisionDetection(collision));
                 if (!pacmanAttacking.IsVulnerable)
                 {
-                    CmdDeathSequence();
+                    CmdDeathSequence(collision.gameObject);
                 }
                 break;
             case "Friendly":
@@ -48,18 +51,37 @@ public class PacmanCollision : NetworkBehaviour {
     }
 
     [CommandAttribute]
-    private void CmdDeathSequence()
+    private void CmdDeathSequence(GameObject Ghost)
     {
-        RpcDeathSequence();
+        RpcDeathSequence(Ghost);
     }
 
     [ClientRpcAttribute]
-    private void RpcDeathSequence()
+    private void RpcDeathSequence(GameObject Ghost)
     {
         GameObject fx = Instantiate(DeathFX, transform.position, Quaternion.identity);
         fx.transform.parent = parent;
         if (gameObject.tag == "Player")
         {
+            switch (Ghost.GetComponent<Movement>().name)
+            {
+                case "Blue":
+                    KillText("Blue");
+                    Instantiate(FireWorks[0]);
+                    break;
+                case "Red":
+                    KillText("Red");
+                    Instantiate(FireWorks[1]);
+                    break;
+                case "Pink":
+                    KillText("Pink");
+                    Instantiate(FireWorks[2]);
+                    break;
+                case "Orange":
+                    KillText("Orange");
+                    Instantiate(FireWorks[3]);
+                    break;
+            }
             playerhealth Health = FindObjectOfType<playerhealth>();
             Health.DecreaseHealth();
             SendMessage("StartDeathSequence");
@@ -70,6 +92,13 @@ public class PacmanCollision : NetworkBehaviour {
             Destroy(DecoyCamera);
             Destroy(gameObject);
         }
+        
+    }
+
+    private void KillText(string Ghost)
+    {
+        UI.CollisionText.SetActive(true);
+        UI.CollisionText.GetComponent<DeathFeed>().GhostKilledPacman(Ghost);
     }
 
     public void GhostInstantiated()

@@ -39,7 +39,10 @@ public class SelfDestruct : MonoBehaviour
                         cam.orthographic = true;
                 }
             }
-            FindObjectOfType<EnvironementalEvents>().ResetTimer();
+
+            if(FindObjectOfType<EnvironementalEvents>() != null)
+                FindObjectOfType<EnvironementalEvents>().ResetTimer();
+
             Destroy(gameObject);
         }
     }
@@ -57,7 +60,10 @@ public class SelfDestruct : MonoBehaviour
                     cam.orthographic = true;
             }
         }
-        FindObjectOfType<EnvironementalEvents>().ResetTimer();
+
+        if (FindObjectOfType<EnvironementalEvents>() != null)
+            FindObjectOfType<EnvironementalEvents>().ResetTimer();
+
         Destroy(gameObject);
     }
 }

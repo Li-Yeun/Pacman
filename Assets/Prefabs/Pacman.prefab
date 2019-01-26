@@ -817,6 +817,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeathFX: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 2}
   parent: {fileID: 0}
+  FireWorks:
+  - {fileID: 1089255455375132, guid: 18561759d604b0a468360209185a7316, type: 2}
+  - {fileID: 1641820613052780, guid: f4aff9fdbdbeefb4b8cf5ee95dba932e, type: 2}
+  - {fileID: 1040950608922272, guid: 0d34cf208605d31428e78e4641e6b6c3, type: 2}
+  - {fileID: 1299397204202514, guid: 55219441119fb9349957f98d9cae24c2, type: 2}
 --- !u!114 &114276165710159438
 MonoBehaviour:
   m_ObjectHideFlags: 1
