@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class SpawnWater : NetworkBehaviour {
+public class SpawnWater : NetworkBehaviour
+{
 
-    [SerializeField] GameObject WaterFirstPerson, WaterThirdPerson, Waterfall;      // Spawnable Prefabs
-    [SerializeField] GameObject Pacman;
-    [SerializeField] GameObject[] Ghosts;
-    private float PacmanSpeed, GhostSpeed;   // The defaulth speed of Pacman && The defaulth speed of the Ghosts
+    [SerializeField] GameObject WaterFirstPerson, WaterThirdPerson, Waterfall;      // De references van de water prefabs die gespawned moeten worden
+    private GameObject Pacman;
+    private GameObject[] Ghosts;
+    private float PacmanSpeed, GhostSpeed;                                          // De standaard snelheden van Pacman en de Ghosts
 
-    void Start () {
+    void Start()
+    {
 
         Camera[] camera = FindObjectsOfType<Camera>();
         foreach (Camera cam in camera)
@@ -31,7 +33,7 @@ public class SpawnWater : NetworkBehaviour {
         SpawnPrefab(WaterFirstPerson, "SlowDownMovement", 9f);
         SpawnPrefab(WaterThirdPerson, "ResetMovement", 37f);
         Invoke("ResetWater", 34f);
-        Instantiate(Waterfall);
+        Instantiate(Waterfall, GameObject.Find("EveryObject").transform);
 
     }
 
@@ -47,13 +49,13 @@ public class SpawnWater : NetworkBehaviour {
     }
     private void SpawnPrefab(GameObject Event, string Method, float time)
     {
-        GameObject gameObject = Instantiate(Event);
+        GameObject gameObject = Instantiate(Event, GameObject.Find("EveryObject").transform);
         Invoke(Method, time);
         Destroy(gameObject, 40f);
     }
     private void SlowDownMovement()
     {
-        SetMovementSpeed(1.2f,1);
+        SetMovementSpeed(1.2f, 1);
     }
 
     private void SetMovementSpeed(float PacmanMovementSpeed, float GhostMovementSpeed)
@@ -84,16 +86,6 @@ public class SpawnWater : NetworkBehaviour {
 
     public void Reset()
     {
-        Camera[] camera = FindObjectsOfType<Camera>();
-        foreach (Camera cam in camera)
-        {
-            if (cam == null)
-                return;
-            else if (cam.name == "Top Down Camera(Clone)")
-                cam.orthographic = true;
-        }
-        FindObjectOfType<EnvironementalEvents>().ResetTimer();
-        SetMovementSpeed(PacmanSpeed, GhostSpeed);
         Destroy(gameObject);
     }
 }

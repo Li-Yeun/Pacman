@@ -32,7 +32,7 @@ public class Movement : NetworkBehaviour {
     public float[] Cooldown, Duration;        //instelbare cooldown per ability || instelbare Duration per ability
 
     private bool goleft, goright;
-    private float RotationCooldown = 0, respawntimer = 0, SpeedMultiplier = 1;    //tijd voordat er weer gedraaid kan worden
+    private float RotationCooldown = 0, respawntimer = 0, SpeedMultiplier = 1, defaulthSpeed;    //tijd voordat er weer gedraaid kan worden
     private Transform respawn;
     private Vector3 Velocity;                                          //beweegsnelheid
     private bool[] Abilities;               //welke ability geactiveerd is
@@ -48,6 +48,7 @@ public class Movement : NetworkBehaviour {
         DurationCounter = new float[4];
         FindObjectOfType<General>().GhostBroadcast();
         gameObject.transform.position = respawn.position;
+        defaulthSpeed = speed;
     }
 
     
@@ -260,6 +261,15 @@ public class Movement : NetworkBehaviour {
     public void Reset()
     {
         reversecontrols = false;
+        speed = defaulthSpeed;
+        Camera[] camera = FindObjectsOfType<Camera>();
+        foreach (Camera cam in camera)
+        {
+            if (cam == null)
+                return;
+            else if (cam.name == "Top Down Camera(Clone)")
+                cam.orthographic = true;
+        }
         DoRespawn();
     }
 }

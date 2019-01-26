@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 199903285884917430}
   - component: {fileID: 114180299715079192}
   - component: {fileID: 114263504542970002}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Smoke Generator
   m_TagString: Event
   m_Icon: {fileID: 0}

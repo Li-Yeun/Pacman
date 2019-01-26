@@ -2,25 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleScript : MonoBehaviour {
+public class ParticleScript : MonoBehaviour
+{
 
     private ParticleSystem particleSystem;
-    void Start() {
+
+    void Start()
+    {
         particleSystem = GetComponent<ParticleSystem>();
+        Invoke("TurnLoopOff", 10f);
     }
 
-    // Update is called once per frame
-    void Update() {
-        Invoke("TurnOffSmokes", 10f);
-    }
-
-    private void TurnOffSmokes()
+    // De loop property van het particle systeem uitzetten en dan na x secondes het particle object verwijderen
+    private void TurnLoopOff()
     {
         particleSystem.loop = false;
-        Invoke("DestroySmoke", 11f);
+        Invoke("DestroyParticle", 11f);
     }
 
-    private void DestroySmoke()
+    // Methoden om het particle object te verwijderen
+    private void DestroyParticle()
     {
         if (gameObject.name != "WaterFall")
             FindObjectOfType<EnvironementalEvents>().ResetTimer();
@@ -30,9 +31,6 @@ public class ParticleScript : MonoBehaviour {
 
     public void Reset()
     {
-        if (gameObject.name != "WaterFall")
-            FindObjectOfType<EnvironementalEvents>().ResetTimer();
-
         Destroy(gameObject);
     }
 }

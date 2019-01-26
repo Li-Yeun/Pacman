@@ -20,7 +20,7 @@ public class PacmanMovement : NetworkBehaviour {
 
     private bool Teleporterlock = false, LockMovement;
     private KeyCode currentKey, p_Key;
-    private Vector3 resetSpeed;
+    private Vector3 defaulthSpeed;
     private Rigidbody rb;
     private GameObject[] Ghosts, Spawners;
     private GameObject Spawner;
@@ -40,7 +40,7 @@ public class PacmanMovement : NetworkBehaviour {
         rb = GetComponent<Rigidbody>();
         currentDirection = 0;
         LockMovement = false;
-        resetSpeed = Speed;
+        defaulthSpeed = Speed;
         FindObjectOfType<General>().PacmanBroadcast();
         if(FindObjectsOfType<Movement>().Length == 4)
         {
@@ -201,8 +201,8 @@ public class PacmanMovement : NetworkBehaviour {
 
     public void Reset()
     {
-        Speed = resetSpeed;
+        Speed = defaulthSpeed;
         StartDeathSequence();
-        transform.position = new Vector3(3f, 2f, -2f);
+        GetComponent<SmoothSync>().teleportAnyObjectFromServer(new Vector3(3f, 2f, -2f), gameObject.transform.rotation, gameObject.transform.localScale);
     }
 }
