@@ -25,9 +25,11 @@ public class SpectateCamera : MonoBehaviour {
             }
         }
 
+        /*
         if (Input.GetKeyDown("2"))
         {
             UI.SetActive(!UI.activeSelf);
         }
+        */
     }
 }

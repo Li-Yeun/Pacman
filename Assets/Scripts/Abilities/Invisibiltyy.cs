@@ -119,10 +119,12 @@ public class Invisibiltyy : NetworkBehaviour
         GetComponentInChildren<ParticleSystem>().Play();
     }
 
-    public void Reset()
+    public void Reset() 
     {
         foreach (GhostStates ghost in ghostStates)
         {
+            if (ghost == null)
+                return;
             if (ghost.gameObject.CompareTag("3Dview") && Orange)
             {
                 SetLayerRecursively(ghost.gameObject, 11);

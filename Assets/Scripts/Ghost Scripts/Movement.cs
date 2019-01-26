@@ -124,7 +124,7 @@ public class Movement : NetworkBehaviour {
         if (respawntimer >= Respawntime)
         {
             dead = false;
-            GetComponent<SmoothSync>().teleportAnyObjectFromServer(respawn.transform.position, Quaternion.Euler(0,0,0), gameObject.transform.localScale);
+            GetComponent<SmoothSync>().teleportAnyObjectFromServer(respawn.transform.position, Quaternion.Euler(0,0,0), gameObject.transform.localScale); // todo error als 5 player gejoined zijn
             respawntimer = 0;
         }
     }
@@ -210,7 +210,7 @@ public class Movement : NetworkBehaviour {
         {
             Abilities[0] = true;
         }
-        else if (Input.GetKey(KeyCode.Space) && !Abilities[1] && cooldowncounter[1] >= Cooldown[1] && (name == "Red")) //todo Orange weghalen en invisible ability geven
+        else if (Input.GetKey(KeyCode.Space) && !Abilities[1] && cooldowncounter[1] >= Cooldown[1] && (name == "Red"))
         {
             CmdActivateSpeedParticles();
             Abilities[1] = true;

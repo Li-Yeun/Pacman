@@ -87,7 +87,8 @@ public class AnimatorScript : NetworkBehaviour {
         if (LockMovements)
             Pacman.AnimationLock = true;
         Invoke("EndAnimation", duratation);
-        JumpLight.enabled = true;
+        if (JumpLight != null)
+            JumpLight.enabled = true;
     }
 
     public void EndAnimation()
@@ -98,7 +99,8 @@ public class AnimatorScript : NetworkBehaviour {
         Pacman.Position = new Vector3(Pacman.Position.x, 2, Pacman.Position.z);
         Pacman.AnimationLock = false;
         AnimationPlaying = false;
-        JumpLight.enabled = false;
+        if(JumpLight != null)
+            JumpLight.enabled = false;
     }
 
     [CommandAttribute]
