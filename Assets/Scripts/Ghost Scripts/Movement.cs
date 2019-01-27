@@ -42,7 +42,15 @@ public class Movement : NetworkBehaviour {
     void Start ()
     {
         gameObject.transform.parent = GameObject.FindGameObjectWithTag("Ghost Parent").transform;
-        respawn = GameObject.FindGameObjectWithTag("Respawn").transform;
+        GameObject[] Respawns = GameObject.FindGameObjectsWithTag("Respawn");
+        foreach(GameObject Respawn in Respawns)
+        {
+            if(Respawn.name == name)
+            {
+                respawn = Respawn.transform;
+            }
+        }
+
         Abilities = new bool[4];
         cooldowncounter = new float[4];
         DurationCounter = new float[4];
