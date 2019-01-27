@@ -3999,8 +3999,8 @@ MonoBehaviour:
   dead: 0
   reversecontrols: 0
   Cooldown:
-  - 5
-  - 5
+  - 15
+  - 15
   - 0
   - 0
   Duration:
@@ -4025,7 +4025,6 @@ MonoBehaviour:
   Speed: 1
   lt: {fileID: 108319232590905412}
   activated: 0
-  tr: {fileID: 4759502236435502}
 --- !u!114 &114616068978091142
 MonoBehaviour:
   m_ObjectHideFlags: 1
