@@ -30,10 +30,7 @@ public class PelletCounter : MonoBehaviour {
         pelletCounter.text = "X " + counter;
         if (counter <= 0)
         {
-            pacmanwins.SetActive(true);
-           // PlayerOnline Player = FindObjectOfType<PlayerOnline>();
-            //Player.CmdReset();
-            
+            pacmanwins.SetActive(true);   
         }
     }
 

@@ -33,8 +33,6 @@ public class playerhealth : MonoBehaviour {
     void Dead()
     {
         ghostwins.SetActive(true);
-        //PlayerOnline Player = FindObjectOfType<PlayerOnline>();
-        //Player.CmdReset();
     }
 
 

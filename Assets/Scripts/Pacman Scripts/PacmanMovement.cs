@@ -44,7 +44,7 @@ public class PacmanMovement : NetworkBehaviour {
         FindObjectOfType<General>().PacmanBroadcast();
         if(FindObjectsOfType<Movement>().Length == 4)
         {
-            FindObjectOfType<General>().ResetBroadCast();
+            Invoke("ResetGameWithDelay", 3f);
         }
     }
 
@@ -195,8 +195,13 @@ public class PacmanMovement : NetworkBehaviour {
     {
         if (FindObjectsOfType<Movement>().Length == 4)
         {
-            FindObjectOfType<General>().ResetBroadCast();
+            Invoke("ResetGameWithDelay", 3f);
         }
+    }
+
+    private void ResetGameWithDelay()
+    {
+        FindObjectOfType<General>().ResetBroadCast();
     }
 
     public void Reset()
