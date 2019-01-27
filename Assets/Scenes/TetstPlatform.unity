@@ -5529,6 +5529,7 @@ GameObject:
   - component: {fileID: 1233736875}
   - component: {fileID: 1233736874}
   - component: {fileID: 1233736873}
+  - component: {fileID: 1233736877}
   m_Layer: 5
   m_Name: Fruitsdisplay
   m_TagString: Untagged
@@ -5640,6 +5641,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1233736871}
   m_CullTransparentMesh: 0
+--- !u!95 &1233736877
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1233736871}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b7b4dc217a341d4eb0c546592c78398, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1244360349
 GameObject:
   m_ObjectHideFlags: 0

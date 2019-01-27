@@ -13,6 +13,7 @@ public class kersTimer : MonoBehaviour {
     }
 
     public void KersTimer()
-    { anim.SetTrigger("KersTimer"); }
+    {
+        anim.Rebind(); anim.Play("kerstimer"); }
 
 }

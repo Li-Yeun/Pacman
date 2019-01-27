@@ -13,5 +13,6 @@ public class sinaasTimer : MonoBehaviour {
     }
 
     public void OrangeTimer()
-    { anim.SetTrigger("OrangeTimer"); }
+    { anim.Rebind(); anim.Play("orangetimer"); }
+    
 }

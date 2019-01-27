@@ -13,5 +13,5 @@ public class speedTimer : MonoBehaviour {
     }
 
     public void SpeedTimer()
-    { anim.SetTrigger("SpeedTimer"); }
+    { anim.Rebind(); anim.Play("skilltimer_white"); }
 }

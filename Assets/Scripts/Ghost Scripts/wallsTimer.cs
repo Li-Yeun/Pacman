@@ -13,6 +13,6 @@ public class wallsTimer : MonoBehaviour {
     }
 
     public void WallsTimer()
-    { anim.SetTrigger("WallsTimer"); }
+    { anim.Rebind(); anim.Play("skilltimer_white"); }
 }
 

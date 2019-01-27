@@ -12,5 +12,7 @@ public class aardbeiTimer : MonoBehaviour
     }
 
     public void AardbeiTimer()
-    { anim.SetTrigger("AardbeiTimer"); }
+    {
+        anim.Rebind();
+        anim.Play("aardbijtimer"); }
 }

@@ -13,5 +13,5 @@ public class viseonTimer : MonoBehaviour {
     }
 
     public void ViseonTimer()
-    { anim.SetTrigger("ViseonTimer"); }
+    { anim.Rebind(); anim.Play("skilltimer_white"); }
 }

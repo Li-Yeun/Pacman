@@ -217,13 +217,16 @@ public class Movement : NetworkBehaviour {
         if (Input.GetKey(KeyCode.Space) && !Abilities[0] && cooldowncounter[0] >= Cooldown[0] && name == "Blue")
         {
             Abilities[0] = true;
+            if (FindObjectOfType<viseonTimer>() != null)
+            {
+                viseonTimer timerAnimation = FindObjectOfType<viseonTimer>();
+                timerAnimation.ViseonTimer();
+            }
         }
         else if (Input.GetKey(KeyCode.Space) && !Abilities[1] && cooldowncounter[1] >= Cooldown[1] && (name == "Red"))
         {
             CmdActivateSpeedParticles();
             Abilities[1] = true;
-            speedTimer timerAnimation = FindObjectOfType<speedTimer>();
-            timerAnimation.SpeedTimer();
         }
     }
     private void DoAbilities()
@@ -275,6 +278,7 @@ public class Movement : NetworkBehaviour {
     {
         IncreaseVisionLight.SetActive(true);
         Vision.activated = true;
+        
     }
 
     [CommandAttribute]
@@ -297,6 +301,8 @@ public class Movement : NetworkBehaviour {
     private void RpcActivateSpeedParticles()
     {
         GetComponentInChildren<ParticleSystem>().Play();
+        speedTimer timerAnimation = FindObjectOfType<speedTimer>();
+        timerAnimation.SpeedTimer();
     }
 
     [CommandAttribute]

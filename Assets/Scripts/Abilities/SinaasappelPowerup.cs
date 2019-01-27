@@ -41,8 +41,6 @@ public class SinaasappelPowerup : NetworkBehaviour
     [ClientRpcAttribute]
     private void RpcCollision()
     {
-        ScoreCounter fruitscore = FindObjectOfType<ScoreCounter>();
-        fruitscore.FruitPoints();
         gameObject.GetComponent<SphereCollider>().enabled = false;
         foreach (MeshRenderer meshrender in gameObject.GetComponentsInChildren<MeshRenderer>())
         {

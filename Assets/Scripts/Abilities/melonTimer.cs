@@ -12,5 +12,6 @@ public class melonTimer : MonoBehaviour {
     }
 
     public void MelonTimer()
-    { anim.SetTrigger("MelonTimer"); }
+    {
+        anim.Rebind(); anim.Play("melontimer"); }
 }

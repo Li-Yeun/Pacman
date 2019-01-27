@@ -34,11 +34,6 @@ public class IncreaseVision : NetworkBehaviour {
             tr.localPosition = new Vector3(0,Mathf.SmoothDamp(tr.localPosition.y, T_Height, ref Ref[0], Speed),0);
             lt.range = Mathf.SmoothDamp(lt.range, T_Range, ref Ref[1], Speed);
             lt.intensity = Mathf.SmoothDamp(lt.intensity, T_Intensity, ref Ref[2], Speed);
-            if (FindObjectOfType<viseonTimer>() != null)
-            {
-                viseonTimer timerAnimation = FindObjectOfType<viseonTimer>();
-                timerAnimation.ViseonTimer();
-            }
             
         }
 

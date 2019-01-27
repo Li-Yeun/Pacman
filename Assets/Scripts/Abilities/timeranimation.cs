@@ -13,6 +13,6 @@ public class timeranimation : MonoBehaviour {
 
     public void JumpTimer()
     {
-        anim.SetTrigger("JumpTimer");
+        anim.Rebind(); anim.Play("jumptimer"); ;
     }
 }

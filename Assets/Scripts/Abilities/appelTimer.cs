@@ -12,5 +12,7 @@ public class appelTimer : MonoBehaviour {
     }
 
     public void AppelTimer()
-    { anim.SetTrigger("AppelTimer"); }
+    {
+        anim.Rebind();
+        anim.Play("appeltimer"); }
 }
