@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpectateCamera : MonoBehaviour {
 
-    [SerializeField] GameObject PacmanCamera, GhostCamera;
+    [SerializeField] GameObject PacmanCamera, GhostCamera;     
     [SerializeField] GameObject DirectionLight;
     private GameObject UI;
     
@@ -15,21 +15,15 @@ public class SpectateCamera : MonoBehaviour {
     }
 	
 	void Update () {
-		if(Input.GetKeyDown("1"))
+
+		if(Input.GetKeyDown("1"))           // Wanneer je op 1 drukt als spectator wordt je camera perspectief verander naar de perspectief van pacman of het geestje
         {
-            if (GameObject.FindGameObjectsWithTag("Player").Length == 1)
+            if (GameObject.FindGameObjectsWithTag("Player").Length == 1)        //Checken of pacman wel bestaat voordat de camera naar het perspectief van pacman verandert
             {
                 PacmanCamera.SetActive(!PacmanCamera.activeSelf);
                 GhostCamera.SetActive(!GhostCamera.activeSelf);
                 DirectionLight.SetActive(!DirectionLight.activeSelf);
             }
         }
-
-        /*
-        if (Input.GetKeyDown("2"))
-        {
-            UI.SetActive(!UI.activeSelf);
-        }
-        */
     }
 }
