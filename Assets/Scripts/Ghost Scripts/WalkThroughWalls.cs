@@ -8,9 +8,11 @@ public class WalkThroughWalls : NetworkBehaviour {
     [SerializeField] float GhostWalkingDuration = 5f;
     [SerializeField] float GhostWalkingCDDuration = 15f;
 
+    public AudioSource poweruppickupsound;
     public bool GhostWalking = false;
     public bool GhostWalkingCD = false;
-
+    void Start()
+    { poweruppickupsound = GetComponent<AudioSource>(); }
     void Update()
     {
         if (!hasAuthority)
@@ -18,6 +20,7 @@ public class WalkThroughWalls : NetworkBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space) && !GhostWalkingCD && gameObject.GetComponentInParent<Movement>().name == "Pink")
         {
+            poweruppickupsound.Play();
             CmdActivateWalkThroughWallsParticles();
             GetComponentInParent<Invisibiltyy>().Invis = false;
             GetComponentInParent<Invisibiltyy>().CmdInvis();

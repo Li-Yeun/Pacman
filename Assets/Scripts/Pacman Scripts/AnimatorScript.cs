@@ -21,6 +21,7 @@ using System;
 /// </summary>
 public class AnimatorScript : NetworkBehaviour {
 
+    public AudioSource poweruppickupsound;
 
     // Use this for initialization
     [Header("Animators")]
@@ -49,7 +50,7 @@ public class AnimatorScript : NetworkBehaviour {
             if (light.name == "Jump Light")
                 JumpLight = light;
         }
-
+        poweruppickupsound = GetComponent<AudioSource>();
         Overzetten();
     }
 
@@ -64,6 +65,7 @@ public class AnimatorScript : NetworkBehaviour {
                 Jumping = true;
                 CmdJump();
                 Invoke("Resett", 15f);
+                poweruppickupsound.Play();
             }
         }
     }

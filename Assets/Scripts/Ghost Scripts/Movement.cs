@@ -37,12 +37,13 @@ public class Movement : NetworkBehaviour {
     private Vector3 Velocity;                                          //beweegsnelheid
     private bool[] Abilities;               //welke ability geactiveerd is
     private float[] cooldowncounter, DurationCounter;        //counter die loopt als ability niet geactiveerd is  || duration counter hoelang de ability geactiveerd is
-
-
+    public AudioSource poweruppickupsound;
+    
     void Start ()
     {
         gameObject.transform.parent = GameObject.FindGameObjectWithTag("Ghost Parent").transform;
         GameObject[] Respawns = GameObject.FindGameObjectsWithTag("Respawn");
+        poweruppickupsound = GetComponent<AudioSource>();
         foreach(GameObject Respawn in Respawns)
         {
             if(Respawn.name == name)
@@ -233,6 +234,7 @@ public class Movement : NetworkBehaviour {
     {
         if (Abilities[0])
         {
+            poweruppickupsound.Play();
             CmdActivateVision();
             cooldowncounter[0] = 0;
             DurationCounter[0] += Time.deltaTime;
@@ -250,6 +252,7 @@ public class Movement : NetworkBehaviour {
 
         if (Abilities[1])
         {
+            poweruppickupsound.Play();
             SpeedMultiplier = 1.5f;
             cooldowncounter[1] = 0;
             DurationCounter[1] += Time.deltaTime;

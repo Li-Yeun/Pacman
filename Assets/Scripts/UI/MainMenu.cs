@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour {
     //starts game
     public void startgame()
     { SceneManager.LoadScene(gamescene);
-        black.SetActive(true); }
+         }
 
     //enables button explanation popupscreen
     public void Buttonexplain()

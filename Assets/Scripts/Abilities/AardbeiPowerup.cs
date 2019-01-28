@@ -5,6 +5,10 @@ using UnityEngine.Networking;
 
 public class AardbeiPowerup : NetworkBehaviour
 {
+    public AudioSource poweruppickupsound;
+
+    void Start()
+    { poweruppickupsound = GetComponent<AudioSource> (); }
 
     [SerializeField] float duration = 15f;
 
@@ -19,6 +23,7 @@ public class AardbeiPowerup : NetworkBehaviour
                 break;
             case "Player":
                 CmdCollision(col.gameObject);
+                poweruppickupsound.Play();
                 break;
         }
     }

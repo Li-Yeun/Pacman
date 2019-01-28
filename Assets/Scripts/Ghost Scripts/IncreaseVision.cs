@@ -11,7 +11,7 @@ public class IncreaseVision : NetworkBehaviour {
     private Transform tr;
     private float Range, Intensity, Height;
     private float[] Ref = new float[3];
-
+    
     void Start()
     {
         tr = transform;

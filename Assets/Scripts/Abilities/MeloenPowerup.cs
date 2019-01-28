@@ -5,6 +5,10 @@ using UnityEngine.Networking;
 
 public class MeloenPowerup : NetworkBehaviour
 {
+    public AudioSource poweruppickupsound;
+
+    void Start()
+    { poweruppickupsound = GetComponent<AudioSource>(); }
 
     [SerializeField] float duration = 15f;
 
@@ -20,6 +24,7 @@ public class MeloenPowerup : NetworkBehaviour
                 break;
             case "Player":
                 CmdCollision();
+                poweruppickupsound.Play();
                 break;
         }
     }

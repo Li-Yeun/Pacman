@@ -5,6 +5,10 @@ using UnityEngine.Networking;
 
 public class AppelPowerup : NetworkBehaviour
 {
+    public AudioSource poweruppickupsound;
+
+    void Start()
+    { poweruppickupsound = GetComponent<AudioSource>(); }
 
     [SerializeField] Transform parent;
 
@@ -19,6 +23,7 @@ public class AppelPowerup : NetworkBehaviour
                 break;
             case "Player":
                 CmdCollision();
+                poweruppickupsound.Play();
                 break;
         }
     }

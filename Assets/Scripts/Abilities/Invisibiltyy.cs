@@ -5,12 +5,14 @@ using UnityEngine.Networking;
 
 public class Invisibiltyy : NetworkBehaviour
 {
+    public AudioSource poweruppickupsound;
     public bool Invis = false;
     private bool Orange = false , Lock = false;
     private Light[] lights;
     private GhostStates[] ghostStates;
     public void Start()
     {
+        poweruppickupsound = GetComponent<AudioSource>();
         ghostStates = GetComponentsInChildren<GhostStates>();
         lights = GetComponentsInChildren<Light>();
         if(GetComponent<Movement>().name == "Orange")
@@ -24,6 +26,7 @@ public class Invisibiltyy : NetworkBehaviour
             return;
         if (Input.GetKeyDown(KeyCode.Space) && Orange && Lock == false)
         {
+            poweruppickupsound.Play();
             Lock = true;
             CmdActivateInvisibleParticles();
             StartCoroutine(Invisible());   

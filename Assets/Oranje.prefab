@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 114436591410926756}
   - component: {fileID: 114435929414905856}
   - component: {fileID: 114337728637033606}
+  - component: {fileID: 82206446787518018}
   m_Layer: 13
   m_Name: Oranje
   m_TagString: Enemy
@@ -1453,7 +1454,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1356418371725904}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 2.7923248, y: 1.4228413, z: 5.0811095}
+  m_LocalPosition: {x: 1031.9093, y: 480.36673, z: -1265.5872}
   m_LocalScale: {x: 0.99, y: 0.99, z: 0.99}
   m_Children:
   - {fileID: 4060692903851302}
@@ -3797,6 +3798,101 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82206446787518018
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356418371725904}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 91e55a415b2232448a2b2c585b5c52b8, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95442219439255986
 Animator:
   serializedVersion: 3
@@ -3918,6 +4014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa3a9b5ba0822f48a8090e275d4d1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Invis: 0
 --- !u!114 &114361653174334632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3929,7 +4026,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebbde2a4b7c81f4f956339e6694343d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimePassed: 0
 --- !u!114 &114435929414905856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4024,7 +4120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebbde2a4b7c81f4f956339e6694343d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimePassed: 0
 --- !u!114 &114888355422877466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4037,7 +4132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Orange
-  animation: {fileID: 0}
   front: {fileID: 114953086515780090}
   left: {fileID: 114971550072650604}
   right: {fileID: 114987494556310854}
@@ -4051,9 +4145,10 @@ MonoBehaviour:
   - q
   - e
   IncreaseVisionLight: {fileID: 0}
+  Vision: {fileID: 0}
+  animation: {fileID: 0}
   dead: 0
   reversecontrols: 0
-  Vision: {fileID: 0}
   Cooldown:
   - 5
   - 5
@@ -4075,9 +4170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114958411236432512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4101,9 +4196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!114 &114987494556310854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4115,9 +4210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ee73d1f5c569440903260daa2bc8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collision: 0
   Firststring: Maze
   Secondstring: BoundingWall
+  Collision: 0
 --- !u!122 &122637791123022846
 Halo:
   m_ObjectHideFlags: 1

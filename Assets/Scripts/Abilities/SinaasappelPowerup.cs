@@ -10,6 +10,10 @@ using UnityEngine.Networking;
 /// </summary>
 public class SinaasappelPowerup : NetworkBehaviour
 {
+    public AudioSource poweruppickupsound;
+
+    void Start()
+    { poweruppickupsound = GetComponent<AudioSource>(); }
     // Variable for measuring how long the powerup has been running for (in seconds)
     [SerializeField] Material transmaterial, defaulthMaterial;
     [SerializeField] float duration = 15;
@@ -27,6 +31,7 @@ public class SinaasappelPowerup : NetworkBehaviour
                 break;
             case "Player":
                 CmdCollision();
+                poweruppickupsound.Play();
                 break;
         }
     }

@@ -5,6 +5,11 @@ using UnityEngine.Networking;
 
 public class KersPowerup : NetworkBehaviour
 {
+    public AudioSource poweruppickupsound;
+
+    void Start()
+    { poweruppickupsound = GetComponent<AudioSource>(); }
+
     void OnTriggerEnter(Collider col)
     {
         if (!hasAuthority)
@@ -16,6 +21,7 @@ public class KersPowerup : NetworkBehaviour
                 break;
             case "Player":
                 CmdCollision();
+                poweruppickupsound.Play();
                 break;
         }
     }
