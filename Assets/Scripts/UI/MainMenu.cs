@@ -12,11 +12,10 @@ public class MainMenu : MonoBehaviour {
     public string gamescene, multiplayerscene;
     public GameObject buttonexplain, black;
 
-    public AudioClip Audio;
-    public AudioSource audioSource;
+    public AudioSource buttonclicksound;
 
     void Start()
-    { audioSource.clip = Audio; }
+    { buttonclicksound = GetComponent<AudioSource>(); }
 
     //starts game
     public void startgame()
@@ -36,5 +35,5 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void Buttonclick()
-    { audioSource.Play(); }
+    { buttonclicksound.Play(); }
 }
