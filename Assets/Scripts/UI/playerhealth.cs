@@ -12,6 +12,12 @@ public class playerhealth : MonoBehaviour {
     public Image[] health_img;
     public Sprite pacman_healthicon;
     public GameObject ghostwins;
+    public AudioSource decreasehealthsound;
+
+    void Start()
+    {
+        decreasehealthsound = GetComponent<AudioSource>();
+    }
 
     void Update () {
         //check if player is dead
@@ -39,6 +45,7 @@ public class playerhealth : MonoBehaviour {
     public void DecreaseHealth()
     {
         health--;
+        decreasehealthsound.Play();
     }
 
     public void IncreaseHealth()
