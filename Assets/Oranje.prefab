@@ -3807,7 +3807,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 91e55a415b2232448a2b2c585b5c52b8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 483b23c0c99218744b4333457dd47608, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4014,6 +4014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa3a9b5ba0822f48a8090e275d4d1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poweruppickupsound: {fileID: 0}
   Invis: 0
 --- !u!114 &114361653174334632
 MonoBehaviour:
@@ -4159,6 +4160,7 @@ MonoBehaviour:
   - 5
   - 0
   - 0
+  poweruppickupsound: {fileID: 0}
 --- !u!114 &114953086515780090
 MonoBehaviour:
   m_ObjectHideFlags: 1
