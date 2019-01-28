@@ -6,24 +6,24 @@ using Smooth;
 
 public class PacmanMovement : NetworkBehaviour {
 
-    [SerializeField] KeyCode[] Controls;
+    [SerializeField] KeyCode[] Controls;                // De Control voor pacman om te bewegen/springen/ability gebruiken
 
     [Header("Directional Speed")]
-    [SerializeField] public Vector3 Speed;
+    [SerializeField] public Vector3 Speed;              // De snelheid van pacman waarmee hij beweegt
 
     [Header("Special Triggers")]
     [SerializeField] SpecialTrigger2 left, right, Movement;
-    Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0) };
+    Vector3[] RotateList = { new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 0, 0) };  // De standaard rotaties die pacman moet gebruiken bij speciefieke methodes
 
-    public bool AnimationLock = false;
-    public int currentDirection;
+    public bool AnimationLock = false;                  // Een lock voor  movement wanneer er een animatie wordt afgespeeld
+    public int currentDirection;                        // De hudige directie waar pacman naar kijkt
 
-    private bool Teleporterlock = false, LockMovement;
+    private bool Teleporterlock = false, LockMovement;  // Andere soorten Locks voor de movement van pacman 
     private KeyCode currentKey, p_Key;
     private Vector3 defaulthSpeed;
     private Rigidbody rb;
-    private GameObject[] Ghosts, Spawners;
-    private GameObject Spawner;
+    private GameObject[] Ghosts, Spawners;             
+    private GameObject Spawner;       
 
     public Vector3 Position
     {

@@ -5,10 +5,10 @@ using UnityEngine.Networking;
 
 public class PacmanCollision : NetworkBehaviour {
 
-    [Tooltip("FX prefab on player")] [SerializeField] GameObject DeathFX;
+    [Tooltip("FX prefab on player")] [SerializeField] GameObject DeathFX;  // Particle effect als pacman doodgaat
     [SerializeField] Transform parent;
-    [SerializeField] GameObject[] FireWorks;
-    private GhostStates pacmanAttacking;
+    [SerializeField] GameObject[] FireWorks;                               // Vuurwerk effect als pacman doodgaat
+    private GhostStates pacmanAttacking;                                   // De state van de ghost of ze vulnerable zijn
     private HUD UI;
 
     void Start()
@@ -26,12 +26,12 @@ public class PacmanCollision : NetworkBehaviour {
         {
             case "Player":
             case "Decoy":
-                Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+                Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());              
                 break;
             case "Enemy":
                 Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
                 StartCoroutine(ResetCollisionDetection(collision));
-                if (!pacmanAttacking.IsVulnerable)
+                if (!pacmanAttacking.IsVulnerable)                      // Checken of pacman of het geestjes dood moet gaan gebaseerd op de state van het geestje
                 {
                     CmdDeathSequence(collision.gameObject);
                 }
@@ -63,6 +63,7 @@ public class PacmanCollision : NetworkBehaviour {
         fx.transform.parent = parent;
         if (gameObject.tag == "Player")
         {
+            // Checken welke UI en vuurwerk kleur moeten gebruiken als pacman door een geestje dood gaat
             switch (Ghost.GetComponent<Movement>().name)
             {
                 case "Blue":
@@ -86,7 +87,7 @@ public class PacmanCollision : NetworkBehaviour {
             Health.DecreaseHealth();
             SendMessage("StartDeathSequence");
         }
-        else
+        else   //Dit is wat er moet gebeuren als de decoy een geest raakt
         {
             GameObject DecoyCamera = GameObject.FindGameObjectWithTag("Decoy Camera");
             Destroy(DecoyCamera);
