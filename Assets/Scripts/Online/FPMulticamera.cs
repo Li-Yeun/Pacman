@@ -18,10 +18,11 @@ public class FPMulticamera : MonoBehaviour
             gameObject.transform.parent = GameObject.FindGameObjectWithTag("Camera Parent").transform;
     }
 
-    void Update ()
+    void Update()
     {
-        if (FindObjectOfType<PacmanMovement>() == null)
-            return;
+        if (FindObjectOfType<PacmanMovement>() == null) { 
+        Debug.Log("well fuck");
+    }
         else
         {
             PacmanMovement Target = FindObjectOfType<PacmanMovement>().GetComponent<PacmanMovement>();

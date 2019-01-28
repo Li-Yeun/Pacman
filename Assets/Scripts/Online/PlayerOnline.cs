@@ -45,7 +45,7 @@ public class PlayerOnline : NetworkBehaviour
             }
         }
 
-        if ((isLocalPlayer && Input.GetKeyDown("8")) && (SpawnDecoyBool == true))
+        if (isLocalPlayer && (SpawnDecoyBool == true))
         {
             if (GameObject.Find("Decoy(Clone)") != null)
                 return;
@@ -84,7 +84,7 @@ public class PlayerOnline : NetworkBehaviour
     {
         SpawnDecoyBool = false;
         CmdSpawnDecoy();
-        Instantiate(Decoy_Camera);
+        //Instantiate(Decoy_Camera);
     }
 
     [Command]
