@@ -17,7 +17,7 @@ public class SelfDestruct : MonoBehaviour
                 if (cam == null)
                     return;
                 else if (cam.name == "Top Down Camera(Clone)")
-                    cam.orthographic = false;
+                    cam.orthographic = false;           // Het camera perspectief van 3D naar 2D veranderen, is nodig om specifieke effects te kunnen zien
             }
         }
 
@@ -36,13 +36,14 @@ public class SelfDestruct : MonoBehaviour
                     if (cam == null)
                         return;
                     else if (cam.name == "Top Down Camera(Clone)")
-                        cam.orthographic = true;
+                        cam.orthographic = true;        // Het camera perspectief van 2D naar 3D veranderen
                 }
             }
 
             if(FindObjectOfType<EnvironementalEvents>() != null)
                 FindObjectOfType<EnvironementalEvents>().ResetTimer();
 
+            // Het object wordt hier vernietigd als de timer een bepaalde tijd heeft bereikt
             Destroy(gameObject);
         }
     }
@@ -57,7 +58,7 @@ public class SelfDestruct : MonoBehaviour
                 if (cam == null)
                     return;
                 else if (cam.name == "Top Down Camera(Clone)")
-                    cam.orthographic = true;
+                    cam.orthographic = true;                    // Het camera perspectief naar 2D veranderen als dat nog niet gebeurd is
             }
         }
 

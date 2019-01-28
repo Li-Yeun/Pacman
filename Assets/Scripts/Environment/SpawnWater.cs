@@ -21,7 +21,7 @@ public class SpawnWater : NetworkBehaviour
                 return;
 
             else if (cam.name == "Top Down Camera(Clone)")
-                cam.orthographic = false;
+                cam.orthographic = false;                                           // De camera projectie veranderen van 2D naar 3D
         }
         Pacman = GameObject.FindGameObjectWithTag("Player");
         Ghosts = GameObject.FindGameObjectsWithTag("Enemy");
@@ -30,10 +30,10 @@ public class SpawnWater : NetworkBehaviour
         {
             GhostSpeed = Ghosts[0].GetComponent<Movement>().speed;
         }
-        SpawnPrefab(WaterFirstPerson, "SlowDownMovement", 9f);
-        SpawnPrefab(WaterThirdPerson, "ResetMovement", 37f);
-        Invoke("ResetWater", 34f);
-        Instantiate(Waterfall, GameObject.Find("EveryObject").transform);
+        SpawnPrefab(WaterFirstPerson, "SlowDownMovement", 9f);                      // Movement van ghost en pacman worden geslowed na 9 seconde
+        SpawnPrefab(WaterThirdPerson, "ResetMovement", 37f);                        // Movement van ghost en pacman worden na de oude waarde terug gezet na 9=37 seconde        
+        Invoke("ResetWater", 34f);                                                  // Het water laten zakken na 34 seconde
+        Instantiate(Waterfall, GameObject.Find("EveryObject").transform);           // De water prefab wordt hier gecreërd
 
     }
 
@@ -43,7 +43,7 @@ public class SpawnWater : NetworkBehaviour
         {
             foreach (RaisingWater water in allWater)
             {
-                water.Lock = true;
+                water.Lock = true;      // Deze lockt zorgt ervoor dat de water gaat zakken als die true is
             }
         }
     }
@@ -51,7 +51,7 @@ public class SpawnWater : NetworkBehaviour
     {
         GameObject gameObject = Instantiate(Event, GameObject.Find("EveryObject").transform);
         Invoke(Method, time);
-        Destroy(gameObject, 40f);
+        Destroy(gameObject, 40f);   // Het water wordt hiet na 40 seconde vernietigt
     }
     private void SlowDownMovement()
     {
@@ -60,13 +60,13 @@ public class SpawnWater : NetworkBehaviour
 
     private void SetMovementSpeed(float PacmanMovementSpeed, float GhostMovementSpeed)
     {
-        Pacman.GetComponent<PacmanMovement>().Speed.x = PacmanMovementSpeed;
-        Pacman.GetComponent<PacmanMovement>().Speed.z = PacmanMovementSpeed;
+        Pacman.GetComponent<PacmanMovement>().Speed.x = PacmanMovementSpeed;                    // De snelheid van pacman op de x-as wordt verandert
+        Pacman.GetComponent<PacmanMovement>().Speed.z = PacmanMovementSpeed;                    // De snelheid van pacman op de z-as wordt verandert
         foreach (GameObject Ghost in Ghosts)
         {
             if (Ghost == null)
                 return;
-            Ghost.GetComponent<Movement>().speed = GhostMovementSpeed;
+            Ghost.GetComponent<Movement>().speed = GhostMovementSpeed;                          // De snelheid van de geestjes wordt verandert
         }
     }
 
@@ -78,7 +78,7 @@ public class SpawnWater : NetworkBehaviour
             if (cam == null)
                 return;
             else if (cam.name == "Top Down Camera(Clone)")
-                cam.orthographic = true;
+                cam.orthographic = true;                                                         // De camera projectie veranderen van 3D naar 2D
         }
         FindObjectOfType<EnvironementalEvents>().ResetTimer();
         SetMovementSpeed(PacmanSpeed, GhostSpeed);

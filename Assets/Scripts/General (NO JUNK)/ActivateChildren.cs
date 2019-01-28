@@ -8,14 +8,14 @@ public class ActivateChildren : MonoBehaviour {
     public void Reset()
     {
         gameObject.SetActiveRecursively(true);
-        if (name == "Pellets")
+        if (name == "Pellets")          // Alle Pellets worden hierdoor gerest zodat ze weer zichtbaar zijn
         {
             foreach (PelletBehaviour pellet in GetComponentsInChildren<PelletBehaviour>())
             {
                 pellet.pelleteaten = false;
             }
         }
-        else if (name == "PowerPills")
+        else if (name == "PowerPills")  // Alle PowerPills worden hierdoor gerest zodat ze weer zichtbaar zijn
         {
             foreach (PowerpilBehaviour powerPill in GetComponentsInChildren<PowerpilBehaviour>())
             {

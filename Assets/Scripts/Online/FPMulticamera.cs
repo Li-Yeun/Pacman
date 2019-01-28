@@ -6,7 +6,7 @@ public class FPMulticamera : MonoBehaviour
 {
     [SerializeField] public string mode;
     [SerializeField] string tag;
-    [SerializeField] float turnspeed = 0.1f;
+    [SerializeField] float turnspeed = 0.1f;            // De draaisnelheid van de camera
 
     private Vector3 Offset = Vector3.zero, R_offset = new Vector3(0, -90, 0);
     private Transform tr_Target;

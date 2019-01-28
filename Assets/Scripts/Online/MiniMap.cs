@@ -21,6 +21,8 @@ public class MiniMap : MonoBehaviour {
         transform.position = new Vector3(xOffset, transform.position.y, zOffset);
     }
 
+
+    // Checken of de camera binnen de muren van de doolhof zit, zoniet dan staat de camera postie van die as stil
     private float CheckBoundingBox(float dimensionPos, float targetPos, float min, float max)
     {
         if (dimensionPos != targetPos)
