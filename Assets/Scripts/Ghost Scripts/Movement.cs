@@ -10,7 +10,8 @@ using System;
 /// Insert alle functies van wat deze classe doet. Thanks.
 /// </summary>
 
-public class Movement : NetworkBehaviour {
+public class Movement : NetworkBehaviour
+{
 
     public string name; //Checken welke ghost er bestaan bij character selectie;
 
@@ -29,50 +30,47 @@ public class Movement : NetworkBehaviour {
     [SerializeField] Animation animation;
 
     public bool dead = false, reversecontrols = false;          //als true is de speler doodgegaan
-    public float[] Cooldown, Duration;        //instelbare cooldown per ability || instelbare Duration per ability
+    [SerializeField] float[] Cooldown, Duration;                                     //instelbare cooldown per ability || instelbare Duration per ability
 
     private bool goleft, goright;
     private float RotationCooldown = 0, respawntimer = 0, SpeedMultiplier = 1, defaulthSpeed;    //tijd voordat er weer gedraaid kan worden
     private Transform respawn;
     private Vector3 Velocity;                                          //beweegsnelheid
-    private bool[] Abilities;               //welke ability geactiveerd is
-    private float[] cooldowncounter, DurationCounter;        //counter die loopt als ability niet geactiveerd is  || duration counter hoelang de ability geactiveerd is
+    private bool[] Abilities;               //welke ability geactiveerd is  \\
     public AudioSource poweruppickupsound;
-    
-    void Start ()
+
+    void Start()
     {
         gameObject.transform.parent = GameObject.FindGameObjectWithTag("Ghost Parent").transform;
         GameObject[] Respawns = GameObject.FindGameObjectsWithTag("Respawn");
         poweruppickupsound = GetComponent<AudioSource>();
-        foreach(GameObject Respawn in Respawns)
+        foreach (GameObject Respawn in Respawns)
         {
-            if(Respawn.name == name)
+            if (Respawn.name == name)
             {
                 respawn = Respawn.transform;
             }
         }
 
-        Abilities = new bool[4];
-        cooldowncounter = new float[4];
-        DurationCounter = new float[4];
+        Abilities = new bool[2];
+        Abilities[0] = false;
+        Abilities[1] = false;
         FindObjectOfType<General>().GhostBroadcast();
         gameObject.transform.position = respawn.position;
         defaulthSpeed = speed;
+
     }
 
-    
-    void Update ()
+
+    void Update()
     {
         if (!hasAuthority)
             return;
         if (dead)
         {
             DoRespawn();
-        }     
-
-        DoAbilities();
-        
-	}
+        }
+    }
 
     void FixedUpdate()
     {
@@ -91,28 +89,28 @@ public class Movement : NetworkBehaviour {
         switch ((int)gameObject.transform.eulerAngles.y)
         {
             case 0:
-                Velocity = new Vector3(Time.deltaTime,0,0);
+                Velocity = new Vector3(Time.deltaTime, 0, 0);
                 if (Input.GetKey(Controls[2])) { goleft = true; }
                 else { goleft = false; }
                 if (Input.GetKey(Controls[0])) { goright = true; }
                 else { goright = false; }
                 break;
             case 90:
-                Velocity = new Vector3(0, 0,-Time.deltaTime);
+                Velocity = new Vector3(0, 0, -Time.deltaTime);
                 if (Input.GetKey(Controls[1])) { goleft = true; }
                 else { goleft = false; }
                 if (Input.GetKey(Controls[3])) { goright = true; }
                 else { goright = false; }
                 break;
             case 180:
-                Velocity = new Vector3(-Time.deltaTime, 0,0);
+                Velocity = new Vector3(-Time.deltaTime, 0, 0);
                 if (Input.GetKey(Controls[0])) { goleft = true; }
                 else { goleft = false; }
                 if (Input.GetKey(Controls[2])) { goright = true; }
                 else { goright = false; }
                 break;
             case 270:
-                Velocity = new Vector3(0,0,Time.deltaTime);
+                Velocity = new Vector3(0, 0, Time.deltaTime);
                 if (Input.GetKey(Controls[3])) { goleft = true; }
                 else { goleft = false; }
                 if (Input.GetKey(Controls[1])) { goright = true; }
@@ -120,11 +118,11 @@ public class Movement : NetworkBehaviour {
                 break;
         }
 
-        gameObject.transform.position += Velocity * speed * SpeedMultiplier;    
+        gameObject.transform.position += Velocity * speed * SpeedMultiplier;
     }       //beweegt Character naar de kijkrichting
     private void Rotate(int i)
     {
-        gameObject.transform.Rotate(0,i*90,0);
+        gameObject.transform.Rotate(0, i * 90, 0);
         RotationCooldown = 1;
     }       //Roteer de Character met 90 graden naar 1 rechts, -1 links
     private void DoRespawn()
@@ -133,7 +131,7 @@ public class Movement : NetworkBehaviour {
         if (respawntimer >= Respawntime)
         {
             dead = false;
-            GetComponent<SmoothSync>().teleportAnyObjectFromServer(respawn.transform.position, Quaternion.Euler(0,0,0), gameObject.transform.localScale); // todo error als 5 player gejoined zijn
+            GetComponent<SmoothSync>().teleportAnyObjectFromServer(respawn.transform.position, Quaternion.Euler(0, 0, 0), gameObject.transform.localScale); // todo error als 5 player gejoined zijn
             respawntimer = 0;
         }
     }
@@ -215,60 +213,58 @@ public class Movement : NetworkBehaviour {
                 RotationCooldown = 0;
             }
         }
-        if (Input.GetKey(KeyCode.Space) && !Abilities[0] && cooldowncounter[0] >= Cooldown[0] && name == "Blue")
+
+        if (Input.GetKey(KeyCode.Space))
         {
-            Abilities[0] = true;
-            if (FindObjectOfType<viseonTimer>() != null)
+            if (name == "Blue" && !Abilities[0])
             {
-                viseonTimer timerAnimation = FindObjectOfType<viseonTimer>();
-                timerAnimation.ViseonTimer();
+                Abilities[0] = true;
+                BlueAbilitliy();
             }
-        }
-        else if (Input.GetKey(KeyCode.Space) && !Abilities[1] && cooldowncounter[1] >= Cooldown[1] && (name == "Red"))
-        {
-            CmdActivateSpeedParticles();
-            Abilities[1] = true;
+            else if (name == "Red" && !Abilities[1])
+            {
+                Abilities[1] = true;
+                RedAbility();
+            }
         }
     }
-    private void DoAbilities()
+
+    private void BlueAbilitliy()
+    {
+        CmdActivateVision();
+        poweruppickupsound.Play();
+        viseonTimer timerAnimation = FindObjectOfType<viseonTimer>();
+        timerAnimation.ViseonTimer();
+        Invoke("DeActivateVision", Duration[0]);
+        Invoke("CooldownReset", Cooldown[0]);
+    }
+
+    private void RedAbility()
+    {
+        CmdActivateSpeedParticles();
+        poweruppickupsound.Play();
+        SpeedMultiplier = 1.5f;
+        Invoke("DeActivateSpeed", Duration[1]);
+        Invoke("CooldownReset", Cooldown[1]);
+    }
+
+    private void DeActivateSpeed()
+    {
+        CmdDeActivateSpeedParticles();
+        SpeedMultiplier = 1;
+    }
+
+    private void DeActivateVision()
+    {
+        CmdDeactivateVision();
+    }
+
+    private void CooldownReset()
     {
         if (Abilities[0])
-        {
-            poweruppickupsound.Play();
-            CmdActivateVision();
-            cooldowncounter[0] = 0;
-            DurationCounter[0] += Time.deltaTime;
-            if(DurationCounter[0] >= Duration[0])
-            {
-                CmdDeactivateVision();
-                Abilities[0] = false;
-                DurationCounter[0] = 0;
-            }
-        }
-        else if (!Abilities[0])
-        {
-            cooldowncounter[0] += Time.deltaTime;
-        }
-
-        if (Abilities[1])
-        {
-            poweruppickupsound.Play();
-            SpeedMultiplier = 1.5f;
-            cooldowncounter[1] = 0;
-            DurationCounter[1] += Time.deltaTime;
-            if(DurationCounter[1] >= Duration[1])
-            {
-                CmdDeActivateSpeedParticles();
-                Abilities[1] = false;
-                SpeedMultiplier = 1;
-                DurationCounter[1] = 0;
-            }
-        }
-        else if (!Abilities[1])
-        {
-            cooldowncounter[1] += Time.deltaTime;
-        }
-
+            Abilities[0] = false;
+        else if (Abilities[1])
+            Abilities[1] = false;
     }
 
     [CommandAttribute]
@@ -281,7 +277,7 @@ public class Movement : NetworkBehaviour {
     {
         IncreaseVisionLight.SetActive(true);
         Vision.activated = true;
-        
+
     }
 
     [CommandAttribute]

@@ -4151,15 +4151,11 @@ MonoBehaviour:
   dead: 0
   reversecontrols: 0
   Cooldown:
-  - 5
-  - 5
-  - 0
-  - 0
+  - 15
+  - 15
   Duration:
   - 5
   - 5
-  - 0
-  - 0
   poweruppickupsound: {fileID: 0}
 --- !u!114 &114953086515780090
 MonoBehaviour:

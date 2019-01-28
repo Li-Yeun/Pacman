@@ -4098,13 +4098,9 @@ MonoBehaviour:
   Cooldown:
   - 15
   - 15
-  - 0
-  - 0
   Duration:
   - 5
   - 5
-  - 0
-  - 0
   poweruppickupsound: {fileID: 0}
 --- !u!114 &114325951750609582
 MonoBehaviour:
