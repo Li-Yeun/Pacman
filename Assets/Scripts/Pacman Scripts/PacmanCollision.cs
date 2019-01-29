@@ -89,8 +89,6 @@ public class PacmanCollision : NetworkBehaviour {
         }
         else   //Dit is wat er moet gebeuren als de decoy een geest raakt
         {
-            GameObject DecoyCamera = GameObject.FindGameObjectWithTag("Decoy Camera");
-            Destroy(DecoyCamera);
             Destroy(gameObject);
         }
         

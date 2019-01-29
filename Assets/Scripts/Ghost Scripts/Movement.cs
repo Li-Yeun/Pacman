@@ -300,8 +300,11 @@ public class Movement : NetworkBehaviour
     private void RpcActivateSpeedParticles()
     {
         GetComponentInChildren<ParticleSystem>().Play();
-        speedTimer timerAnimation = FindObjectOfType<speedTimer>();
-        timerAnimation.SpeedTimer();
+        if (FindObjectOfType<speedTimer>() != null)
+        {
+            speedTimer timerAnimation = FindObjectOfType<speedTimer>();
+            timerAnimation.SpeedTimer();
+        }
     }
 
     [CommandAttribute]
