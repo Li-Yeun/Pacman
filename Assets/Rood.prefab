@@ -4106,8 +4106,8 @@ MonoBehaviour:
   - 15
   - 15
   Duration:
-  - 5
-  - 5
+  - 4
+  - 4
   poweruppickupsound: {fileID: 0}
 --- !u!114 &114624426221438624
 MonoBehaviour:
