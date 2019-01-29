@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 /// <summary>
-/// This script is responsable for making the blocks transparent when the orange is picked up.
-/// It's inefficient as shit but it works.
-/// Todo make this beter
+/// This script is responsable for making the blocks transparent when the orange is eaten.
 /// </summary>
 public class SinaasappelPowerup : NetworkBehaviour
 {

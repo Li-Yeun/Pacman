@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-
+/// <summary>
+/// De appel spawned een decoy, als pacman deze opeet.
+/// </summary>
 public class AppelPowerup : NetworkBehaviour
 {
     public AudioSource poweruppickupsound;

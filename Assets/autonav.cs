@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Dit script is verantwoordelijk voor de automatische navigatie van de decoy
+/// </summary>
 public class autonav : MonoBehaviour {
     [SerializeField] SpecialTrigger2 front, left, right;               //colliders voor navigatie
     private Vector3 Velocity;

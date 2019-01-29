@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-
+/// <summary>
+/// De kers geeft Pacman een extra leven als hij deze opeet.
+/// </summary>
 public class KersPowerup : NetworkBehaviour
 {
     public AudioSource poweruppickupsound;

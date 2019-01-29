@@ -4,7 +4,12 @@ using UnityEngine.Networking;
 #if UNITY_WSA && !UNITY_5_3 && !UNITY_5_4
 using UnityEngine.XR.WSA;
 #endif
-
+/// <summary>
+/// SmoothSync is niet door ParrotGames geschreven.
+/// Deze graag niet mee nemen in de beoordeling.
+/// SmoothSync is geïmplementeerd omdat Unity maar 30 keer per seconde de multiplayer locatie uitzend en dit er niet heel smooth uitzag.
+/// Daarom gebruiken we dit custom Script van de assetstore.
+/// </summary>
 // Whalecome to SmoothSync. If you have any problems, suggestions, or comments, don't hesitate to let us hear them.
 // With Love,
 // Noble Whale Studios
