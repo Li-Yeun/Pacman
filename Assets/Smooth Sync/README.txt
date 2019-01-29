@@ -1,6 +1,9 @@
 Plugin Version: 3.13
 Unity Version: 5.3.* - 2018.2*
 
+SmoothSync is niet geschreven door Parrotgames.
+SmoothSync is geïmplementeerd omdat Unity niet vaak genoeg de locatie van objecte door stuurde.
+
 # Smooth Sync
 Performs interpolation and extrapolation in order to make your objects smooth and more accurate over the network.
 Highly configurable, only send what you need. Optionally compress floats to further reduce bandwidth. 
